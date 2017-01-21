@@ -16,7 +16,7 @@ RUN apk --no-cache --update add \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /usr/lib/ruby/gems/*/cache/*.gem
 
 # Copy configuration files
-COPY ./conf/fluentd.conf /fluentd/etc/
+COPY ./conf/fluent.conf /fluentd/etc/
 COPY ./conf/kubernetes.conf /fluentd/etc/
 
 # Environment variables
