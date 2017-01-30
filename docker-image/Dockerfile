@@ -21,7 +21,7 @@ COPY ./conf/kubernetes.conf /fluentd/etc/
 
 # Environment variables
 ENV FLUENTD_OPT=""
-ENV FLUENTD_CONF="fluentd.conf"
+ENV FLUENTD_CONF="fluent.conf"
 #ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
 
 # Run Fluentd
