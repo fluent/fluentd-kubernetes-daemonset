@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v0.12.31-onbuild
+FROM fluent/fluentd:v0.12-onbuild
 MAINTAINER Eduardo Silva <eduardo@treasure-data.com>
 USER root
 WORKDIR /home/fluent
