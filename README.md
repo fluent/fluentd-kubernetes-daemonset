@@ -11,4 +11,4 @@ References:
 
 ## Install using Honestbee Helm Chart
 
-See [Honestbee Public Helm charts](https://github.com/honestbee/public-charts/tree/fluentd-logentries-0.1.0/)
+See [Honestbee Public Helm charts](https://github.com/honestbee/public-charts/tree/fluentd-logentries-0.1.0/incubator/fluentd-logentries)
