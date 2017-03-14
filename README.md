@@ -1,4 +1,3 @@
-# Fluentd Daemonset for Kubernetes
 Fluentd Daemonset for Kubernetes
 ====================
 
