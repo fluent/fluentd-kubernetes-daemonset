@@ -10,7 +10,7 @@
 # It's still possible to build, tag and push images manually. Just use:
 #	make release-all
 
-IMAGE_NAME := so0k/fluentd-kubernetes
+IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
 	v0.12/elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
