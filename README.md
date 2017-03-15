@@ -78,8 +78,8 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [2]: https://hub.docker.com/_/alpine
 [3]: https://hub.docker.com/_/debian
 [4]: http://docs.fluentd.org/v0.12/articles/kubernetes-fluentd
-[101]: https://github.com/fluent/fluentd-docker-image/blob/master/docker-image/v0.12/elasticsearch/Dockerfile
-[102]: https://github.com/fluent/fluentd-docker-image/blob/master/docker-image/v0.12/loggly/Dockerfile
-[103]: https://github.com/fluent/fluentd-docker-image/blob/master/docker-image/v0.12/logentries/Dockerfile
-[104]: https://github.com/fluent/fluentd-docker-image/blob/master/docker-image/v0.12/cloudwatch/Dockerfile
+[101]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/elasticsearch/Dockerfile
+[102]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/loggly/Dockerfile
+[103]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/logentries/Dockerfile
+[104]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/cloudwatch/Dockerfile
 
