@@ -14,7 +14,8 @@ IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
 	v0.12/elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
-	v0.12/logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries
+	v0.12/logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
+	v0.12/cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
 # Default is first image from ALL_IMAGES list.
