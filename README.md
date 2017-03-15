@@ -52,9 +52,8 @@ Concrete `vX.Y.Z` version of Fluentd.
 
 Debian image not available at the moment.
 
-The image based on [Debian Linux image][3].
-You may be needed when you require plugins which cannot be installed
-on Alpine (like `fluent-plugin-systemd`).
+You may need the image based on [Debian Linux image][3] when you require
+plugins which cannot be installed on Alpine (like `fluent-plugin-systemd`).
 
 
 ### References
@@ -66,8 +65,8 @@ on Alpine (like `fluent-plugin-systemd`).
 
 ## Issues
 
-We can't notice comments in the DockerHub so don't use them for reporting issue
-or asking question.
+We can't notice comments in the DockerHub so don't use them for reporting
+issues or asking question.
 
 If you have any problems with or questions about this image, please contact us
 through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/issues).
