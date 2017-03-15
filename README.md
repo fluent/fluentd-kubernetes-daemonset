@@ -17,6 +17,8 @@ Fluentd Daemonset for Kubernetes
   [(v0.12/loggly/Dockerfile)][102]
 - `v0.12.33-logentries`,`v0.12-logentries`,`stable-logentries`,`logentries`
   [(v0.12/logentries/Dockerfile)][103]
+- `v0.12.33-cloudwatch`,`v0.12-cloudwatch`,`stable-cloudwatch`,`cloudwatch`
+  [(v0.12/cloudwatch/Dockerfile)][104]
 
 
 ## What is Fluentd?

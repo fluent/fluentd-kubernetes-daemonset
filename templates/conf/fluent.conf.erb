@@ -34,4 +34,11 @@
    log_level info
    loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/fluentd"
 </match>
+<%  when "cloudwatch"%>
+<match **>
+  type cloudwatch_logs
+  log_group_name "#{ENV['LOG_GROUP_NAME']}"
+  auto_create_stream true
+  use_tag_as_stream true
+</match>
 <% end%>
