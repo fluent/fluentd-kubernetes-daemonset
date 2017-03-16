@@ -1,10 +1,10 @@
 Fluentd Daemonset for Kubernetes
 ====================
 
-[![Docker Stars](https://img.shields.io/docker/stars/fluent/fluentd-kubernetes.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-[![Docker Pulls](https://img.shields.io/docker/pulls/fluent/fluentd-kubernetes.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/fluent/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/fluent/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
+[![Docker Stars](https://img.shields.io/docker/stars/honestbee/fluentd-kubernetes.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
+[![Docker Pulls](https://img.shields.io/docker/pulls/honestbee/fluentd-kubernetes.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/honestbee/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/honestbee/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
 
 
 
