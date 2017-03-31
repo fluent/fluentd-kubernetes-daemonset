@@ -1,12 +1,10 @@
 Fluentd Daemonset for Kubernetes
 ====================
 
-[![Docker Stars](https://img.shields.io/docker/stars/fluent/fluentd-kubernetes.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-[![Docker Pulls](https://img.shields.io/docker/pulls/fluent/fluentd-kubernetes.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/fluent/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/fluent/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/fluent/fluentd-kubernetes)
-
-
+[![Docker Stars](https://img.shields.io/docker/stars/honestbee/fluentd-kubernetes.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
+[![Docker Pulls](https://img.shields.io/docker/pulls/honestbee/fluentd-kubernetes.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/honestbee/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/honestbee/fluentd-kubernetes/latest.svg)](https://hub.docker.com/r/honestbee/fluentd-kubernetes)
 
 
 ## Supported tags and respective `Dockerfile` links
@@ -61,6 +59,9 @@ plugins which cannot be installed on Alpine (like `fluent-plugin-systemd`).
 [Kubernetes Logging with Fluentd][4]
 
 
+### Deploying to Kubernetes
+
+See [Honestbee Public Helm charts](https://github.com/honestbee/public-charts/tree/fluentd-logentries-0.1.0/incubator/fluentd-logentries)
 
 
 ## Issues
@@ -77,8 +78,7 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [2]: https://hub.docker.com/_/alpine
 [3]: https://hub.docker.com/_/debian
 [4]: http://docs.fluentd.org/v0.12/articles/kubernetes-fluentd
-[101]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/elasticsearch/Dockerfile
-[102]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/loggly/Dockerfile
-[103]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/logentries/Dockerfile
-[104]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/cloudwatch/Dockerfile
-
+[101]: https://github.com/honestbee/fluentd-kubernetes/blob/master/docker-image/v0.12/elasticsearch/Dockerfile
+[102]: https://github.com/honestbee/fluentd-kubernetes/blob/master/docker-image/v0.12/loggly/Dockerfile
+[103]: https://github.com/honestbee/fluentd-kubernetes/blob/master/docker-image/v0.12/logentries/Dockerfile
+[104]: https://github.com/honestbee/fluentd-kubernetes/blob/master/docker-image/v0.12/cloudwatch/Dockerfile
