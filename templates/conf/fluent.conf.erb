@@ -34,6 +34,17 @@
    log_level info
    loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/fluentd"
 </match>
+<%  when "logzio"%>
+<match **>
+   type logzio_buffered
+   endpoint_url https://listener.logz.io:8071?token=#{ENV['LOGZIO_TOKEN']}&type=#{ENV['LOGZIO_TYPE']}
+   output_include_time true
+   output_include_tags true
+   buffer_type    file
+   buffer_path    /var/log/logzio-buffer
+   flush_interval 10s
+   buffer_chunk_limit 1m   # Logz.io has bulk limit of 10M. We recommend set this to 1M, to avoid oversized bulks
+</match>
 <%  when "cloudwatch"%>
 <match **>
   type cloudwatch_logs
