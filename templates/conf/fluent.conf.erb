@@ -35,9 +35,18 @@
    loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/fluentd"
 </match>
 <%  when "logzio"%>
-<match **>
+
+<match kubernetes.**>
+  type record_reformer
+  <record>
+    cluster "#{ENV['CLUSTER']}"
+  </record>
+  tag reformed.*
+</match>
+
+<match reformed.**>
    type logzio_buffered
-   endpoint_url https://listener.logz.io:8071?token=#{ENV['LOGZIO_TOKEN']}&type=#{ENV['LOGZIO_TYPE']}
+   endpoint_url "https://listener.logz.io:8071?token=#{ENV['LOGZIO_TOKEN']}&type=#{ENV['LOGZIO_TYPE']}"
    output_include_time true
    output_include_tags true
    buffer_type    file
