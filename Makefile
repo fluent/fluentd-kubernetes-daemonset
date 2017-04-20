@@ -109,7 +109,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile fluent.conf kubernetes.conf plugins post-push-hook
+src: dockerfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook
 
 # Generate sources for all supported Docker images.
 #
@@ -166,6 +166,14 @@ kubernetes.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/kubernetes.conf.erb > docker-image/$(DOCKERFILE)/conf/kubernetes.conf
+
+systemd.conf:
+	mkdir -p docker-image/$(DOCKERFILE)/conf
+	docker run --rm -i -v $(PWD)/templates/conf/systemd.conf.erb:/systemd.conf.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
 
 # Generate plugins for version
 #
