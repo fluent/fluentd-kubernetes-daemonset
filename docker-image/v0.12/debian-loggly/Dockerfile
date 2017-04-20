@@ -18,6 +18,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-record-reformer \
     && gem install fluent-plugin-loggly \
     && gem install fluent-plugin-kubernetes_metadata_filter \
+    && gem install ffi \
+    && gem install fluent-plugin-systemd -v 0.0.8 \
     && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
                   -o APT::AutoRemove::RecommendsImportant=false \
@@ -28,6 +30,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
+COPY ./conf/systemd.conf /fluentd/etc/
 COPY ./conf/kubernetes.conf /fluentd/etc/
 
 # Copy plugins
