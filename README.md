@@ -82,12 +82,12 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [debian-dockerhub]: https://hub.docker.com/_/debian
 [fluentd-article]: http://docs.fluentd.org/v0.12/articles/kubernetes-fluentd
 
-[alpine-elasticsearch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-elasticsearch/Dockerfile
-[alpine-loggly-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-loggly/Dockerfile
-[alpine-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-logentries/Dockerfile
-[alpine-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-cloudwatch/Dockerfile
+[alpine-elasticsearch-dockerfile]: docker-image/v0.12/alpine-elasticsearch/Dockerfile
+[alpine-loggly-dockerfile]: docker-image/v0.12/alpine-loggly/Dockerfile
+[alpine-logentries-dockerfile]: docker-image/v0.12/alpine-logentries/Dockerfile
+[alpine-cloudwatch-dockerfile]: docker-image/v0.12/alpine-cloudwatch/Dockerfile
 
-[debian-elasticsearch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-elasticsearch/Dockerfile
-[debian-loggly-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-loggly/Dockerfile
-[debian-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-logentries/Dockerfile
-[debian-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-cloudwatch/Dockerfile
+[debian-elasticsearch-dockerfile]: docker-image/v0.12/debian-elasticsearch/Dockerfile
+[debian-loggly-dockerfile]: docker-image/v0.12/debian-loggly/Dockerfile
+[debian-logentries-dockerfile]: docker-image/v0.12/debian-logentries/Dockerfile
+[debian-cloudwatch-dockerfile]: docker-image/v0.12/debian-cloudwatch/Dockerfile
