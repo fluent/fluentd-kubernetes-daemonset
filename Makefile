@@ -12,24 +12,39 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v0.12/elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
-	v0.12/loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
-	v0.12/logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
-	v0.12/logzio:v0.12.33-logzio,v0.12-logzio,stable-logzio,logzio \
-	v0.12/cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch
+	v0.12/alpine-elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
+	v0.12/alpine-loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
+	v0.12/alpine-logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
+	v0.12/alpine-logzio:v0.12.33-logzio,v0.12-logzio,stable-logzio,logzio \
+	v0.12/alpine-cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
+	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
+	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
+	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
+	v0.12/debian-logzio:v0.12.33-logzio,v0.12-logzio,stable-logzio,logzio \
+	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
-
-# Default is first image from ALL_IMAGES list.
-DOCKERFILE ?= $(word 1,$(subst :, ,$(word 1,$(ALL_IMAGES))))
-VERSION ?=  $(word 1,$(subst $(comma), ,\
-                     $(word 2,$(subst :, ,$(word 1,$(ALL_IMAGES))))))
-TAGS ?= $(word 2,$(subst :, ,$(word 1,$(ALL_IMAGES))))
-
-no-cache ?= no
 
 comma := ,
 empty :=
 space := $(empty) $(empty)
+
+# Default is first image from ALL_IMAGES list.
+DOCKERFILE ?= $(word 1,$(subst :, ,$(word 1,$(ALL_IMAGES))))
+TARGET ?= $(word 2,$(subst -, , $(DOCKERFILE)))
+
+# Gets the version value based on the directory the dockerfile is in.
+FLUENTD_VERSION ?= $(word 1,$(subst /, ,$(DOCKERFILE)))
+
+# Finds the image tags based on whatever DOCKERFILE is set to, even if the user
+# has passed DOCKERFILE explicitly
+#
+# Gets the <version>,<tag1>,<tag2>,... from <Dockerfile>:<version>,<tag1>,<tag2>,...
+TAGS ?= $(word 2,$(subst :, ,$(word 1,$(filter $(DOCKERFILE)%, $(ALL_IMAGES)))))
+# Gets the <version> from <Dockerfile>:<version>,<tag1>,<tag2>,...
+VERSION ?= $(word 1,$(subst $(comma), ,$(TAGS)))
+
+no-cache ?= no
+
 eq = $(if $(or $(1),$(2)),$(and $(findstring $(1),$(2)),\
                                 $(findstring $(2),$(1))),1)
 
@@ -96,7 +111,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile fluent.conf kubernetes.conf plugins post-push-hook
+src: dockerfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook
 
 # Generate sources for all supported Docker images.
 #
@@ -154,6 +169,13 @@ kubernetes.conf:
 			version='$(VERSION)' \
 		/kubernetes.conf.erb > docker-image/$(DOCKERFILE)/conf/kubernetes.conf
 
+systemd.conf:
+	mkdir -p docker-image/$(DOCKERFILE)/conf
+	docker run --rm -i -v $(PWD)/templates/conf/systemd.conf.erb:/systemd.conf.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
 
 # Generate plugins for version
 #
@@ -162,8 +184,8 @@ kubernetes.conf:
 
 plugins:
 	mkdir -p docker-image/$(DOCKERFILE)/plugins
-	cp -R plugins/$(word 1,$(subst /, ,$(DOCKERFILE)))/shared/ docker-image/$(DOCKERFILE)/plugins/
-	cp -R plugins/$(DOCKERFILE)/ docker-image/$(DOCKERFILE)/plugins/
+	cp -R plugins/$(FLUENTD_VERSION)/shared/ docker-image/$(DOCKERFILE)/plugins/
+	cp -R plugins/$(FLUENTD_VERSION)/$(TARGET)/ docker-image/$(DOCKERFILE)/plugins/
 
 # Create `post_push` Docker Hub hook.
 #
