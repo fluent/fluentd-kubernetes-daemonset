@@ -13,6 +13,8 @@
    host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
    port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
    scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME'] || 'http'}"
+   user "#{ENV['FLUENT_ELASTICSEARCH_USER']}"
+   password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}"
    logstash_format true
    buffer_chunk_limit 2M
    buffer_queue_limit 32
