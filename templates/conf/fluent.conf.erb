@@ -50,6 +50,11 @@
   auto_create_stream true
   use_tag_as_stream true
 </match>
+<%  when "s3"%>
+<match **>
+  type s3
+  s3_bucket "#{ENV['S3_BUCKET_NAME']}"
+</match>
 <% when "stackdriver"%>
 <match **>
   type google_cloud
