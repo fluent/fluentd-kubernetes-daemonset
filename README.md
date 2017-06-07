@@ -19,6 +19,8 @@ Fluentd Daemonset for Kubernetes
   [(v0.12/alpine-logentries/Dockerfile)][alpine-logentries-dockerfile]
 - `v0.12.33-cloudwatch`,`v0.12-cloudwatch`,`stable-cloudwatch`,`cloudwatch`
   [(v0.12/alpine-cloudwatch/Dockerfile)][alpine-cloudwatch-dockerfile]
+- `v0.12.33-s3`,`v0.12-s3`,`stable-s3`,`s3`
+  [(v0.12/alpine-s3/Dockerfile)][alpine-s3-dockerfile]
 - `v0.12.33-debian-elasticsearch`,`v0.12-debian-elasticsearch`, `debian-elasticsearch`
   [(v0.12/debian-elasticsearch/Dockerfile)][debian-elasticsearch-dockerfile]
 - `v0.12.33-debian-loggly`,`v0.12-debian-loggly`,`debian-loggly`
@@ -27,6 +29,8 @@ Fluentd Daemonset for Kubernetes
   [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
 - `v0.12.33-debian-cloudwatch`,`v0.12-debian-cloudwatch`,`debian-cloudwatch`
   [(v0.12/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
+- `v0.12.33-debian-s3`,`v0.12-debian-s3`,`debian-s3`
+  [(v0.12/debian-s3/Dockerfile)][debian-s3-dockerfile]
 
 
 
@@ -86,8 +90,10 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [alpine-loggly-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-loggly/Dockerfile
 [alpine-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-logentries/Dockerfile
 [alpine-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-cloudwatch/Dockerfile
+[alpine-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-s3/Dockerfile
 
 [debian-elasticsearch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-elasticsearch/Dockerfile
 [debian-loggly-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-loggly/Dockerfile
 [debian-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-logentries/Dockerfile
 [debian-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-cloudwatch/Dockerfile
+[debian-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-s3/Dockerfile
