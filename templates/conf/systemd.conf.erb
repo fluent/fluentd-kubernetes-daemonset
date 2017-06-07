@@ -9,3 +9,11 @@
   read_from_head true
   tag kubelet
 </source>
+
+<source>
+  @type systemd
+  filters [{ "_SYSTEMD_UNIT": "docker.service" }]
+  pos_file /var/log/fluentd-journald-docker.pos
+  read_from_head true
+  tag docker.systemd
+</source>
