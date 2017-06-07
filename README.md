@@ -13,6 +13,7 @@
 - `v0.12-debian-elasticsearch` [(v0.12/debian-elasticsearch/Dockerfile)][debian-elasticsearch-dockerfile]
 - `v0.12-debian-logentries` [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
 - `v0.12-debian-loggly` [(v0.12/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
+- `v0.12-debian-rsyslog` [(v0.12/debian-rsyslog/Dockerfile)][debian-rsyslog-dockerfile]
 - `v0.12-debian-s3` [(v0.12/debian-s3/Dockerfile)][debian-s3-dockerfile]
 - `v0.12-debian-stackdriver` [(v0.12/debian-stackdriver/Dockerfile)][debian-stackdriver-dockerfile]
 
@@ -71,7 +72,11 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [debian-loggly-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-loggly/Dockerfile
 [debian-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-logentries/Dockerfile
 [debian-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-cloudwatch/Dockerfile
+[debian-rsyslog-dockerfile]:
+https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-rsyslog/Dockerfile
 [debian-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-s3/Dockerfile
+[debian-stackdriver-dockerfile]:
+https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-stackdriver/Dockerfile
 
 ## About Enterprise Edition
 

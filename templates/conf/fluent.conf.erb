@@ -55,6 +55,12 @@
   type s3
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
 </match>
+<%  when "rsyslog"%>
+<match **>
+  type remote_syslog
+  host "#{ENV['SYSLOG_HOST']}"
+  port "#{ENV['SYSLOG_PORT']}"
+</match>
 <% when "stackdriver"%>
 <match **>
   type google_cloud
