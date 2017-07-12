@@ -17,6 +17,8 @@ RUN set -ex \
     && gem install fluent-plugin-record-reformer \
     && gem install fluent-plugin-s3 -v "~> 0.8" \
     && gem install fluent-plugin-kubernetes_metadata_filter \
+    && gem install ffi \
+    && gem install fluent-plugin-systemd -v 0.0.8 \
     && apk del .build-deps \
     && gem sources --clear-all \
     && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
