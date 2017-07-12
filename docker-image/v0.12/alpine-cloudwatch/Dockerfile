@@ -15,7 +15,7 @@ RUN set -ex \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
-    && gem install fluent-plugin-cloudwatch-logs -v 0.3.3 \
+    && gem install fluent-plugin-cloudwatch-logs -v 0.4.0 \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && apk del .build-deps \
     && gem sources --clear-all \
