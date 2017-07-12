@@ -17,12 +17,8 @@
    host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
    port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
    scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME'] || 'http'}"
-   <% if ENV.key?('FLUENT_ELASTICSEARCH_USER') %>
    user "#{ENV['FLUENT_ELASTICSEARCH_USER']}"
-   <% end %>
-   <% if ENV.key?('FLUENT_ELASTICSEARCH_PASSWORD') %>
    password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}"
-   <% end %>
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'true'}"
    logstash_prefix "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_PREFIX'] || 'logstash'}"
    logstash_format true
