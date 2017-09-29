@@ -8,6 +8,8 @@ metadata:
     version: v1
     kubernetes.io/cluster-service: "true"
 spec:
+  updateStrategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
