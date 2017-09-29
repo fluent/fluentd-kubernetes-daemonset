@@ -84,8 +84,8 @@
 <% when "papertrail"%>
 <match **>
   type remote_syslog
-  host ${ENV["FLUENT_PAPERTRAIL_HOST"]}
-  port ${ENV["FLUENT_PAPERTRAIL_PORT"]}
-  flush_interval 5s
+  host "#{ENV['FLUENT_PAPERTRAIL_HOST']}"
+  port "#{ENV['FLUENT_PAPERTRAIL_PORT']}"
+  hostname "#{ENV['FLUENT_HOSTNAME']}"
 </match>
 <% end%>

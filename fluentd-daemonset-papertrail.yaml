@@ -22,10 +22,12 @@ spec:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:papertrail
         env:
-          - name:  FLUENT_PAPERTRAIL_HOST
+          - name: FLUENT_PAPERTRAIL_HOST
             value: "logsX.papertrailapp.com"
-          - name:  FLUENT_PAPERTRAIL_PORT
-            value: "XXXXX" 
+          - name: FLUENT_PAPERTRAIL_PORT
+            value: "XXXXX"
+          - name: FLUENT_HOSTNAME
+            value: "MYCLUSTER"
         resources:
           limits:
             memory: 200Mi
