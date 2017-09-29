@@ -80,5 +80,11 @@
   # Use multiple threads for processing.
   num_threads 2
 </match>
-
+<% when "papertrail"%>
+<match **>
+  type remote_syslog
+  host ${ENV["PAPERTRAIL_REMOTE_SYSLOG_HOST_URI"]}
+  port ${ENV["PAPERTRAIL_REMOTE_SYSLOG_HOST_PORT"]}
+  flush_interval 5s
+</match>
 <% end%>
