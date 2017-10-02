@@ -125,3 +125,11 @@
 <filter kubernetes.**>
   type kubernetes_metadata
 </filter>
+
+<filter kubernetes.**>
+  @type record_transformer
+  enable_ruby true
+  <record>
+    kubernetes_namespace_container_name ${record["kubernetes"]["namespace_name"]}.${record["kubernetes"]["container_name"]}
+  </record>
+</filter>
