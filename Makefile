@@ -17,12 +17,14 @@ ALL_IMAGES := \
 	v0.12/alpine-logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
 	v0.12/alpine-cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
 	v0.12/alpine-s3:v0.12.33-s3,v0.12-s3,stable-s3,s3 \
+	v0.12/alpine-logzio:v0.12.33-logzio,v0.12-logzio,stable-logzio,logzio \
 	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
 	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
 	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
 	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
-	v0.12/debian-s3:v0.12.33-debian-s3,v0.12-debian-s3,debian-s3
+	v0.12/debian-s3:v0.12.33-debian-s3,v0.12-debian-s3,debian-s3 \
+	v0.12/debian-logzio:v0.12.33-debian-logzio,v0.12-debian-logzio,debian-logzio
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
