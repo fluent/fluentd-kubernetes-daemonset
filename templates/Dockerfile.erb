@@ -21,8 +21,9 @@ RUN set -ex \
         build-base \
         ruby-dev \
         libffi-dev \
+        git \
 <% else %>
-RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
+RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git" \
      && apt-get update \
      && apt-get install \
      -y --no-install-recommends \
@@ -44,7 +45,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
 <% when "s3" %>
     && gem install fluent-plugin-s3 -v "~> 0.8" \
 <% when "papertrail" %>
-    && gem install fluent-plugin-remote_syslog -v 0.3.3 \
+    && gem install fluent-plugin-papertrail -v 0.1 \
 <% end%>
     && gem install fluent-plugin-kubernetes_metadata_filter \
 <% if !is_alpine %>

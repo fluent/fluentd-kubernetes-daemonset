@@ -127,9 +127,13 @@
 </filter>
 
 <filter kubernetes.**>
-  @type record_transformer
+  type record_transformer
   enable_ruby true
   <record>
-    kubernetes_namespace_container_name ${record["kubernetes"]["namespace_name"]}.${record["kubernetes"]["container_name"]}
+    hostname #{ENV['FLUENT_HOSTNAME']}-${record["kubernetes"]["namespace_name"]}-${record["kubernetes"]["pod_name"]}
+    program ${record["kubernetes"]["container_name"]}
+    severity info
+    facility local0
+    message ${record['log']}
   </record>
 </filter>
