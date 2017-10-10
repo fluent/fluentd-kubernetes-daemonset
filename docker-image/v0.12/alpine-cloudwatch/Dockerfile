@@ -8,10 +8,12 @@ WORKDIR /home/fluent
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
 RUN set -ex \
+    && apk update && apk upgrade \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         ruby-dev \
         libffi-dev \
+        git \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
