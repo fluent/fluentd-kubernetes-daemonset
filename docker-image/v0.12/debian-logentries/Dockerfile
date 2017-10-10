@@ -8,7 +8,7 @@ USER root
 WORKDIR /home/fluent
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
-RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git" \
+RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
      && apt-get update \
      && apt-get install \
      -y --no-install-recommends \

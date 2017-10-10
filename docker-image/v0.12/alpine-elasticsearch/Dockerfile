@@ -12,7 +12,6 @@ RUN set -ex \
         build-base \
         ruby-dev \
         libffi-dev \
-        git \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
