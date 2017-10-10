@@ -201,8 +201,8 @@ systemd.conf:
 
 plugins:
 	mkdir -p docker-image/$(DOCKERFILE)/plugins
-	cp -R plugins/$(FLUENTD_VERSION)/shared/ docker-image/$(DOCKERFILE)/plugins/
-	cp -R plugins/$(FLUENTD_VERSION)/$(TARGET)/ docker-image/$(DOCKERFILE)/plugins/
+	cp -R plugins/$(FLUENTD_VERSION)/shared/. docker-image/$(DOCKERFILE)/plugins/
+	cp -R plugins/$(FLUENTD_VERSION)/$(TARGET)/. docker-image/$(DOCKERFILE)/plugins/
 
 # Create `post_push` Docker Hub hook.
 #
