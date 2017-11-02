@@ -8,7 +8,7 @@ USER root
 WORKDIR /home/fluent
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
-RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
+RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git build-essential patch zlib1g-dev liblzma-dev" \
      && apt-get update \
      && apt-get install \
      -y --no-install-recommends \
@@ -16,7 +16,11 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
-    && gem install gelf \
+    && gem install jeweler \
+    && git clone https://github.com/graylog-labs/gelf-rb.git \
+    && cd gelf-rb \
+    && rake install \
+    && gem install fluent-plugin-gelf-hs \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && gem install ffi \
     && gem install fluent-plugin-systemd -v 0.0.8 \
