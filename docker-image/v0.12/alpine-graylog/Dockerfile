@@ -15,7 +15,11 @@ RUN set -ex \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
-    && gem install gelf \
+    && git clone https://github.com/graylog-labs/gelf-rb.git \
+    && cd gelf-rb \
+    && rake build gem \
+    && gem install pkg/gelf-rb-3.0.0.gem \
+    && gem install fluent-plugin-gelf-hs \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && apk del .build-deps \
     && gem sources --clear-all \
