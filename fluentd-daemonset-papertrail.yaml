@@ -1,3 +1,6 @@
+## PaperTrail example Daemonset
+# Uncomment sections below to allow audit logs to go to a separate host
+
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
@@ -28,6 +31,10 @@ spec:
             value: "logsX.papertrailapp.com"
           - name: FLUENT_PAPERTRAIL_PORT
             value: "XXXXX"
+#          - name: FLUENT_PAPERTRAIL_AUDIT_HOST
+#            value: "<PAPERTRAIL_AUDIT_HOST>"
+#          - name: FLUENT_PAPERTRAIL_AUDIT_PORT
+#            value: "<PAPERTRAIL_AUDIT_PORT>"
           - name: FLUENT_HOSTNAME
             value: "MYCLUSTER"
         resources:
@@ -50,3 +57,32 @@ spec:
       - name: varlibdockercontainers
         hostPath:
           path: /var/lib/docker/containers
+#---
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: fluentd-config
+#  namespace: kube-system
+#  labels:
+#    k8s-app: fluentd-logging
+#    version: v1
+#    kubernetes.io/cluster-service: "true"
+#data:
+#  fluent.conf: |-
+#    @include kubernetes.conf
+#
+#    # Capture audit logs
+#    <match kube-apiserver-audit>
+#      type papertrail
+#
+#      papertrail_host "#{ENV['FLUENT_PAPERTRAIL_AUDIT_HOST']}"
+#      papertrail_port "#{ENV['FLUENT_PAPERTRAIL_AUDIT_PORT']}"
+#    </match>
+#
+#    # Capture all unmatched tags
+#    <match **>
+#      type papertrail
+#
+#      papertrail_host "#{ENV['FLUENT_PAPERTRAIL_HOST']}"
+#      papertrail_port "#{ENV['FLUENT_PAPERTRAIL_PORT']}"
+#    </match>
