@@ -24,7 +24,7 @@ ALL_IMAGES := \
 	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
 	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
 	v0.12/debian-s3:v0.12.33-debian-s3,v0.12-debian-s3,debian-s3 \
-	v0.12/debian-logzio:v0.12.33-debian-logzio,v0.12-debian-logzio,debian-logzio
+	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
@@ -115,7 +115,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook
+src: dockerfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook entrypoint.sh
 
 # Generate sources for all supported Docker images.
 #
@@ -146,6 +146,14 @@ dockerfile:
 			version='$(VERSION)' \
 		/Dockerfile.erb > docker-image/$(DOCKERFILE)/Dockerfile
 
+# Generate entrypoint.sh from template.
+#
+# Usage:
+#	make entrypoint.sh [DOCKERFILE=] [VERSION=]
+
+entrypoint.sh:
+	mkdir -p docker-image/$(DOCKERFILE)
+	cp $(PWD)/templates/entrypoint.sh docker-image/$(DOCKERFILE)/entrypoint.sh
 
 # Generate fluent.conf from template.
 #
@@ -188,8 +196,8 @@ systemd.conf:
 
 plugins:
 	mkdir -p docker-image/$(DOCKERFILE)/plugins
-	cp -R plugins/$(FLUENTD_VERSION)/shared/ docker-image/$(DOCKERFILE)/plugins/
-	cp -R plugins/$(FLUENTD_VERSION)/$(TARGET)/ docker-image/$(DOCKERFILE)/plugins/
+	cp -R plugins/$(FLUENTD_VERSION)/shared/. docker-image/$(DOCKERFILE)/plugins/
+	cp -R plugins/$(FLUENTD_VERSION)/$(TARGET)/. docker-image/$(DOCKERFILE)/plugins/
 
 # Create `post_push` Docker Hub hook.
 #
@@ -218,6 +226,19 @@ post-push-hook:
 dockerfile-all:
 	(set -e ; $(foreach img,$(ALL_IMAGES), \
 		make dockerfile \
+			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
+			VERSION=$(word 1,$(subst $(comma), ,\
+			                 $(word 2,$(subst :, ,$(img))))) ; \
+	))
+
+# Generate entrypoint.sh from template for all supported Docker images.
+#
+# Usage:
+#	make entrypoint.sh-all
+
+entrypoint.sh-all:
+	(set -e ; $(foreach img,$(ALL_IMAGES), \
+		make entrypoint.sh \
 			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
 			VERSION=$(word 1,$(subst $(comma), ,\
 			                 $(word 2,$(subst :, ,$(img))))) ; \
@@ -277,6 +298,7 @@ post-push-hook-all:
         release release-all \
         src src-all \
         dockerfile dockerfile-all \
+        entrypoint.sh entrypoint.sh-all \
         fluent.conf fluent.conf-all \
         kubernetes.conf kubernetes.conf-all\
         plugins plugins-all \

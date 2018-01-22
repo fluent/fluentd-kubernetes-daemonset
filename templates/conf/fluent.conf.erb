@@ -41,7 +41,7 @@
 <match **>
    type loggly
    log_level info
-   loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/fluentd"
+   loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/#{ENV['LOGGLY_TAGS'] || 'fluentd'}"
 </match>
 <%  when "cloudwatch"%>
 <match **>
@@ -52,8 +52,20 @@
 </match>
 <%  when "s3"%>
 <match **>
+  # docs: https://docs.fluentd.org/v0.12/articles/out_s3
+  # note: this configuration relies on the nodes have an IAM instance profile with access to your S3 bucket
   type s3
+  log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
+  s3_region "#{ENV['S3_BUCKET_REGION']}"
+  s3_object_key_format %{path}%{time_slice}/cluster-log-%{index}.%{file_extension}
+  time_slice_format %Y/%m/%d
+  time_slice_wait 10m
+  utc
+  include_time_key true
+  include_tag_key true
+  buffer_chunk_limit 256m
+  buffer_path /var/log/fluentd-buffers/s3.buffer
 </match>
 <% when "stackdriver"%>
 <match **>
@@ -107,6 +119,24 @@
   # disable_retry_limit
   # Use multiple threads for processing.
   num_threads 2
+</match>
+
+<% when "papertrail"%>
+
+## Capture audit logs
+#<match kube-apiserver-audit>
+#  type papertrail
+#
+#  papertrail_host "#{ENV['FLUENT_PAPERTRAIL_AUDIT_HOST']}"
+#  papertrail_port "#{ENV['FLUENT_PAPERTRAIL_AUDIT_PORT']}"
+#</match>
+
+<match **>
+  type papertrail
+
+  papertrail_host "#{ENV['FLUENT_PAPERTRAIL_HOST']}"
+  papertrail_port "#{ENV['FLUENT_PAPERTRAIL_PORT']}"
+
 </match>
 
 <% end%>
