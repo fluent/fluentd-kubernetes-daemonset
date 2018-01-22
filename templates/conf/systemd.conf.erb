@@ -7,7 +7,11 @@
 <source>
   @type systemd
   filters [{ "_SYSTEMD_UNIT": "kubelet.service" }]
-  pos_file /var/log/fluentd-journald-kubelet.pos
+  <storage>
+    @type local
+    persistent true
+    path /var/log/fluentd-journald-kubelet.pos
+  </storage>
   read_from_head true
   tag kubelet
 </source>
@@ -16,14 +20,18 @@
 <source>
   @type systemd
   filters [{ "_SYSTEMD_UNIT": "bootkube.service" }]
-  pos_file /var/log/fluentd-journald-bootkube.pos
+  <storage>
+    @type local
+    persistent true
+    path /var/log/fluentd-journald-bootkube.pos
+  </storage>
   read_from_head true
   tag bootkube
 </source>
 
 <% case target when "papertrail"%>
 <filter bootkube>
-  type record_transformer
+  @type record_transformer
   enable_ruby true
   <record>
     hostname #{ENV['FLUENT_HOSTNAME']}
@@ -34,4 +42,3 @@
   </record>
 </filter>
 <% end %>
-

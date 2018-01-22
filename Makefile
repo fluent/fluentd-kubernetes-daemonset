@@ -12,19 +12,13 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v0.12/alpine-elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
-	v0.12/alpine-loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
-	v0.12/alpine-logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
-	v0.12/alpine-cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
-	v0.12/alpine-s3:v0.12.33-s3,v0.12-s3,stable-s3,s3 \
-	v0.12/alpine-papertrail:v0.12.33-papertrail,v0.12-papertrail,stable-papertrail,papertrail \
-	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
-	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
-	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
-	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
-	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
-	v0.12/debian-s3:v0.12.33-debian-s3,v0.12-debian-s3,debian-s3 \
-	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail
+	v1.0/debian-elasticsearch:v1.1.0-debian-elasticsearch,v1.0-debian-elasticsearch,debian-elasticsearch \
+	v1.0/debian-loggly:v1.1.0-debian-loggly,v1.0-debian-loggly,debian-loggly \
+	v1.0/debian-logentries:v1.1.0-debian-logentries,v1.0-debian-logentries,debian-logentries \
+	v1.0/debian-cloudwatch:v1.1.0-debian-cloudwatch,v1.0-debian-cloudwatch,debian-cloudwatch \
+	v1.0/debian-stackdriver:v1.1.0-debian-stackdriver,v1.0-debian-stackdriver,debian-stackdriver \
+	v1.0/debian-s3:v1.1.0-debian-s3,v1.0-debian-s3,debian-s3 \
+	v1.0/debian-papertrail:v1.1.0-debian-papertrail,v1.0-debian-papertrail,debian-papertrail
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 

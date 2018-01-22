@@ -9,7 +9,7 @@
 
 ### Debian
 
-- `v0.12-debian-cloudwatch` [(v0.12/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
+- `v1.0-debian-cloudwatch` [(v0.12/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
 - `v0.12-debian-elasticsearch` [(v0.12/debian-elasticsearch/Dockerfile)][debian-elasticsearch-dockerfile]
 - `v0.12-debian-logentries` [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
 - `v0.12-debian-loggly` [(v0.12/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
