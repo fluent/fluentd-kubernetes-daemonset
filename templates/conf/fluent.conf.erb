@@ -81,4 +81,22 @@
   num_threads 2
 </match>
 
+<% when "papertrail"%>
+
+## Capture audit logs
+#<match kube-apiserver-audit>
+#  type papertrail
+#
+#  papertrail_host "#{ENV['FLUENT_PAPERTRAIL_AUDIT_HOST']}"
+#  papertrail_port "#{ENV['FLUENT_PAPERTRAIL_AUDIT_PORT']}"
+#</match>
+
+<match **>
+  type papertrail
+
+  papertrail_host "#{ENV['FLUENT_PAPERTRAIL_HOST']}"
+  papertrail_port "#{ENV['FLUENT_PAPERTRAIL_PORT']}"
+
+</match>
+
 <% end%>
