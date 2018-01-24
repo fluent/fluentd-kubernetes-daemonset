@@ -16,8 +16,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
      && apt-get update \
      && apt-get upgrade \
      && apt-get install \
-     -y --no-install-recommends \
-     $buildDeps \
+        -y --no-install-recommends \
+     $buildDeps libjemalloc1 \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && echo 'gem install fluent-plugin-record-reformer' \
 <% case target when "elasticsearch"%>
@@ -60,10 +60,8 @@ COPY entrypoint.sh /fluentd/entrypoint.sh
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
-# jemalloc is memory optimization only available for td-agent
-# td-agent is provided and QA'ed by treasuredata as rpm/deb/.. package
-# -> td-agent (stable) vs fluentd (edge)
-#ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
+# Jemalloc is the suggested memory allocator to reduce memory fragmentation
+ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
 
 # Run Fluentd
 CMD ["/fluentd/entrypoint.sh"]

@@ -17,14 +17,6 @@
 - `v0.12-debian-stackdriver` [(v0.12/debian-stackdriver/Dockerfile)][debian-stackdriver-dockerfile]
 - `v0.12-debian-papertrail` [(v0.12/debian-papertrail/Dockerfile)][debian-papertrail-dockerfile]
 
-### Alpine Linux
-
-- `v0.12-alpine-cloudwatch` [(v0.12/alpine-cloudwatch/Dockerfile)][alpine-cloudwatch-dockerfile]
-- `v0.12-alpine-elasticsearch` [(v0.12/alpine-elasticsearch/Dockerfile)][alpine-elasticsearch-dockerfile]
-- `v0.12-alpine-logentries` [(v0.12/alpine-logentries/Dockerfile)][alpine-logentries-dockerfile]
-- `v0.12-alpine-loggly` [(v0.12/alpine-loggly/Dockerfile)][alpine-loggly-dockerfile]
-- `v0.12-alpine-papertrail` [(v0.12/alpine-papertrail/Dockerfile)][alpine-papertrail-dockerfile]
-
 ## What is Fluentd?
 
 ![Fluentd Logo](http://www.fluentd.org/assets/img/miscellany/fluentd-logo.png)
