@@ -46,6 +46,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-google-cloud \
 <% when "s3" %>
     && gem install fluent-plugin-s3 -v "~> 0.8" \
+<% when "gcs" %>
+    && gem install fluent-plugin-gcs -v "~> 0.3"  --no-document \
 <% when "papertrail" %>
     && gem install fluent-plugin-papertrail -v 0.1.1 \
 <% end%>
