@@ -14,6 +14,7 @@
 - `v0.12-debian-logentries` [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
 - `v0.12-debian-loggly` [(v0.12/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
 - `v0.12-debian-s3` [(v0.12/debian-s3/Dockerfile)][debian-s3-dockerfile]
+- `v0.12-debian-gcs` [(v0.12/debian-gcs/Dockerfile)][debian-gcs-dockerfile]
 - `v0.12-debian-stackdriver` [(v0.12/debian-stackdriver/Dockerfile)][debian-stackdriver-dockerfile]
 - `v0.12-debian-papertrail` [(v0.12/debian-papertrail/Dockerfile)][debian-papertrail-dockerfile]
 
@@ -23,6 +24,9 @@
 - `v0.12-alpine-elasticsearch` [(v0.12/alpine-elasticsearch/Dockerfile)][alpine-elasticsearch-dockerfile]
 - `v0.12-alpine-logentries` [(v0.12/alpine-logentries/Dockerfile)][alpine-logentries-dockerfile]
 - `v0.12-alpine-loggly` [(v0.12/alpine-loggly/Dockerfile)][alpine-loggly-dockerfile]
+- `v0.12-alpine-s3` [(v0.12/alpine-s3/Dockerfile)][alpine-s3-dockerfile]
+- `v0.12-alpine-gcs` [(v0.12/alpine-gcs/Dockerfile)][alpine-gcs-dockerfile]
+- `v0.12-alpine-stackdriver` [(v0.12/alpine-stackdriver/Dockerfile)][alpine-stackdriver-dockerfile]
 - `v0.12-alpine-papertrail` [(v0.12/alpine-papertrail/Dockerfile)][alpine-papertrail-dockerfile]
 
 ## What is Fluentd?
@@ -68,6 +72,8 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [alpine-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-logentries/Dockerfile
 [alpine-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-cloudwatch/Dockerfile
 [alpine-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-s3/Dockerfile
+[alpine-gcs-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-gcs/Dockerfile
+[alpine-stackdriver-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-stackdriver/Dockerfile
 [alpine-papertrail-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-papertrail/Dockerfile
 
 [debian-elasticsearch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-elasticsearch/Dockerfile
@@ -75,6 +81,8 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [debian-logentries-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-logentries/Dockerfile
 [debian-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-cloudwatch/Dockerfile
 [debian-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-s3/Dockerfile
+[debian-gcs-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-gcs/Dockerfile
+[debian-stackdriver-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-stackdriver/Dockerfile
 [debian-papertrail-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-papertrail/Dockerfile
 
 ## About Enterprise Edition
