@@ -55,6 +55,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when
     && gem install fluent-plugin-gcs -v "~> 0.3"  --no-document \
 <% when "papertrail" %>
     && gem install fluent-plugin-papertrail -v 0.1.1 \
+<% when "syslog" %>
+    && gem install fluent-plugin-remote_syslog -v 0.3.3 \
 <% end%>
     && gem install fluent-plugin-kubernetes_metadata_filter \
 <% if !is_alpine %>

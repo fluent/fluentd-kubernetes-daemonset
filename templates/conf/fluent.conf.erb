@@ -120,4 +120,22 @@
    disable_retry_limit
    num_threads 8
 </match>
+
+<% when "syslog" %>
+<match **>
+  @type remote_syslog
+  host "#{ENV['SYSLOG_HOST']}"
+  port "#{ENV['SYSLOG_PORT']}"
+  severity debug
+  program fluentd
+  hostname ${tag[1]}
+
+  <buffer tag>
+  </buffer>
+
+  <format>
+    @type single_value
+    message_key msg
+  </format>
+</match>
 <% end%>
