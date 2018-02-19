@@ -129,12 +129,13 @@
   severity debug
   program fluentd
   hostname ${tag[1]}
+  packet_size 4096
 
   <buffer tag>
   </buffer>
 
   <format>
-    @type single_value
+    @type ltsv
     message_key msg
   </format>
 </match>
