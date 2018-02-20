@@ -17,7 +17,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
-    && gem install fluent-plugin-remote_syslog -v 0.3.3 \
+    && gem install specific_install \
+    && gem specific_install -l https://github.com/georgegoh/fluent-plugin-kubernetes_remote_syslog.git \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && gem install ffi \
     && gem install fluent-plugin-systemd -v 0.0.8 \
