@@ -123,20 +123,13 @@
 
 <% when "syslog" %>
 <match **>
-  @type remote_syslog
+  @type kubernetes_remote_syslog
   host "#{ENV['SYSLOG_HOST']}"
   port "#{ENV['SYSLOG_PORT']}"
   severity debug
-  program fluentd
-  hostname ${tag[1]}
-  packet_size 4096
-
-  <buffer tag>
-  </buffer>
-
-  <format>
-    @type ltsv
-    message_key msg
-  </format>
+  tag fluentd
+  protocol tcp
+  packet_size 65535
+  output_data_type ltsv
 </match>
 <% end%>
