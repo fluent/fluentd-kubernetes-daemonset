@@ -14,7 +14,6 @@ pipeline:
   verify:
     <<: *pyrex_environment
     <<: *proxy_environment
-    dry_run: true
     commands:
       - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
       - docker build -t fluent/fluentd-kubernetes:v0.12.33-kafka docker-image/v0.12/alpine-kafka
