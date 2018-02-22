@@ -2,7 +2,7 @@ docker_build: &docker_build
   image: plugins/docker
   registry: docker-dev.core.rcsops.com
   repo: docker-dev.core.rcsops.com/${DRONE_REPO_NAME}
-  dockerfile: docker-image/v0.12/alpine-kafka
+  dockerfile: docker-image/v0.12/alpine-kafka/Dockerfile
 
 proxy_environment: &proxy_environment
   environment:
