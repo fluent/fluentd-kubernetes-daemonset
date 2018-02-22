@@ -27,7 +27,6 @@ pipeline:
       - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
       - docker tag fluent/fluentd-kubernetes:v0.12.33-kafka fluent/fluentd-kubernetes:v0.12.33-kafka
       - docker push fluent/fluentd-kubernetes:v0.12.33-kafka
-    auto_tag: true
     when:
       event:
         - tag
