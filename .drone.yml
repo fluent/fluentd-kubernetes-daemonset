@@ -1,9 +1,8 @@
-docker_build: &docker_build
-  image: plugins/docker
-  registry: docker-dev.core.rcsops.com
-  repo: docker-dev.core.rcsops.com/${DRONE_REPO_NAME}
-  build_args:
-    - DOCKERFILE=v0.12/alpine-kafka
+pyrex_environment: &pyrex_environment
+  image: docker-dev.core.rcsops.com/pyrex-runner:0.8.2
+  secrets:
+    - docker_username
+    - docker_password
 
 proxy_environment: &proxy_environment
   environment:
@@ -13,19 +12,23 @@ proxy_environment: &proxy_environment
 
 pipeline:
   verify:
-    <<: *docker_build
-    dry_run: true
+    <<: *pyrex_environment
     <<: *proxy_environment
+    dry_run: true
+    commands:
+      - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+      - docker build -t fluent/fluentd-kubernetes:v0.12.33-kafka docker-image/v0.12/alpine-kafka
     when:
       event: pull_request
 
   publish:
-    <<: *docker_build
+    <<: *pyrex_environment
     <<: *proxy_environment
+    commands:
+      - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+      - docker tag fluent/fluentd-kubernetes:v0.12.33-kafka fluent/fluentd-kubernetes:v0.12.33-kafka
+      - docker push fluent/fluentd-kubernetes:v0.12.33-kafka
     auto_tag: true
-    secrets:
-      - docker_username
-      - docker_password
     when:
       event:
         - tag
