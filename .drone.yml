@@ -21,10 +21,14 @@ pipeline:
   publish:
     <<: *docker_build
     <<: *proxy_environment
-    auto_tag: true
     secrets:
       - docker_username
       - docker_password
+    commands:
+      - make image DOCKERFILE=v0.12/alpine-kafka
+      - docker tag IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+      - docker tag fluent/fluentd-kubernetes:stable-kafka docker-dev.core/rcsops.com/${DRONE_REPO_NAME}/fluent/fluentd-kubernetes:stable-kafka
+      - docker push docker-dev.core/rcsops.com/${DRONE_REPO_NAME}/fluent/fluentd-kubernetes:stable-kafka
     when:
       event:
         - tag
