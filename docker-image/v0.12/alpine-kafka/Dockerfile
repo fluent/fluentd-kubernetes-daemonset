@@ -22,11 +22,11 @@ RUN set -ex \
     && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
 # Copy configuration files
-COPY ./conf/fluent.conf /fluentd/etc/
-COPY ./conf/kubernetes.conf /fluentd/etc/
+COPY docker-image/v0.12/alpine-kafka/conf/fluent.conf /fluentd/etc/
+COPY docker-image/v0.12/alpine-kafka/conf/kubernetes.conf /fluentd/etc/
 
 # Copy plugins
-COPY plugins /fluentd/plugins/
+COPY docker-image/v0.12/alpine-kafka/plugins /fluentd/plugins/
 
 # Environment variables
 ENV FLUENTD_OPT=""
