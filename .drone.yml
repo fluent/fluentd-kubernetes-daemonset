@@ -19,7 +19,7 @@ pipeline:
       event: pull_request
 
   publish:
-    <<: *docker_build
+    image: plugins/docker
     <<: *proxy_environment
     secrets:
       - docker_username
