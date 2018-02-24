@@ -11,6 +11,7 @@
 
 - `v0.12-debian-cloudwatch` [(v0.12/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
 - `v0.12-debian-elasticsearch` [(v0.12/debian-elasticsearch/Dockerfile)][debian-elasticsearch-dockerfile]
+- `v0.12-debian-kafka` [(v0.12/debian-kafka/Dockerfile)][debian-kafka-dockerfile]
 - `v0.12-debian-logentries` [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
 - `v0.12-debian-loggly` [(v0.12/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
 - `v0.12-debian-s3` [(v0.12/debian-s3/Dockerfile)][debian-s3-dockerfile]
@@ -21,6 +22,7 @@
 
 - `v0.12-alpine-cloudwatch` [(v0.12/alpine-cloudwatch/Dockerfile)][alpine-cloudwatch-dockerfile]
 - `v0.12-alpine-elasticsearch` [(v0.12/alpine-elasticsearch/Dockerfile)][alpine-elasticsearch-dockerfile]
+- `v0.12-alpine-kafka` [(v0.12/alpine-kafka/Dockerfile)][alpine-kafka-dockerfile]
 - `v0.12-alpine-logentries` [(v0.12/alpine-logentries/Dockerfile)][alpine-logentries-dockerfile]
 - `v0.12-alpine-loggly` [(v0.12/alpine-loggly/Dockerfile)][alpine-loggly-dockerfile]
 - `v0.12-alpine-papertrail` [(v0.12/alpine-papertrail/Dockerfile)][alpine-papertrail-dockerfile]
@@ -69,6 +71,7 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [alpine-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-cloudwatch/Dockerfile
 [alpine-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-s3/Dockerfile
 [alpine-papertrail-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-papertrail/Dockerfile
+[alpine-kafka-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/alpine-kafka/Dockerfile
 
 [debian-elasticsearch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-elasticsearch/Dockerfile
 [debian-loggly-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-loggly/Dockerfile
@@ -76,6 +79,7 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [debian-cloudwatch-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-cloudwatch/Dockerfile
 [debian-s3-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-s3/Dockerfile
 [debian-papertrail-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-papertrail/Dockerfile
+[debian-kafka-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-kafka/Dockerfile
 
 ## About Enterprise Edition
 
