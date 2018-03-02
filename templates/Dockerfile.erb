@@ -50,6 +50,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-papertrail -v 0.1.1 \
 <% when "kafka" %>
     && gem install fluent-plugin-kafka \
+<% when "logzio" %>
+    && gem install fluent-plugin-logzio \
 <% end%>
     && gem install fluent-plugin-kubernetes_metadata_filter \
 <% if !is_alpine %>
