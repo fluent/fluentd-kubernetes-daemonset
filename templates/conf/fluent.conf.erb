@@ -109,6 +109,20 @@
   papertrail_port "#{ENV['FLUENT_PAPERTRAIL_PORT']}"
 
 </match>
+
+<% when "logzio"%>
+<match **>
+  type logzio_buffered
+  endpoint_url "#{ENV['FLUENT_LOGZIO_URL']}?token=#{ENV['FLUENT_LOGZIO_TOKEN']}&type=#{ENV['FLUENT_LOGZIO_TYPE']}"
+  output_include_time true
+  output_include_tags true
+  buffer_type    file
+  buffer_path    /var/log/fluentd-buffers/logzio.buffer
+  flush_interval 10s
+  buffer_chunk_limit 1m
+</match>
+
+
 <% when "kafka" %>
 <match **>
   type kafka_buffered
