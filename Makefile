@@ -10,7 +10,9 @@
 # It's still possible to build, tag and push images manually. Just use:
 #	make release-all
 
-IMAGE_NAME := fluent/fluentd-kubernetes
+# 'git@github.com:fluent/fluentd-kubernetes-daemonset.git' => 'fluentd'
+IMAGE_ORG ?= $(shell git config --get remote.origin.url | awk -F":|/" '{print $$2}' | cut -d"." -f1)
+IMAGE_NAME := $(IMAGE_ORG)/fluentd-kubernetes
 ALL_IMAGES := \
 	v0.12/alpine-elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/alpine-loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
