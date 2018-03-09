@@ -16,6 +16,7 @@ RUN set -ex \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-rewrite-tag-filter -v 1.6.0 \
     && gem install aws-sdk-core -v 2.10.50 \
     && gem install fluent-plugin-cloudwatch-logs -v 0.4.0 \
     && gem install fluent-plugin-kubernetes_metadata_filter \
