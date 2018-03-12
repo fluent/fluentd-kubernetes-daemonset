@@ -31,10 +31,10 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
      $buildDeps \
 <% end %>
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem install fluent-plugin-secure-forward \
-    && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-secure-forward -v 0.4.5 \
+    && gem install fluent-plugin-record-reformer -v 0.9.0 \
     && gem install fluent-plugin-rewrite-tag-filter -v 1.6.0 \
-    && gem install fluent-plugin-prometheus \
+    && gem install fluent-plugin-prometheus -v 0.3.0 \
 <% case target when "elasticsearch"%>
     && gem install fluent-plugin-elasticsearch \
 <% when "logentries"%>
@@ -58,7 +58,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-kubernetes_metadata_filter \
 <% if !is_alpine %>
     && gem install ffi \
-    && gem install fluent-plugin-systemd -v 0.0.8 \
+    && gem install fluent-plugin-systemd -v 0.0.9 \
 <% end %>
 <% if is_alpine %>
     && apk del .build-deps \
