@@ -10,10 +10,13 @@
 # It's still possible to build, tag and push images manually. Just use:
 #	make release-all
 
-IMAGE_NAME := fluent/fluentd-kubernetes
+# 'git@github.com:fluent/fluentd-kubernetes-daemonset.git' => 'fluentd'
+IMAGE_ORG ?= $(shell git config --get remote.origin.url | awk -F":|/" '{print $$2}' | cut -d"." -f1)
+IMAGE_NAME := $(IMAGE_ORG)/fluentd-kubernetes
 ALL_IMAGES := \
 	v0.12/alpine-elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/alpine-loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
+	v0.12/alpine-datadog:v0.12.33-datadog,v0.12-datadog,stable-datadog,datadog \
 	v0.12/alpine-logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
 	v0.12/alpine-cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
 	v0.12/alpine-s3:v0.12.33-s3,v0.12-s3,stable-s3,s3 \
@@ -21,6 +24,7 @@ ALL_IMAGES := \
 	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/alpine-kafka:v0.12.33-kafka,v0.12-kafka,stable-kafka,kafka \
 	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
+	v0.12/debian-datadog:v0.12.33-debian-datadog,v0.12-debian-datadog,debian-datadog \
 	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
 	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
 	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \

@@ -10,16 +10,19 @@ ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
 RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
      && apt-get update \
+     && apt-get upgrade -y \
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps \
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem install fluent-plugin-secure-forward \
-    && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-secure-forward -v 0.4.5 \
+    && gem install fluent-plugin-record-reformer -v 0.9.0 \
+    && gem install fluent-plugin-rewrite-tag-filter -v 1.6.0 \
+    && gem install fluent-plugin-prometheus -v 0.3.0 \
     && gem install fluent-plugin-kafka \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && gem install ffi \
-    && gem install fluent-plugin-systemd -v 0.0.8 \
+    && gem install fluent-plugin-systemd -v 0.0.9 \
     && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
                   -o APT::AutoRemove::RecommendsImportant=false \
@@ -35,6 +38,7 @@ COPY ./conf/kubernetes.conf /fluentd/etc/
 
 # Copy plugins
 COPY plugins /fluentd/plugins/
+COPY entrypoint.sh /fluentd/entrypoint.sh
 
 # Environment variables
 ENV FLUENTD_OPT=""
@@ -46,4 +50,4 @@ ENV FLUENTD_CONF="fluent.conf"
 #ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
 
 # Run Fluentd
-CMD exec fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
+CMD ["/fluentd/entrypoint.sh"]

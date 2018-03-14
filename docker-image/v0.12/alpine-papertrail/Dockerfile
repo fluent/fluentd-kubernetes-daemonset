@@ -14,8 +14,10 @@ RUN set -ex \
         ruby-dev \
         libffi-dev \
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem install fluent-plugin-secure-forward \
-    && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-secure-forward -v 0.4.5 \
+    && gem install fluent-plugin-record-reformer -v 0.9.0 \
+    && gem install fluent-plugin-rewrite-tag-filter -v 1.6.0 \
+    && gem install fluent-plugin-prometheus -v 0.3.0 \
     && gem install fluent-plugin-papertrail -v 0.1.1 \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && apk del .build-deps \
