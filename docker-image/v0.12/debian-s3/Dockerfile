@@ -10,13 +10,14 @@ ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
 RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
      && apt-get update \
-     && apt-get upgrade \
+     && apt-get upgrade -y \
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install fluent-plugin-s3 -v "~> 0.8" \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && gem install ffi \

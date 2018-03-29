@@ -16,6 +16,7 @@ RUN set -ex \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install fluent-plugin-papertrail -v 0.1.1 \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && apk del .build-deps \
@@ -28,6 +29,7 @@ COPY ./conf/kubernetes.conf /fluentd/etc/
 
 # Copy plugins
 COPY plugins /fluentd/plugins/
+COPY entrypoint.sh /fluentd/entrypoint.sh
 
 # Environment variables
 ENV FLUENTD_OPT=""
@@ -39,4 +41,4 @@ ENV FLUENTD_CONF="fluent.conf"
 #ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
 
 # Run Fluentd
-CMD exec fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
+CMD ["/fluentd/entrypoint.sh"]
