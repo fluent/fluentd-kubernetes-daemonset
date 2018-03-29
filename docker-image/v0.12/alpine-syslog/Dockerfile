@@ -13,10 +13,10 @@ RUN set -ex \
         build-base \
         ruby-dev \
         libffi-dev \
-        git \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install specific_install \
     && gem specific_install -l https://github.com/georgegoh/fluent-plugin-kubernetes_remote_syslog.git \
     && gem install fluent-plugin-kubernetes_metadata_filter \
