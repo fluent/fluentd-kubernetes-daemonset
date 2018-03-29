@@ -12,6 +12,15 @@
   tag kubelet
 </source>
 
+# Logs from docker-systemd
+<source>
+  @type systemd
+  filters [{ "_SYSTEMD_UNIT": "docker.service" }]
+  pos_file /var/log/fluentd-journald-docker.pos
+  read_from_head true
+  tag docker.systemd
+</source>
+
 # Logs from systemd-journal for interesting services.
 <source>
   @type systemd
@@ -34,4 +43,3 @@
   </record>
 </filter>
 <% end %>
-
