@@ -17,7 +17,7 @@ RUN set -ex \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
-    && gem install fluent-plugin-elasticsearch \
+    && gem install fluent-plugin-elasticsearch -v "<2" \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && apk del .build-deps \
     && gem sources --clear-all \
