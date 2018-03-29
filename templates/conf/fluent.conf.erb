@@ -17,6 +17,7 @@
    host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
    port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
    scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME'] || 'http'}"
+   ssl_verify "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERIFY'] || 'true'}"
    user "#{ENV['FLUENT_ELASTICSEARCH_USER']}"
    password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}"
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'true'}"
@@ -189,4 +190,17 @@
   max_send_limit_bytes "#{ENV['FLUENT_KAFKA_MAX_SEND_LIMIT_BYTES'] || nil}"
   discard_kafka_delivery_failed "#{ENV['FLUENT_KAFKA_DISCARD_KAFKA_DELIVERY_FAILED'] || false}"
 </match>
+  
+<% when "syslog" %>
+<match **>
+  @type kubernetes_remote_syslog
+  host "#{ENV['SYSLOG_HOST']}"
+  port "#{ENV['SYSLOG_PORT']}"
+  severity debug
+  tag fluentd
+  protocol tcp
+  packet_size 65535
+  output_data_type ltsv
+</match>
 <% end%>
+
