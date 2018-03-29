@@ -92,7 +92,19 @@
   # Use multiple threads for processing.
   num_threads 2
 </match>
-
+<% when "graylog"%>
+<match **>
+   type gelf
+   log_level info
+   include_tag_key true
+   host "#{ENV['FLUENT_GRAYLOG_HOST']}"
+   port "#{ENV['FLUENT_GRAYLOG_PORT']}"
+   buffer_chunk_limit 4096K
+   buffer_queue_limit 512
+   flush_interval 5s
+   max_retry_wait 30
+   disable_retry_limit
+   num_threads 8
 <% when "logzio"%>
 <match **>
   type logzio_buffered

@@ -22,8 +22,12 @@ RUN set -ex \
         build-base \
         ruby-dev \
         libffi-dev \
+<% case target when "graylog"%>
+        zlib-dev \
+        git \
+<% end %>
 <% else %>
-RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
+RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when "graylog" %> git build-essential patch zlib1g-dev liblzma-dev<% end %>" \
      && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
@@ -47,6 +51,12 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-google-cloud \
 <% when "s3" %>
     && gem install fluent-plugin-s3 -v "~> 0.8" \
+<% when "graylog" %>
+    && gem install jeweler \
+    && git clone https://github.com/graylog-labs/gelf-rb.git \
+    && cd gelf-rb \
+    && rake install \
+    && gem install fluent-plugin-gelf-hs \
 <% when "logzio" %>
     && gem install fluent-plugin-logzio \
 <% when "papertrail" %>
