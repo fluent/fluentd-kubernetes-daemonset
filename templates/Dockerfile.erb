@@ -22,8 +22,12 @@ RUN set -ex \
         build-base \
         ruby-dev \
         libffi-dev \
+<% case target when "graylog"%>
+        zlib-dev \
+        git \
+<% end %>
 <% else %>
-RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
+RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when "graylog" %> git build-essential patch zlib1g-dev liblzma-dev<% end %>" \
      && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
@@ -33,8 +37,9 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
 <% case target when "elasticsearch"%>
-    && gem install fluent-plugin-elasticsearch \
+    && gem install fluent-plugin-elasticsearch -v "<2" \
 <% when "logentries"%>
     # && gem install fluent-plugin-logentries \
 <% when "loggly"%>
@@ -46,11 +51,23 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-google-cloud \
 <% when "s3" %>
     && gem install fluent-plugin-s3 -v "~> 0.8" \
+<% when "gcs" %>
+    && gem install fluent-plugin-gcs -v "~> 0.3"  --no-document \
+<% when "graylog" %>
+    && gem install jeweler \
+    && git clone https://github.com/graylog-labs/gelf-rb.git \
+    && cd gelf-rb \
+    && rake install \
+    && gem install fluent-plugin-gelf-hs \
+<% when "logzio" %>
+    && gem install fluent-plugin-logzio \
 <% when "papertrail" %>
     && gem install fluent-plugin-papertrail -v 0.1.1 \
 <% when "syslog" %>
     && gem install specific_install \
     && gem specific_install -l https://github.com/georgegoh/fluent-plugin-kubernetes_remote_syslog.git \
+<% when "kafka" %>
+    && gem install fluent-plugin-kafka \
 <% end%>
     && gem install fluent-plugin-kubernetes_metadata_filter \
 <% if !is_alpine %>
