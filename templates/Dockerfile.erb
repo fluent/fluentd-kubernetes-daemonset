@@ -51,6 +51,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when
     && gem install fluent-plugin-google-cloud \
 <% when "s3" %>
     && gem install fluent-plugin-s3 -v "~> 0.8" \
+<% when "gcs" %>
+    && gem install fluent-plugin-gcs -v "~> 0.3"  --no-document \
 <% when "graylog" %>
     && gem install jeweler \
     && git clone https://github.com/graylog-labs/gelf-rb.git \
