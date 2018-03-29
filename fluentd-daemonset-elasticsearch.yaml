@@ -34,6 +34,12 @@ spec:
             value: "elastic"
           - name: FLUENT_ELASTICSEARCH_PASSWORD
             value: "changeme"
+          # Logz.io Authentication
+          # ======================
+          - name: LOGZIO_TOKEN
+            value: "ThisIsASuperLongToken"
+          - name: LOGZIO_LOGTYPE
+            value: "kubernetes"
         resources:
           limits:
             memory: 200Mi
