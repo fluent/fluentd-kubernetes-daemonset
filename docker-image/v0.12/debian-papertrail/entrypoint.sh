@@ -2,11 +2,11 @@
 
 set -e
 
-if [[ -z ${FLUENT_ELASTICSEARCH_USER} ]] ; then
+if [ -z ${FLUENT_ELASTICSEARCH_USER} ] ; then
    sed -i  '/FLUENT_ELASTICSEARCH_USER/d' /fluentd/etc/${FLUENTD_CONF}
 fi
 
-if [[ -z ${FLUENT_ELASTICSEARCH_PASSWORD} ]] ; then
+if [ -z ${FLUENT_ELASTICSEARCH_PASSWORD} ] ; then
    sed -i  '/FLUENT_ELASTICSEARCH_PASSWORD/d' /fluentd/etc/${FLUENTD_CONF}
 fi
 

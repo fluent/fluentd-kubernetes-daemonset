@@ -18,7 +18,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
-    && gem install fluent-plugin-elasticsearch \
+    && gem install fluent-plugin-elasticsearch -v "<2" \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && gem install ffi \
     && gem install fluent-plugin-systemd -v 0.0.8 \
