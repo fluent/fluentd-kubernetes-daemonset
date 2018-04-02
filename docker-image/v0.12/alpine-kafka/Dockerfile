@@ -19,6 +19,7 @@ RUN set -ex \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install fluent-plugin-kafka \
     && gem install fluent-plugin-kubernetes_metadata_filter \
+    && gem install fluent-plugin-prometheus --version=0.4.0 \
     && apk del .build-deps \
     && gem sources --clear-all \
     && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem

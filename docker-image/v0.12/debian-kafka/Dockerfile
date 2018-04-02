@@ -20,6 +20,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install fluent-plugin-kafka \
     && gem install fluent-plugin-kubernetes_metadata_filter \
+    && gem install fluent-plugin-prometheus --version=0.4.0 \
     && gem install ffi \
     && gem install fluent-plugin-systemd -v 0.0.8 \
     && SUDO_FORCE_REMOVE=yes \
