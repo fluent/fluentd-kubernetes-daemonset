@@ -12,6 +12,7 @@
   tag kubelet
 </source>
 
+# Logs from docker-systemd
 <source>
   @type systemd
   filters [{ "_SYSTEMD_UNIT": "docker.service" }]
@@ -19,3 +20,26 @@
   read_from_head true
   tag docker.systemd
 </source>
+
+# Logs from systemd-journal for interesting services.
+<source>
+  @type systemd
+  filters [{ "_SYSTEMD_UNIT": "bootkube.service" }]
+  pos_file /var/log/fluentd-journald-bootkube.pos
+  read_from_head true
+  tag bootkube
+</source>
+
+<% case target when "papertrail"%>
+<filter bootkube>
+  type record_transformer
+  enable_ruby true
+  <record>
+    hostname #{ENV['FLUENT_HOSTNAME']}
+    program kube-bootkube
+    severity info
+    facility local0
+    message ${record['log']}
+  </record>
+</filter>
+<% end %>
