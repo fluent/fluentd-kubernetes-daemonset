@@ -45,7 +45,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when
 <% when "loggly"%>
     && gem install fluent-plugin-loggly \
 <% when "cloudwatch"%>
-    && gem install aws-sdk-core -v 2.10.50 \
+    && gem install aws-sdk-core -v 2.11.31 \
     && gem install fluent-plugin-cloudwatch-logs -v 0.4.0 \
 <% when "stackdriver" %>
     && gem install fluent-plugin-google-cloud \
