@@ -8,6 +8,7 @@
 @include systemd.conf
 <% end%>
 @include kubernetes.conf
+@include prometheus.conf
 
 <% case target when "elasticsearch"%>
 <match **>
@@ -190,7 +191,7 @@
   max_send_limit_bytes "#{ENV['FLUENT_KAFKA_MAX_SEND_LIMIT_BYTES'] || nil}"
   discard_kafka_delivery_failed "#{ENV['FLUENT_KAFKA_DISCARD_KAFKA_DELIVERY_FAILED'] || false}"
 </match>
-  
+
 <% when "syslog" %>
 <match **>
   @type kubernetes_remote_syslog
@@ -203,4 +204,3 @@
   output_data_type ltsv
 </match>
 <% end%>
-

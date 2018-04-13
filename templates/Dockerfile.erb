@@ -37,6 +37,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-prometheus -v 0.4.0 \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
 <% case target when "elasticsearch"%>
     && gem install fluent-plugin-elasticsearch -v "<2" \
@@ -88,6 +89,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev<% case target when
 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
+COPY ./conf/prometheus.conf /fluentd/etc/
 <% if !is_alpine %>
 COPY ./conf/systemd.conf /fluentd/etc/
 <% end %>

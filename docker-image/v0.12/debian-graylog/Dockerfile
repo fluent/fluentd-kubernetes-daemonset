@@ -17,6 +17,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git build-essentia
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-prometheus -v 0.4.0 \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install jeweler \
     && git clone https://github.com/graylog-labs/gelf-rb.git \
@@ -36,6 +37,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git build-essentia
 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
+COPY ./conf/prometheus.conf /fluentd/etc/
 COPY ./conf/systemd.conf /fluentd/etc/
 COPY ./conf/kubernetes.conf /fluentd/etc/
 
