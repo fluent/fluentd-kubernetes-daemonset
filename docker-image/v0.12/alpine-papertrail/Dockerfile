@@ -16,6 +16,7 @@ RUN set -ex \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-prometheus -v 0.4.0 \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install fluent-plugin-papertrail -v 0.1.1 \
     && gem install fluent-plugin-kubernetes_metadata_filter \
@@ -25,6 +26,7 @@ RUN set -ex \
 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
+COPY ./conf/prometheus.conf /fluentd/etc/
 COPY ./conf/kubernetes.conf /fluentd/etc/
 
 # Copy plugins
