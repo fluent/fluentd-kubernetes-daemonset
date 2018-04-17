@@ -36,7 +36,8 @@ ALL_IMAGES := \
 	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
 	v0.12/debian-graylog:v0.12.33-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
 	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
-	v0.12/debian-kafka:v0.12.33-debian-kafka,v0.12-debian-kafka,debian-kafka
+	v0.12/debian-kafka:v0.12.33-debian-kafka,v0.12-debian-kafka,debian-kafka \
+	v0.12/debian-logzio:v0.12.33-debian-logzio,v0.12-debian-logzio,debian-stable-logzio
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
