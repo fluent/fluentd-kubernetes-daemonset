@@ -18,6 +18,7 @@ RUN set -ex \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-rewrite-tag-filter \
     && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
     && gem install jeweler \
     && git clone https://github.com/graylog-labs/gelf-rb.git \
