@@ -16,6 +16,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install fluent-plugin-secure-forward \
     && gem install fluent-plugin-record-reformer \
+    && gem install fluent-plugin-rewrite-tag-filter \
     && gem install fluent-plugin-logzio \
     && gem install fluent-plugin-kubernetes_metadata_filter \
     && gem install ffi \
