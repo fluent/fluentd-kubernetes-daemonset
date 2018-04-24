@@ -10,3 +10,4 @@ gem "fluent-plugin-kubernetes_remote_syslog", git: "https://github.com/georgegoh
 gem "fluent-plugin-kubernetes_metadata_filter"
 gem "ffi"
 gem "fluent-plugin-systemd"
+gem "fluent-plugin-rewrite-tag-filter"
