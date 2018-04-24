@@ -127,7 +127,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook entrypoint.sh
+src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook entrypoint.sh
 
 # Generate sources for all supported Docker images.
 #
@@ -157,6 +157,20 @@ dockerfile:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/Dockerfile.erb > docker-image/$(DOCKERFILE)/Dockerfile
+
+# Generate Gemfile and Gemfile.lock from template.
+#
+# Usage:
+#	make gemfile [DOCKERFILE=] [VERSION=]
+gemfile:
+	mkdir -p docker-image/$(DOCKERFILE)
+	docker run --rm -i -v $(PWD)/templates/Gemfile.erb:/Gemfile.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/Gemfile.erb > docker-image/$(DOCKERFILE)/Gemfile
+	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
+		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print" > docker-image/${DOCKERFILE}/Gemfile.lock
 
 # Generate entrypoint.sh from template.
 #
@@ -243,6 +257,19 @@ dockerfile-all:
 			                 $(word 2,$(subst :, ,$(img))))) ; \
 	))
 
+# Generate Gemfile and Gemfile.lock from template for all supported Docker images.
+#
+# Usage:
+#	make gemfile-all
+
+gemfile-all:
+	(set -e ; $(foreach img,$(ALL_IMAGES), \
+		make gemfile \
+			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
+			VERSION=$(word 1,$(subst $(comma), ,\
+			                 $(word 2,$(subst :, ,$(img))))) ; \
+	))
+
 # Generate entrypoint.sh from template for all supported Docker images.
 #
 # Usage:
@@ -310,6 +337,7 @@ post-push-hook-all:
         release release-all \
         src src-all \
         dockerfile dockerfile-all \
+        gemfile gemfile-all \
         entrypoint.sh entrypoint.sh-all \
         fluent.conf fluent.conf-all \
         kubernetes.conf kubernetes.conf-all\

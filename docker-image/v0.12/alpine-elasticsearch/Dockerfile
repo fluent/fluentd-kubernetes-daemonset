@@ -7,19 +7,16 @@ USER root
 WORKDIR /home/fluent
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
+COPY Gemfile* /fluentd/
 RUN set -ex \
-    && apk update && apk upgrade \
+    && apk upgrade --no-cache \
+    && apk add --no-cache ruby-bundler \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         ruby-dev \
         libffi-dev \
-    && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem install fluent-plugin-secure-forward \
-    && gem install fluent-plugin-record-reformer \
-    && gem install fluent-plugin-detect-exceptions -v 0.0.9 \
-    && gem install fluent-plugin-elasticsearch -v "<2" \
-    && gem install fluent-plugin-kubernetes_metadata_filter \
-    && gem install fluent-plugin-rewrite-tag-filter \
+    && bundle config silence_root_warning true \
+    && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && apk del .build-deps \
     && gem sources --clear-all \
     && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem

@@ -56,6 +56,27 @@ Fluentd versioning is as follows:
 
 [Kubernetes Logging with Fluentd][fluentd-article]
 
+### Running on OpenShift
+
+This daemonset setting mounts `/var/log` as service account `fluentd` so you need to run containers as privileged container.
+Here is command example:
+
+```
+oc project kube-system
+oc create -f https://raw.githubusercontent.com/fluent/fluentd-kubernetes-daemonset/master/fluentd-daemonset-elasticsearch-rbac.yaml
+oc adm policy add-scc-to-user privileged -z fluentd
+oc patch ds fluentd -p "spec:
+  template:
+    spec:
+      containers:
+      - name: fluentd
+        securityContext:
+          privileged: true"
+oc delete pod -l k8s-app = fluentd-logging
+```
+
+This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
+
 ## Issues
 
 We can't notice comments in the DockerHub so don't use them for reporting
@@ -88,12 +109,3 @@ through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/
 [debian-stackdriver-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-stackdriver/Dockerfile
 [debian-papertrail-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-papertrail/Dockerfile
 [debian-kafka-dockerfile]: https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v0.12/debian-kafka/Dockerfile
-
-## About Enterprise Edition
-
-[Fluentd Enterprise](https://fluentd.treasuredata.com) is a new edition by [Treasure Data](https://www.treasuredata.com) that provides specific features like:
-
-- Enhanced Security
-- Additional and certified Enterprise add-ons for Splunk, Apache Kafka, Hadoop and Amazon S3.
-
-To obtain more details please visit the official [Fluentd Enterprise](https://fluentd.treasuredata.com) web site.
