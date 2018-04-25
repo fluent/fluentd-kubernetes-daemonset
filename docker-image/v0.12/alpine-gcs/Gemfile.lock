@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.6)
+    activesupport (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -11,14 +11,14 @@ GEM
     concurrent-ruby (1.0.5)
     cool.io (1.5.3)
     digest-crc (0.4.1)
-    domain_name (0.5.20170404)
+    domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    faraday (0.14.0)
+    faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
     fluent-plugin-gcs (0.3.0)
       fluentd (~> 0.12.0)
       google-cloud-storage (~> 0.23.2)
-    fluent-plugin-kubernetes_metadata_filter (1.0.1)
+    fluent-plugin-kubernetes_metadata_filter (1.0.2)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
@@ -47,14 +47,15 @@ GEM
       mime-types (>= 1.6)
       representable (~> 2.3.0)
       retriable (~> 2.0)
-    google-cloud-core (0.21.0)
+    google-cloud-core (0.21.1)
+      googleauth (~> 0.5.1)
     google-cloud-storage (0.23.2)
       digest-crc (~> 0.4)
       google-api-client (~> 0.9.11)
       google-cloud-core (~> 0.21.0)
-    googleauth (0.6.2)
+    googleauth (0.5.3)
       faraday (~> 0.12)
-      jwt (>= 1.4, < 3.0)
+      jwt (~> 1.4)
       logging (~> 2.0)
       memoist (~> 0.12)
       multi_json (~> 1.11)
@@ -71,10 +72,10 @@ GEM
     http_parser.rb (0.6.0)
     httpclient (2.8.3)
     hurley (0.2)
-    i18n (1.0.0)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
-    jwt (2.1.0)
+    jwt (1.5.6)
     kubeclient (1.1.4)
       activesupport
       http (= 0.9.8)
@@ -135,4 +136,4 @@ DEPENDENCIES
   fluentd (= 0.12.33)
 
 BUNDLED WITH
-   1.16.1
+   1.14.3
