@@ -11,7 +11,8 @@
 
 <% case target when "elasticsearch"%>
 <match **>
-   type elasticsearch
+   @type elasticsearch
+   @id out_es
    log_level info
    include_tag_key true
    host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
@@ -32,7 +33,8 @@
 </match>
 <%  when "logentries"%>
 <match **>
-   type logentries
+   @type logentries
+   @id out_logentries
    use_json true
    tag_access_log stdout
    tag_error_log stderr
@@ -40,13 +42,15 @@
 </match>
 <%  when "loggly"%>
 <match **>
-   type loggly
+   @type loggly
+   @id out_loggly
    log_level info
    loggly_url "https://logs-01.loggly.com/inputs/#{ENV['LOGGLY_TOKEN']}/tag/#{ENV['LOGGLY_TAGS'] || 'fluentd'}"
 </match>
 <%  when "cloudwatch"%>
 <match **>
-  type cloudwatch_logs
+  @type cloudwatch_logs
+  @id out_cloudwatch_logs
   log_group_name "#{ENV['LOG_GROUP_NAME']}"
   auto_create_stream true
   use_tag_as_stream true
@@ -55,7 +59,8 @@
 <match **>
   # docs: https://docs.fluentd.org/v0.12/articles/out_s3
   # note: this configuration relies on the nodes have an IAM instance profile with access to your S3 bucket
-  type s3
+  @type s3
+  @id out_s3
   log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
   s3_region "#{ENV['S3_BUCKET_REGION']}"
@@ -72,7 +77,8 @@
 <match **>
   # docs: https://github.com/daichirata/fluent-plugin-gcs
   # this configuration relies on the nodes having permission to write on your gs bucket
-  type gcs
+  @type gcs
+  @id out_gcs
   project "#{ENV['GCS_BUCKET_PROJECT']}"
   bucket "#{ENV['GCS_BUCKET_NAME']}"
   object_key_format %{path}%{time_slice}/%{hostname}/%{index}.%{file_extension}
@@ -84,7 +90,8 @@
 </match>
 <% when "stackdriver"%>
 <match **>
-  type google_cloud
+  @type google_cloud
+  @id out_google_cloud
 
   # Set the buffer type to file to improve the reliability and reduce the memory consumption
   buffer_type file
@@ -109,7 +116,8 @@
 </match>
 <% when "graylog"%>
 <match **>
-   type gelf
+   @type gelf
+   @id out_graylog
    log_level info
    include_tag_key true
    host "#{ENV['FLUENT_GRAYLOG_HOST']}"
@@ -122,7 +130,8 @@
    num_threads 8
 <% when "logzio"%>
 <match **>
-  type logzio_buffered
+  @type logzio_buffered
+  @id out_logzio
   endpoint_url "https://listener.logz.io:8071?token=#{ENV['LOGZIO_TOKEN']}&type=#{ENV['LOGZIO_LOGTYPE']}"
   output_include_time true
   output_include_tags true
@@ -153,14 +162,15 @@
 
 ## Capture audit logs
 #<match kube-apiserver-audit>
-#  type papertrail
+#  @type papertrail
 #
 #  papertrail_host "#{ENV['FLUENT_PAPERTRAIL_AUDIT_HOST']}"
 #  papertrail_port "#{ENV['FLUENT_PAPERTRAIL_AUDIT_PORT']}"
 #</match>
 
 <match **>
-  type papertrail
+  @type papertrail
+  @id out_papertrail
 
   papertrail_host "#{ENV['FLUENT_PAPERTRAIL_HOST']}"
   papertrail_port "#{ENV['FLUENT_PAPERTRAIL_PORT']}"
@@ -168,7 +178,8 @@
 </match>
 <% when "kafka" %>
 <match **>
-  type kafka_buffered
+  @type kafka_buffered
+  @id out_kafka
 
   brokers "#{ENV['FLUENT_KAFKA_BROKERS']}"
 
@@ -194,6 +205,7 @@
 <% when "syslog" %>
 <match **>
   @type kubernetes_remote_syslog
+  @id out_kube_remote_syslog
   host "#{ENV['SYSLOG_HOST']}"
   port "#{ENV['SYSLOG_PORT']}"
   severity debug
