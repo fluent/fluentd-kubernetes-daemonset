@@ -23,19 +23,17 @@ ALL_IMAGES := \
 	v0.12/alpine-syslog:v0.12.33-syslog,v0.12-syslog,stable-syslog,syslog \
 	v0.12/alpine-graylog:v0.12.33-graylog,v0.12-graylog,stable-graylog,graylog \
 	v0.12/alpine-logzio:v0.12.33-logzio,v0.12-logzio,stable-logzio,logzio \
-	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/alpine-kafka:v0.12.33-kafka,v0.12-kafka,stable-kafka,kafka \
+	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
 	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
 	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
 	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
 	v0.12/debian-s3:v0.12.33-debian-s3,v0.12-debian-s3,debian-s3 \
-	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
-	v0.12/debian-syslog:v0.12.33-debian-syslog,v0.12-debian-syslog,debian-syslog \
 	v0.12/debian-gcs:v0.12.33-debian-gcs,v0.12-debian-gcs,debian-gcs \
 	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
+	v0.12/debian-syslog:v0.12.33-debian-syslog,v0.12-debian-syslog,debian-syslog \
 	v0.12/debian-graylog:v0.12.33-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
-	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
 	v0.12/debian-kafka:v0.12.33-debian-kafka,v0.12-debian-kafka,debian-kafka
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
