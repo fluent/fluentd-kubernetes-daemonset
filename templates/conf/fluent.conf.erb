@@ -54,11 +54,13 @@
 <%  when "s3"%>
 <match **>
   # docs: https://docs.fluentd.org/v0.12/articles/out_s3
-  # note: this configuration relies on the nodes have an IAM instance profile with access to your S3 bucket
+  # note: Make sure you use secrets to store your AWS key/secret
   type s3
   log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
   s3_region "#{ENV['S3_BUCKET_REGION']}"
+  aws_key_id "#{ENV['AWS_KEY_ID']}"
+  aws_sec_key "#{ENV['AWS_SEC_KEY']}"
   s3_object_key_format %{path}%{time_slice}/cluster-log-%{index}.%{file_extension}
   time_slice_format %Y/%m/%d
   time_slice_wait 10m
