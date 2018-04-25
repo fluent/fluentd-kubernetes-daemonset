@@ -25,6 +25,8 @@ GEM
       lru_redux
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-secure-forward (0.4.5)
       fluentd (>= 0.10.46)
       proxifier
@@ -139,6 +141,7 @@ DEPENDENCIES
   fluent-plugin-gcs (~> 0.3)
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter
   fluent-plugin-secure-forward
   fluent-plugin-systemd
   fluentd (= 0.12.33)
