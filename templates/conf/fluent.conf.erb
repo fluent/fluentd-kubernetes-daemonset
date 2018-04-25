@@ -54,7 +54,7 @@
 <%  when "s3"%>
 <match **>
   # docs: https://docs.fluentd.org/v0.12/articles/out_s3
-  # note: this configuration relies on the nodes have an IAM instance profile with access to your S3 bucket
+  # note: Make sure you use secrets to store your AWS key/secret
   type s3
   log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
