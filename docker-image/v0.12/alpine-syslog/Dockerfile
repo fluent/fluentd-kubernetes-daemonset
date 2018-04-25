@@ -5,7 +5,11 @@ FROM fluent/fluentd:v0.12.33
 MAINTAINER Eduardo Silva <eduardo@treasure-data.com>
 USER root
 WORKDIR /home/fluent
-ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
+ENV PATH /fluentd/vendor/bundle/ruby/2.3.0/bin:$PATH
+ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.3.0
+ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.3.0
+# skip runtime bundler installation
+ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
 RUN set -ex \
