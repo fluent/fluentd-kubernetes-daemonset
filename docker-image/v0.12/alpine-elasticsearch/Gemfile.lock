@@ -104,4 +104,4 @@ DEPENDENCIES
   fluentd (= 0.12.33)
 
 BUNDLED WITH
-   1.14.3
+   1.16.1
