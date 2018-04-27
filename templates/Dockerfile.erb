@@ -1,4 +1,5 @@
 <% fluentd_ver = version.split("-").first %>
+<% is_v1 = fluentd_ver.start_with?('v1') %>
 <% target = (dockerfile.split("/").last.split("-").last) %>
 <% requires_git = %w(graylog syslog).include? target %>
 <% is_alpine = (dockerfile.split("/").last.split("-").first == "alpine") %>
@@ -42,7 +43,11 @@ RUN set -ex \
      && apt-get upgrade -y \
      && apt-get install \
      -y --no-install-recommends \
+<% if is_v1 %>
+     $buildDeps libjemalloc1 \
+<% else %>
      $buildDeps \
+<% end %>
      ruby-bundler \
 <% end %>
     && bundle config silence_root_warning true \
@@ -74,10 +79,15 @@ COPY entrypoint.sh /fluentd/entrypoint.sh
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
+<% if is_v1 %>
+# See https://packages.debian.org/stretch/amd64/libjemalloc1/filelist
+ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
+<% else %>
 # jemalloc is memory optimization only available for td-agent
 # td-agent is provided and QA'ed by treasuredata as rpm/deb/.. package
 # -> td-agent (stable) vs fluentd (edge)
 #ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
+<% end %>
 
 # Run Fluentd
 CMD ["/fluentd/entrypoint.sh"]

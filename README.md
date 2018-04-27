@@ -19,6 +19,16 @@
 - `v0.12-debian-stackdriver` [(v0.12/debian-stackdriver/Dockerfile)][debian-stackdriver-dockerfile]
 - `v0.12-debian-papertrail` [(v0.12/debian-papertrail/Dockerfile)][debian-papertrail-dockerfile]
 
+- `v1.1-debian-cloudwatch` [(v1.1/debian-cloudwatch/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-cloudwatch/Dockerfile)
+- `v1.1-debian-elasticsearch` [(v1.1/debian-elasticsearch/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-elasticsearch/Dockerfile)
+- `v1.1-debian-kafka` [(v1.1/debian-kafka/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-kafka/Dockerfile)
+- `v1.1-debian-logentries` [(v1.1/debian-logentries/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-logentries/Dockerfile)
+- `v1.1-debian-loggly` [(v1.1/debian-loggly/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-loggly/Dockerfile)
+- `v1.1-debian-s3` [(v1.1/debian-s3/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-s3/Dockerfile)
+- `v1.1-debian-gcs` [(v1.1/debian-gcs/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-gcs/Dockerfile)
+- `v1.1-debian-stackdriver` [(v1.1/debian-stackdriver/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-stackdriver/Dockerfile)
+- `v1.1-debian-papertrail` [(v1.1/debian-papertrail/Dockerfile)](https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.1/debian-papertrail/Dockerfile)
+
 ### Alpine Linux
 
 - `v0.12-alpine-cloudwatch` [(v0.12/alpine-cloudwatch/Dockerfile)][alpine-cloudwatch-dockerfile]
@@ -49,8 +59,8 @@ Fluentd versioning is as follows:
 
 | Series | Description                         |
 |--------|-------------------------------------|
-| v0.12  | Stable, production ready            |
-| v0.14  | Development, next stable (Q3 2017)  |
+| v0.12  | Old stable, production ready        |
+| v1.x   | stable |
 
 ### References
 
