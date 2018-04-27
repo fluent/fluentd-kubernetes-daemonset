@@ -1,4 +1,5 @@
 <% fluentd_ver = version.split("-").first[1..-1] %>
+<% is_v1 = fluentd_ver.start_with?('1') %>
 <% target = (dockerfile.split("/").last.split("-").last) %>
 <% is_alpine = (dockerfile.split("/").last.split("-").first == "alpine") %>
 # AUTOMATICALLY GENERATED
@@ -7,23 +8,39 @@
 source "https://rubygems.org"
 
 gem "fluentd", "<%= fluentd_ver %>"
+<% if !is_v1 %>
 gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"
-<% case target when "elasticsearch"%>
+<% end %>
+<% case target when "elasticsearch" %>
 gem "fluent-plugin-elasticsearch"
-<% when "logentries"%>
+<% when "logentries" %>
 #gem "fluent-plugin-logentries"
 <% when "loggly"%>
 gem "fluent-plugin-loggly"
-<% when "cloudwatch"%>
+<% when "cloudwatch" %>
+<% if is_v1 %>
+gem "aws-sdk-cloudwatchlogs", "~> 1.0"
+gem "fluent-plugin-cloudwatch-logs", ">=0.5"
+<% else %>
 gem "aws-sdk-core", "2.10.50"
 gem "fluent-plugin-cloudwatch-logs", "0.4.0"
+<% end %>
 <% when "stackdriver" %>
 gem "fluent-plugin-google-cloud"
 <% when "s3" %>
+<% if is_v1 %>
+gem "aws-sdk-s3", "~> 1.0"
+gem "fluent-plugin-s3", "~>1.0"
+<% else %>
 gem "fluent-plugin-s3", "~>0.8"
+<% end %>
 <% when "gcs" %>
+<% if is_v1 %>
+gem "fluent-plugin-gcs", "0.4.0.beta1"
+<% else %>
 gem "fluent-plugin-gcs", "~>0.3"
+<% end %>
 <% when "graylog" %>
 gem "gelf", git: "https://github.com/graylog-labs/gelf-rb.git"
 gem "fluent-plugin-gelf-hs"
