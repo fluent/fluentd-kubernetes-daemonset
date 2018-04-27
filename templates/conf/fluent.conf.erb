@@ -1,3 +1,4 @@
+<% is_v1 = version.split("-").first.start_with?('v1') %>
 <% target = (dockerfile.split("/").last.split("-").last) %>
 <% is_alpine = (dockerfile.split("/").last.split("-").first == "alpine") %>
 
@@ -24,12 +25,23 @@
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'true'}"
    logstash_prefix "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_PREFIX'] || 'logstash'}"
    logstash_format true
+<% if is_v1 %>
+   <buffer>
+     flush_thread_count 8
+     flush_interval 5s
+     chunk_limit_size 2M
+     queue_limit_length 32
+     retry_max_interval 30
+     retry_forever true
+   </buffer>
+<% else %>
    buffer_chunk_limit 2M
    buffer_queue_limit 32
    flush_interval 5s
    max_retry_wait 30
    disable_retry_limit
    num_threads 8
+<% end %>
 </match>
 <%  when "logentries"%>
 <match **>
@@ -64,6 +76,21 @@
   log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
   s3_region "#{ENV['S3_BUCKET_REGION']}"
+<% if is_v1 %>
+  s3_object_key_format %{path}%Y/%m/%d/cluster-log-%{index}.%{file_extension}
+  <inject>
+    time_key time
+    tag_key tag
+    localtime false
+  </inject>
+  <buffer>
+    @type file
+    path /var/log/fluentd-buffers/s3.buffer
+    timekey 3600
+    timekey_use_utc true
+    chunk_limit_size 256m
+  </buffer>
+<% else %>
   s3_object_key_format %{path}%{time_slice}/cluster-log-%{index}.%{file_extension}
   time_slice_format %Y/%m/%d
   time_slice_wait 10m
@@ -72,6 +99,7 @@
   include_tag_key true
   buffer_chunk_limit 256m
   buffer_path /var/log/fluentd-buffers/s3.buffer
+<% end %>
 </match>
 <%  when "gcs"%>
 <match **>
@@ -215,4 +243,3 @@
   output_data_type ltsv
 </match>
 <% end%>
-
