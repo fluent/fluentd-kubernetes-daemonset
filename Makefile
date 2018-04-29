@@ -34,6 +34,7 @@ ALL_IMAGES := \
 	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
 	v0.12/debian-syslog:v0.12.33-debian-syslog,v0.12-debian-syslog,debian-syslog \
 	v0.12/debian-graylog:v0.12.33-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
+	v0.12/debian-logzio:v0.12.33-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.33-debian-kafka,v0.12-debian-kafka,debian-kafka \
 	v1.1/debian-elasticsearch:v1.1.3-debian-elasticsearch,v1.1-debian-elasticsearch \
 	v1.1/debian-loggly:v1.1.3-debian-loggly,v1.1-debian-loggly \
@@ -45,6 +46,7 @@ ALL_IMAGES := \
 	v1.1/debian-gcs:v1.1.3-debian-gcs,v1.1-debian-gcs \
 	v1.1/debian-graylog:v1.1.3-debian-graylog,v1.1-debian-graylog,debian-stable-graylog \
 	v1.1/debian-papertrail:v1.1.3-debian-papertrail,v1.1-debian-papertrail \
+	v1.1/debian-logzio:v1.1.3-debian-logzio,v1.1-debian-logzio,debian-logzio \
 	v1.1/debian-kafka:v1.1.3-debian-kafka,v1.1-debian-kafka
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
