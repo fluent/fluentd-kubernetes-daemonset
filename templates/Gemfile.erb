@@ -20,12 +20,11 @@ gem "fluent-plugin-elasticsearch"
 <% when "loggly"%>
 gem "fluent-plugin-loggly"
 <% when "cloudwatch" %>
-<% if is_v1 %>
 gem "aws-sdk-cloudwatchlogs", "~> 1.0"
+<% if is_v1 %>
 gem "fluent-plugin-cloudwatch-logs", ">=0.5"
 <% else %>
-gem "aws-sdk-core", "2.10.50"
-gem "fluent-plugin-cloudwatch-logs", "0.4.0"
+gem "fluent-plugin-cloudwatch-logs", "0.4.5"
 <% end %>
 <% when "stackdriver" %>
 gem "fluent-plugin-google-cloud"
