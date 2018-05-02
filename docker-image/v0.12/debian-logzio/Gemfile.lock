@@ -64,6 +64,7 @@ GEM
     msgpack (1.2.4)
     net-http-persistent (2.9.4)
     netrc (0.11.0)
+    oj (3.5.1)
     proxifier (1.0.3)
     public_suffix (3.0.2)
     recursive-open-struct (1.0.0)
@@ -97,6 +98,7 @@ DEPENDENCIES
   fluent-plugin-secure-forward
   fluent-plugin-systemd
   fluentd (= 0.12.33)
+  oj (= 3.5.1)
 
 BUNDLED WITH
    1.16.1
