@@ -4,6 +4,7 @@
 source "https://rubygems.org"
 
 gem "fluentd", "0.12.33"
+gem "oj", "3.5.1"
 gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"
 gem "fluent-plugin-kubernetes_remote_syslog", git: "https://github.com/georgegoh/fluent-plugin-kubernetes_remote_syslog.git"
