@@ -86,7 +86,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    yajl-ruby (1.3.1)
+    yajl-ruby (1.4.0)
 
 PLATFORMS
   ruby
@@ -100,4 +100,4 @@ DEPENDENCIES
   gelf!
 
 BUNDLED WITH
-   1.14.3
+   1.16.1

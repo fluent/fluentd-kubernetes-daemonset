@@ -89,5 +89,10 @@ ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
 #ENV LD_PRELOAD="/usr/lib/libjemalloc.so.2"
 <% end %>
 
+<% if is_v1 %>
+# Overwrite ENTRYPOINT to run fluentd as root for /var/log / /var/lib
+ENTRYPOINT ["/fluentd/entrypoint.sh"]
+<% end %>
+
 # Run Fluentd
 CMD ["/fluentd/entrypoint.sh"]

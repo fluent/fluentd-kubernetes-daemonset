@@ -46,5 +46,8 @@ ENV FLUENTD_CONF="fluent.conf"
 # See https://packages.debian.org/stretch/amd64/libjemalloc1/filelist
 ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
 
+# Overwrite ENTRYPOINT to run fluentd as root for /var/log / /var/lib
+ENTRYPOINT ["/fluentd/entrypoint.sh"]
+
 # Run Fluentd
 CMD ["/fluentd/entrypoint.sh"]
