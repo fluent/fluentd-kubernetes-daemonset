@@ -145,7 +145,7 @@ src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf plugins post-pu
 # Usage:
 #	make src-all
 
-src-all:
+src-all: README.md
 	(set -e ; $(foreach img,$(ALL_IMAGES), \
 		make src \
 			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
@@ -225,6 +225,12 @@ systemd.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
+
+README.md: templates/README.md.erb
+	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
+		ruby:alpine erb -U -T 1 \
+	                all_images='$(ALL_IMAGES)' \
+		/README.md.erb > README.md
 
 # Generate plugins for version
 #
@@ -353,4 +359,5 @@ post-push-hook-all:
         fluent.conf fluent.conf-all \
         kubernetes.conf kubernetes.conf-all\
         plugins plugins-all \
-        post-push-hook post-push-hook-all
+        post-push-hook post-push-hook-all \
+	README.md
