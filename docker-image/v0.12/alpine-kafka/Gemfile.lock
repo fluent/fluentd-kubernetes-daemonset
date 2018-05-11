@@ -22,6 +22,8 @@ GEM
       lru_redux
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-secure-forward (0.4.5)
       fluentd (>= 0.10.46)
       proxifier
@@ -70,13 +72,13 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    ruby-kafka (0.5.5)
+    ruby-kafka (0.6.2)
     sigdump (0.2.4)
     string-scrub (0.0.5)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.4)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -90,6 +92,7 @@ DEPENDENCIES
   fluent-plugin-kafka
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter (= 1.6.0)
   fluent-plugin-secure-forward
   fluentd (= 0.12.33)
   oj (= 3.5.1)

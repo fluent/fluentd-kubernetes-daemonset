@@ -20,12 +20,14 @@ GEM
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
-    fluent-plugin-papertrail (0.2.3)
+    fluent-plugin-papertrail (0.2.4)
       fluent-mixin-config-placeholders (~> 0.4.0)
       fluentd (>= 0.10, < 2)
       syslog_protocol
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-secure-forward (0.4.5)
       fluentd (>= 0.10.46)
       proxifier
@@ -84,7 +86,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.4)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -100,6 +102,7 @@ DEPENDENCIES
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-papertrail
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter (= 1.6.0)
   fluent-plugin-secure-forward
   fluent-plugin-systemd
   fluentd (= 0.12.33)
