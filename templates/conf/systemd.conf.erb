@@ -15,8 +15,16 @@
     persistent true
     path /var/log/fluentd-journald-kubelet-cursor.json
   </storage>
+<% if target == "elasticsearch" %>
+  <entry>
+    fields_strip_underscores true
+  </entry>
+<% end %>
 <% else %>
   pos_file /var/log/fluentd-journald-kubelet.pos
+<% if target == "elasticsearch" %>
+  strip_underscores true
+<% end %>
 <% end %>
   read_from_head true
   tag kubelet
@@ -33,8 +41,16 @@
     persistent true
     path /var/log/fluentd-journald-docker-cursor.json
   </storage>
+<% if target == "elasticsearch" %>
+  <entry>
+    fields_strip_underscores true
+  </entry>
+<% end %>
 <% else %>
   pos_file /var/log/fluentd-journald-docker.pos
+<% if target == "elasticsearch" %>
+  strip_underscores true
+<% end %>
 <% end %>
   read_from_head true
   tag docker.systemd
@@ -51,8 +67,16 @@
     persistent true
     path /var/log/fluentd-journald-bootkube-cursor.json
   </storage>
+<% if target == "elasticsearch" %>
+  <entry>
+    fields_strip_underscores true
+  </entry>
+<% end %>
 <% else %>
   pos_file /var/log/fluentd-journald-bootkube.pos
+<% if target == "elasticsearch" %>
+  strip_underscores true
+<% end %>
 <% end %>
   read_from_head true
   tag bootkube
