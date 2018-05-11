@@ -16,8 +16,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.23)
     fluent-plugin-google-cloud (0.6.18)
+    ffi (1.9.25)
       fluentd (~> 0.10)
       google-api-client (~> 0.17)
       google-cloud-logging (~> 1.3, >= 1.3.2)
@@ -35,9 +35,9 @@ GEM
       fluentd (>= 0.10.46)
       proxifier
       resolve-hostname
-    fluent-plugin-systemd (0.0.10)
+    fluent-plugin-systemd (0.0.11)
       fluentd (~> 0.12)
-      systemd-journal (~> 1.3)
+      systemd-journal (~> 1.3.2)
     fluentd (0.12.33)
       cool.io (>= 1.2.2, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
@@ -146,7 +146,7 @@ GEM
     stackdriver-core (1.3.0)
       google-cloud-core (~> 1.2)
     string-scrub (0.0.5)
-    systemd-journal (1.3.1)
+    systemd-journal (1.3.2)
       ffi (~> 1.9)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
@@ -173,4 +173,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

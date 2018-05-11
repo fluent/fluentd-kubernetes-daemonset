@@ -12,20 +12,22 @@ GEM
     cool.io (1.5.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    ffi (1.9.23)
-    fluent-plugin-kubernetes_metadata_filter (1.0.2)
+    ffi (1.9.25)
+    fluent-plugin-kubernetes_metadata_filter (1.1.0)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-secure-forward (0.4.5)
       fluentd (>= 0.10.46)
       proxifier
       resolve-hostname
-    fluent-plugin-systemd (0.0.10)
+    fluent-plugin-systemd (0.0.11)
       fluentd (~> 0.12)
-      systemd-journal (~> 1.3)
+      systemd-journal (~> 1.3.2)
     fluentd (0.12.33)
       cool.io (>= 1.2.2, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
@@ -71,12 +73,12 @@ GEM
       netrc (~> 0.8)
     sigdump (0.2.4)
     string-scrub (0.0.5)
-    systemd-journal (1.3.1)
+    systemd-journal (1.3.2)
       ffi (~> 1.9)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.4)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -90,6 +92,7 @@ DEPENDENCIES
   ffi
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter (< 2.0.0)
   fluent-plugin-secure-forward
   fluent-plugin-systemd
   fluentd (= 0.12.33)
