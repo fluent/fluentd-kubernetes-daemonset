@@ -10,45 +10,45 @@
 
 ### Debian
 
-- `v0.12-debian-elasticsearch` [(v0.12/debian-elasticsearch/Dockerfile)][debian-elasticsearch-dockerfile]
-- `v0.12-debian-loggly` [(v0.12/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
-- `v0.12-debian-logentries` [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
-- `v0.12-debian-cloudwatch` [(v0.12/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
-- `v0.12-debian-stackdriver` [(v0.12/debian-stackdriver/Dockerfile)][debian-stackdriver-dockerfile]
-- `v0.12-debian-s3` [(v0.12/debian-s3/Dockerfile)][debian-s3-dockerfile]
-- `v0.12-debian-gcs` [(v0.12/debian-gcs/Dockerfile)][debian-gcs-dockerfile]
-- `v0.12-debian-papertrail` [(v0.12/debian-papertrail/Dockerfile)][debian-papertrail-dockerfile]
-- `v0.12-debian-syslog` [(v0.12/debian-syslog/Dockerfile)][debian-syslog-dockerfile]
-- `v0.12-debian-graylog` [(v0.12/debian-graylog/Dockerfile)][debian-graylog-dockerfile]
-- `v0.12-debian-logzio` [(v0.12/debian-logzio/Dockerfile)][debian-logzio-dockerfile]
-- `v0.12-debian-kafka` [(v0.12/debian-kafka/Dockerfile)][debian-kafka-dockerfile]
-- `v1.1-debian-elasticsearch` [(v1.1/debian-elasticsearch/Dockerfile)][debian-elasticsearch-dockerfile]
-- `v1.1-debian-loggly` [(v1.1/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
-- `v1.1-debian-logentries` [(v1.1/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
-- `v1.1-debian-cloudwatch` [(v1.1/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
-- `v1.1-debian-stackdriver` [(v1.1/debian-stackdriver/Dockerfile)][debian-stackdriver-dockerfile]
-- `v1.1-debian-s3` [(v1.1/debian-s3/Dockerfile)][debian-s3-dockerfile]
-- `v1.1-debian-syslog` [(v1.1/debian-syslog/Dockerfile)][debian-syslog-dockerfile]
-- `v1.1-debian-gcs` [(v1.1/debian-gcs/Dockerfile)][debian-gcs-dockerfile]
-- `v1.1-debian-graylog` [(v1.1/debian-graylog/Dockerfile)][debian-graylog-dockerfile]
-- `v1.1-debian-papertrail` [(v1.1/debian-papertrail/Dockerfile)][debian-papertrail-dockerfile]
-- `v1.1-debian-logzio` [(v1.1/debian-logzio/Dockerfile)][debian-logzio-dockerfile]
-- `v1.1-debian-kafka` [(v1.1/debian-kafka/Dockerfile)][debian-kafka-dockerfile]
+- `v0.12-debian-elasticsearch` [docker-image/v0.12/debian-elasticsearch/Dockerfile](docker-image/v0.12/debian-elasticsearch/Dockerfile)
+- `v0.12-debian-loggly` [docker-image/v0.12/debian-loggly/Dockerfile](docker-image/v0.12/debian-loggly/Dockerfile)
+- `v0.12-debian-logentries` [docker-image/v0.12/debian-logentries/Dockerfile](docker-image/v0.12/debian-logentries/Dockerfile)
+- `v0.12-debian-cloudwatch` [docker-image/v0.12/debian-cloudwatch/Dockerfile](docker-image/v0.12/debian-cloudwatch/Dockerfile)
+- `v0.12-debian-stackdriver` [docker-image/v0.12/debian-stackdriver/Dockerfile](docker-image/v0.12/debian-stackdriver/Dockerfile)
+- `v0.12-debian-s3` [docker-image/v0.12/debian-s3/Dockerfile](docker-image/v0.12/debian-s3/Dockerfile)
+- `v0.12-debian-gcs` [docker-image/v0.12/debian-gcs/Dockerfile](docker-image/v0.12/debian-gcs/Dockerfile)
+- `v0.12-debian-papertrail` [docker-image/v0.12/debian-papertrail/Dockerfile](docker-image/v0.12/debian-papertrail/Dockerfile)
+- `v0.12-debian-syslog` [docker-image/v0.12/debian-syslog/Dockerfile](docker-image/v0.12/debian-syslog/Dockerfile)
+- `v0.12-debian-graylog` [docker-image/v0.12/debian-graylog/Dockerfile](docker-image/v0.12/debian-graylog/Dockerfile)
+- `v0.12-debian-logzio` [docker-image/v0.12/debian-logzio/Dockerfile](docker-image/v0.12/debian-logzio/Dockerfile)
+- `v0.12-debian-kafka` [docker-image/v0.12/debian-kafka/Dockerfile](docker-image/v0.12/debian-kafka/Dockerfile)
+- `v1.1-debian-elasticsearch` [docker-image/v1.1/debian-elasticsearch/Dockerfile](docker-image/v1.1/debian-elasticsearch/Dockerfile)
+- `v1.1-debian-loggly` [docker-image/v1.1/debian-loggly/Dockerfile](docker-image/v1.1/debian-loggly/Dockerfile)
+- `v1.1-debian-logentries` [docker-image/v1.1/debian-logentries/Dockerfile](docker-image/v1.1/debian-logentries/Dockerfile)
+- `v1.1-debian-cloudwatch` [docker-image/v1.1/debian-cloudwatch/Dockerfile](docker-image/v1.1/debian-cloudwatch/Dockerfile)
+- `v1.1-debian-stackdriver` [docker-image/v1.1/debian-stackdriver/Dockerfile](docker-image/v1.1/debian-stackdriver/Dockerfile)
+- `v1.1-debian-s3` [docker-image/v1.1/debian-s3/Dockerfile](docker-image/v1.1/debian-s3/Dockerfile)
+- `v1.1-debian-syslog` [docker-image/v1.1/debian-syslog/Dockerfile](docker-image/v1.1/debian-syslog/Dockerfile)
+- `v1.1-debian-gcs` [docker-image/v1.1/debian-gcs/Dockerfile](docker-image/v1.1/debian-gcs/Dockerfile)
+- `v1.1-debian-graylog` [docker-image/v1.1/debian-graylog/Dockerfile](docker-image/v1.1/debian-graylog/Dockerfile)
+- `v1.1-debian-papertrail` [docker-image/v1.1/debian-papertrail/Dockerfile](docker-image/v1.1/debian-papertrail/Dockerfile)
+- `v1.1-debian-logzio` [docker-image/v1.1/debian-logzio/Dockerfile](docker-image/v1.1/debian-logzio/Dockerfile)
+- `v1.1-debian-kafka` [docker-image/v1.1/debian-kafka/Dockerfile](docker-image/v1.1/debian-kafka/Dockerfile)
 
 ### Alpine Linux
 
-- `v0.12-alpine-elasticsearch` [(v0.12/alpine-elasticsearch/Dockerfile)][alpine-elasticsearch-dockerfile]
-- `v0.12-alpine-loggly` [(v0.12/alpine-loggly/Dockerfile)][alpine-loggly-dockerfile]
-- `v0.12-alpine-logentries` [(v0.12/alpine-logentries/Dockerfile)][alpine-logentries-dockerfile]
-- `v0.12-alpine-cloudwatch` [(v0.12/alpine-cloudwatch/Dockerfile)][alpine-cloudwatch-dockerfile]
-- `v0.12-alpine-stackdriver` [(v0.12/alpine-stackdriver/Dockerfile)][alpine-stackdriver-dockerfile]
-- `v0.12-alpine-s3` [(v0.12/alpine-s3/Dockerfile)][alpine-s3-dockerfile]
-- `v0.12-alpine-gcs` [(v0.12/alpine-gcs/Dockerfile)][alpine-gcs-dockerfile]
-- `v0.12-alpine-papertrail` [(v0.12/alpine-papertrail/Dockerfile)][alpine-papertrail-dockerfile]
-- `v0.12-alpine-syslog` [(v0.12/alpine-syslog/Dockerfile)][alpine-syslog-dockerfile]
-- `v0.12-alpine-graylog` [(v0.12/alpine-graylog/Dockerfile)][alpine-graylog-dockerfile]
-- `v0.12-alpine-logzio` [(v0.12/alpine-logzio/Dockerfile)][alpine-logzio-dockerfile]
-- `v0.12-alpine-kafka` [(v0.12/alpine-kafka/Dockerfile)][alpine-kafka-dockerfile]
+- `v0.12-alpine-elasticsearch` [docker-image/v0.12/alpine-elasticsearch/Dockerfile](docker-image/v0.12/alpine-elasticsearch/Dockerfile)
+- `v0.12-alpine-loggly` [docker-image/v0.12/alpine-loggly/Dockerfile](docker-image/v0.12/alpine-loggly/Dockerfile)
+- `v0.12-alpine-logentries` [docker-image/v0.12/alpine-logentries/Dockerfile](docker-image/v0.12/alpine-logentries/Dockerfile)
+- `v0.12-alpine-cloudwatch` [docker-image/v0.12/alpine-cloudwatch/Dockerfile](docker-image/v0.12/alpine-cloudwatch/Dockerfile)
+- `v0.12-alpine-stackdriver` [docker-image/v0.12/alpine-stackdriver/Dockerfile](docker-image/v0.12/alpine-stackdriver/Dockerfile)
+- `v0.12-alpine-s3` [docker-image/v0.12/alpine-s3/Dockerfile](docker-image/v0.12/alpine-s3/Dockerfile)
+- `v0.12-alpine-gcs` [docker-image/v0.12/alpine-gcs/Dockerfile](docker-image/v0.12/alpine-gcs/Dockerfile)
+- `v0.12-alpine-papertrail` [docker-image/v0.12/alpine-papertrail/Dockerfile](docker-image/v0.12/alpine-papertrail/Dockerfile)
+- `v0.12-alpine-syslog` [docker-image/v0.12/alpine-syslog/Dockerfile](docker-image/v0.12/alpine-syslog/Dockerfile)
+- `v0.12-alpine-graylog` [docker-image/v0.12/alpine-graylog/Dockerfile](docker-image/v0.12/alpine-graylog/Dockerfile)
+- `v0.12-alpine-logzio` [docker-image/v0.12/alpine-logzio/Dockerfile](docker-image/v0.12/alpine-logzio/Dockerfile)
+- `v0.12-alpine-kafka` [docker-image/v0.12/alpine-kafka/Dockerfile](docker-image/v0.12/alpine-kafka/Dockerfile)
 
 ## What is Fluentd?
 
