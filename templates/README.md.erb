@@ -15,14 +15,14 @@
 
 <% debian.each do |image| %>
 <% path = image.split(":").first %>
-- `<%= path.tr("/","-") %>` [(<%= path %>/Dockerfile)][<%= path.split("/").last %>-dockerfile]
+- `<%= path.tr("/","-") %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% end %>
 
 ### Alpine Linux
 
 <% alpine.each do |image| %>
 <% path = image.split(":").first %>
-- `<%= path.tr("/","-") %>` [(<%= path %>/Dockerfile)][<%= path.split("/").last %>-dockerfile]
+- `<%= path.tr("/","-") %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% end %>
 
 ## What is Fluentd?
