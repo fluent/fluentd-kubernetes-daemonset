@@ -10,8 +10,7 @@ ENV PATH /fluentd/vendor/bundle/ruby/2.3.0/bin:$PATH
 ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.3.0
 ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.3.0
 # skip runtime bundler installation
-ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
-
+ENV FLUENTD_DISABLE_BUNDLER_INJECTION 0
 COPY Gemfile* /fluentd/
   RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git" \
      && apt-get update \
