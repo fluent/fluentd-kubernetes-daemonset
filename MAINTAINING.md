@@ -45,6 +45,6 @@ It will build all existing `Dockerfile`s, tag them with proper tags
 
 
 
-[1]: https://hub.docker.com/r/fluent/fluentd-kubernetes/tags
-[2]: https://hub.docker.com/r/fluent/fluentd-kubernetes/~/settings/automated-builds
+[1]: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
+[2]: https://github.com/fluent/fluentd-kubernetes-daemonset/tree/master
 [3]: README.md#supported-tags-and-respective-dockerfile-links
