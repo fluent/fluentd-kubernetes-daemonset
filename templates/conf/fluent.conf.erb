@@ -156,6 +156,7 @@
    max_retry_wait 30
    disable_retry_limit
    num_threads 8
+</match>
 <% when "logzio"%>
 <match **>
   @type logzio_buffered
@@ -229,7 +230,7 @@
   max_send_limit_bytes "#{ENV['FLUENT_KAFKA_MAX_SEND_LIMIT_BYTES'] || nil}"
   discard_kafka_delivery_failed "#{ENV['FLUENT_KAFKA_DISCARD_KAFKA_DELIVERY_FAILED'] || false}"
 </match>
-  
+
 <% when "syslog" %>
 <match **>
   @type kubernetes_remote_syslog
