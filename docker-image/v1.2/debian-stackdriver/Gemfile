@@ -3,7 +3,7 @@
 
 source "https://rubygems.org"
 
-gem "fluentd", "1.2.1"
+gem "fluentd", "1.2.2"
 gem "oj", "3.5.1"
 gem "fluent-plugin-google-cloud"
 gem "fluent-plugin-kubernetes_metadata_filter"
