@@ -45,7 +45,7 @@ GEM
       aws-sdk-s3 (~> 1.0)
       aws-sdk-sqs (~> 1.0)
       fluentd (>= 0.14.2, < 2)
-    fluent-plugin-systemd (1.0.1)
+    fluent-plugin-systemd (1.0.0)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.3.2)
     fluentd (1.1.3)

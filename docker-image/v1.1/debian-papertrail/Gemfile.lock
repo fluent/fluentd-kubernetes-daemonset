@@ -27,10 +27,7 @@ GEM
       fluent-mixin-config-placeholders (~> 0.4.0)
       fluentd (>= 0.10, < 2)
       syslog_protocol
-    fluent-plugin-rewrite-tag-filter (2.1.0)
-      fluent-config-regexp-type
-      fluentd (>= 0.14.2, < 2)
-    fluent-plugin-systemd (1.0.1)
+    fluent-plugin-systemd (1.0.0)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.3.2)
     fluentd (1.1.3)
