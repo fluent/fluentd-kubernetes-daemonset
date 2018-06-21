@@ -31,7 +31,7 @@ GEM
       ltsv
     fluent-mixin-rewrite-tag-name (0.1.0)
       fluentd
-    fluent-plugin-kubernetes_metadata_filter (1.0.2)
+    fluent-plugin-kubernetes_metadata_filter (1.1.0)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
@@ -110,7 +110,7 @@ DEPENDENCIES
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-kubernetes_remote_syslog!
   fluent-plugin-record-reformer
-  fluent-plugin-rewrite-tag-filter (= 1.6.0)
+  fluent-plugin-rewrite-tag-filter (< 2.0.0)
   fluent-plugin-secure-forward
   fluentd (= 0.12.33)
   oj (= 3.5.1)

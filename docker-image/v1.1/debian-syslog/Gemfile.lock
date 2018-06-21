@@ -1,14 +1,3 @@
-GIT
-  remote: https://github.com/georgegoh/fluent-plugin-kubernetes_remote_syslog.git
-  revision: 7ac20a089dd70c036f25ca72da94387b95da48de
-  specs:
-    fluent-plugin-kubernetes_remote_syslog (0.3.6)
-      fluent-mixin-config-placeholders
-      fluent-mixin-plaintextformatter
-      fluent-mixin-rewrite-tag-name
-      fluentd
-      remote_syslog_sender (~> 1.2.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,10 +22,16 @@ GEM
       ltsv
     fluent-mixin-rewrite-tag-name (0.1.0)
       fluentd
-    fluent-plugin-kubernetes_metadata_filter (2.0.0)
+    fluent-plugin-kubernetes_metadata_filter (2.1.1)
       fluentd (>= 0.14.0, < 2)
       kubeclient (~> 1.1.4)
       lru_redux
+    fluent-plugin-kubernetes_remote_syslog (0.3.6)
+      fluent-mixin-config-placeholders
+      fluent-mixin-plaintextformatter
+      fluent-mixin-rewrite-tag-name
+      fluentd
+      remote_syslog_sender (~> 1.2.1)
     fluent-plugin-systemd (1.0.0)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.3)
@@ -108,7 +103,7 @@ PLATFORMS
 DEPENDENCIES
   ffi
   fluent-plugin-kubernetes_metadata_filter
-  fluent-plugin-kubernetes_remote_syslog!
+  fluent-plugin-kubernetes_remote_syslog
   fluent-plugin-systemd
   fluentd (= 1.1.3)
   oj (= 3.5.1)
