@@ -8,24 +8,26 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    aws-sdk (2.11.40)
-      aws-sdk-resources (= 2.11.40)
-    aws-sdk-core (2.11.40)
+    aws-sdk (2.11.72)
+      aws-sdk-resources (= 2.11.72)
+    aws-sdk-core (2.11.72)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.40)
-      aws-sdk-core (= 2.11.40)
+    aws-sdk-resources (2.11.72)
+      aws-sdk-core (= 2.11.72)
     aws-sigv4 (1.0.2)
     concurrent-ruby (1.0.5)
     cool.io (1.5.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    fluent-plugin-kubernetes_metadata_filter (1.0.2)
+    fluent-plugin-kubernetes_metadata_filter (1.1.0)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-s3 (0.8.7)
       aws-sdk (>= 2.3.22, < 3)
       fluentd (>= 0.10.58, < 2)
@@ -82,7 +84,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.4)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -95,6 +97,7 @@ PLATFORMS
 DEPENDENCIES
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter (< 2.0.0)
   fluent-plugin-s3 (~> 0.8)
   fluent-plugin-secure-forward
   fluentd (= 0.12.33)
