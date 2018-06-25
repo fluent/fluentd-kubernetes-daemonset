@@ -14,10 +14,10 @@ GEM
     declarative-option (0.1.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    faraday (0.15.0)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
-    fluent-plugin-google-cloud (0.6.18)
     ffi (1.9.25)
+    fluent-plugin-google-cloud (0.6.20)
       fluentd (~> 0.10)
       google-api-client (~> 0.17)
       google-cloud-logging (~> 1.3, >= 1.3.2)
@@ -25,12 +25,14 @@ GEM
       googleauth (~> 0.6)
       grpc (~> 1.0)
       json (~> 1.8)
-    fluent-plugin-kubernetes_metadata_filter (1.0.2)
+    fluent-plugin-kubernetes_metadata_filter (1.1.0)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-secure-forward (0.4.5)
       fluentd (>= 0.10.46)
       proxifier
@@ -48,7 +50,7 @@ GEM
       tzinfo (>= 1.0.0)
       tzinfo-data (>= 1.0.0)
       yajl-ruby (~> 1.0)
-    google-api-client (0.20.1)
+    google-api-client (0.23.0)
       addressable (~> 2.5, >= 2.5.1)
       googleauth (>= 0.5, < 0.7.0)
       httpclient (>= 2.8.1, < 3.0)
@@ -63,13 +65,13 @@ GEM
       google-cloud-core (~> 1.2)
       google-gax (~> 1.0)
       stackdriver-core (~> 1.3)
-    google-gax (1.2.0)
+    google-gax (1.3.0)
       google-protobuf (~> 3.2)
       googleapis-common-protos (>= 1.3.5, < 2.0)
       googleauth (~> 0.6.2)
       grpc (>= 1.7.2, < 2.0)
       rly (~> 0.2.3)
-    google-protobuf (3.5.1.2)
+    google-protobuf (3.6.0)
     googleapis-common-protos (1.3.7)
       google-protobuf (~> 3.0)
       googleapis-common-protos-types (~> 1.0)
@@ -84,7 +86,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    grpc (1.11.0)
+    grpc (1.12.0)
       google-protobuf (~> 3.1)
       googleapis-common-protos-types (~> 1.0.0)
       googleauth (>= 0.5.1, < 0.7)
@@ -135,7 +137,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    retriable (3.1.1)
+    retriable (3.1.2)
     rly (0.2.3)
     sigdump (0.2.4)
     signet (0.8.1)
@@ -151,7 +153,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.4)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     uber (0.1.0)
     unf (0.1.4)
@@ -167,10 +169,11 @@ DEPENDENCIES
   fluent-plugin-google-cloud
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter (< 2.0.0)
   fluent-plugin-secure-forward
   fluent-plugin-systemd
   fluentd (= 0.12.33)
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.2
+   1.16.1
