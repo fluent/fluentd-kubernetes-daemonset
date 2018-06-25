@@ -23,10 +23,14 @@ GEM
     fluent-plugin-logzio (0.0.17)
       fluentd (>= 0.14.0, < 2)
       net-http-persistent (~> 2.9)
+<<<<<<< HEAD
     fluent-plugin-rewrite-tag-filter (2.1.0)
       fluent-config-regexp-type
       fluentd (>= 0.14.2, < 2)
     fluent-plugin-systemd (1.0.1)
+=======
+    fluent-plugin-systemd (1.0.0)
+>>>>>>> 5caa1cc9c66bef441cecb8b32a9bf010f36fe441
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.3.2)
     fluentd (1.1.3)

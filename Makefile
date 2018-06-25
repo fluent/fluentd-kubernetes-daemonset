@@ -36,18 +36,18 @@ ALL_IMAGES := \
 	v0.12/debian-graylog:v0.12.33-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
 	v0.12/debian-logzio:v0.12.33-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.33-debian-kafka,v0.12-debian-kafka,debian-kafka \
-	v1.1/debian-elasticsearch:v1.1.3-debian-elasticsearch,v1.1-debian-elasticsearch \
-	v1.1/debian-loggly:v1.1.3-debian-loggly,v1.1-debian-loggly \
-	v1.1/debian-logentries:v1.1.3-debian-logentries,v1.1-debian-logentries \
-	v1.1/debian-cloudwatch:v1.1.3-debian-cloudwatch,v1.1-debian-cloudwatch \
-	v1.1/debian-stackdriver:v1.1.3-debian-stackdriver,v1.1-debian-stackdriver \
-	v1.1/debian-s3:v1.1.3-debian-s3,v1.1-debian-s3 \
-	v1.1/debian-syslog:v1.1.3-debian-syslog,v1.1-debian-syslog \
-	v1.1/debian-gcs:v1.1.3-debian-gcs,v1.1-debian-gcs \
-	v1.1/debian-graylog:v1.1.3-debian-graylog,v1.1-debian-graylog,debian-stable-graylog \
-	v1.1/debian-papertrail:v1.1.3-debian-papertrail,v1.1-debian-papertrail \
-	v1.1/debian-logzio:v1.1.3-debian-logzio,v1.1-debian-logzio,debian-logzio \
-	v1.1/debian-kafka:v1.1.3-debian-kafka,v1.1-debian-kafka
+	v1.2/debian-elasticsearch:v1.2.2-debian-elasticsearch,v1.2-debian-elasticsearch \
+	v1.2/debian-loggly:v1.2.2-debian-loggly,v1.2-debian-loggly \
+	v1.2/debian-logentries:v1.2.2-debian-logentries,v1.2-debian-logentries \
+	v1.2/debian-cloudwatch:v1.2.2-debian-cloudwatch,v1.2-debian-cloudwatch \
+	v1.2/debian-stackdriver:v1.2.2-debian-stackdriver,v1.2-debian-stackdriver \
+	v1.2/debian-s3:v1.2.2-debian-s3,v1.2-debian-s3 \
+	v1.2/debian-syslog:v1.2.2-debian-syslog,v1.2-debian-syslog \
+	v1.2/debian-gcs:v1.2.2-debian-gcs,v1.2-debian-gcs \
+	v1.2/debian-graylog:v1.2.2-debian-graylog,v1.2-debian-graylog,debian-stable-graylog \
+	v1.2/debian-papertrail:v1.2.2-debian-papertrail,v1.2-debian-papertrail \
+	v1.2/debian-logzio:v1.2.2-debian-logzio,v1.2-debian-logzio,debian-logzio \
+	v1.2/debian-kafka:v1.2.2-debian-kafka,v1.2-debian-kafka
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
@@ -145,7 +145,7 @@ src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf plugins post-pu
 # Usage:
 #	make src-all
 
-src-all:
+src-all: README.md
 	(set -e ; $(foreach img,$(ALL_IMAGES), \
 		make src \
 			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
@@ -225,6 +225,12 @@ systemd.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
+
+README.md: templates/README.md.erb
+	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
+		ruby:alpine erb -U -T 1 \
+	                all_images='$(ALL_IMAGES)' \
+		/README.md.erb > README.md
 
 # Generate plugins for version
 #
@@ -353,4 +359,5 @@ post-push-hook-all:
         fluent.conf fluent.conf-all \
         kubernetes.conf kubernetes.conf-all\
         plugins plugins-all \
-        post-push-hook post-push-hook-all
+        post-push-hook post-push-hook-all \
+	README.md

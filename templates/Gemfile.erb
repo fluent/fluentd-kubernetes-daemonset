@@ -45,14 +45,14 @@ gem "fluent-plugin-gcs", "0.4.0.beta1"
 gem "fluent-plugin-gcs", "~>0.3"
 <% end %>
 <% when "graylog" %>
-gem "gelf", git: "https://github.com/graylog-labs/gelf-rb.git"
+gem "gelf"
 gem "fluent-plugin-gelf-hs"
 <% when "logzio" %>
 gem "fluent-plugin-logzio"
 <% when "papertrail" %>
 gem "fluent-plugin-papertrail"
 <% when "syslog" %>
-gem "fluent-plugin-kubernetes_remote_syslog", git: "https://github.com/georgegoh/fluent-plugin-kubernetes_remote_syslog.git"
+gem "fluent-plugin-kubernetes_remote_syslog"
 <% when "kafka" %>
 gem "fluent-plugin-kafka"
 <% end %>

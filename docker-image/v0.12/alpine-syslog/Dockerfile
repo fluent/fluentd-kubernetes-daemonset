@@ -19,7 +19,6 @@ RUN set -ex \
         build-base \
         ruby-dev \
         libffi-dev \
-        git \
     && gem install bundler --version 1.16.1 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \

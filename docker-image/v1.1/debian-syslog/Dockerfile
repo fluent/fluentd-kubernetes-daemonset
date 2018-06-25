@@ -13,7 +13,7 @@ ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.3.0
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
-  RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev git" \
+  RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev libffi-dev" \
      && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
@@ -48,6 +48,3 @@ ENV LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libjemalloc.so.1"
 
 # Overwrite ENTRYPOINT to run fluentd as root for /var/log / /var/lib
 ENTRYPOINT ["/fluentd/entrypoint.sh"]
-
-# Run Fluentd
-CMD ["/fluentd/entrypoint.sh"]
