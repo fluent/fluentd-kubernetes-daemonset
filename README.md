@@ -13,6 +13,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 - `v1.3.3-debian-elasticsearch-1.1,v1.3-debian-elasticsearch-1` [docker-image/v1.3/debian-elasticsearch/Dockerfile](docker-image/v1.3/debian-elasticsearch/Dockerfile)
 - `v1.3.3-debian-loggly-1.0,v1.3-debian-loggly-1` [docker-image/v1.3/debian-loggly/Dockerfile](docker-image/v1.3/debian-loggly/Dockerfile)
+- `v1.3.3-debian-datadog-1.0,v1.3-debian-loggly-1` [docker-image/v1.3/debian-datadog/Dockerfile](docker-image/v1.3/debian-datadog/Dockerfile)
 - `v1.3.3-debian-logentries-1.0,v1.3-debian-logentries-1` [docker-image/v1.3/debian-logentries/Dockerfile](docker-image/v1.3/debian-logentries/Dockerfile)
 - `v1.3.3-debian-cloudwatch-1.1,v1.3-debian-cloudwatch-1` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
 - `v1.3.3-debian-stackdriver-1.0,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
@@ -44,6 +45,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 - `v0.12-alpine-elasticsearch` [docker-image/v0.12/alpine-elasticsearch/Dockerfile](docker-image/v0.12/alpine-elasticsearch/Dockerfile)
 - `v0.12-alpine-loggly` [docker-image/v0.12/alpine-loggly/Dockerfile](docker-image/v0.12/alpine-loggly/Dockerfile)
+- `v0.12-alpine-datadog` [docker-image/v0.12/alpine-datadog/Dockerfile](docker-image/v0.12/alpine-datadog/Dockerfile)
 - `v0.12-alpine-logentries` [docker-image/v0.12/alpine-logentries/Dockerfile](docker-image/v0.12/alpine-logentries/Dockerfile)
 - `v0.12-alpine-cloudwatch` [docker-image/v0.12/alpine-cloudwatch/Dockerfile](docker-image/v0.12/alpine-cloudwatch/Dockerfile)
 - `v0.12-alpine-stackdriver` [docker-image/v0.12/alpine-stackdriver/Dockerfile](docker-image/v0.12/alpine-stackdriver/Dockerfile)
