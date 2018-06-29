@@ -48,7 +48,6 @@ RUN set -ex \
 <% else %>
      $buildDeps \
 <% end %>
-     ruby-bundler \
     && gem install bundler --version 1.16.1 \
 <% end %>
     && bundle config silence_root_warning true \
