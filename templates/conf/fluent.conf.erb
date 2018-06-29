@@ -63,6 +63,18 @@
    @log_level info
    loggly_url "https://logs-01.loggly.com/bulk/#{ENV['LOGGLY_TOKEN']}/tag/#{ENV['LOGGLY_TAGS'] || 'fluentd'}/bulk"
 </match>
+<%  when "datadog"%>
+<match **>
+   @type datadog
+   @id out_datadog
+   log_level info
+   api_key "#{ENV['DATADOG_API_KEY']}"
+   include_tag_key true
+   tag_key 'tag'
+   dd_source "#{ENV['DATADOG_SOURCE'] || 'fluentd'}"
+   dd_tags "#{ENV['DATADOG_TAGS'] || 'fluentd:fluentd'}"
+   dd_sourcecategory "#{ENV['DATADOG_SOURCE_CATEGORY'] || 'fluentd'}"
+</match>
 <%  when "cloudwatch"%>
 <match **>
   @type cloudwatch_logs

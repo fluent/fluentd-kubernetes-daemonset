@@ -30,6 +30,8 @@ gem "fluent-plugin-loggly", "~> 0.0.9"
 <% else %>
 gem "fluent-plugin-loggly"
 <% end %>
+<% when "datadog"%>
+gem "fluent-plugin-datadog"
 <% when "cloudwatch" %>
 gem "aws-sdk-cloudwatchlogs", "~> 1.0"
 <% if is_v1 %>
