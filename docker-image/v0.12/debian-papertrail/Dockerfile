@@ -19,7 +19,7 @@ COPY Gemfile* /fluentd/
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps \
-    && gem install bundler --version 1.16.1 \
+    && gem install bundler --version 1.16.2 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \
