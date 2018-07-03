@@ -1,5 +1,6 @@
 #!/usr/bin/dumb-init /bin/sh
 
+
 set -e
 
 if [ -z ${FLUENT_ELASTICSEARCH_USER} ] ; then
