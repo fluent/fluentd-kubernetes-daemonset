@@ -27,7 +27,7 @@ GEM
     ffi (1.9.25)
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-plugin-elasticsearch (2.11.0)
+    fluent-plugin-elasticsearch (2.11.1)
       elasticsearch
       excon
       fluentd (>= 0.14.20)
@@ -107,7 +107,7 @@ DEPENDENCIES
   ffi
   fluent-plugin-elasticsearch
   fluent-plugin-kubernetes_metadata_filter
-  fluent-plugin-rewrite-tag-filter (>= 2.0.0)
+  fluent-plugin-rewrite-tag-filter
   fluent-plugin-systemd
   fluentd (= 1.2.2)
   oj (= 3.5.1)

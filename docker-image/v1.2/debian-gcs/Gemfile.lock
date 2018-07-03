@@ -52,9 +52,9 @@ GEM
       mime-types (>= 3.0)
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
-    google-cloud-core (1.2.0)
+    google-cloud-core (1.2.1)
       google-cloud-env (~> 1.0)
-    google-cloud-env (1.0.1)
+    google-cloud-env (1.0.2)
       faraday (~> 0.11)
     google-cloud-storage (1.1.0)
       digest-crc (~> 0.4)
@@ -142,7 +142,7 @@ DEPENDENCIES
   ffi
   fluent-plugin-gcs (= 0.4.0.beta1)
   fluent-plugin-kubernetes_metadata_filter
-  fluent-plugin-rewrite-tag-filter (>= 2.0.0)
+  fluent-plugin-rewrite-tag-filter
   fluent-plugin-systemd
   fluentd (= 1.2.2)
   oj (= 3.5.1)

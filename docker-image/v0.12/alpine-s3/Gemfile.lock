@@ -8,14 +8,14 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    aws-sdk (2.11.75)
-      aws-sdk-resources (= 2.11.75)
-    aws-sdk-core (2.11.75)
+    aws-sdk (2.11.80)
+      aws-sdk-resources (= 2.11.80)
+    aws-sdk-core (2.11.80)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.75)
-      aws-sdk-core (= 2.11.75)
-    aws-sigv4 (1.0.2)
+    aws-sdk-resources (2.11.80)
+      aws-sdk-core (= 2.11.80)
+    aws-sigv4 (1.0.3)
     concurrent-ruby (1.0.5)
     cool.io (1.5.3)
     domain_name (0.5.20180417)
@@ -97,7 +97,7 @@ PLATFORMS
 DEPENDENCIES
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
-  fluent-plugin-rewrite-tag-filter (< 2.0.0)
+  fluent-plugin-rewrite-tag-filter
   fluent-plugin-s3 (~> 0.8)
   fluent-plugin-secure-forward
   fluentd (= 0.12.33)
