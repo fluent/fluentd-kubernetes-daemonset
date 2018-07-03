@@ -191,6 +191,12 @@ gemfile:
 entrypoint.sh:
 	mkdir -p docker-image/$(DOCKERFILE)
 	cp $(PWD)/templates/entrypoint.sh docker-image/$(DOCKERFILE)/entrypoint.sh
+	docker run --rm -i -v $(PWD)/templates/entrypoint.sh.erb:/entrypoint.sh.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/entrypoint.sh.erb > docker-image/$(DOCKERFILE)/entrypoint.sh
+	chmod 755 docker-image/$(DOCKERFILE)/entrypoint.sh
 
 # Generate fluent.conf from template.
 #
