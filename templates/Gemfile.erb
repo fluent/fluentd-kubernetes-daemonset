@@ -12,6 +12,9 @@ gem "oj", "3.5.1"
 <% if !is_v1 %>
 gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"
+gem "fluent-plugin-rewrite-tag-filter"
+<% else %>
+gem "fluent-plugin-rewrite-tag-filter"
 <% end %>
 <% case target when "elasticsearch" %>
 gem "fluent-plugin-elasticsearch"

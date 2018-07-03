@@ -13,17 +13,19 @@ GEM
     digest-crc (0.4.1)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    faraday (0.15.0)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     fluent-plugin-gcs (0.3.0)
       fluentd (~> 0.12.0)
       google-cloud-storage (~> 0.23.2)
-    fluent-plugin-kubernetes_metadata_filter (1.0.2)
+    fluent-plugin-kubernetes_metadata_filter (1.1.0)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
     fluent-plugin-record-reformer (0.9.1)
       fluentd
+    fluent-plugin-rewrite-tag-filter (1.6.0)
+      fluentd (>= 0.12.0, < 0.14.0)
     fluent-plugin-secure-forward (0.4.5)
       fluentd (>= 0.10.46)
       proxifier
@@ -117,7 +119,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.4)
+    tzinfo-data (1.2018.5)
       tzinfo (>= 1.0.0)
     uber (0.0.15)
     unf (0.1.4)
@@ -132,6 +134,7 @@ DEPENDENCIES
   fluent-plugin-gcs (~> 0.3)
   fluent-plugin-kubernetes_metadata_filter
   fluent-plugin-record-reformer
+  fluent-plugin-rewrite-tag-filter
   fluent-plugin-secure-forward
   fluentd (= 0.12.33)
   oj (= 3.5.1)
