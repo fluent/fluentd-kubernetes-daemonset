@@ -190,7 +190,6 @@ gemfile:
 
 entrypoint.sh:
 	mkdir -p docker-image/$(DOCKERFILE)
-	cp $(PWD)/templates/entrypoint.sh docker-image/$(DOCKERFILE)/entrypoint.sh
 	docker run --rm -i -v $(PWD)/templates/entrypoint.sh.erb:/entrypoint.sh.erb:ro \
 		ruby:alpine erb -U -T 1 \
 			dockerfile='$(DOCKERFILE)' \
