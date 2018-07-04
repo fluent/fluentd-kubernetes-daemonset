@@ -8,13 +8,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    aws-sdk (2.11.80)
-      aws-sdk-resources (= 2.11.80)
-    aws-sdk-core (2.11.80)
+    aws-sdk (2.11.81)
+      aws-sdk-resources (= 2.11.81)
+    aws-sdk-core (2.11.81)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.80)
-      aws-sdk-core (= 2.11.80)
+    aws-sdk-resources (2.11.81)
+      aws-sdk-core (= 2.11.81)
     aws-sigv4 (1.0.3)
     concurrent-ruby (1.0.5)
     cool.io (1.5.3)
@@ -35,7 +35,7 @@ GEM
       fluentd (>= 0.10.46)
       proxifier
       resolve-hostname
-    fluentd (0.12.33)
+    fluentd (0.12.43)
       cool.io (>= 1.2.2, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
       json (>= 1.4.3)
@@ -100,7 +100,7 @@ DEPENDENCIES
   fluent-plugin-rewrite-tag-filter
   fluent-plugin-s3 (~> 0.8)
   fluent-plugin-secure-forward
-  fluentd (= 0.12.33)
+  fluentd (= 0.12.43)
   oj (= 3.5.1)
 
 BUNDLED WITH

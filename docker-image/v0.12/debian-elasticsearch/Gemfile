@@ -3,7 +3,7 @@
 
 source "https://rubygems.org"
 
-gem "fluentd", "0.12.33"
+gem "fluentd", "0.12.43"
 gem "oj", "3.5.1"
 gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"

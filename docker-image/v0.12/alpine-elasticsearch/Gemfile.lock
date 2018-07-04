@@ -39,7 +39,7 @@ GEM
       fluentd (>= 0.10.46)
       proxifier
       resolve-hostname
-    fluentd (0.12.33)
+    fluentd (0.12.43)
       cool.io (>= 1.2.2, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
       json (>= 1.4.3)
@@ -105,7 +105,7 @@ DEPENDENCIES
   fluent-plugin-record-reformer
   fluent-plugin-rewrite-tag-filter
   fluent-plugin-secure-forward
-  fluentd (= 0.12.33)
+  fluentd (= 0.12.43)
   oj (= 3.5.1)
 
 BUNDLED WITH
