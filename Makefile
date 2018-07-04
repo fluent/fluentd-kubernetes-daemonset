@@ -12,30 +12,30 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v0.12/alpine-elasticsearch:v0.12.33-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
-	v0.12/alpine-loggly:v0.12.33-loggly,v0.12-loggly,stable-loggly,loggly \
-	v0.12/alpine-logentries:v0.12.33-logentries,v0.12-logentries,stable-logentries,logentries \
-	v0.12/alpine-cloudwatch:v0.12.33-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
-	v0.12/alpine-stackdriver:v0.12.33-stackdriver,v0.12-alpine-stackdriver,stable-stackdriver,stackdriver \
-	v0.12/alpine-s3:v0.12.33-s3,v0.12-s3,stable-s3,s3 \
-	v0.12/alpine-gcs:v0.12.33-gcs,v0.12-gcs,stable-gcs,gcs \
-	v0.12/alpine-papertrail:v0.12.33-papertrail,v0.12-papertrail,stable-papertrail,papertrail \
-	v0.12/alpine-syslog:v0.12.33-syslog,v0.12-syslog,stable-syslog,syslog \
-	v0.12/alpine-graylog:v0.12.33-graylog,v0.12-graylog,stable-graylog,graylog \
-	v0.12/alpine-logzio:v0.12.33-logzio,v0.12-logzio,stable-logzio,logzio \
-	v0.12/alpine-kafka:v0.12.33-kafka,v0.12-kafka,stable-kafka,kafka \
-	v0.12/debian-elasticsearch:v0.12.33-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
-	v0.12/debian-loggly:v0.12.33-debian-loggly,v0.12-debian-loggly,debian-loggly \
-	v0.12/debian-logentries:v0.12.33-debian-logentries,v0.12-debian-logentries,debian-logentries \
-	v0.12/debian-cloudwatch:v0.12.33-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
-	v0.12/debian-stackdriver:v0.12.33-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
-	v0.12/debian-s3:v0.12.33-debian-s3,v0.12-debian-s3,debian-s3 \
-	v0.12/debian-gcs:v0.12.33-debian-gcs,v0.12-debian-gcs,debian-gcs \
-	v0.12/debian-papertrail:v0.12.33-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
-	v0.12/debian-syslog:v0.12.33-debian-syslog,v0.12-debian-syslog,debian-syslog \
-	v0.12/debian-graylog:v0.12.33-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
-	v0.12/debian-logzio:v0.12.33-debian-logzio,v0.12-debian-logzio,debian-logzio \
-	v0.12/debian-kafka:v0.12.33-debian-kafka,v0.12-debian-kafka,debian-kafka \
+	v0.12/alpine-elasticsearch:v0.12.43-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
+	v0.12/alpine-loggly:v0.12.43-loggly,v0.12-loggly,stable-loggly,loggly \
+	v0.12/alpine-logentries:v0.12.43-logentries,v0.12-logentries,stable-logentries,logentries \
+	v0.12/alpine-cloudwatch:v0.12.43-cloudwatch,v0.12-cloudwatch,stable-cloudwatch,cloudwatch \
+	v0.12/alpine-stackdriver:v0.12.43-stackdriver,v0.12-alpine-stackdriver,stable-stackdriver,stackdriver \
+	v0.12/alpine-s3:v0.12.43-s3,v0.12-s3,stable-s3,s3 \
+	v0.12/alpine-gcs:v0.12.43-gcs,v0.12-gcs,stable-gcs,gcs \
+	v0.12/alpine-papertrail:v0.12.43-papertrail,v0.12-papertrail,stable-papertrail,papertrail \
+	v0.12/alpine-syslog:v0.12.43-syslog,v0.12-syslog,stable-syslog,syslog \
+	v0.12/alpine-graylog:v0.12.43-graylog,v0.12-graylog,stable-graylog,graylog \
+	v0.12/alpine-logzio:v0.12.43-logzio,v0.12-logzio,stable-logzio,logzio \
+	v0.12/alpine-kafka:v0.12.43-kafka,v0.12-kafka,stable-kafka,kafka \
+	v0.12/debian-elasticsearch:v0.12.43-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
+	v0.12/debian-loggly:v0.12.43-debian-loggly,v0.12-debian-loggly,debian-loggly \
+	v0.12/debian-logentries:v0.12.43-debian-logentries,v0.12-debian-logentries,debian-logentries \
+	v0.12/debian-cloudwatch:v0.12.43-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
+	v0.12/debian-stackdriver:v0.12.43-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
+	v0.12/debian-s3:v0.12.43-debian-s3,v0.12-debian-s3,debian-s3 \
+	v0.12/debian-gcs:v0.12.43-debian-gcs,v0.12-debian-gcs,debian-gcs \
+	v0.12/debian-papertrail:v0.12.43-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
+	v0.12/debian-syslog:v0.12.43-debian-syslog,v0.12-debian-syslog,debian-syslog \
+	v0.12/debian-graylog:v0.12.43-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
+	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
+	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
 	v1.2/debian-elasticsearch:v1.2.2-debian-elasticsearch,v1.2-debian-elasticsearch \
 	v1.2/debian-loggly:v1.2.2-debian-loggly,v1.2-debian-loggly \
 	v1.2/debian-logentries:v1.2.2-debian-logentries,v1.2-debian-logentries \
