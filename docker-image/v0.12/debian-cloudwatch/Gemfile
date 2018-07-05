@@ -3,12 +3,13 @@
 
 source "https://rubygems.org"
 
-gem "fluentd", "0.12.33"
+gem "fluentd", "0.12.43"
 gem "oj", "3.5.1"
 gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"
-gem "aws-sdk-core", "2.10.50"
-gem "fluent-plugin-cloudwatch-logs", "0.4.0"
+gem "fluent-plugin-rewrite-tag-filter"
+gem "aws-sdk-cloudwatchlogs", "~> 1.0"
+gem "fluent-plugin-cloudwatch-logs", "0.4.5"
 gem "fluent-plugin-kubernetes_metadata_filter"
 gem "ffi"
 gem "fluent-plugin-systemd"

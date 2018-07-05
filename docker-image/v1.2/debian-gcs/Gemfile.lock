@@ -19,6 +19,8 @@ GEM
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    fluent-config-regexp-type (1.0.0)
+      fluentd (> 1.0.0, < 2)
     fluent-plugin-gcs (0.4.0.beta1)
       fluentd (>= 0.14.0, < 2)
       google-cloud-storage (~> 1.1.0)
@@ -26,6 +28,9 @@ GEM
       fluentd (>= 0.14.0, < 2)
       kubeclient (~> 1.1.4)
       lru_redux
+    fluent-plugin-rewrite-tag-filter (2.1.0)
+      fluent-config-regexp-type
+      fluentd (>= 0.14.2, < 2)
     fluent-plugin-systemd (1.0.1)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.3.2)
@@ -47,9 +52,9 @@ GEM
       mime-types (>= 3.0)
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
-    google-cloud-core (1.2.0)
+    google-cloud-core (1.2.1)
       google-cloud-env (~> 1.0)
-    google-cloud-env (1.0.1)
+    google-cloud-env (1.0.2)
       faraday (~> 0.11)
     google-cloud-storage (1.1.0)
       digest-crc (~> 0.4)
@@ -137,6 +142,7 @@ DEPENDENCIES
   ffi
   fluent-plugin-gcs (= 0.4.0.beta1)
   fluent-plugin-kubernetes_metadata_filter
+  fluent-plugin-rewrite-tag-filter
   fluent-plugin-systemd
   fluentd (= 1.2.2)
   oj (= 3.5.1)

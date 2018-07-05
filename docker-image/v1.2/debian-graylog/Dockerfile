@@ -3,7 +3,7 @@
 
 FROM fluent/fluentd:v1.2.2-debian
 
-MAINTAINER Eduardo Silva <eduardo@treasure-data.com>
+LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
 USER root
 WORKDIR /home/fluent
 ENV PATH /fluentd/vendor/bundle/ruby/2.3.0/bin:$PATH
@@ -19,7 +19,7 @@ COPY Gemfile* /fluentd/
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps libjemalloc1 \
-     ruby-bundler \
+    && gem install bundler --version 1.16.2 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \
