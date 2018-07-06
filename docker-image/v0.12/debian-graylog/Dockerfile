@@ -18,7 +18,7 @@ COPY Gemfile* /fluentd/
      && apt-get upgrade -y \
      && apt-get install \
      -y --no-install-recommends \
-     $buildDeps \
+     $buildDeps net-tools \
     && gem install bundler --version 1.16.2 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \

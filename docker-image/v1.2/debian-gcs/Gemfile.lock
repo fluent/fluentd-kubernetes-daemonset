@@ -52,7 +52,7 @@ GEM
       mime-types (>= 3.0)
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
-    google-cloud-core (1.2.1)
+    google-cloud-core (1.2.2)
       google-cloud-env (~> 1.0)
     google-cloud-env (1.0.2)
       faraday (~> 0.11)
