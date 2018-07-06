@@ -50,9 +50,9 @@ RUN set -ex \
      && apt-get install \
      -y --no-install-recommends \
 <% if is_v1 %>
-     $buildDeps libjemalloc1 \
+     $buildDeps net-tools libjemalloc1 \
 <% else %>
-     $buildDeps \
+     $buildDeps net-tools \
 <% end %>
     && gem install bundler --version 1.16.2 \
 <% end %>
