@@ -8,7 +8,11 @@
 <source>
   @type systemd
   @id in_systemd_kubelet
+<% if is_v1 %>
+  matches [{ "_SYSTEMD_UNIT": "kubelet.service" }]
+<% else %>
   filters [{ "_SYSTEMD_UNIT": "kubelet.service" }]
+<% end %>
 <% if is_v1 %>
   <storage>
     @type local
@@ -34,7 +38,11 @@
 <source>
   @type systemd
   @id in_systemd_docker
+<% if is_v1 %>
+  matches [{ "_SYSTEMD_UNIT": "docker.service" }]
+<% else %>
   filters [{ "_SYSTEMD_UNIT": "docker.service" }]
+<% end %>
 <% if is_v1 %>
   <storage>
     @type local
@@ -60,7 +68,11 @@
 <source>
   @type systemd
   @id in_systemd_bootkube
+<% if is_v1 %>
+  matches [{ "_SYSTEMD_UNIT": "bootkube.service" }]
+<% else %>
   filters [{ "_SYSTEMD_UNIT": "bootkube.service" }]
+<% end %>
 <% if is_v1 %>
   <storage>
     @type local
