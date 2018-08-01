@@ -25,6 +25,7 @@ ALL_IMAGES := \
 	v0.12/alpine-logzio:v0.12.43-logzio,v0.12-logzio,stable-logzio,logzio \
 	v0.12/alpine-kafka:v0.12.43-kafka,v0.12-kafka,stable-kafka,kafka \
 	v0.12/alpine-kinesis:v0.12.43-kinesis,v0.12-kinesis,stable-kinesis,kinesis \
+	v0.12/alpine-splunkhec:v0.12.43-splunkhec,v0.12-splunkhec,stable-splunkhec,splunkhec \
 	v0.12/debian-elasticsearch:v0.12.43-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/debian-loggly:v0.12.43-debian-loggly,v0.12-debian-loggly,debian-loggly \
 	v0.12/debian-logentries:v0.12.43-debian-logentries,v0.12-debian-logentries,debian-logentries \
