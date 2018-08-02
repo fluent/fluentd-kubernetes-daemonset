@@ -71,6 +71,13 @@ Fluentd versioning is as follows:
 | v0.12  | Old stable, production ready        |
 | v1.x   | stable |
 
+## Settings
+
+### Run as root
+
+In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
+To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
+
 ### References
 
 [Kubernetes Logging with Fluentd][fluentd-article]
