@@ -246,4 +246,29 @@
   packet_size 65535
   output_data_type ltsv
 </match>
-<% end%>
+
+<% when "kinesis" %>
+<match **>
+  @type kinesis_streams
+  @id out_kinesis_streams
+  region "#{ENV['FLUENT_KINESIS_STREAMS_REGION'] || nil}"
+  stream_name "#{ENV['FLUENT_KINESIS_STREAMS_STREAM_NAME']}"
+  include_time_key "#{ENV['FLUENT_KINESIS_STREAMS_INCLUDE_TIME_KEY'] || false}"
+<% if is_v1 %>
+  <buffer>
+    flush_interval 1
+    chunk_limit_size 1m
+    flush_thread_interval 0.1
+    flush_thread_burst_interval 0.01
+    flush_thread_count 15
+  </buffer>
+<% else %>
+  flush_interval 1
+  buffer_chunk_limit 1m
+  try_flush_interval 0.1
+  queued_chunk_flush_interval 0.01
+  num_threads 15
+<% end %>
+</match>
+
+<% end %>
