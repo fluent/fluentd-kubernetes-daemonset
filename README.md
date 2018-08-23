@@ -81,6 +81,18 @@ Fluentd versioning is as follows:
 In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
 To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
 
+## Maintainers
+
+Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
+
+- cloudwatch : @so0k
+- papertrail : @alexouzounis
+- kafka : @erhudy
+- graylog : @rtnpro
+- gcs : @andor-pierdelacabeza
+- Amazon Kinesis : @shiftky
+- logz.io : @SaMnCo / @jamielennox
+
 ### References
 
 [Kubernetes Logging with Fluentd][fluentd-article]
