@@ -38,19 +38,19 @@ ALL_IMAGES := \
 	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
 	v0.12/debian-kinesis:v0.12.43-debian-kinesis,v0.12-debian-kinesis,debian-kinesis \
-	v1.2/debian-elasticsearch:v1.2.2-debian-elasticsearch,v1.2-debian-elasticsearch \
-	v1.2/debian-loggly:v1.2.2-debian-loggly,v1.2-debian-loggly \
-	v1.2/debian-logentries:v1.2.2-debian-logentries,v1.2-debian-logentries \
-	v1.2/debian-cloudwatch:v1.2.2-debian-cloudwatch,v1.2-debian-cloudwatch \
-	v1.2/debian-stackdriver:v1.2.2-debian-stackdriver,v1.2-debian-stackdriver \
-	v1.2/debian-s3:v1.2.2-debian-s3,v1.2-debian-s3 \
-	v1.2/debian-syslog:v1.2.2-debian-syslog,v1.2-debian-syslog \
-	v1.2/debian-gcs:v1.2.2-debian-gcs,v1.2-debian-gcs \
-	v1.2/debian-graylog:v1.2.2-debian-graylog,v1.2-debian-graylog,debian-stable-graylog \
-	v1.2/debian-papertrail:v1.2.2-debian-papertrail,v1.2-debian-papertrail \
-	v1.2/debian-logzio:v1.2.2-debian-logzio,v1.2-debian-logzio,debian-logzio \
-	v1.2/debian-kafka:v1.2.2-debian-kafka,v1.2-debian-kafka \
-	v1.2/debian-kinesis:v1.2.2-debian-kinesis,v1.2-debian-kinesis \
+	v1.2/debian-elasticsearch:v1.2.5-debian-elasticsearch,v1.2-debian-elasticsearch \
+	v1.2/debian-loggly:v1.2.5-debian-loggly,v1.2-debian-loggly \
+	v1.2/debian-logentries:v1.2.5-debian-logentries,v1.2-debian-logentries \
+	v1.2/debian-cloudwatch:v1.2.5-debian-cloudwatch,v1.2-debian-cloudwatch \
+	v1.2/debian-stackdriver:v1.2.5-debian-stackdriver,v1.2-debian-stackdriver \
+	v1.2/debian-s3:v1.2.5-debian-s3,v1.2-debian-s3 \
+	v1.2/debian-syslog:v1.2.5-debian-syslog,v1.2-debian-syslog \
+	v1.2/debian-gcs:v1.2.5-debian-gcs,v1.2-debian-gcs \
+	v1.2/debian-graylog:v1.2.5-debian-graylog,v1.2-debian-graylog,debian-stable-graylog \
+	v1.2/debian-papertrail:v1.2.5-debian-papertrail,v1.2-debian-papertrail \
+	v1.2/debian-logzio:v1.2.5-debian-logzio,v1.2-debian-logzio,debian-logzio \
+	v1.2/debian-kafka:v1.2.5-debian-kafka,v1.2-debian-kafka \
+	v1.2/debian-kinesis:v1.2.5-debian-kinesis,v1.2-debian-kinesis
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
