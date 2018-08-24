@@ -36,6 +36,7 @@
 - `v1.2-debian-logzio` [docker-image/v1.2/debian-logzio/Dockerfile](docker-image/v1.2/debian-logzio/Dockerfile)
 - `v1.2-debian-kafka` [docker-image/v1.2/debian-kafka/Dockerfile](docker-image/v1.2/debian-kafka/Dockerfile)
 - `v1.2-debian-kinesis` [docker-image/v1.2/debian-kinesis/Dockerfile](docker-image/v1.2/debian-kinesis/Dockerfile)
+- `v1.2-debian-azureeventhubs` [docker-image/v1.2/debian-kinesis/Dockerfile](docker-image/v1.2/debian-kinesis/Dockerfile)
 
 ### Alpine Linux
 
@@ -92,6 +93,7 @@ Some images are contributed by users. If you have a problem/question for followi
 - gcs : @andor-pierdelacabeza
 - Amazon Kinesis : @shiftky
 - logz.io : @SaMnCo / @jamielennox
+- Azure EventHubs : @sputnik13
 
 ### References
 

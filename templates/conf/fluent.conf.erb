@@ -271,4 +271,16 @@
 <% end %>
 </match>
 
+<% when "azureeventhubs" %>
+<match **>
+   @type azureeventhubs_buffered
+   @id out_aeh
+   connection_string "#{ENV['FLUENT_EVENTHUB_CONNECTION_STRING']}"
+   hub_name "#{ENV['FLUENT_EVENTHUB_HUB_NAME']}"
+   include_tag true
+   include_time true
+   tag_time_name 'timestamp'
+   type https
+</match>
+
 <% end %>

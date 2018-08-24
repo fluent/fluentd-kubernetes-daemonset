@@ -57,6 +57,8 @@ gem "fluent-plugin-kubernetes_remote_syslog"
 gem "fluent-plugin-kafka"
 <% when "kinesis" %>
 gem "fluent-plugin-kinesis"
+<% when "azureeventhubs" %>
+gem "fluent-plugin-azureeventhubs"
 <% end %>
 gem "fluent-plugin-kubernetes_metadata_filter"
 <% if !is_alpine %>
