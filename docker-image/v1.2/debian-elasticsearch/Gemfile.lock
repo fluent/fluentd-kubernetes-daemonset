@@ -27,7 +27,7 @@ GEM
     ffi (1.9.25)
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-plugin-elasticsearch (2.11.5)
+    fluent-plugin-elasticsearch (2.11.8)
       elasticsearch
       excon
       fluentd (>= 0.14.20)
@@ -113,4 +113,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
