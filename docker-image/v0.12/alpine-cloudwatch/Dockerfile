@@ -45,4 +45,4 @@ ENV FLUENTD_CONF="fluent.conf"
 
 
 # Run Fluentd
-CMD ["/fluentd/entrypoint.sh"]
+ENTRYPOINT ["/fluentd/entrypoint.sh"]
