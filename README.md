@@ -22,6 +22,7 @@
 - `v0.12-debian-graylog` [docker-image/v0.12/debian-graylog/Dockerfile](docker-image/v0.12/debian-graylog/Dockerfile)
 - `v0.12-debian-logzio` [docker-image/v0.12/debian-logzio/Dockerfile](docker-image/v0.12/debian-logzio/Dockerfile)
 - `v0.12-debian-kafka` [docker-image/v0.12/debian-kafka/Dockerfile](docker-image/v0.12/debian-kafka/Dockerfile)
+- `v0.12-debian-splunkhec` [docker-image/v0.12/debian-splunkhec/Dockerfile](docker-image/v0.12/debian-splunkhec/Dockerfile)
 - `v0.12-debian-kinesis` [docker-image/v0.12/debian-kinesis/Dockerfile](docker-image/v0.12/debian-kinesis/Dockerfile)
 - `v1.2-debian-elasticsearch` [docker-image/v1.2/debian-elasticsearch/Dockerfile](docker-image/v1.2/debian-elasticsearch/Dockerfile)
 - `v1.2-debian-loggly` [docker-image/v1.2/debian-loggly/Dockerfile](docker-image/v1.2/debian-loggly/Dockerfile)
@@ -93,6 +94,7 @@ Some images are contributed by users. If you have a problem/question for followi
 - gcs : @andor-pierdelacabeza
 - Amazon Kinesis : @shiftky
 - logz.io : @SaMnCo / @jamielennox
+- splunkhec: @FutureSharks
 
 ### References
 

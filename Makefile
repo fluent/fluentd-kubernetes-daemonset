@@ -38,6 +38,7 @@ ALL_IMAGES := \
 	v0.12/debian-graylog:v0.12.43-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
 	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
+	v0.12/debian-splunkhec:v0.12.43-debian-splunkhec,v0.12-debian-splunkhec,debian-splunkhec \
 	v0.12/debian-kinesis:v0.12.43-debian-kinesis,v0.12-debian-kinesis,debian-kinesis \
 	v1.2/debian-elasticsearch:v1.2.5-debian-elasticsearch,v1.2-debian-elasticsearch \
 	v1.2/debian-loggly:v1.2.5-debian-loggly,v1.2-debian-loggly \
