@@ -25,6 +25,7 @@ ALL_IMAGES := \
 	v0.12/alpine-logzio:v0.12.43-logzio,v0.12-logzio,stable-logzio,logzio \
 	v0.12/alpine-kafka:v0.12.43-kafka,v0.12-kafka,stable-kafka,kafka \
 	v0.12/alpine-kinesis:v0.12.43-kinesis,v0.12-kinesis,stable-kinesis,kinesis \
+	v0.12/alpine-splunkhec:v0.12.43-splunkhec,v0.12-splunkhec,stable-splunkhec,splunkhec \
 	v0.12/debian-elasticsearch:v0.12.43-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
 	v0.12/debian-loggly:v0.12.43-debian-loggly,v0.12-debian-loggly,debian-loggly \
 	v0.12/debian-logentries:v0.12.43-debian-logentries,v0.12-debian-logentries,debian-logentries \
@@ -37,6 +38,7 @@ ALL_IMAGES := \
 	v0.12/debian-graylog:v0.12.43-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
 	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
+	v0.12/debian-splunkhec:v0.12.43-debian-splunkhec,v0.12-debian-splunkhec,debian-splunkhec \
 	v0.12/debian-kinesis:v0.12.43-debian-kinesis,v0.12-debian-kinesis,debian-kinesis \
 	v1.2/debian-elasticsearch:v1.2.5-debian-elasticsearch,v1.2-debian-elasticsearch \
 	v1.2/debian-loggly:v1.2.5-debian-loggly,v1.2-debian-loggly \
