@@ -23,7 +23,7 @@ GEM
       fluentd (>= 0.14.0, < 2)
       kubeclient (~> 1.1.4)
       lru_redux
-    fluent-plugin-papertrail (0.2.5)
+    fluent-plugin-papertrail (0.2.6)
       fluent-mixin-config-placeholders (~> 0.4.0)
       fluentd (>= 0.10, < 2)
       syslog_protocol
