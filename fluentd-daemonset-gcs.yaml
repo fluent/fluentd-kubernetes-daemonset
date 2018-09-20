@@ -26,6 +26,9 @@ spec:
             value: "myproject"
           - name:  GCS_BUCKET_NAME
             value: "mybucket"
+        ports:
+        - containerPort: 24231
+          name: metrics
         resources:
           limits:
             memory: 200Mi

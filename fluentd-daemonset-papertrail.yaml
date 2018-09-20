@@ -26,6 +26,9 @@ spec:
       containers:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:papertrail
+        ports:
+        - containerPort: 24231
+          name: metrics
         env:
           - name: FLUENT_PAPERTRAIL_HOST
             value: "logsX.papertrailapp.com"

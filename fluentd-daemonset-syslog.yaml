@@ -21,6 +21,9 @@ spec:
       containers:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:syslog
+        ports:
+        - containerPort: 24231
+          name: metrics
         env:
           - name:  SYSLOG_HOST
             value: "sysloghost"

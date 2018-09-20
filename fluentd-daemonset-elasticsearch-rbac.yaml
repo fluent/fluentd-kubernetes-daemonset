@@ -61,6 +61,9 @@ spec:
       containers:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:elasticsearch
+        ports:
+        - containerPort: 24231
+          name: metrics
         env:
           - name:  FLUENT_ELASTICSEARCH_HOST
             value: "elasticsearch-logging"
