@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -12,10 +12,13 @@ GEM
     cool.io (1.5.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    fluent-plugin-kubernetes_metadata_filter (1.1.0)
+    fluent-plugin-kubernetes_metadata_filter (1.2.0)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
+    fluent-plugin-prometheus (0.5.0)
+      fluentd (>= 0.12.0, < 0.14.0)
+      prometheus-client
     fluent-plugin-record-reformer (0.9.1)
       fluentd
     fluent-plugin-rewrite-tag-filter (1.6.0)
@@ -43,7 +46,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     kubeclient (1.1.4)
@@ -52,15 +55,18 @@ GEM
       recursive-open-struct (= 1.0.0)
       rest-client
     lru_redux (1.1.0)
-    mime-types (3.1)
+    mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types-data (3.2018.0812)
     minitest (5.11.3)
     msgpack (1.2.4)
     netrc (0.11.0)
     oj (3.5.1)
+    prometheus-client (0.8.0)
+      quantile (~> 0.2.1)
     proxifier (1.0.3)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
+    quantile (0.2.1)
     recursive-open-struct (1.0.0)
     resolve-hostname (0.1.0)
     rest-client (2.0.2)
@@ -77,13 +83,14 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    yajl-ruby (1.4.0)
+    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   fluent-plugin-kubernetes_metadata_filter
+  fluent-plugin-prometheus
   fluent-plugin-record-reformer
   fluent-plugin-rewrite-tag-filter
   fluent-plugin-secure-forward
@@ -91,4 +98,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.16.4

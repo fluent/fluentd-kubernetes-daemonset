@@ -52,8 +52,8 @@
 - `v0.12-alpine-graylog` [docker-image/v0.12/alpine-graylog/Dockerfile](docker-image/v0.12/alpine-graylog/Dockerfile)
 - `v0.12-alpine-logzio` [docker-image/v0.12/alpine-logzio/Dockerfile](docker-image/v0.12/alpine-logzio/Dockerfile)
 - `v0.12-alpine-kafka` [docker-image/v0.12/alpine-kafka/Dockerfile](docker-image/v0.12/alpine-kafka/Dockerfile)
-- `v0.12-alpine-splunkhec` [docker-image/v0.12/alpine-splunkhec/Dockerfile](docker-image/v0.12/alpine-splunkhec/Dockerfile)
 - `v0.12-alpine-kinesis` [docker-image/v0.12/alpine-kinesis/Dockerfile](docker-image/v0.12/alpine-kinesis/Dockerfile)
+- `v0.12-alpine-splunkhec` [docker-image/v0.12/alpine-splunkhec/Dockerfile](docker-image/v0.12/alpine-splunkhec/Dockerfile)
 
 ## What is Fluentd?
 

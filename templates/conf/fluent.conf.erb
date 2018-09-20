@@ -10,6 +10,11 @@
 <% end%>
 @include kubernetes.conf
 
+# Prometheus metric exposed on 0.0.0.0:24231/metrics
+<source>
+  @type prometheus
+</source>
+
 <% case target when "elasticsearch"%>
 <match **>
    @type elasticsearch
