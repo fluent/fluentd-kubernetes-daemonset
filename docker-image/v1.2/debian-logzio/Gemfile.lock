@@ -16,11 +16,11 @@ GEM
     ffi (1.9.25)
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-plugin-kubernetes_metadata_filter (2.1.2)
+    fluent-plugin-kubernetes_metadata_filter (2.1.4)
       fluentd (>= 0.14.0, < 2)
       kubeclient (~> 1.1.4)
       lru_redux
-    fluent-plugin-logzio (0.0.17)
+    fluent-plugin-logzio (0.0.18)
       fluentd (>= 0.14.0, < 2)
       net-http-persistent (~> 2.9)
     fluent-plugin-rewrite-tag-filter (2.1.0)
@@ -29,7 +29,7 @@ GEM
     fluent-plugin-systemd (1.0.1)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.3.2)
-    fluentd (1.2.5)
+    fluentd (1.2.6)
       cool.io (>= 1.4.5, < 2.0.0)
       dig_rb (~> 1.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
@@ -96,7 +96,7 @@ DEPENDENCIES
   fluent-plugin-logzio
   fluent-plugin-rewrite-tag-filter
   fluent-plugin-systemd
-  fluentd (= 1.2.5)
+  fluentd (= 1.2.6)
   oj (= 3.5.1)
 
 BUNDLED WITH
