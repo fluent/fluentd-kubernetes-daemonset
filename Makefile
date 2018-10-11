@@ -143,7 +143,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook entrypoint.sh
+src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf prometheus.conf plugins post-push-hook entrypoint.sh
 
 # Generate sources for all supported Docker images.
 #
@@ -227,6 +227,18 @@ kubernetes.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/kubernetes.conf.erb > docker-image/$(DOCKERFILE)/conf/kubernetes.conf
+
+# Generate prometheus.conf from template.
+#
+# Usage:
+#	make prometheus.conf [DOCKERFILE=] [VERSION=]
+
+prometheus.conf:
+	mkdir -p docker-image/$(DOCKERFILE)/conf
+	docker run --rm -i -v $(PWD)/templates/conf/prometheus.conf.erb:/prometheus.conf.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
 
 systemd.conf:
 	mkdir -p docker-image/$(DOCKERFILE)/conf
@@ -336,6 +348,19 @@ kubernetes.conf-all:
 			                 $(word 2,$(subst :, ,$(img))))) ; \
 	))
 
+# Generate prometheus.conf from template for all supported Docker images.
+#
+# Usage:
+#	make prometheus.conf-all
+
+prometheus.conf-all:
+	(set -e ; $(foreach img,$(ALL_IMAGES), \
+		make prometheus.conf \
+			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
+			VERSION=$(word 1,$(subst $(comma), ,\
+			                 $(word 2,$(subst :, ,$(img))))) ; \
+	))
+
 # copy plugins required for all supported Docker images.
 #
 # Usage:
@@ -367,7 +392,8 @@ post-push-hook-all:
         gemfile gemfile-all \
         entrypoint.sh entrypoint.sh-all \
         fluent.conf fluent.conf-all \
-        kubernetes.conf kubernetes.conf-all\
+        kubernetes.conf kubernetes.conf-all \
+				prometheus.conf prometheus.conf-all \
         plugins plugins-all \
         post-push-hook post-push-hook-all \
 	README.md

@@ -72,6 +72,7 @@ RUN set -ex \
 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
+COPY ./conf/prometheus.conf /fluentd/etc/
 <% if !is_alpine %>
 COPY ./conf/systemd.conf /fluentd/etc/
 <% end %>
