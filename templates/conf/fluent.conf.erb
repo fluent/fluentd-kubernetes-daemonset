@@ -14,7 +14,7 @@
 <match **>
    @type elasticsearch
    @id out_es
-   log_level info
+   @log_level info
    include_tag_key true
    host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
    port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
@@ -57,7 +57,7 @@
 <match **>
    @type loggly
    @id out_loggly
-   log_level info
+   @log_level info
    loggly_url "https://logs-01.loggly.com/bulk/#{ENV['LOGGLY_TOKEN']}/tag/#{ENV['LOGGLY_TAGS'] || 'fluentd'}/bulk"
 </match>
 <%  when "cloudwatch"%>
@@ -77,7 +77,7 @@
   # note: this configuration relies on the nodes have an IAM instance profile with access to your S3 bucket
   @type s3
   @id out_s3
-  log_level info
+  @log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
   s3_region "#{ENV['S3_BUCKET_REGION']}"
 <% if is_v1 %>
@@ -150,7 +150,7 @@
 <match **>
    @type gelf
    @id out_graylog
-   log_level info
+   @log_level info
    include_tag_key true
    host "#{ENV['FLUENT_GRAYLOG_HOST']}"
    port "#{ENV['FLUENT_GRAYLOG_PORT']}"
