@@ -16,24 +16,13 @@ GEM
     ffi (1.9.25)
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-mixin-config-placeholders (0.4.0)
-      fluentd
-      uuidtools (>= 2.1.5)
-    fluent-mixin-plaintextformatter (0.2.6)
-      fluentd
-      ltsv
-    fluent-mixin-rewrite-tag-name (0.1.0)
-      fluentd
     fluent-plugin-kubernetes_metadata_filter (2.1.4)
       fluentd (>= 0.14.0, < 2)
       kubeclient (~> 1.1.4)
       lru_redux
-    fluent-plugin-kubernetes_remote_syslog (0.3.6)
-      fluent-mixin-config-placeholders
-      fluent-mixin-plaintextformatter
-      fluent-mixin-rewrite-tag-name
+    fluent-plugin-remote_syslog (1.0.0)
       fluentd
-      remote_syslog_sender (~> 1.2.1)
+      remote_syslog_sender (>= 1.1.1)
     fluent-plugin-rewrite-tag-filter (2.1.0)
       fluent-config-regexp-type
       fluentd (>= 0.14.2, < 2)
@@ -68,7 +57,6 @@ GEM
       recursive-open-struct (= 1.0.0)
       rest-client
     lru_redux (1.1.0)
-    ltsv (0.1.0)
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
@@ -99,7 +87,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    uuidtools (2.1.5)
     yajl-ruby (1.4.1)
 
 PLATFORMS
@@ -108,11 +95,11 @@ PLATFORMS
 DEPENDENCIES
   ffi
   fluent-plugin-kubernetes_metadata_filter
-  fluent-plugin-kubernetes_remote_syslog
+  fluent-plugin-remote_syslog
   fluent-plugin-rewrite-tag-filter
   fluent-plugin-systemd
   fluentd (= 1.2.6)
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.16.6

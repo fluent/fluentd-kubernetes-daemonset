@@ -52,7 +52,11 @@ gem "fluent-plugin-logzio"
 <% when "papertrail" %>
 gem "fluent-plugin-papertrail"
 <% when "syslog" %>
+<% if is_v1 %>
+gem "fluent-plugin-remote_syslog"
+<% else %>
 gem "fluent-plugin-kubernetes_remote_syslog"
+<% end %>
 <% when "kafka" %>
 gem "fluent-plugin-kafka"
 <% when "kinesis" %>
