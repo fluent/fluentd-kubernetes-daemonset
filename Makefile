@@ -12,6 +12,8 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
+	v1.2/debian-secureforward:v1.2.6-debian-secureforward,v1.2-debian-secureforward \
+	v0.12/debian-secureforward:v0.12.43-debian-secureforward,v0.12-debian-secureforward,debian-secureforward,secureforward \
 	v0.12/alpine-elasticsearch:v0.12.43-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/alpine-loggly:v0.12.43-loggly,v0.12-loggly,stable-loggly,loggly \
 	v0.12/alpine-logentries:v0.12.43-logentries,v0.12-logentries,stable-logentries,logentries \
@@ -35,7 +37,7 @@ ALL_IMAGES := \
 	v0.12/debian-gcs:v0.12.43-debian-gcs,v0.12-debian-gcs,debian-gcs \
 	v0.12/debian-papertrail:v0.12.43-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
 	v0.12/debian-syslog:v0.12.43-debian-syslog,v0.12-debian-syslog,debian-syslog \
-	v0.12/debian-secureforward:v0.12.43-debian-secureforward,v0.12-debian-secureforward,debian-secureforward \
+	v0.12/debian-secureforward:v0.12.43-debian-secureforward,v0.12-debian-secureforward,debian-secureforward,secureforward \
 	v0.12/debian-graylog:v0.12.43-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
 	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \

@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -15,7 +15,7 @@ GEM
     fluent-plugin-gelf-hs (1.0.7)
       fluentd
       gelf (>= 2.0.0)
-    fluent-plugin-kubernetes_metadata_filter (1.1.0)
+    fluent-plugin-kubernetes_metadata_filter (1.2.1)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
@@ -37,7 +37,7 @@ GEM
       tzinfo (>= 1.0.0)
       tzinfo-data (>= 1.0.0)
       yajl-ruby (~> 1.0)
-    gelf (3.0.0)
+    gelf (3.1.0)
       json
     http (0.9.8)
       addressable (~> 2.3)
@@ -48,7 +48,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    i18n (1.0.1)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     kubeclient (1.1.4)
@@ -57,15 +57,15 @@ GEM
       recursive-open-struct (= 1.0.0)
       rest-client
     lru_redux (1.1.0)
-    mime-types (3.1)
+    mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types-data (3.2018.0812)
     minitest (5.11.3)
     msgpack (1.2.4)
     netrc (0.11.0)
     oj (3.5.1)
     proxifier (1.0.3)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     recursive-open-struct (1.0.0)
     resolve-hostname (0.1.0)
     rest-client (2.0.2)
@@ -77,12 +77,12 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.5)
+    tzinfo-data (1.2018.6)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    yajl-ruby (1.4.0)
+    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
@@ -98,4 +98,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.16.6

@@ -19,6 +19,7 @@
 - `v0.12-debian-gcs` [docker-image/v0.12/debian-gcs/Dockerfile](docker-image/v0.12/debian-gcs/Dockerfile)
 - `v0.12-debian-papertrail` [docker-image/v0.12/debian-papertrail/Dockerfile](docker-image/v0.12/debian-papertrail/Dockerfile)
 - `v0.12-debian-syslog` [docker-image/v0.12/debian-syslog/Dockerfile](docker-image/v0.12/debian-syslog/Dockerfile)
+- `v0.12-debian-secureforward` [docker-image/v0.12/debian-secureforward/Dockerfile](docker-image/v0.12/debian-secureforward/Dockerfile)
 - `v0.12-debian-graylog` [docker-image/v0.12/debian-graylog/Dockerfile](docker-image/v0.12/debian-graylog/Dockerfile)
 - `v0.12-debian-logzio` [docker-image/v0.12/debian-logzio/Dockerfile](docker-image/v0.12/debian-logzio/Dockerfile)
 - `v0.12-debian-kafka` [docker-image/v0.12/debian-kafka/Dockerfile](docker-image/v0.12/debian-kafka/Dockerfile)
@@ -31,6 +32,7 @@
 - `v1.2-debian-stackdriver` [docker-image/v1.2/debian-stackdriver/Dockerfile](docker-image/v1.2/debian-stackdriver/Dockerfile)
 - `v1.2-debian-s3` [docker-image/v1.2/debian-s3/Dockerfile](docker-image/v1.2/debian-s3/Dockerfile)
 - `v1.2-debian-syslog` [docker-image/v1.2/debian-syslog/Dockerfile](docker-image/v1.2/debian-syslog/Dockerfile)
+- `v1.2-debian-secureforward` [docker-image/v1.2/debian-secureforward/Dockerfile](docker-image/v1.2/debian-secureforward/Dockerfile)
 - `v1.2-debian-gcs` [docker-image/v1.2/debian-gcs/Dockerfile](docker-image/v1.2/debian-gcs/Dockerfile)
 - `v1.2-debian-graylog` [docker-image/v1.2/debian-graylog/Dockerfile](docker-image/v1.2/debian-graylog/Dockerfile)
 - `v1.2-debian-papertrail` [docker-image/v1.2/debian-papertrail/Dockerfile](docker-image/v1.2/debian-papertrail/Dockerfile)
@@ -52,8 +54,8 @@
 - `v0.12-alpine-graylog` [docker-image/v0.12/alpine-graylog/Dockerfile](docker-image/v0.12/alpine-graylog/Dockerfile)
 - `v0.12-alpine-logzio` [docker-image/v0.12/alpine-logzio/Dockerfile](docker-image/v0.12/alpine-logzio/Dockerfile)
 - `v0.12-alpine-kafka` [docker-image/v0.12/alpine-kafka/Dockerfile](docker-image/v0.12/alpine-kafka/Dockerfile)
-- `v0.12-alpine-splunkhec` [docker-image/v0.12/alpine-splunkhec/Dockerfile](docker-image/v0.12/alpine-splunkhec/Dockerfile)
 - `v0.12-alpine-kinesis` [docker-image/v0.12/alpine-kinesis/Dockerfile](docker-image/v0.12/alpine-kinesis/Dockerfile)
+- `v0.12-alpine-splunkhec` [docker-image/v0.12/alpine-splunkhec/Dockerfile](docker-image/v0.12/alpine-splunkhec/Dockerfile)
 
 ## What is Fluentd?
 
