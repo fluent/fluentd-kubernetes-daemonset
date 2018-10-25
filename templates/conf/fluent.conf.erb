@@ -276,6 +276,23 @@
   output_data_type ltsv
 </match>
 
+</match>
+
+<%  when "secureforward"%>
+<match **>
+   @type secure_forward
+   shared_key "#{ENV['FLUENT_SECURE_FORWARD_SHARED_KEY']}"
+   self_hostname client.fqdn.local
+   secure true
+   ca_cert_path "#{ENV['FLUENT_SECURE_FORWARD_CERT_PATH']}"
+   config_path /etc/logentries/tokens.yaml
+  <server>
+    host "#{ENV['FLUENT_SECURE_FORWARD_REMOTE_HOST']}"
+    port "#{ENV['FLUENT_SECURE_FORWARD_PORT'] || 24284 }"
+  </server>
+
+</match>
+
 <% when "kinesis" %>
 <match **>
   @type kinesis_streams
