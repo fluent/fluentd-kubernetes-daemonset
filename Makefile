@@ -12,8 +12,6 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v1.2/debian-secureforward:v1.2.6-debian-secureforward,v1.2-debian-secureforward \
-	v0.12/debian-secureforward:v0.12.43-debian-secureforward,v0.12-debian-secureforward,debian-secureforward,secureforward \
 	v0.12/alpine-elasticsearch:v0.12.43-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/alpine-loggly:v0.12.43-loggly,v0.12-loggly,stable-loggly,loggly \
 	v0.12/alpine-logentries:v0.12.43-logentries,v0.12-logentries,stable-logentries,logentries \
