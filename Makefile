@@ -35,6 +35,7 @@ ALL_IMAGES := \
 	v0.12/debian-gcs:v0.12.43-debian-gcs,v0.12-debian-gcs,debian-gcs \
 	v0.12/debian-papertrail:v0.12.43-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
 	v0.12/debian-syslog:v0.12.43-debian-syslog,v0.12-debian-syslog,debian-syslog \
+	v0.12/debian-secureforward:v0.12.43-debian-secureforward,v0.12-debian-secureforward,debian-secureforward \
 	v0.12/debian-graylog:v0.12.43-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
 	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
 	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
@@ -47,6 +48,7 @@ ALL_IMAGES := \
 	v1.2/debian-stackdriver:v1.2.6-debian-stackdriver,v1.2-debian-stackdriver \
 	v1.2/debian-s3:v1.2.6-debian-s3,v1.2-debian-s3 \
 	v1.2/debian-syslog:v1.2.6-debian-syslog,v1.2-debian-syslog \
+	v1.2/debian-secureforward:v1.2.6-debian-secureforward,v1.2-debian-secureforward \
 	v1.2/debian-gcs:v1.2.6-debian-gcs,v1.2-debian-gcs \
 	v1.2/debian-graylog:v1.2.6-debian-graylog,v1.2-debian-graylog,debian-stable-graylog \
 	v1.2/debian-papertrail:v1.2.6-debian-papertrail,v1.2-debian-papertrail \
