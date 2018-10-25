@@ -53,6 +53,8 @@ gem "fluent-plugin-logzio"
 gem "fluent-plugin-papertrail"
 <% when "syslog" %>
 gem "fluent-plugin-kubernetes_remote_syslog"
+<% when "secureforward" %>
+gem "fluent-plugin-secure-forward"
 <% when "kafka" %>
 gem "fluent-plugin-kafka"
 <% when "kinesis" %>
