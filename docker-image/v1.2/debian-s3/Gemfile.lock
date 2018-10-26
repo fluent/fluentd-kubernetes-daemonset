@@ -9,20 +9,20 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     aws-eventstream (1.0.1)
-    aws-partitions (1.105.0)
-    aws-sdk-core (3.30.0)
+    aws-partitions (1.106.0)
+    aws-sdk-core (3.35.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.9.0)
+    aws-sdk-kms (1.11.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sigv4 (~> 1.0)
-    aws-sdk-s3 (1.21.0)
+    aws-sdk-s3 (1.23.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
-    aws-sdk-sqs (1.7.0)
+    aws-sdk-sqs (1.9.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.0.3)
@@ -68,7 +68,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    i18n (1.1.0)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     jmespath (1.4.0)
     kubeclient (1.1.4)
@@ -99,7 +99,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.5)
+    tzinfo-data (1.2018.6)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -112,10 +112,10 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3 (~> 1.0)
   ffi
-  fluent-plugin-kubernetes_metadata_filter
-  fluent-plugin-rewrite-tag-filter
-  fluent-plugin-s3 (~> 1.0)
-  fluent-plugin-systemd
+  fluent-plugin-kubernetes_metadata_filter (~> 2.1.4)
+  fluent-plugin-rewrite-tag-filter (~> 2.1.0)
+  fluent-plugin-s3 (~> 1.1.6)
+  fluent-plugin-systemd (~> 1.0.1)
   fluentd (= 1.2.6)
   oj (= 3.5.1)
 
