@@ -51,7 +51,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    i18n (1.1.0)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     kubeclient (1.1.4)
@@ -82,7 +82,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.5)
+    tzinfo-data (1.2018.6)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -94,10 +94,10 @@ PLATFORMS
 
 DEPENDENCIES
   ffi
-  fluent-plugin-gelf-hs
-  fluent-plugin-kubernetes_metadata_filter
-  fluent-plugin-rewrite-tag-filter
-  fluent-plugin-systemd
+  fluent-plugin-gelf-hs (~> 1.0.7)
+  fluent-plugin-kubernetes_metadata_filter (~> 2.1.4)
+  fluent-plugin-rewrite-tag-filter (~> 2.1.0)
+  fluent-plugin-systemd (~> 1.0.1)
   fluentd (= 1.2.6)
   gelf
   oj (= 3.5.1)

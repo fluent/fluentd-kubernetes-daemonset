@@ -14,54 +14,90 @@ gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"
 gem "fluent-plugin-rewrite-tag-filter"
 <% else %>
-gem "fluent-plugin-rewrite-tag-filter"
+gem "fluent-plugin-rewrite-tag-filter", "~> 2.1.0"
 <% end %>
 <% case target when "elasticsearch" %>
+<% if is_v1 %>
+gem "fluent-plugin-elasticsearch", "~> 2.11.0"
+<% else %>
 gem "fluent-plugin-elasticsearch"
+<% end %>
 <% when "logentries" %>
 #gem "fluent-plugin-logentries"
 <% when "loggly"%>
+<% if is_v1 %>
+gem "fluent-plugin-loggly", "~> 0.0.9"
+<% else %>
 gem "fluent-plugin-loggly"
+<% end %>
 <% when "cloudwatch" %>
 gem "aws-sdk-cloudwatchlogs", "~> 1.0"
 <% if is_v1 %>
-gem "fluent-plugin-cloudwatch-logs", ">=0.5"
+gem "fluent-plugin-cloudwatch-logs", "~> 0.6.1"
 <% else %>
 gem "fluent-plugin-cloudwatch-logs", "0.4.5"
 <% end %>
 <% when "stackdriver" %>
+<% if is_v1 %>
+gem "fluent-plugin-google-cloud", "~> 0.4.10"
+<% else %>
 gem "fluent-plugin-google-cloud"
+<% end %>
 <% when "s3" %>
 <% if is_v1 %>
 gem "aws-sdk-s3", "~> 1.0"
-gem "fluent-plugin-s3", "~>1.0"
+gem "fluent-plugin-s3", "~> 1.1.6"
 <% else %>
-gem "fluent-plugin-s3", "~>0.8"
+gem "fluent-plugin-s3", "~> 0.8"
 <% end %>
 <% when "gcs" %>
 <% if is_v1 %>
 gem "fluent-plugin-gcs", "0.4.0.beta1"
 <% else %>
-gem "fluent-plugin-gcs", "~>0.3"
+gem "fluent-plugin-gcs", "~> 0.3"
 <% end %>
 <% when "graylog" %>
 gem "gelf"
+<% if is_v1 %>
+gem "fluent-plugin-gelf-hs", "~> 1.0.7"
+<% else %>
 gem "fluent-plugin-gelf-hs"
+<% end %>
 <% when "logzio" %>
+<% if is_v1 %>
+gem "fluent-plugin-logzio", "~> 0.0.18"
+<% else %>
 gem "fluent-plugin-logzio"
+<% end %>
 <% when "papertrail" %>
+<% if is_v1 %>
+gem "fluent-plugin-papertrail", "~> 0.2.6"
+<% else %>
 gem "fluent-plugin-papertrail"
+<% end %>
 <% when "syslog" %>
 gem "fluent-plugin-kubernetes_remote_syslog"
 <% when "kafka" %>
-gem "fluent-plugin-kafka"
+gem "fluent-plugin-kafka", "~> 0.7.9"
 <% when "kinesis" %>
+<% if is_v1 %>
+gem "fluent-plugin-kinesis", "~> 2.1.1"
+<% else %>
 gem "fluent-plugin-kinesis"
+<% end %>
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
 <% end %>
+<% if is_v1 %>
+gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.1.4"
+<% else %>
 gem "fluent-plugin-kubernetes_metadata_filter"
+<% end %>
 <% if !is_alpine %>
 gem "ffi"
+<% if is_v1 %>
+gem "fluent-plugin-systemd", "~> 1.0.1"
+<% else %>
 gem "fluent-plugin-systemd"
+<% end %>
 <% end %>
