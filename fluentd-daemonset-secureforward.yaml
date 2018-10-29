@@ -1,3 +1,44 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluentd
+  namespace: kube-system
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: fluentd
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+
+---
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: fluentd
+roleRef:
+  kind: ClusterRole
+  name: fluentd
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: fluentd
+  namespace: kube-system
+
+---
+
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
@@ -15,6 +56,8 @@ spec:
         version: v1
         kubernetes.io/cluster-service: "true"
     spec:
+      serviceAccount: fluentd
+      serviceAccountName: fluentd
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
@@ -23,11 +66,11 @@ spec:
         image: fluent/fluentd-kubernetes-daemonset:secureforward
         env:
           - name:  FLUENT_SECURE_FORWARD_SHARED_KEY
-            value: "YOURSECRET"
+            value: "STRING"
           - name:  FLUENT_SECURE_FORWARD_CERT_PATH
-            value: "/fluent/tls.cert"
+            value: "CERT_PATH"
           - name:  FLUENT_SECURE_FORWARD_REMOTE_HOST
-            value: "YOU_REMOTE_HOST"
+            value: "REMOTE_ENDPOINT"
           # - name:  FLUENT_SECURE_FORWARD_PORT
           #   value: "24284" # Default port
         resources:
@@ -42,9 +85,8 @@ spec:
         - name: varlibdockercontainers
           mountPath: /var/lib/docker/containers
           readOnly: true
-        - name: fluentTLS
-          mountPath: /fluent/tls.cert
-          readOnly: true
+        - name: SECRET_CERT_NAME
+          mountPath: "CERT_PATH"
       terminationGracePeriodSeconds: 30
       volumes:
       - name: varlog
@@ -53,6 +95,6 @@ spec:
       - name: varlibdockercontainers
         hostPath:
           path: /var/lib/docker/containers
-      - name: fluentTLS
-        configMap:
-          name: fluentTLS.cert
+      - name: SECRET_CERT_NAME
+        secret:
+          secretName: SECRET_CERT_NAME
