@@ -36,7 +36,6 @@ COPY entrypoint.sh /fluentd/entrypoint.sh
 
 # Environment variables
 ENV FLUENTD_OPT=""
-ENV FLUENT_UID=0
 ENV FLUENTD_CONF="fluent.conf"
 
 # jemalloc is memory optimization only available for td-agent

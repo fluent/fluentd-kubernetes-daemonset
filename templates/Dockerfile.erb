@@ -16,9 +16,9 @@ LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
 USER root
 WORKDIR /home/fluent
 <% if is_alpine %>
-ENV PATH /fluentd/vendor/bundle/ruby/2.4.0/bin:$PATH
-ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.4.0
-ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.4.0
+ENV PATH /fluentd/vendor/bundle/ruby/2.5.0/bin:$PATH
+ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.5.0
+ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.5.0
 <% else %>
 ENV PATH /fluentd/vendor/bundle/ruby/2.3.0/bin:$PATH
 ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.3.0

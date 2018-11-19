@@ -20,9 +20,11 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent-test
+        image: fluent/fluentd-kubernetes:v0.12.43-loomsystems
         imagePullPolicy: Never
         env:
+          - name:  FLUENT_UID
+            value: "0"
           - name:  LOOM_RECIEVER_HOST
             value: "129.213.38.169"
           - name:  LOOM_RECIEVER_SSL_PORT
@@ -30,7 +32,7 @@ spec:
           - name:  LOOM_USE_SSL
             value: "true"
           - name:  LOOM_RECIEVER_PORT
-            value: "8888" ##example:https://listener.logz.io:8071  
+            value: "8888"
         resources:
           limits:
             memory: 200Mi

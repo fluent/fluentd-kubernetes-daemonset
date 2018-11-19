@@ -69,6 +69,8 @@ gem "fluent-plugin-logzio", "~> 0.0.18"
 <% else %>
 gem "fluent-plugin-logzio"
 <% end %>
+<% when "loomsystems" %>
+gem "fluent-plugin-loomsystems", "~> 0.0.1"
 <% when "papertrail" %>
 <% if is_v1 %>
 gem "fluent-plugin-papertrail", "~> 0.2.6"
