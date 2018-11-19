@@ -12,6 +12,7 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
+	v0.12/alpine-loomsystems:v0.12.43-loomsystems,v0.12-loomsystems,stable-loomsystems,loomsystems \
 	v0.12/alpine-elasticsearch:v0.12.43-elasticsearch,v0.12-elasticsearch,stable-elasticsearch,elasticsearch \
 	v0.12/alpine-loggly:v0.12.43-loggly,v0.12-loggly,stable-loggly,loggly \
 	v0.12/alpine-logentries:v0.12.43-logentries,v0.12-logentries,stable-logentries,logentries \

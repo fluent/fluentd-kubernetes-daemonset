@@ -191,6 +191,16 @@
   num_threads 2
 </match>
 
+<% when "loomsystems"%>
+<match **>
+  @type loomsystems
+  host "#{ENV['LOOM_RECIEVER_HOST']}"
+  ssl_port "#{ENV['LOOM_RECIEVER_SSL_PORT']}"
+  port "#{ENV['LOOM_RECIEVER_PORT']}"
+  use_ssl "#{ENV['LOOM_USE_SSL']}"
+</match>
+
+
 <% when "papertrail"%>
 
 ## Capture audit logs
