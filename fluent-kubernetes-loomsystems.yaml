@@ -20,8 +20,8 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes:v0.12.43-loomsystems
-        imagePullPolicy: Never
+        image: loomsystems/fluentd-kubernetes-loomsystems:v0.12.43-loomsystems
+        imagePullPolicy: Always
         env:
           - name:  FLUENT_UID
             value: "0"
