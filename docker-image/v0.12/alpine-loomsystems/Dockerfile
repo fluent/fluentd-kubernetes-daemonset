@@ -13,9 +13,9 @@ ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
 RUN set -ex \
-    && apk --no-cache upgrade \
-    && apk --no-cache add ruby-bundler \
-    && apk --no-cache add --virtual .build-deps \
+    && apk upgrade --no-cache \
+    && apk add --no-cache ruby-bundler \
+    && apk add --no-cache --virtual .build-deps \
         build-base \
         ruby-dev \
         libffi-dev \
