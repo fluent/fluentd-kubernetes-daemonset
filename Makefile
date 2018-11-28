@@ -40,19 +40,19 @@ ALL_IMAGES := \
 	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
 	v0.12/debian-splunkhec:v0.12.43-debian-splunkhec,v0.12-debian-splunkhec,debian-splunkhec \
 	v0.12/debian-kinesis:v0.12.43-debian-kinesis,v0.12-debian-kinesis,debian-kinesis \
-	v1.3/debian-elasticsearch:v1.3.0-debian-elasticsearch,v1.3-debian-elasticsearch \
-	v1.3/debian-loggly:v1.3.0-debian-loggly,v1.3-debian-loggly \
-	v1.3/debian-logentries:v1.3.0-debian-logentries,v1.3-debian-logentries \
-	v1.3/debian-cloudwatch:v1.3.0-debian-cloudwatch,v1.3-debian-cloudwatch \
-	v1.3/debian-stackdriver:v1.3.0-debian-stackdriver,v1.3-debian-stackdriver \
-	v1.3/debian-s3:v1.3.0-debian-s3,v1.3-debian-s3 \
-	v1.3/debian-syslog:v1.3.0-debian-syslog,v1.3-debian-syslog \
-	v1.3/debian-gcs:v1.3.0-debian-gcs,v1.3-debian-gcs \
-	v1.3/debian-graylog:v1.3.0-debian-graylog,v1.3-debian-graylog,debian-stable-graylog \
-	v1.3/debian-papertrail:v1.3.0-debian-papertrail,v1.3-debian-papertrail \
-	v1.3/debian-logzio:v1.3.0-debian-logzio,v1.3-debian-logzio,debian-logzio \
-	v1.3/debian-kafka:v1.3.0-debian-kafka,v1.3-debian-kafka \
-	v1.3/debian-kinesis:v1.3.0-debian-kinesis,v1.3-debian-kinesis
+	v1.3/debian-elasticsearch:v1.3.1-debian-elasticsearch,v1.3-debian-elasticsearch \
+	v1.3/debian-loggly:v1.3.1-debian-loggly,v1.3-debian-loggly \
+	v1.3/debian-logentries:v1.3.1-debian-logentries,v1.3-debian-logentries \
+	v1.3/debian-cloudwatch:v1.3.1-debian-cloudwatch,v1.3-debian-cloudwatch \
+	v1.3/debian-stackdriver:v1.3.1-debian-stackdriver,v1.3-debian-stackdriver \
+	v1.3/debian-s3:v1.3.1-debian-s3,v1.3-debian-s3 \
+	v1.3/debian-syslog:v1.3.1-debian-syslog,v1.3-debian-syslog \
+	v1.3/debian-gcs:v1.3.1-debian-gcs,v1.3-debian-gcs \
+	v1.3/debian-graylog:v1.3.1-debian-graylog,v1.3-debian-graylog,debian-stable-graylog \
+	v1.3/debian-papertrail:v1.3.1-debian-papertrail,v1.3-debian-papertrail \
+	v1.3/debian-logzio:v1.3.1-debian-logzio,v1.3-debian-logzio,debian-logzio \
+	v1.3/debian-kafka:v1.3.1-debian-kafka,v1.3-debian-kafka \
+	v1.3/debian-kinesis:v1.3.1-debian-kinesis,v1.3-debian-kinesis
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
