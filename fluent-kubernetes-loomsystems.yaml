@@ -23,16 +23,15 @@ spec:
         image: loomsystems/fluentd-kubernetes-loomsystems:v0.12.43-loomsystems
         imagePullPolicy: Always
         env:
-          - name:  FLUENT_UID
-            value: "0"
-          - name:  LOOM_RECIEVER_HOST
-            value: "129.213.38.169"
-          - name:  LOOM_RECIEVER_SSL_PORT
-            value: "9999"
-          - name:  LOOM_USE_SSL
-            value: "true"
-          - name:  LOOM_RECIEVER_PORT
-            value: "8888"
+        - name:  LOOM_RECIEVER_HOST
+          value: "{{RECEIVER HOST}}"
+        - name:  LOOM_RECIEVER_SSL_PORT
+          value: "{{SSL PORT}}"
+        - name:  LOOM_USE_SSL
+          value: "true"
+          #use when LOOM_USE_SSL is false
+        - name:  LOOM_RECIEVER_PORT
+          value: "{{RECEIVER PORT}}"
         resources:
           limits:
             memory: 200Mi
