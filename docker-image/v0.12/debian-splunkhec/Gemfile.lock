@@ -1,19 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.1)
+    activesupport (5.2.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.3)
     cool.io (1.5.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.9.25)
-    fluent-plugin-kubernetes_metadata_filter (1.2.0)
+    fluent-plugin-kubernetes_metadata_filter (1.2.1)
       fluentd (>= 0.12.0)
       kubeclient (~> 1.1.4)
       lru_redux
@@ -52,7 +52,7 @@ GEM
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
     httpclient (2.8.3)
-    i18n (1.1.0)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     kubeclient (1.1.4)
@@ -83,7 +83,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.5)
+    tzinfo-data (1.2018.7)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -105,4 +105,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.3
+   1.17.1
