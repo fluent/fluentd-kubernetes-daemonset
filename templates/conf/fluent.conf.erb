@@ -9,6 +9,7 @@
 @include systemd.conf
 <% end%>
 @include kubernetes.conf
+@include conf.d/*.conf
 
 <% case target when "elasticsearch"%>
 <match **>
