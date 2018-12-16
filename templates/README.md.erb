@@ -20,10 +20,20 @@
 
 ### Alpine Linux (This is deprecated. Use Debian images instead)
 
-<% alpine.each do |image| %>
-<% path = image.split(":").first %>
-- `<%= path.tr("/","-") %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
-<% end %>
+- `v0.12-alpine-elasticsearch` [docker-image/v0.12/alpine-elasticsearch/Dockerfile](docker-image/v0.12/alpine-elasticsearch/Dockerfile)
+- `v0.12-alpine-loggly` [docker-image/v0.12/alpine-loggly/Dockerfile](docker-image/v0.12/alpine-loggly/Dockerfile)
+- `v0.12-alpine-logentries` [docker-image/v0.12/alpine-logentries/Dockerfile](docker-image/v0.12/alpine-logentries/Dockerfile)
+- `v0.12-alpine-cloudwatch` [docker-image/v0.12/alpine-cloudwatch/Dockerfile](docker-image/v0.12/alpine-cloudwatch/Dockerfile)
+- `v0.12-alpine-stackdriver` [docker-image/v0.12/alpine-stackdriver/Dockerfile](docker-image/v0.12/alpine-stackdriver/Dockerfile)
+- `v0.12-alpine-s3` [docker-image/v0.12/alpine-s3/Dockerfile](docker-image/v0.12/alpine-s3/Dockerfile)
+- `v0.12-alpine-gcs` [docker-image/v0.12/alpine-gcs/Dockerfile](docker-image/v0.12/alpine-gcs/Dockerfile)
+- `v0.12-alpine-papertrail` [docker-image/v0.12/alpine-papertrail/Dockerfile](docker-image/v0.12/alpine-papertrail/Dockerfile)
+- `v0.12-alpine-syslog` [docker-image/v0.12/alpine-syslog/Dockerfile](docker-image/v0.12/alpine-syslog/Dockerfile)
+- `v0.12-alpine-graylog` [docker-image/v0.12/alpine-graylog/Dockerfile](docker-image/v0.12/alpine-graylog/Dockerfile)
+- `v0.12-alpine-logzio` [docker-image/v0.12/alpine-logzio/Dockerfile](docker-image/v0.12/alpine-logzio/Dockerfile)
+- `v0.12-alpine-kafka` [docker-image/v0.12/alpine-kafka/Dockerfile](docker-image/v0.12/alpine-kafka/Dockerfile)
+- `v0.12-alpine-kinesis` [docker-image/v0.12/alpine-kinesis/Dockerfile](docker-image/v0.12/alpine-kinesis/Dockerfile)
+- `v0.12-alpine-splunkhec` [docker-image/v0.12/alpine-splunkhec/Dockerfile](docker-image/v0.12/alpine-splunkhec/Dockerfile)
 
 ## What is Fluentd?
 
