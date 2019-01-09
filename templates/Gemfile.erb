@@ -37,6 +37,8 @@ gem "fluent-plugin-cloudwatch-logs", "~> 0.6.1"
 <% else %>
 gem "fluent-plugin-cloudwatch-logs", "0.4.5"
 <% end %>
+<% when "sqs"%>
+gem "fluent-plugin-sqs"
 <% when "stackdriver" %>
 <% if is_v1 %>
 gem "fluent-plugin-google-cloud", "~> 0.4.10"
