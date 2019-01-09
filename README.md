@@ -37,6 +37,7 @@
 - `v1.3-debian-logzio` [docker-image/v1.3/debian-logzio/Dockerfile](docker-image/v1.3/debian-logzio/Dockerfile)
 - `v1.3-debian-kafka` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
 - `v1.3-debian-kinesis` [docker-image/v1.3/debian-kinesis/Dockerfile](docker-image/v1.3/debian-kinesis/Dockerfile)
+- `v1.2-debian-sqs` [docker-image/v1.2/debian-sqs/Dockerfile](docker-image/v1.2/debian-sqs/Dockerfile)
 
 ### Alpine Linux (This is deprecated. Use Debian images instead)
 
@@ -95,6 +96,7 @@ Some images are contributed by users. If you have a problem/question for followi
 - Amazon Kinesis : @shiftky
 - logz.io : @SaMnCo / @jamielennox
 - splunkhec: @FutureSharks
+- sqs: @ixixi
 
 ### References
 

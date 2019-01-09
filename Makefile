@@ -38,7 +38,8 @@ ALL_IMAGES := \
 	v1.3/debian-papertrail:v1.3.2-debian-papertrail,v1.3-debian-papertrail \
 	v1.3/debian-logzio:v1.3.2-debian-logzio,v1.3-debian-logzio,debian-logzio \
 	v1.3/debian-kafka:v1.3.2-debian-kafka,v1.3-debian-kafka \
-	v1.3/debian-kinesis:v1.3.2-debian-kinesis,v1.3-debian-kinesis
+	v1.3/debian-kinesis:v1.3.2-debian-kinesis,v1.3-debian-kinesis \
+	v1.2/debian-sqs:v1.2.5-debian-sqs,v1.2-debian-sqs
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
