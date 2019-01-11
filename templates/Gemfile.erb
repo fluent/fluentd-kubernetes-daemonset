@@ -16,7 +16,9 @@ gem "fluent-plugin-rewrite-tag-filter"
 <% else %>
 gem "fluent-plugin-rewrite-tag-filter", "~> 2.1.0"
 <% end %>
-<% case target when "elasticsearch" %>
+<% case target when "amqp" %>
+gem 'fluent-plugin-amqp2'
+<% when "elasticsearch" %>
 <% if is_v1 %>
 gem "fluent-plugin-elasticsearch", "~> 2.11.0"
 <% else %>
