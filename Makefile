@@ -12,33 +12,19 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v0.12/debian-elasticsearch:v0.12.43-debian-elasticsearch,v0.12-debian-elasticsearch,debian-elasticsearch \
-	v0.12/debian-loggly:v0.12.43-debian-loggly,v0.12-debian-loggly,debian-loggly \
-	v0.12/debian-logentries:v0.12.43-debian-logentries,v0.12-debian-logentries,debian-logentries \
-	v0.12/debian-cloudwatch:v0.12.43-debian-cloudwatch,v0.12-debian-cloudwatch,debian-cloudwatch \
-	v0.12/debian-stackdriver:v0.12.43-debian-stackdriver,v0.12-debian-stackdriver,debian-stackdriver \
-	v0.12/debian-s3:v0.12.43-debian-s3,v0.12-debian-s3,debian-s3 \
-	v0.12/debian-gcs:v0.12.43-debian-gcs,v0.12-debian-gcs,debian-gcs \
-	v0.12/debian-papertrail:v0.12.43-debian-papertrail,v0.12-debian-papertrail,debian-papertrail \
-	v0.12/debian-syslog:v0.12.43-debian-syslog,v0.12-debian-syslog,debian-syslog \
-	v0.12/debian-graylog:v0.12.43-debian-graylog,v0.12-debian-graylog,debian-stable-graylog,debian-graylog \
-	v0.12/debian-logzio:v0.12.43-debian-logzio,v0.12-debian-logzio,debian-logzio \
-	v0.12/debian-kafka:v0.12.43-debian-kafka,v0.12-debian-kafka,debian-kafka \
-	v0.12/debian-splunkhec:v0.12.43-debian-splunkhec,v0.12-debian-splunkhec,debian-splunkhec \
-	v0.12/debian-kinesis:v0.12.43-debian-kinesis,v0.12-debian-kinesis,debian-kinesis \
-	v1.3/debian-elasticsearch:v1.3.2-debian-elasticsearch,v1.3-debian-elasticsearch \
-	v1.3/debian-loggly:v1.3.2-debian-loggly,v1.3-debian-loggly \
-	v1.3/debian-logentries:v1.3.2-debian-logentries,v1.3-debian-logentries \
-	v1.3/debian-cloudwatch:v1.3.2-debian-cloudwatch,v1.3-debian-cloudwatch \
-	v1.3/debian-stackdriver:v1.3.2-debian-stackdriver,v1.3-debian-stackdriver \
-	v1.3/debian-s3:v1.3.2-debian-s3,v1.3-debian-s3 \
-	v1.3/debian-syslog:v1.3.2-debian-syslog,v1.3-debian-syslog \
-	v1.3/debian-gcs:v1.3.2-debian-gcs,v1.3-debian-gcs \
-	v1.3/debian-graylog:v1.3.2-debian-graylog,v1.3-debian-graylog,debian-stable-graylog \
-	v1.3/debian-papertrail:v1.3.2-debian-papertrail,v1.3-debian-papertrail \
-	v1.3/debian-logzio:v1.3.2-debian-logzio,v1.3-debian-logzio,debian-logzio \
-	v1.3/debian-kafka:v1.3.2-debian-kafka,v1.3-debian-kafka \
-	v1.3/debian-kinesis:v1.3.2-debian-kinesis,v1.3-debian-kinesis
+	v1.3/debian-elasticsearch:v1.3.3-debian-elasticsearch-1.0,v1.3-debian-elasticsearch-1 \
+	v1.3/debian-loggly:v1.3.3-debian-loggly-1.0,v1.3-debian-loggly-1 \
+	v1.3/debian-logentries:v1.3.3-debian-logentries-1.0,v1.3-debian-logentries-1 \
+	v1.3/debian-cloudwatch:v1.3.3-debian-cloudwatch-1.0,v1.3-debian-cloudwatch-1 \
+	v1.3/debian-stackdriver:v1.3.3-debian-stackdriver-1.0,v1.3-debian-stackdriver-1 \
+	v1.3/debian-s3:v1.3.3-debian-s3-1.0,v1.3-debian-s3-1 \
+	v1.3/debian-syslog:v1.3.3-debian-syslog-1.0,v1.3-debian-syslog-1 \
+	v1.3/debian-gcs:v1.3.3-debian-gcs-1.0,v1.3-debian-gcs-1 \
+	v1.3/debian-graylog:v1.3.3-debian-graylog-1.0,v1.3-debian-graylog-1 \
+	v1.3/debian-papertrail:v1.3.3-debian-papertrail-1.0,v1.3-debian-papertrail-1 \
+	v1.3/debian-logzio:v1.3.3-debian-logzio-1.0,v1.3-debian-logzio-1 \
+	v1.3/debian-kafka:v1.3.3-debian-kafka-1.0,v1.3-debian-kafka-1 \
+	v1.3/debian-kinesis:v1.3.3-debian-kinesis-1.0,v1.3-debian-kinesis-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
