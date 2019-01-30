@@ -70,6 +70,7 @@
   use_tag_as_stream true
 <% if is_v1 %>
   json_handler yajl # To avoid UndefinedConversionError
+  log_rejected_request "#{ENV['LOG_REJECTED_REQUEST']}" # Log rejected request for missing parts
 <% end %>
 </match>
 <%  when "s3"%>
