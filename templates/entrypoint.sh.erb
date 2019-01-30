@@ -1,16 +1,18 @@
-#!/usr/bin/dumb-init /bin/sh
+#!/bin/sh
 
 <% target = (dockerfile.split("/").last.split("-").last) %>
 <% if target == "elasticsearch" %>
 
 set -e
 
-if [ -z ${FLUENT_ELASTICSEARCH_USER} ] ; then
-   sed -i  '/FLUENT_ELASTICSEARCH_USER/d' /fluentd/etc/${FLUENTD_CONF}
-fi
+if [ -z ${FLUENT_ELASTICSEARCH_SED_DISABLE} ] ; then
+  if [ -z ${FLUENT_ELASTICSEARCH_USER} ] ; then
+    sed -i  '/FLUENT_ELASTICSEARCH_USER/d' /fluentd/etc/${FLUENTD_CONF}
+  fi
 
-if [ -z ${FLUENT_ELASTICSEARCH_PASSWORD} ] ; then
-   sed -i  '/FLUENT_ELASTICSEARCH_PASSWORD/d' /fluentd/etc/${FLUENTD_CONF}
+  if [ -z ${FLUENT_ELASTICSEARCH_PASSWORD} ] ; then
+    sed -i  '/FLUENT_ELASTICSEARCH_PASSWORD/d' /fluentd/etc/${FLUENTD_CONF}
+  fi
 fi
 <% end %>
 

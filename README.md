@@ -10,6 +10,19 @@
 
 ### Debian
 
+- `v1.3.3-debian-elasticsearch-1.0,v1.3-debian-elasticsearch-1` [docker-image/v1.3/debian-elasticsearch/Dockerfile](docker-image/v1.3/debian-elasticsearch/Dockerfile)
+- `v1.3.3-debian-loggly-1.0,v1.3-debian-loggly-1` [docker-image/v1.3/debian-loggly/Dockerfile](docker-image/v1.3/debian-loggly/Dockerfile)
+- `v1.3.3-debian-logentries-1.0,v1.3-debian-logentries-1` [docker-image/v1.3/debian-logentries/Dockerfile](docker-image/v1.3/debian-logentries/Dockerfile)
+- `v1.3.3-debian-cloudwatch-1.0,v1.3-debian-cloudwatch-1` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
+- `v1.3.3-debian-stackdriver-1.0,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
+- `v1.3.3-debian-s3-1.0,v1.3-debian-s3-1` [docker-image/v1.3/debian-s3/Dockerfile](docker-image/v1.3/debian-s3/Dockerfile)
+- `v1.3.3-debian-syslog-1.0,v1.3-debian-syslog-1` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
+- `v1.3.3-debian-gcs-1.0,v1.3-debian-gcs-1` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
+- `v1.3.3-debian-graylog-1.0,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
+- `v1.3.3-debian-papertrail-1.0,v1.3-debian-papertrail-1` [docker-image/v1.3/debian-papertrail/Dockerfile](docker-image/v1.3/debian-papertrail/Dockerfile)
+- `v1.3.3-debian-logzio-1.0,v1.3-debian-logzio-1` [docker-image/v1.3/debian-logzio/Dockerfile](docker-image/v1.3/debian-logzio/Dockerfile)
+- `v1.3.3-debian-kafka-1.0,v1.3-debian-kafka-1` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
+- `v1.3.3-debian-kinesis-1.0,v1.3-debian-kinesis-1` [docker-image/v1.3/debian-kinesis/Dockerfile](docker-image/v1.3/debian-kinesis/Dockerfile)
 - `v0.12-debian-elasticsearch` [docker-image/v0.12/debian-elasticsearch/Dockerfile](docker-image/v0.12/debian-elasticsearch/Dockerfile)
 - `v0.12-debian-loggly` [docker-image/v0.12/debian-loggly/Dockerfile](docker-image/v0.12/debian-loggly/Dockerfile)
 - `v0.12-debian-logentries` [docker-image/v0.12/debian-logentries/Dockerfile](docker-image/v0.12/debian-logentries/Dockerfile)
@@ -24,19 +37,6 @@
 - `v0.12-debian-kafka` [docker-image/v0.12/debian-kafka/Dockerfile](docker-image/v0.12/debian-kafka/Dockerfile)
 - `v0.12-debian-splunkhec` [docker-image/v0.12/debian-splunkhec/Dockerfile](docker-image/v0.12/debian-splunkhec/Dockerfile)
 - `v0.12-debian-kinesis` [docker-image/v0.12/debian-kinesis/Dockerfile](docker-image/v0.12/debian-kinesis/Dockerfile)
-- `v1.3-debian-elasticsearch` [docker-image/v1.3/debian-elasticsearch/Dockerfile](docker-image/v1.3/debian-elasticsearch/Dockerfile)
-- `v1.3-debian-loggly` [docker-image/v1.3/debian-loggly/Dockerfile](docker-image/v1.3/debian-loggly/Dockerfile)
-- `v1.3-debian-logentries` [docker-image/v1.3/debian-logentries/Dockerfile](docker-image/v1.3/debian-logentries/Dockerfile)
-- `v1.3-debian-cloudwatch` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
-- `v1.3-debian-stackdriver` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
-- `v1.3-debian-s3` [docker-image/v1.3/debian-s3/Dockerfile](docker-image/v1.3/debian-s3/Dockerfile)
-- `v1.3-debian-syslog` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
-- `v1.3-debian-gcs` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
-- `v1.3-debian-graylog` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
-- `v1.3-debian-papertrail` [docker-image/v1.3/debian-papertrail/Dockerfile](docker-image/v1.3/debian-papertrail/Dockerfile)
-- `v1.3-debian-logzio` [docker-image/v1.3/debian-logzio/Dockerfile](docker-image/v1.3/debian-logzio/Dockerfile)
-- `v1.3-debian-kafka` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
-- `v1.3-debian-kinesis` [docker-image/v1.3/debian-kinesis/Dockerfile](docker-image/v1.3/debian-kinesis/Dockerfile)
 
 ### Alpine Linux (This is deprecated. Use Debian images instead)
 
@@ -73,8 +73,8 @@ Fluentd versioning is as follows:
 
 | Series | Description                         |
 |--------|-------------------------------------|
-| v0.12  | Old stable, production ready        |
 | v1.x   | stable |
+| v0.12  | Old stable, no longer updated|
 
 ## Settings
 
@@ -82,6 +82,23 @@ Fluentd versioning is as follows:
 
 In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
 To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
+
+### Disable systemd input
+
+If you don't setup systemd in the container, fluentd shows following messages by default configuration.
+
+```
+[warn]: #0 [in_systemd_bootkube] Systemd::JournalError: No such file or directory retrying in 1s
+[warn]: #0 [in_systemd_kubelet] Systemd::JournalError: No such file or directory retrying in 1s
+[warn]: #0 [in_systemd_docker] Systemd::JournalError: No such file or directory retrying in 1s
+```
+
+You can suppress these messages by setting `disable` to `FLUENTD_SYSTEMD_CONF` environment variable in your kubernetes configuration.
+
+### Disable sed execution on elasticsearch image
+
+By historical reason, elasaticsearch image executes `sed` command during startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes a problem with read only mount.
+To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable.
 
 ## Maintainers
 
