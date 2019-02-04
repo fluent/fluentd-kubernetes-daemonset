@@ -7,6 +7,7 @@
 
 ## Supported tags and respective `Dockerfile` links
 
+See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
 
 ### Debian
 
@@ -101,7 +102,7 @@ You can suppress these messages by setting `disable` to `FLUENTD_SYSTEMD_CONF` e
 ### Disable sed execution on elasticsearch image
 
 By historical reason, elasaticsearch image executes `sed` command during startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes a problem with read only mount.
-To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable.
+To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable in your kubernetes configuration.
 
 ## Maintainers
 
