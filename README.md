@@ -7,6 +7,7 @@
 
 ## Supported tags and respective `Dockerfile` links
 
+See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
 
 ### Debian
 
@@ -17,6 +18,7 @@
 - `v1.3.3-debian-stackdriver-1.0,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
 - `v1.3.3-debian-s3-1.0,v1.3-debian-s3-1` [docker-image/v1.3/debian-s3/Dockerfile](docker-image/v1.3/debian-s3/Dockerfile)
 - `v1.3.3-debian-syslog-1.0,v1.3-debian-syslog-1` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
+- `v1.3.3-debian-forward-1.0,v1.3-debian-forward-1` [docker-image/v1.3/debian-forward/Dockerfile](docker-image/v1.3/debian-forward/Dockerfile)
 - `v1.3.3-debian-gcs-1.0,v1.3-debian-gcs-1` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
 - `v1.3.3-debian-graylog-1.0,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
 - `v1.3.3-debian-papertrail-1.0,v1.3-debian-papertrail-1` [docker-image/v1.3/debian-papertrail/Dockerfile](docker-image/v1.3/debian-papertrail/Dockerfile)
@@ -98,7 +100,7 @@ You can suppress these messages by setting `disable` to `FLUENTD_SYSTEMD_CONF` e
 ### Disable sed execution on elasticsearch image
 
 By historical reason, elasaticsearch image executes `sed` command during startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes a problem with read only mount.
-To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable.
+To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable in your kubernetes configuration.
 
 ## Maintainers
 

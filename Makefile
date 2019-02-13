@@ -19,6 +19,7 @@ ALL_IMAGES := \
 	v1.3/debian-stackdriver:v1.3.3-debian-stackdriver-1.0,v1.3-debian-stackdriver-1 \
 	v1.3/debian-s3:v1.3.3-debian-s3-1.0,v1.3-debian-s3-1 \
 	v1.3/debian-syslog:v1.3.3-debian-syslog-1.0,v1.3-debian-syslog-1 \
+	v1.3/debian-forward:v1.3.3-debian-forward-1.0,v1.3-debian-forward-1 \
 	v1.3/debian-gcs:v1.3.3-debian-gcs-1.0,v1.3-debian-gcs-1 \
 	v1.3/debian-graylog:v1.3.3-debian-graylog-1.0,v1.3-debian-graylog-1 \
 	v1.3/debian-papertrail:v1.3.3-debian-papertrail-1.0,v1.3-debian-papertrail-1 \

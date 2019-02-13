@@ -304,6 +304,17 @@
   output_data_type ltsv
 </match>
 
+<% when "forward" %>
+<match **>
+  @type forward
+  @id out_fwd
+  @log_level info
+  <server>
+    host "#{ENV['FLUENT_FOWARD_HOST']}"
+    port "#{ENV['FLUENT_FOWARD_PORT']}"
+  </server>
+</match>
+
 <% when "kinesis" %>
 <match **>
   @type kinesis_streams
