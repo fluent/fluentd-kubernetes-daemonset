@@ -151,6 +151,12 @@
   num_threads 2
 </match>
 <% when "graylog"%>
+# The gelf plugin assumes input in utf-8
+<filter **>
+  @type record_modifier
+  char_encoding utf-8
+</filter>
+
 <match **>
    @type gelf
    @id out_graylog
