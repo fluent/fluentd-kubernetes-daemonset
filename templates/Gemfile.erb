@@ -62,8 +62,10 @@ gem "fluent-plugin-gcs", "~> 0.3"
 gem "gelf", "3.0.0"
 <% if is_v1 %>
 gem "fluent-plugin-gelf-hs", "~> 1.0.7"
+gem "fluent-plugin-record-modifier", "~> 2.0.0"
 <% else %>
 gem "fluent-plugin-gelf-hs"
+gem "fluent-plugin-record-modifier", "< 1.0.0"
 <% end %>
 <% when "logzio" %>
 <% if is_v1 %>
@@ -93,7 +95,7 @@ gem "fluent-plugin-splunk-enterprise"
 <% if is_v1 %>
 gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.1.4"
 <% else %>
-gem "fluent-plugin-kubernetes_metadata_filter"
+gem "fluent-plugin-kubernetes_metadata_filter", "< 1.0.0"
 <% end %>
 <% if !is_alpine %>
 gem "ffi"
