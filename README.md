@@ -20,7 +20,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.3.3-debian-syslog-1.1,v1.3-debian-syslog-1` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
 - `v1.3.3-debian-forward-1.1,v1.3-debian-forward-1` [docker-image/v1.3/debian-forward/Dockerfile](docker-image/v1.3/debian-forward/Dockerfile)
 - `v1.3.3-debian-gcs-1.1,v1.3-debian-gcs-1` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
-- `v1.3.3-debian-graylog-1.1,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
+- `v1.3.3-debian-graylog-1.2,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
 - `v1.3.3-debian-papertrail-1.1,v1.3-debian-papertrail-1` [docker-image/v1.3/debian-papertrail/Dockerfile](docker-image/v1.3/debian-papertrail/Dockerfile)
 - `v1.3.3-debian-logzio-1.1,v1.3-debian-logzio-1` [docker-image/v1.3/debian-logzio/Dockerfile](docker-image/v1.3/debian-logzio/Dockerfile)
 - `v1.3.3-debian-kafka-1.1,v1.3-debian-kafka-1` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
