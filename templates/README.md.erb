@@ -7,7 +7,7 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
+See also the DockerHub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
 <% images = all_images.split(" ") %>
 <% debian = images.select { |i| i.match("debian") } %>
 <% alpine = images.select { |i| i.match("alpine") } %>
@@ -62,25 +62,25 @@ collection and consumption for a better use and understanding of data.
 
 ## Image versions
 
-The following repository expose images based on Alpine Linux and Debian. For production environments we strongly suggest to use Debian images.
+The following repository exposes images based on Alpine Linux and Debian. For production environments, we strongly suggest using the Debian images.
 
 Fluentd versioning is as follows:
 
-| Series | Description                         |
-|--------|-------------------------------------|
-| v1.x   | stable |
-| v0.12  | Old stable, no longer updated|
+| Series | Description                   |
+|--------|-------------------------------|
+| v1.x   | Stable                        |
+| v0.12  | Old stable, no longer updated |
 
 ## Settings
 
 ### Run as root
 
-In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
-To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
+In Kubernetes and with default settings, Fluentd needs root permissions to read logs in `/var/log` and write `pos_file` to `/var/log`.
+To avoid permissions errors, you need to set the `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
 
 ### Disable systemd input
 
-If you don't setup systemd in the container, fluentd shows following messages by default configuration.
+If you don't setup systemd in the container, Fluentd shows the following messages with the default configuration:
 
 ```
 [warn]: #0 [in_systemd_bootkube] Systemd::JournalError: No such file or directory retrying in 1s
@@ -88,16 +88,16 @@ If you don't setup systemd in the container, fluentd shows following messages by
 [warn]: #0 [in_systemd_docker] Systemd::JournalError: No such file or directory retrying in 1s
 ```
 
-You can suppress these messages by setting `disable` to `FLUENTD_SYSTEMD_CONF` environment variable in your kubernetes configuration.
+You can suppress these messages by setting the `FLUENTD_SYSTEMD_CONF` environment variable to `disable` in your Kubernetes configuration.
 
-### Disable sed execution on elasticsearch image
+### Disable sed execution in the Elasticsearch image
 
-By historical reason, elasaticsearch image executes `sed` command during startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes a problem with read only mount.
-To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable in your kubernetes configuration.
+For historical reasons, the Elasticsearch image executes `sed` during the startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes problems with read-only mounts.
+To avoid this problem, set the `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable to `true` in your Kubernetes configuration.
 
 ## Maintainers
 
-Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
+Some images are contributed by users. If you have a problem/question for the following images, please contact the contributors directly.
 
 - cloudwatch : @so0k
 - papertrail : @alexouzounis
@@ -114,8 +114,8 @@ Some images are contributed by users. If you have a problem/question for followi
 
 ### Running on OpenShift
 
-This daemonset setting mounts `/var/log` as service account `fluentd` so you need to run containers as privileged container.
-Here is command example:
+This daemonset setting mounts `/var/log` as service account `fluentd` so you need to run containers as privileged containers.
+Here is a command example:
 
 ```
 oc project kube-system
@@ -131,12 +131,12 @@ oc patch ds fluentd -p "spec:
 oc delete pod -l k8s-app = fluentd-logging
 ```
 
-This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
+This is from [nekop's Japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
 
 ## Issues
 
-We can't notice comments in the DockerHub so don't use them for reporting
-issues or asking question.
+We can't notice comments on DockerHub, so don't use them for reporting
+issues or asking questions.
 
 If you have any problems with or questions about this image, please contact us
 through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/issues).
