@@ -1,24 +1,24 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.2)
+    activesupport (5.2.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     cool.io (1.5.3)
     dig_rb (1.0.1)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (6.1.0)
-      elasticsearch-api (= 6.1.0)
-      elasticsearch-transport (= 6.1.0)
-    elasticsearch-api (6.1.0)
+    elasticsearch (6.2.0)
+      elasticsearch-api (= 6.2.0)
+      elasticsearch-transport (= 6.2.0)
+    elasticsearch-api (6.2.0)
       multi_json
-    elasticsearch-transport (6.1.0)
+    elasticsearch-transport (6.2.0)
       faraday
       multi_json
     excon (0.62.0)
@@ -29,10 +29,12 @@ GEM
       fluentd (> 1.0.0, < 2)
     fluent-plugin-concat (2.3.0)
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-elasticsearch (3.2.3)
+    fluent-plugin-elasticsearch (3.2.4)
       elasticsearch
       excon
-      fluentd (>= 0.14.20)
+      fluentd (>= 0.14.22)
+    fluent-plugin-grok-parser (2.5.0)
+      fluentd (>= 0.14.6, < 2)
     fluent-plugin-kubernetes_metadata_filter (2.1.6)
       fluentd (>= 0.14.0, < 2)
       kubeclient (~> 1.1.4)
@@ -65,7 +67,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    i18n (1.5.3)
+    i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     kubeclient (1.1.4)
       activesupport
@@ -77,7 +79,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     minitest (5.11.3)
-    msgpack (1.2.6)
+    msgpack (1.2.9)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     netrc (0.11.0)
@@ -111,6 +113,7 @@ DEPENDENCIES
   ffi
   fluent-plugin-concat (~> 2.3.0)
   fluent-plugin-elasticsearch (~> 3.2.3)
+  fluent-plugin-grok-parser (~> 2.5.0)
   fluent-plugin-kubernetes_metadata_filter (~> 2.1.4)
   fluent-plugin-multi-format-parser (~> 1.0.0)
   fluent-plugin-rewrite-tag-filter (~> 2.1.0)

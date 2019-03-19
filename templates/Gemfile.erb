@@ -11,6 +11,7 @@ gem "fluentd", "<%= fluentd_ver %>"
 gem "oj", "3.5.1"
 gem "fluent-plugin-multi-format-parser", "~> 1.0.0"
 gem "fluent-plugin-concat", "~> 2.3.0"
+gem "fluent-plugin-grok-parser", "~> 2.5.0"
 <% if !is_v1 %>
 gem "fluent-plugin-secure-forward"
 gem "fluent-plugin-record-reformer"
@@ -83,6 +84,7 @@ gem "fluent-plugin-papertrail"
 gem "fluent-plugin-kubernetes_remote_syslog"
 <% when "kafka" %>
 gem "fluent-plugin-kafka", "~> 0.7.9"
+gem "snappy", "~> 0.0.15"
 <% when "kinesis" %>
 <% if is_v1 %>
 gem "fluent-plugin-kinesis", "~> 2.1.1"
