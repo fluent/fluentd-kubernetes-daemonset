@@ -164,6 +164,7 @@
    include_tag_key true
    host "#{ENV['FLUENT_GRAYLOG_HOST']}"
    port "#{ENV['FLUENT_GRAYLOG_PORT']}"
+   protocol "#{ENV['FLUENT_GRAYLOG_PROTOCOL']} || 'udp'"
    buffer_chunk_limit 4096K
    buffer_queue_limit 512
    flush_interval 5s
