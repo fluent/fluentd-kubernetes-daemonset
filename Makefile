@@ -116,7 +116,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook entrypoint.sh
+src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins post-push-hook entrypoint.sh
 
 # Generate sources for all supported Docker images.
 #
@@ -208,6 +208,14 @@ systemd.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
+
+prometheus.conf:
+	mkdir -p docker-image/$(DOCKERFILE)/conf
+	docker run --rm -i -v $(PWD)/templates/conf/prometheus.conf.erb:/prometheus.conf.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/prometheus.conf.erb > docker-image/$(DOCKERFILE)/conf/prometheus.conf
 
 README.md: templates/README.md.erb
 	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
