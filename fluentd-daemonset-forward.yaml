@@ -4,14 +4,14 @@ metadata:
   name: fluentd
   namespace: kube-system
   labels:
-    k8s-app: fluentd-logging
+    k8s-app: statsd-logging
     version: v1
     kubernetes.io/cluster-service: "true"
 spec:
   template:
     metadata:
       labels:
-        k8s-app: fluentd-logging
+        k8s-app: statsd-logging
         version: v1
         kubernetes.io/cluster-service: "true"
     spec:
@@ -19,13 +19,16 @@ spec:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
-      - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:forward
+      - name: statsd
+        image: fluent/fluentd-kubernetes-daemonset:v1.3.3-debian-forward-1.2
+        ports:
+        - containerPort: 24224
+          hostPort: 24224
         env:
           - name:  FLUENT_FOWARD_HOST
-            value: "REMOTE_ENDPOINT"
+            value: "fluentd-stdout-service.utils.svc.cluster.local"
           - name:  FLUENT_FOWARD_PORT
-            value: "18080"
+            value: "24224"
         resources:
           limits:
             memory: 200Mi
