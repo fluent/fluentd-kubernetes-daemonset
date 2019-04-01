@@ -4,14 +4,14 @@ metadata:
   name: fluentd
   namespace: kube-system
   labels:
-    k8s-app: statsd-logging
+    k8s-app: fluentd-logging
     version: v1
     kubernetes.io/cluster-service: "true"
 spec:
   template:
     metadata:
       labels:
-        k8s-app: statsd-logging
+        k8s-app: fluentd-logging
         version: v1
         kubernetes.io/cluster-service: "true"
     spec:
@@ -19,7 +19,7 @@ spec:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
-      - name: statsd
+      - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1.3.3-debian-forward-1.2
         ports:
         - containerPort: 24224
