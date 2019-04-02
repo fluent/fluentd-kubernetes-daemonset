@@ -25,7 +25,21 @@ ALL_IMAGES := \
 	v1.3/debian-papertrail:v1.3.3-debian-papertrail-1.3,v1.3-debian-papertrail-1 \
 	v1.3/debian-logzio:v1.3.3-debian-logzio-1.3,v1.3-debian-logzio-1 \
 	v1.3/debian-kafka:v1.3.3-debian-kafka-1.4,v1.3-debian-kafka-1 \
-	v1.3/debian-kinesis:v1.3.3-debian-kinesis-1.3,v1.3-debian-kinesis-1
+	v1.3/debian-kinesis:v1.3.3-debian-kinesis-1.3,v1.3-debian-kinesis-1 \
+	v1.4/debian-elasticsearch:v1.4.2-debian-elasticsearch-2.0,v1.4-debian-elasticsearch-2 \
+	v1.4/debian-loggly:v1.4.2-debian-loggly-2.0,v1.4-debian-loggly-2 \
+	v1.4/debian-logentries:v1.4.2-debian-logentries-2.0,v1.4-debian-logentries-2 \
+	v1.4/debian-cloudwatch:v1.4.2-debian-cloudwatch-2.0,v1.4-debian-cloudwatch-2 \
+	v1.4/debian-stackdriver:v1.4.2-debian-stackdriver-2.0,v1.4-debian-stackdriver-2 \
+	v1.4/debian-s3:v1.4.2-debian-s3-2.0,v1.4-debian-s3-2 \
+	v1.4/debian-syslog:v1.4.2-debian-syslog-2.0,v1.4-debian-syslog-2 \
+	v1.4/debian-forward:v1.4.2-debian-forward-2.0,v1.4-debian-forward-2 \
+	v1.4/debian-gcs:v1.4.2-debian-gcs-2.0,v1.4-debian-gcs-2 \
+	v1.4/debian-graylog:v1.4.2-debian-graylog-2.0,v1.4-debian-graylog-2 \
+	v1.4/debian-papertrail:v1.4.2-debian-papertrail-2.0,v1.4-debian-papertrail-2 \
+	v1.4/debian-logzio:v1.4.2-debian-logzio-2.0,v1.4-debian-logzio-2 \
+	v1.4/debian-kafka:v1.4.2-debian-kafka-2.0,v1.4-debian-kafka-2 \
+	v1.4/debian-kinesis:v1.4.2-debian-kinesis-2.0,v1.4-debian-kinesis-2
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 

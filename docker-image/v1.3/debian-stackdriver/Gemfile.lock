@@ -118,7 +118,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (1.4.1)
-    serverengine (2.1.0)
+    serverengine (2.1.1)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
     signet (0.11.0)

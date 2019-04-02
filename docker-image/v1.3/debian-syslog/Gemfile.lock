@@ -96,7 +96,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    serverengine (2.1.0)
+    serverengine (2.1.1)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
     strptime (0.2.3)

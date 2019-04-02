@@ -85,7 +85,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ruby-kafka (0.6.8)
-    serverengine (2.1.0)
+    serverengine (2.1.1)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
     snappy (0.0.17)
