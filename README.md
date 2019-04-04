@@ -82,6 +82,8 @@ Fluentd versioning is as follows:
 
 ### Run as root
 
+This is for v0.12 images.
+
 In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
 To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
 
@@ -96,6 +98,11 @@ If you don't setup systemd in the container, fluentd shows following messages by
 ```
 
 You can suppress these messages by setting `disable` to `FLUENTD_SYSTEMD_CONF` environment variable in your kubernetes configuration.
+
+### Disable prometheus input plugins
+
+By default, latest images launch `prometheus` plugins to monitor fluentd.
+You can disable prometheus input plugin by setting `disable` to `FLUENTD_PROMETHEUS_CONF` environment variable in your kubernetes configuration.
 
 ### Disable sed execution on elasticsearch image
 
