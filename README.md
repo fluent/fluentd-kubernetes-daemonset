@@ -13,6 +13,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 - `v1.3.3-debian-elasticsearch-1.6,v1.3-debian-elasticsearch-1` [docker-image/v1.3/debian-elasticsearch/Dockerfile](docker-image/v1.3/debian-elasticsearch/Dockerfile)
 - `v1.3.3-debian-loggly-1.3,v1.3-debian-loggly-1` [docker-image/v1.3/debian-loggly/Dockerfile](docker-image/v1.3/debian-loggly/Dockerfile)
+- `v1.3.3-debian-datadog-1.0,v1.3-debian-datadog-1` [docker-image/v1.3/debian-datadog/Dockerfile](docker-image/v1.3/debian-datadog/Dockerfile)
 - `v1.3.3-debian-logentries-1.3,v1.3-debian-logentries-1` [docker-image/v1.3/debian-logentries/Dockerfile](docker-image/v1.3/debian-logentries/Dockerfile)
 - `v1.3.3-debian-cloudwatch-1.4,v1.3-debian-cloudwatch-1` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
 - `v1.3.3-debian-stackdriver-1.3,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
