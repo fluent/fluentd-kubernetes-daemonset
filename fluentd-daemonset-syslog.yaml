@@ -26,6 +26,8 @@ spec:
             value: "sysloghost"
           - name:  SYSLOG_PORT
             value: "514"
+          - name:  SYSLOG_PROTOCOL
+            value: "tcp"            
         resources:
           limits:
             memory: 200Mi
