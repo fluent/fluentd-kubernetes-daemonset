@@ -13,12 +13,12 @@ GEM
     dig_rb (1.0.1)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (6.2.0)
-      elasticsearch-api (= 6.2.0)
-      elasticsearch-transport (= 6.2.0)
-    elasticsearch-api (6.2.0)
+    elasticsearch (6.3.0)
+      elasticsearch-api (= 6.3.0)
+      elasticsearch-transport (= 6.3.0)
+    elasticsearch-api (6.3.0)
       multi_json
-    elasticsearch-transport (6.2.0)
+    elasticsearch-transport (6.3.0)
       faraday
       multi_json
     excon (0.62.0)
