@@ -18,7 +18,7 @@ ALL_IMAGES := \
 	v1.3/debian-cloudwatch:v1.3.3-debian-cloudwatch-1.4,v1.3-debian-cloudwatch-1 \
 	v1.3/debian-stackdriver:v1.3.3-debian-stackdriver-1.3,v1.3-debian-stackdriver-1 \
 	v1.3/debian-s3:v1.3.3-debian-s3-1.3,v1.3-debian-s3-1 \
-	v1.3/debian-syslog:v1.3.3-debian-syslog-1.3,v1.3-debian-syslog-1 \
+	v1.3/debian-syslog:v1.3.3-debian-syslog-1.4,v1.3-debian-syslog-1 \
 	v1.3/debian-forward:v1.3.3-debian-forward-1.3,v1.3-debian-forward-1 \
 	v1.3/debian-gcs:v1.3.3-debian-gcs-1.3,v1.3-debian-gcs-1 \
 	v1.3/debian-graylog:v1.3.3-debian-graylog-1.4,v1.3-debian-graylog-1 \
