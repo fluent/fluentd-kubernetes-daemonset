@@ -24,7 +24,7 @@ ALL_IMAGES := \
 	v1.3/debian-graylog:v1.3.3-debian-graylog-1.4,v1.3-debian-graylog-1 \
 	v1.3/debian-papertrail:v1.3.3-debian-papertrail-1.3,v1.3-debian-papertrail-1 \
 	v1.3/debian-logzio:v1.3.3-debian-logzio-1.3,v1.3-debian-logzio-1 \
-	v1.3/debian-kafka:v1.3.3-debian-kafka-1.3,v1.3-debian-kafka-1 \
+	v1.3/debian-kafka:v1.3.3-debian-kafka-1.4,v1.3-debian-kafka-1 \
 	v1.3/debian-kinesis:v1.3.3-debian-kinesis-1.3,v1.3-debian-kinesis-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...

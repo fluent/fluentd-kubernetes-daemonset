@@ -23,7 +23,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.3.3-debian-graylog-1.4,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
 - `v1.3.3-debian-papertrail-1.3,v1.3-debian-papertrail-1` [docker-image/v1.3/debian-papertrail/Dockerfile](docker-image/v1.3/debian-papertrail/Dockerfile)
 - `v1.3.3-debian-logzio-1.3,v1.3-debian-logzio-1` [docker-image/v1.3/debian-logzio/Dockerfile](docker-image/v1.3/debian-logzio/Dockerfile)
-- `v1.3.3-debian-kafka-1.3,v1.3-debian-kafka-1` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
+- `v1.3.3-debian-kafka-1.4,v1.3-debian-kafka-1` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
 - `v1.3.3-debian-kinesis-1.3,v1.3-debian-kinesis-1` [docker-image/v1.3/debian-kinesis/Dockerfile](docker-image/v1.3/debian-kinesis/Dockerfile)
 - `v0.12-debian-elasticsearch` [docker-image/v0.12/debian-elasticsearch/Dockerfile](docker-image/v0.12/debian-elasticsearch/Dockerfile)
 - `v0.12-debian-loggly` [docker-image/v0.12/debian-loggly/Dockerfile](docker-image/v0.12/debian-loggly/Dockerfile)
