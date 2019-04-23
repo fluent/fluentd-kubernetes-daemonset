@@ -29,7 +29,7 @@ GEM
       fluentd (> 1.0.0, < 2)
     fluent-plugin-concat (2.3.0)
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-elasticsearch (3.4.2)
+    fluent-plugin-elasticsearch (3.4.3)
       elasticsearch
       excon
       fluentd (>= 0.14.22)
@@ -82,7 +82,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
     minitest (5.11.3)
-    msgpack (1.2.9)
+    msgpack (1.2.10)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     netrc (0.11.0)
@@ -109,7 +109,7 @@ GEM
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.5)
+    unf_ext (0.0.7.6)
     yajl-ruby (1.4.1)
 
 PLATFORMS
@@ -129,4 +129,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.17.2

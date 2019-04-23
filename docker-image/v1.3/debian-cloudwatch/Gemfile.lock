@@ -9,11 +9,11 @@ GEM
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     aws-eventstream (1.0.2)
-    aws-partitions (1.149.0)
+    aws-partitions (1.151.0)
     aws-sdk-cloudwatchlogs (1.17.0)
       aws-sdk-core (~> 3, >= 3.48.2)
       aws-sigv4 (~> 1.1)
-    aws-sdk-core (3.48.3)
+    aws-sdk-core (3.48.4)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
@@ -83,7 +83,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
     minitest (5.11.3)
-    msgpack (1.2.9)
+    msgpack (1.2.10)
     netrc (0.11.0)
     oj (3.5.1)
     prometheus-client (0.9.0)
@@ -108,7 +108,7 @@ GEM
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.5)
+    unf_ext (0.0.7.6)
     yajl-ruby (1.4.1)
 
 PLATFORMS
@@ -129,4 +129,4 @@ DEPENDENCIES
   oj (= 3.5.1)
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
