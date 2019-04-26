@@ -21,9 +21,8 @@ class Fluent::LogentriesOutput < Fluent::BufferedOutput
   config_param :tag_access_log, :string,  :default => 'logs-access'
   config_param :tag_error_log,  :string,  :default => 'logs-error'
   config_param :default_token,  :string,  :default => nil
-
-  SSL_HOST    = "api.logentries.com"
-  NO_SSL_HOST = "data.logentries.com"
+  config_param :ssl_host,       :string,  :default => 'api.logentries.com'
+  config_param :no_ssl_host,    :string,  :default => 'data.logentries.com'
 
   def configure(conf)
     super
@@ -43,16 +42,16 @@ class Fluent::LogentriesOutput < Fluent::BufferedOutput
   def client
     @_socket ||= if @use_ssl
       context    = OpenSSL::SSL::SSLContext.new
-      socket     = TCPSocket.new SSL_HOST, @port
+      socket     = TCPSocket.new @ssl_host, @port
       ssl_client = OpenSSL::SSL::SSLSocket.new socket, context
 
       ssl_client.connect
     else
       if @protocol == 'tcp'
-        TCPSocket.new NO_SSL_HOST, @port
+        TCPSocket.new @no_ssl_host, @port
       else
         udp_client = UDPSocket.new
-        udp_client.connect NO_SSL_HOST, @port
+        udp_client.connect @no_ssl_host, @port
 
         udp_client
       end

@@ -46,6 +46,33 @@ spec:
         - name: varlibdockercontainers
           mountPath: /var/lib/docker/containers
           readOnly: true
+        env:
+        - name: FLUENTD_SYSTEMD_CONF
+          value: "disable"
+        #- name: FLUENT_LOGENTRIES_TAG_ACCESS_LOG
+        #  value: "stdout"
+        #- name: FLUENT_LOGENTRIES_TAG_ERROR_LOG
+        #  value: "stderr"
+        #- name: FLUENT_LOGENTRIES_USE_SSL
+        #  value: "true"
+        - name: FLUENT_LOGENTRIES_USE_JSON
+          value: "true"
+        - name: FLUENT_LOGENTRIES_PORT
+          value: "443"
+        #- name: FLUENT_LOGENTRIES_PROTOCOL
+        #  value: "tcp"
+        #- name: FLUENT_LOGENTRIES_CONFIG_PATH
+        #  value: "/etc/logentries/tokens.yaml"
+        #- name: FLUENT_LOGENTRIES_MAX_RETRIES
+        #  value: "3"
+        #- name: FLUENT_LOGENTRIES_TAG_ACCESS_LOG
+        #  value: "logs-access"
+        #- name: FLUENT_LOGENTRIES_TAG_ERROR_LOG
+        #  value: "logs-error"
+        #- name: FLUENT_LOGENTRIES_NO_SSL_HOST
+        #  value: "REGION.data.logs.insight.rapid7.com"
+        #- name: FLUENT_LOGENTRIES_SSL_HOST
+        #  value: "REGION.data.logs.insight.rapid7.com"
       terminationGracePeriodSeconds: 30
       volumes:
       - name: logentries-config
