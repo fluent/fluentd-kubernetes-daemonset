@@ -305,9 +305,12 @@
   @id out_kube_remote_syslog
   host "#{ENV['SYSLOG_HOST']}"
   port "#{ENV['SYSLOG_PORT']}"
-  severity debug
-  tag fluentd
+  facility "#{ENV['SYSLOG_FACILITY'] || 'user'}"
+  severity "#{ENV['SYSLOG_SEVERITY'] || 'debug'}"
+  tag "#{ENV['SYSLOG_TAG'] || 'fluentd'}"
   protocol "#{ENV['SYSLOG_PROTOCOL'] || 'tcp'}" 
+  tls "#{ENV['SYSLOG_TLS'] || 'false'}"
+  ca_file "#{ENV['SYSLOG_CA_FILE'] || ''}"
   packet_size 65535
   output_data_type ltsv
 </match>
