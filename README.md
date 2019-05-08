@@ -31,7 +31,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.3.3-debian-cloudwatch-1.4,v1.3-debian-cloudwatch-1` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
 - `v1.3.3-debian-stackdriver-1.3,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
 - `v1.3.3-debian-s3-1.3,v1.3-debian-s3-1` [docker-image/v1.3/debian-s3/Dockerfile](docker-image/v1.3/debian-s3/Dockerfile)
-- `v1.3.3-debian-syslog-1.4,v1.3-debian-syslog-1` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
+- `v1.3.3-debian-syslog-2.0,v1.3-debian-syslog-2` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
 - `v1.3.3-debian-forward-1.3,v1.3-debian-forward-1` [docker-image/v1.3/debian-forward/Dockerfile](docker-image/v1.3/debian-forward/Dockerfile)
 - `v1.3.3-debian-gcs-1.3,v1.3-debian-gcs-1` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
 - `v1.3.3-debian-graylog-1.4,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)

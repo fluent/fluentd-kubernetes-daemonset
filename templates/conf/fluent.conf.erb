@@ -300,17 +300,45 @@
 </match>
 
 <% when "syslog" %>
+<% if is_v1 %>
+<match **>
+  @type remote_syslog
+  @id out_kube_remote_syslog
+  host "#{ENV['SYSLOG_HOST']}"
+  port "#{ENV['SYSLOG_PORT']}"
+  severity debug
+  program fluentd
+  hostname ${kubernetes_host}
+
+  protocol "#{ENV['SYSLOG_PROTOCOL'] || 'tcp'}"
+  tls "#{ENV['SYSLOG_TLS'] || 'false'}"
+  ca_file "#{ENV['SYSLOG_CA_FILE'] || ''}"
+  verify_mode "#{ENV['SYSLOG_VERIFY_MODE'] || ''}"
+  packet_size 65535
+
+  <buffer kubernetes_host>
+  </buffer>
+
+  <format>
+    @type ltsv
+  </format>
+</match>
+<% else %>
 <match **>
   @type kubernetes_remote_syslog
   @id out_kube_remote_syslog
   host "#{ENV['SYSLOG_HOST']}"
   port "#{ENV['SYSLOG_PORT']}"
-  severity debug
-  tag fluentd
-  protocol "#{ENV['SYSLOG_PROTOCOL'] || 'tcp'}" 
+  facility "#{ENV['SYSLOG_FACILITY'] || 'user'}"
+  severity "#{ENV['SYSLOG_SEVERITY'] || 'debug'}"
+  tag "#{ENV['SYSLOG_TAG'] || 'fluentd'}"
+  protocol "#{ENV['SYSLOG_PROTOCOL'] || 'tcp'}"
+  tls "#{ENV['SYSLOG_TLS'] || 'false'}"
+  ca_file "#{ENV['SYSLOG_CA_FILE'] || ''}"
   packet_size 65535
   output_data_type ltsv
 </match>
+<% end %>
 
 <% when "forward" %>
 <match **>

@@ -82,7 +82,11 @@ gem "fluent-plugin-papertrail", "~> 0.2.6"
 gem "fluent-plugin-papertrail"
 <% end %>
 <% when "syslog" %>
+<% if is_v1 %>
+gem "fluent-plugin-remote_syslog"
+<% else %>
 gem "fluent-plugin-kubernetes_remote_syslog"
+<% end %>
 <% when "kafka" %>
 gem "fluent-plugin-kafka", "~> 0.7.9"
 gem "zookeeper", "~> 1.4.11"
