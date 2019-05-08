@@ -1,6 +1,6 @@
 ---
 apiVersion: v1
-kind: ConfigMap
+kind: Secret
 metadata:
   name: fluentd-logentries
   namespace: kube-system
@@ -49,8 +49,8 @@ spec:
       terminationGracePeriodSeconds: 30
       volumes:
       - name: logentries-config
-        configMap:
-          name: fluentd-logentries
+        secret:
+          secretName: fluentd-logentries
       - name: varlog
         hostPath:
           path: /var/log
