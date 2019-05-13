@@ -12,7 +12,7 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v1.4/debian-elasticsearch:v1.4.2-debian-elasticsearch-1.0,v1.4-debian-elasticsearch-1 \
+	v1.4/debian-elasticsearch:v1.4.2-debian-elasticsearch-1.1,v1.4-debian-elasticsearch-1 \
 	v1.4/debian-loggly:v1.4.2-debian-loggly-1.0,v1.4-debian-loggly-1 \
 	v1.4/debian-logentries:v1.4.2-debian-logentries-1.0,v1.4-debian-logentries-1 \
 	v1.4/debian-cloudwatch:v1.4.2-debian-cloudwatch-1.0,v1.4-debian-cloudwatch-1 \
