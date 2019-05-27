@@ -26,6 +26,8 @@ gem "fluent-plugin-elasticsearch", "~> 3.4.2"
 <% else %>
 gem "fluent-plugin-elasticsearch"
 <% end %>
+<% when "awselasticsearch" %>
+gem "fluent-plugin-aws-elasticsearch-service"
 <% when "logentries" %>
 #gem "fluent-plugin-logentries"
 <% when "loggly"%>
