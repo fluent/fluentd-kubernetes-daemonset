@@ -23,7 +23,6 @@ steps:
     description: Build geodesic
     image_name: ${{CF_REPO_NAME}}
     working_directory: docker-image/${{DEBIAN_VERSION}}/debian-${{LOG_SERVICE}}/
-    dockerfile: docker-image/${{DEBIAN_VERSION}}/debian-${{LOG_SERVICE}}/Dockerfile
 
   push_image_commit:
     title: Push image with commit sha tag
