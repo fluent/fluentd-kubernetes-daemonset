@@ -8,7 +8,7 @@ stages:
 steps:
   main_clone:
     title: Pull image with commit sha
-    stage: "Prepare"
+    stage: Prepare
     image: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}:${{CF_REVISION}}"
     registry: dockerhub
     retry:
