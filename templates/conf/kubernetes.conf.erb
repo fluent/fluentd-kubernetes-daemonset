@@ -21,7 +21,7 @@
     time_format %Y-%m-%dT%H:%M:%S.%NZ
   </parse>
 <% else %>
-  format json_in_json
+  format "#{ENV['FLUENT_CONTAINER_TAIL_PARSER_TYPE'] || 'json'}"
   time_format %Y-%m-%dT%H:%M:%S.%NZ
 <% end %>
 </source>
