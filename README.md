@@ -11,27 +11,27 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 ### Debian
 
-- `v1.4.2-debian-elasticsearch-1.0,v1.4-debian-elasticsearch-1` [docker-image/v1.4/debian-elasticsearch/Dockerfile](docker-image/v1.4/debian-elasticsearch/Dockerfile)
-- `v1.4.2-debian-loggly-1.0,v1.4-debian-loggly-1` [docker-image/v1.4/debian-loggly/Dockerfile](docker-image/v1.4/debian-loggly/Dockerfile)
-- `v1.4.2-debian-logentries-1.0,v1.4-debian-logentries-1` [docker-image/v1.4/debian-logentries/Dockerfile](docker-image/v1.4/debian-logentries/Dockerfile)
-- `v1.4.2-debian-cloudwatch-1.0,v1.4-debian-cloudwatch-1` [docker-image/v1.4/debian-cloudwatch/Dockerfile](docker-image/v1.4/debian-cloudwatch/Dockerfile)
-- `v1.4.2-debian-stackdriver-1.0,v1.4-debian-stackdriver-1` [docker-image/v1.4/debian-stackdriver/Dockerfile](docker-image/v1.4/debian-stackdriver/Dockerfile)
-- `v1.4.2-debian-s3-1.0,v1.4-debian-s3-1` [docker-image/v1.4/debian-s3/Dockerfile](docker-image/v1.4/debian-s3/Dockerfile)
-- `v1.4.2-debian-syslog-1.0,v1.4-debian-syslog-1` [docker-image/v1.4/debian-syslog/Dockerfile](docker-image/v1.4/debian-syslog/Dockerfile)
-- `v1.4.2-debian-forward-1.0,v1.4-debian-forward-1` [docker-image/v1.4/debian-forward/Dockerfile](docker-image/v1.4/debian-forward/Dockerfile)
-- `v1.4.2-debian-gcs-1.0,v1.4-debian-gcs-1` [docker-image/v1.4/debian-gcs/Dockerfile](docker-image/v1.4/debian-gcs/Dockerfile)
-- `v1.4.2-debian-graylog-1.0,v1.4-debian-graylog-1` [docker-image/v1.4/debian-graylog/Dockerfile](docker-image/v1.4/debian-graylog/Dockerfile)
-- `v1.4.2-debian-papertrail-1.0,v1.4-debian-papertrail-1` [docker-image/v1.4/debian-papertrail/Dockerfile](docker-image/v1.4/debian-papertrail/Dockerfile)
-- `v1.4.2-debian-logzio-1.0,v1.4-debian-logzio-1` [docker-image/v1.4/debian-logzio/Dockerfile](docker-image/v1.4/debian-logzio/Dockerfile)
-- `v1.4.2-debian-kafka-1.0,v1.4-debian-kafka-1` [docker-image/v1.4/debian-kafka/Dockerfile](docker-image/v1.4/debian-kafka/Dockerfile)
-- `v1.4.2-debian-kinesis-1.0,v1.4-debian-kinesis-1` [docker-image/v1.4/debian-kinesis/Dockerfile](docker-image/v1.4/debian-kinesis/Dockerfile)
+- `v1.4.2-debian-elasticsearch-1.1,v1.4-debian-elasticsearch-1` [docker-image/v1.4/debian-elasticsearch/Dockerfile](docker-image/v1.4/debian-elasticsearch/Dockerfile)
+- `v1.4.2-debian-loggly-1.1,v1.4-debian-loggly-1` [docker-image/v1.4/debian-loggly/Dockerfile](docker-image/v1.4/debian-loggly/Dockerfile)
+- `v1.4.2-debian-logentries-1.1,v1.4-debian-logentries-1` [docker-image/v1.4/debian-logentries/Dockerfile](docker-image/v1.4/debian-logentries/Dockerfile)
+- `v1.4.2-debian-cloudwatch-1.1,v1.4-debian-cloudwatch-1` [docker-image/v1.4/debian-cloudwatch/Dockerfile](docker-image/v1.4/debian-cloudwatch/Dockerfile)
+- `v1.4.2-debian-stackdriver-1.1,v1.4-debian-stackdriver-1` [docker-image/v1.4/debian-stackdriver/Dockerfile](docker-image/v1.4/debian-stackdriver/Dockerfile)
+- `v1.4.2-debian-s3-1.1,v1.4-debian-s3-1` [docker-image/v1.4/debian-s3/Dockerfile](docker-image/v1.4/debian-s3/Dockerfile)
+- `v1.4.2-debian-syslog-1.1,v1.4-debian-syslog-1` [docker-image/v1.4/debian-syslog/Dockerfile](docker-image/v1.4/debian-syslog/Dockerfile)
+- `v1.4.2-debian-forward-1.1,v1.4-debian-forward-1` [docker-image/v1.4/debian-forward/Dockerfile](docker-image/v1.4/debian-forward/Dockerfile)
+- `v1.4.2-debian-gcs-1.1,v1.4-debian-gcs-1` [docker-image/v1.4/debian-gcs/Dockerfile](docker-image/v1.4/debian-gcs/Dockerfile)
+- `v1.4.2-debian-graylog-1.1,v1.4-debian-graylog-1` [docker-image/v1.4/debian-graylog/Dockerfile](docker-image/v1.4/debian-graylog/Dockerfile)
+- `v1.4.2-debian-papertrail-1.1,v1.4-debian-papertrail-1` [docker-image/v1.4/debian-papertrail/Dockerfile](docker-image/v1.4/debian-papertrail/Dockerfile)
+- `v1.4.2-debian-logzio-1.1,v1.4-debian-logzio-1` [docker-image/v1.4/debian-logzio/Dockerfile](docker-image/v1.4/debian-logzio/Dockerfile)
+- `v1.4.2-debian-kafka-1.1,v1.4-debian-kafka-1` [docker-image/v1.4/debian-kafka/Dockerfile](docker-image/v1.4/debian-kafka/Dockerfile)
+- `v1.4.2-debian-kinesis-1.1,v1.4-debian-kinesis-1` [docker-image/v1.4/debian-kinesis/Dockerfile](docker-image/v1.4/debian-kinesis/Dockerfile)
 - `v1.3.3-debian-elasticsearch-1.8,v1.3-debian-elasticsearch-1` [docker-image/v1.3/debian-elasticsearch/Dockerfile](docker-image/v1.3/debian-elasticsearch/Dockerfile)
 - `v1.3.3-debian-loggly-1.3,v1.3-debian-loggly-1` [docker-image/v1.3/debian-loggly/Dockerfile](docker-image/v1.3/debian-loggly/Dockerfile)
 - `v1.3.3-debian-logentries-1.3,v1.3-debian-logentries-1` [docker-image/v1.3/debian-logentries/Dockerfile](docker-image/v1.3/debian-logentries/Dockerfile)
 - `v1.3.3-debian-cloudwatch-1.4,v1.3-debian-cloudwatch-1` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
 - `v1.3.3-debian-stackdriver-1.3,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
 - `v1.3.3-debian-s3-1.3,v1.3-debian-s3-1` [docker-image/v1.3/debian-s3/Dockerfile](docker-image/v1.3/debian-s3/Dockerfile)
-- `v1.3.3-debian-syslog-2.0,v1.3-debian-syslog-2` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
+- `v1.3.3-debian-syslog-1.4,v1.3-debian-syslog-1` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
 - `v1.3.3-debian-forward-1.3,v1.3-debian-forward-1` [docker-image/v1.3/debian-forward/Dockerfile](docker-image/v1.3/debian-forward/Dockerfile)
 - `v1.3.3-debian-gcs-1.3,v1.3-debian-gcs-1` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
 - `v1.3.3-debian-graylog-1.4,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
@@ -174,4 +174,4 @@ _Note: This file is generated from [templates/README.md.erb](templates/README.md
 [alpine-home]: http://alpinelinux.org
 [alpine-dockerhub]: https://hub.docker.com/_/alpine
 [debian-dockerhub]: https://hub.docker.com/_/debian
-[fluentd-article]: http://docs.fluentd.org/v/0.12/articles/kubernetes-fluentd
+[fluentd-article]: http://docs.fluentd.org/v0.12/articles/kubernetes-fluentd
