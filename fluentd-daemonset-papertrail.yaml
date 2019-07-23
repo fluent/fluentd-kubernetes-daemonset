@@ -9,7 +9,6 @@ metadata:
   labels:
     k8s-app: fluentd-logging
     version: v1
-    kubernetes.io/cluster-service: "true"
 spec:
   updateStrategy:
     type: RollingUpdate
@@ -18,7 +17,6 @@ spec:
       labels:
         k8s-app: fluentd-logging
         version: v1
-        kubernetes.io/cluster-service: "true"
     spec:
       tolerations:
       - key: node-role.kubernetes.io/master
@@ -66,7 +64,6 @@ spec:
 #  labels:
 #    k8s-app: fluentd-logging
 #    version: v1
-#    kubernetes.io/cluster-service: "true"
 #data:
 #  fluent.conf: |-
 #    @include kubernetes.conf

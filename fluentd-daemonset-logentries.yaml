@@ -18,13 +18,11 @@ metadata:
   namespace: kube-system
   labels:
     k8s-app: fluentd
-    kubernetes.io/cluster-service: "true"
 spec:
   template:
     metadata:
       labels:
         k8s-app: fluentd
-        kubernetes.io/cluster-service: "true"
     spec:
       tolerations:
       - key: node-role.kubernetes.io/master
