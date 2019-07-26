@@ -174,4 +174,4 @@ _Note: This file is generated from [templates/README.md.erb](templates/README.md
 [alpine-home]: http://alpinelinux.org
 [alpine-dockerhub]: https://hub.docker.com/_/alpine
 [debian-dockerhub]: https://hub.docker.com/_/debian
-[fluentd-article]: http://docs.fluentd.org/v0.12/articles/kubernetes-fluentd
+[fluentd-article]: https://docs.fluentd.org/v/0.12/articles/kubernetes-fluentd
