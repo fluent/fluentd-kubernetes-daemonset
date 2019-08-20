@@ -167,6 +167,7 @@
   include_tag_key true
   host "#{ENV['FLUENT_GRAYLOG_HOST']}"
   port "#{ENV['FLUENT_GRAYLOG_PORT']}"
+  protocol "#{ENV['FLUENT_GRAYLOG_PROTOCOL'] || 'udp'}"
   <buffer>
     flush_thread_count 8
     flush_interval 5s
