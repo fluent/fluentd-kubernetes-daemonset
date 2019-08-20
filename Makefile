@@ -21,7 +21,7 @@ ALL_IMAGES := \
 	v1.4/debian-syslog:v1.4.2-debian-syslog-1.1,v1.4-debian-syslog-1 \
 	v1.4/debian-forward:v1.4.2-debian-forward-1.1,v1.4-debian-forward-1 \
 	v1.4/debian-gcs:v1.4.2-debian-gcs-1.1,v1.4-debian-gcs-1 \
-	v1.4/debian-graylog:v1.4.2-debian-graylog-1.1,v1.4-debian-graylog-1 \
+	v1.4/debian-graylog:v1.4.2-debian-graylog-1.2,v1.4-debian-graylog-1 \
 	v1.4/debian-papertrail:v1.4.2-debian-papertrail-1.1,v1.4-debian-papertrail-1 \
 	v1.4/debian-logzio:v1.4.2-debian-logzio-1.1,v1.4-debian-logzio-1 \
 	v1.4/debian-kafka:v1.4.2-debian-kafka-1.1,v1.4-debian-kafka-1 \
