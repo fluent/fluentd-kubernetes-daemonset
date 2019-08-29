@@ -22,12 +22,12 @@ gem "fluent-plugin-rewrite-tag-filter"
 <% else %>
 gem "fluent-plugin-rewrite-tag-filter", "~> 2.2.0"
 <% end %>
-<% case target when "elasticsearch" %>
-<% if is_v1 %>
-gem "fluent-plugin-elasticsearch", "~> 3.4.2"
-<% else %>
-gem "fluent-plugin-elasticsearch"
-<% end %>
+<% case target when "elasticsearch6" %>
+gem "elasticsearch", "~> 6.0"
+gem "fluent-plugin-elasticsearch", "~> 3.5.5"
+<% when "elasticsearch7" %>
+gem "elasticsearch", "~> 7.0"
+gem "fluent-plugin-elasticsearch", "~> 3.5.5"
 <% when "logentries" %>
 #gem "fluent-plugin-logentries"
 <% when "loggly"%>

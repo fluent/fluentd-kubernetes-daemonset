@@ -10,7 +10,7 @@
 @include kubernetes.conf
 @include conf.d/*.conf
 
-<% case target when "elasticsearch"%>
+<% case target when "elasticsearch6","elasticsearch7" %>
 <match **>
    @type elasticsearch
    @id out_es
