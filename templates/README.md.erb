@@ -14,24 +14,19 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 ### Debian
 
+#### Current stable
+
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
 - `<%= tags %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% end %>
-- `v1.3.3-debian-elasticsearch-1.8,v1.3-debian-elasticsearch-1` [docker-image/v1.3/debian-elasticsearch/Dockerfile](docker-image/v1.3/debian-elasticsearch/Dockerfile)
-- `v1.3.3-debian-loggly-1.3,v1.3-debian-loggly-1` [docker-image/v1.3/debian-loggly/Dockerfile](docker-image/v1.3/debian-loggly/Dockerfile)
-- `v1.3.3-debian-logentries-1.3,v1.3-debian-logentries-1` [docker-image/v1.3/debian-logentries/Dockerfile](docker-image/v1.3/debian-logentries/Dockerfile)
-- `v1.3.3-debian-cloudwatch-1.4,v1.3-debian-cloudwatch-1` [docker-image/v1.3/debian-cloudwatch/Dockerfile](docker-image/v1.3/debian-cloudwatch/Dockerfile)
-- `v1.3.3-debian-stackdriver-1.3,v1.3-debian-stackdriver-1` [docker-image/v1.3/debian-stackdriver/Dockerfile](docker-image/v1.3/debian-stackdriver/Dockerfile)
-- `v1.3.3-debian-s3-1.3,v1.3-debian-s3-1` [docker-image/v1.3/debian-s3/Dockerfile](docker-image/v1.3/debian-s3/Dockerfile)
-- `v1.3.3-debian-syslog-1.4,v1.3-debian-syslog-1` [docker-image/v1.3/debian-syslog/Dockerfile](docker-image/v1.3/debian-syslog/Dockerfile)
-- `v1.3.3-debian-forward-1.3,v1.3-debian-forward-1` [docker-image/v1.3/debian-forward/Dockerfile](docker-image/v1.3/debian-forward/Dockerfile)
-- `v1.3.3-debian-gcs-1.3,v1.3-debian-gcs-1` [docker-image/v1.3/debian-gcs/Dockerfile](docker-image/v1.3/debian-gcs/Dockerfile)
-- `v1.3.3-debian-graylog-1.4,v1.3-debian-graylog-1` [docker-image/v1.3/debian-graylog/Dockerfile](docker-image/v1.3/debian-graylog/Dockerfile)
-- `v1.3.3-debian-papertrail-1.3,v1.3-debian-papertrail-1` [docker-image/v1.3/debian-papertrail/Dockerfile](docker-image/v1.3/debian-papertrail/Dockerfile)
-- `v1.3.3-debian-logzio-1.3,v1.3-debian-logzio-1` [docker-image/v1.3/debian-logzio/Dockerfile](docker-image/v1.3/debian-logzio/Dockerfile)
-- `v1.3.3-debian-kafka-1.4,v1.3-debian-kafka-1` [docker-image/v1.3/debian-kafka/Dockerfile](docker-image/v1.3/debian-kafka/Dockerfile)
-- `v1.3.3-debian-kinesis-1.3,v1.3-debian-kinesis-1` [docker-image/v1.3/debian-kinesis/Dockerfile](docker-image/v1.3/debian-kinesis/Dockerfile)
+
+You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
+
+See dockerhub's tags page for older tags.
+
+#### Old stable
+
 - `v0.12-debian-elasticsearch` [docker-image/v0.12/debian-elasticsearch/Dockerfile](docker-image/v0.12/debian-elasticsearch/Dockerfile)
 - `v0.12-debian-loggly` [docker-image/v0.12/debian-loggly/Dockerfile](docker-image/v0.12/debian-loggly/Dockerfile)
 - `v0.12-debian-logentries` [docker-image/v0.12/debian-logentries/Dockerfile](docker-image/v0.12/debian-logentries/Dockerfile)
@@ -76,14 +71,12 @@ collection and consumption for a better use and understanding of data.
 
 ## Image versions
 
-The following repository expose images based on Alpine Linux and Debian. For production environments we strongly suggest to use Debian images.
-
 Fluentd versioning is as follows:
 
 | Series | Description                         |
 |--------|-------------------------------------|
-| v1.x   | stable |
-| v0.12  | Old stable, no longer updated|
+| v1.x   | current stable |
+| v0.12  | Old stable, no longer updated |
 
 ## Settings
 
