@@ -1,14 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.6.0)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     aws-eventstream (1.0.3)
-    aws-partitions (1.207.0)
+    aws-partitions (1.208.0)
     aws-sdk-cloudwatchlogs (1.25.0)
       aws-sdk-core (~> 3, >= 3.61.1)
       aws-sigv4 (~> 1.1)
-    aws-sdk-core (3.65.1)
+    aws-sdk-core (3.66.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
@@ -85,7 +85,7 @@ GEM
     oj (3.8.1)
     prometheus-client (0.9.0)
       quantile (~> 0.2.1)
-    public_suffix (3.1.1)
+    public_suffix (4.0.1)
     quantile (0.2.1)
     recursive-open-struct (1.1.0)
     rest-client (2.1.0)

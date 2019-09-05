@@ -16,7 +16,7 @@ ALL_IMAGES := \
 	v1.7/debian-elasticsearch6:v1.7.0-debian-elasticsearch6-1.1,v1.7-debian-elasticsearch6-1 \
 	v1.7/debian-loggly:v1.7.0-debian-loggly-1.1,v1.7-debian-loggly-1 \
 	v1.7/debian-logentries:v1.7.0-debian-logentries-1.1,v1.7-debian-logentries-1 \
-	v1.7/debian-cloudwatch:v1.7.0-debian-cloudwatch-1.1,v1.7-debian-cloudwatch-1 \
+	v1.7/debian-cloudwatch:v1.7.0-debian-cloudwatch-1.2,v1.7-debian-cloudwatch-1 \
 	v1.7/debian-stackdriver:v1.7.0-debian-stackdriver-1.1,v1.7-debian-stackdriver-1 \
 	v1.7/debian-s3:v1.7.0-debian-s3-1.1,v1.7-debian-s3-1 \
 	v1.7/debian-syslog:v1.7.0-debian-syslog-1.1,v1.7-debian-syslog-1 \
