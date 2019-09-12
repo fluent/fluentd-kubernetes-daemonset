@@ -62,7 +62,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:v1.4.2-debian-loggly-1.0
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-loggly
         env:
           # See https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.4/debian-loggly/conf/fluent.conf
           # loggly_url "https://logs-01.loggly.com/bulk/#{ENV['LOGGLY_TOKEN']}/tag/#{ENV['LOGGLY_TAGS'] || 'fluentd'}/bulk"

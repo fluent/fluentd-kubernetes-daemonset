@@ -63,7 +63,7 @@ spec:
       #   effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:v1.4.2-debian-graylog-1.1
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-graylog
         imagePullPolicy: IfNotPresent
         env:
           - name:  FLUENT_GRAYLOG_HOST

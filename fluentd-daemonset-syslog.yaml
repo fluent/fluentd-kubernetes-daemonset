@@ -18,7 +18,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:syslog
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-syslog
         env:
           - name:  SYSLOG_HOST
             value: "sysloghost"

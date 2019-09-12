@@ -18,7 +18,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd-gcs
-        image: fluent/fluentd-kubernetes-daemonset:gcs
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-gcs
         env:
           - name:  GCS_BUCKET_PROJECT
             value: "myproject"

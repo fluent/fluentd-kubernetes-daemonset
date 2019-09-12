@@ -23,7 +23,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:papertrail
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-papertrail
         env:
           - name: FLUENT_PAPERTRAIL_HOST
             value: "logsX.papertrailapp.com"

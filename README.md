@@ -88,6 +88,10 @@ Fluentd versioning is as follows:
 
 ## Settings
 
+### Default image version
+
+Default YAML uses latest v1 images like `fluent/fluentd-kubernetes-daemonset:v1-debian-kafka`. If you want to avoid unexpected image update, specify exact version for `image` like `fluent/fluentd-kubernetes-daemonset:v1.7.0-debian-kafka-1.1`.
+
 ### Run as root
 
 This is for v0.12 images.

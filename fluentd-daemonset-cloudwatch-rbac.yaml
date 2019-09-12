@@ -60,7 +60,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:v1.4-debian-cloudwatch-1
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-cloudwatch
         env:
           - name: LOG_GROUP_NAME
             value: "k8s"
