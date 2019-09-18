@@ -13,8 +13,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
-- `v1.7.1-debian-elasticsearch7-1.0,v1.7-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.7/debian-elasticsearch7/Dockerfile](docker-image/v1.7/debian-elasticsearch7/Dockerfile)
-- `v1.7.1-debian-elasticsearch6-1.0,v1.7-debian-elasticsearch6-1` [docker-image/v1.7/debian-elasticsearch6/Dockerfile](docker-image/v1.7/debian-elasticsearch6/Dockerfile)
+- `v1.7.1-debian-elasticsearch7-1.1,v1.7-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.7/debian-elasticsearch7/Dockerfile](docker-image/v1.7/debian-elasticsearch7/Dockerfile)
+- `v1.7.1-debian-elasticsearch6-1.1,v1.7-debian-elasticsearch6-1` [docker-image/v1.7/debian-elasticsearch6/Dockerfile](docker-image/v1.7/debian-elasticsearch6/Dockerfile)
 - `v1.7.1-debian-loggly-1.0,v1.7-debian-loggly-1` [docker-image/v1.7/debian-loggly/Dockerfile](docker-image/v1.7/debian-loggly/Dockerfile)
 - `v1.7.1-debian-logentries-1.0,v1.7-debian-logentries-1` [docker-image/v1.7/debian-logentries/Dockerfile](docker-image/v1.7/debian-logentries/Dockerfile)
 - `v1.7.1-debian-cloudwatch-1.0,v1.7-debian-cloudwatch-1` [docker-image/v1.7/debian-cloudwatch/Dockerfile](docker-image/v1.7/debian-cloudwatch/Dockerfile)
@@ -121,23 +121,6 @@ You can disable prometheus input plugin by setting `disable` to `FLUENTD_PROMETH
 By historical reason, elasaticsearch image executes `sed` command during startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes a problem with read only mount.
 To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable in your kubernetes configuration.
 
-## Maintainers
-
-Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
-
-- cloudwatch : @so0k
-- papertrail : @alexouzounis
-- kafka : @erhudy
-- graylog : @rtnpro
-- gcs : @andor-pierdelacabeza
-- Amazon Kinesis : @shiftky
-- logz.io : @SaMnCo / @jamielennox
-- splunkhec: @FutureSharks
-
-### References
-
-[Kubernetes Logging with Fluentd][fluentd-article]
-
 ### Running on OpenShift
 
 This daemonset setting mounts `/var/log` as service account `fluentd` so you need to run containers as privileged container.
@@ -159,6 +142,23 @@ oc delete pod -l k8s-app = fluentd-logging
 
 This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
 
+## Maintainers
+
+Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
+
+- cloudwatch : @so0k
+- papertrail : @alexouzounis
+- kafka : @erhudy
+- graylog : @rtnpro
+- gcs : @andor-pierdelacabeza
+- Amazon Kinesis : @shiftky
+- logz.io : @SaMnCo / @jamielennox
+- splunkhec: @FutureSharks
+
+### References
+
+[Kubernetes Logging with Fluentd][fluentd-article]
+
 ## Issues
 
 We can't notice comments in the DockerHub so don't use them for reporting
@@ -166,6 +166,11 @@ issues or asking question.
 
 If you have any problems with or questions about this image, please contact us
 through a [GitHub issue](https://github.com/fluent/fluentd-kubernetes-daemonset/issues).
+
+## Pull Request
+
+Update `templates` files instead of `docker-image` files.
+`docker-image` files are automatically generated from `templates`.
 
 _Note: This file is generated from [templates/README.md.erb](templates/README.md.erb)_
 
