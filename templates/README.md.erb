@@ -91,6 +91,11 @@ This is for v0.12 images.
 In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
 To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
 
+### Use your configuration
+
+These images have default configuration and support some environment variables for parameters
+but it sometimes doesn't fit your case. If you want to use your configuration, use ConfigMap feature.
+
 ### Disable systemd input
 
 If you don't setup systemd in the container, fluentd shows following messages by default configuration.
