@@ -13,21 +13,21 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
-- `v1.7.1-debian-elasticsearch7-1.1,v1.7-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.7/debian-elasticsearch7/Dockerfile](docker-image/v1.7/debian-elasticsearch7/Dockerfile)
-- `v1.7.1-debian-elasticsearch6-1.1,v1.7-debian-elasticsearch6-1` [docker-image/v1.7/debian-elasticsearch6/Dockerfile](docker-image/v1.7/debian-elasticsearch6/Dockerfile)
-- `v1.7.1-debian-loggly-1.0,v1.7-debian-loggly-1` [docker-image/v1.7/debian-loggly/Dockerfile](docker-image/v1.7/debian-loggly/Dockerfile)
-- `v1.7.1-debian-logentries-1.0,v1.7-debian-logentries-1` [docker-image/v1.7/debian-logentries/Dockerfile](docker-image/v1.7/debian-logentries/Dockerfile)
-- `v1.7.1-debian-cloudwatch-1.0,v1.7-debian-cloudwatch-1` [docker-image/v1.7/debian-cloudwatch/Dockerfile](docker-image/v1.7/debian-cloudwatch/Dockerfile)
-- `v1.7.1-debian-stackdriver-1.0,v1.7-debian-stackdriver-1` [docker-image/v1.7/debian-stackdriver/Dockerfile](docker-image/v1.7/debian-stackdriver/Dockerfile)
-- `v1.7.1-debian-s3-1.0,v1.7-debian-s3-1` [docker-image/v1.7/debian-s3/Dockerfile](docker-image/v1.7/debian-s3/Dockerfile)
-- `v1.7.1-debian-syslog-1.0,v1.7-debian-syslog-1` [docker-image/v1.7/debian-syslog/Dockerfile](docker-image/v1.7/debian-syslog/Dockerfile)
-- `v1.7.1-debian-forward-1.0,v1.7-debian-forward-1` [docker-image/v1.7/debian-forward/Dockerfile](docker-image/v1.7/debian-forward/Dockerfile)
-- `v1.7.1-debian-gcs-1.0,v1.7-debian-gcs-1` [docker-image/v1.7/debian-gcs/Dockerfile](docker-image/v1.7/debian-gcs/Dockerfile)
-- `v1.7.1-debian-graylog-1.0,v1.7-debian-graylog-1` [docker-image/v1.7/debian-graylog/Dockerfile](docker-image/v1.7/debian-graylog/Dockerfile)
-- `v1.7.1-debian-papertrail-1.0,v1.7-debian-papertrail-1` [docker-image/v1.7/debian-papertrail/Dockerfile](docker-image/v1.7/debian-papertrail/Dockerfile)
-- `v1.7.1-debian-logzio-1.0,v1.7-debian-logzio-1` [docker-image/v1.7/debian-logzio/Dockerfile](docker-image/v1.7/debian-logzio/Dockerfile)
-- `v1.7.1-debian-kafka-1.0,v1.7-debian-kafka-1` [docker-image/v1.7/debian-kafka/Dockerfile](docker-image/v1.7/debian-kafka/Dockerfile)
-- `v1.7.1-debian-kinesis-1.0,v1.7-debian-kinesis-1` [docker-image/v1.7/debian-kinesis/Dockerfile](docker-image/v1.7/debian-kinesis/Dockerfile)
+- `v1.7.3-debian-elasticsearch7-1.0,v1.7-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.7/debian-elasticsearch7/Dockerfile](docker-image/v1.7/debian-elasticsearch7/Dockerfile)
+- `v1.7.3-debian-elasticsearch6-1.0,v1.7-debian-elasticsearch6-1` [docker-image/v1.7/debian-elasticsearch6/Dockerfile](docker-image/v1.7/debian-elasticsearch6/Dockerfile)
+- `v1.7.3-debian-loggly-1.0,v1.7-debian-loggly-1` [docker-image/v1.7/debian-loggly/Dockerfile](docker-image/v1.7/debian-loggly/Dockerfile)
+- `v1.7.3-debian-logentries-1.0,v1.7-debian-logentries-1` [docker-image/v1.7/debian-logentries/Dockerfile](docker-image/v1.7/debian-logentries/Dockerfile)
+- `v1.7.3-debian-cloudwatch-1.0,v1.7-debian-cloudwatch-1` [docker-image/v1.7/debian-cloudwatch/Dockerfile](docker-image/v1.7/debian-cloudwatch/Dockerfile)
+- `v1.7.3-debian-stackdriver-1.0,v1.7-debian-stackdriver-1` [docker-image/v1.7/debian-stackdriver/Dockerfile](docker-image/v1.7/debian-stackdriver/Dockerfile)
+- `v1.7.3-debian-s3-1.0,v1.7-debian-s3-1` [docker-image/v1.7/debian-s3/Dockerfile](docker-image/v1.7/debian-s3/Dockerfile)
+- `v1.7.3-debian-syslog-1.0,v1.7-debian-syslog-1` [docker-image/v1.7/debian-syslog/Dockerfile](docker-image/v1.7/debian-syslog/Dockerfile)
+- `v1.7.3-debian-forward-1.0,v1.7-debian-forward-1` [docker-image/v1.7/debian-forward/Dockerfile](docker-image/v1.7/debian-forward/Dockerfile)
+- `v1.7.3-debian-gcs-1.0,v1.7-debian-gcs-1` [docker-image/v1.7/debian-gcs/Dockerfile](docker-image/v1.7/debian-gcs/Dockerfile)
+- `v1.7.3-debian-graylog-1.0,v1.7-debian-graylog-1` [docker-image/v1.7/debian-graylog/Dockerfile](docker-image/v1.7/debian-graylog/Dockerfile)
+- `v1.7.3-debian-papertrail-1.0,v1.7-debian-papertrail-1` [docker-image/v1.7/debian-papertrail/Dockerfile](docker-image/v1.7/debian-papertrail/Dockerfile)
+- `v1.7.3-debian-logzio-1.0,v1.7-debian-logzio-1` [docker-image/v1.7/debian-logzio/Dockerfile](docker-image/v1.7/debian-logzio/Dockerfile)
+- `v1.7.3-debian-kafka-1.0,v1.7-debian-kafka-1` [docker-image/v1.7/debian-kafka/Dockerfile](docker-image/v1.7/debian-kafka/Dockerfile)
+- `v1.7.3-debian-kinesis-1.0,v1.7-debian-kinesis-1` [docker-image/v1.7/debian-kinesis/Dockerfile](docker-image/v1.7/debian-kinesis/Dockerfile)
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
 
@@ -98,6 +98,11 @@ This is for v0.12 images.
 
 In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
 To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
+
+### Use your configuration
+
+These images have default configuration and support some environment variables for parameters
+but it sometimes doesn't fit your case. If you want to use your configuration, use ConfigMap feature.
 
 ### Disable systemd input
 
