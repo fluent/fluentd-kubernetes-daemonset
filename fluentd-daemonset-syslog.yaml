@@ -6,21 +6,19 @@ metadata:
   labels:
     k8s-app: fluentd-logging
     version: v1
-    kubernetes.io/cluster-service: "true"
 spec:
   template:
     metadata:
       labels:
         k8s-app: fluentd-logging
         version: v1
-        kubernetes.io/cluster-service: "true"
     spec:
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:syslog
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-syslog
         env:
           - name:  SYSLOG_HOST
             value: "sysloghost"

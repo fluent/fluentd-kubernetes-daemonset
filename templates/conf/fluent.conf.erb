@@ -10,7 +10,7 @@
 @include kubernetes.conf
 @include conf.d/*.conf
 
-<% case target when "elasticsearch"%>
+<% case target when "elasticsearch6","elasticsearch7" %>
 <match **>
    @type elasticsearch
    @id out_es
@@ -27,6 +27,7 @@
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'false'}"
    reconnect_on_error "#{ENV['FLUENT_ELASTICSEARCH_RECONNECT_ON_ERROR'] || 'true'}"
    reload_on_failure "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_ON_FAILURE'] || 'true'}"
+   log_es_400_reason "#{ENV['FLUENT_ELASTICSEARCH_LOG_ES_400_REASON'] || 'false'}"
    logstash_prefix "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_PREFIX'] || 'logstash'}"
    logstash_format "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_FORMAT'] || 'true'}"
    index_name "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_INDEX_NAME'] || 'logstash'}"
@@ -107,6 +108,7 @@
   log_group_name "#{ENV['LOG_GROUP_NAME']}"
   auto_create_stream true
   use_tag_as_stream true
+  retention_in_days "#{ENV['RETENTION_IN_DAYS'] || 'nil'}"
 <% if is_v1 %>
   json_handler yajl # To avoid UndefinedConversionError
   log_rejected_request "#{ENV['LOG_REJECTED_REQUEST']}" # Log rejected request for missing parts
@@ -195,18 +197,21 @@
 </filter>
 
 <match **>
-   @type gelf
-   @id out_graylog
-   @log_level info
-   include_tag_key true
-   host "#{ENV['FLUENT_GRAYLOG_HOST']}"
-   port "#{ENV['FLUENT_GRAYLOG_PORT']}"
-   buffer_chunk_limit 4096K
-   buffer_queue_limit 512
-   flush_interval 5s
-   max_retry_wait 30
-   disable_retry_limit
-   num_threads 8
+  @type gelf
+  @id out_graylog
+  @log_level info
+  include_tag_key true
+  host "#{ENV['FLUENT_GRAYLOG_HOST']}"
+  port "#{ENV['FLUENT_GRAYLOG_PORT']}"
+  protocol "#{ENV['FLUENT_GRAYLOG_PROTOCOL'] || 'udp'}"
+  <buffer>
+    flush_thread_count 8
+    flush_interval 5s
+    chunk_limit_size 8M
+    queue_limit_length 512
+    retry_max_interval 30
+    retry_forever true
+  </buffer>
 </match>
 <% when "logzio"%>
 <match **>
@@ -396,7 +401,7 @@
 <% if is_v1 %>
   <buffer>
     flush_interval 1
-    chunk_limit_size 1m
+    chunk_limit_size "#{ENV['FLUENT_KINESIS_STREAMS_CHUNK_LIMIT_SIZE'] || '1m'}"
     flush_thread_interval 0.1
     flush_thread_burst_interval 0.01
     flush_thread_count 15

@@ -17,11 +17,11 @@
   read_from_head true
 <% if is_v1 %>
   <parse>
-    @type json
+    @type "#{ENV['FLUENT_CONTAINER_TAIL_PARSER_TYPE'] || 'json'}"
     time_format %Y-%m-%dT%H:%M:%S.%NZ
   </parse>
 <% else %>
-  format json
+  format "#{ENV['FLUENT_CONTAINER_TAIL_PARSER_TYPE'] || 'json'}"
   time_format %Y-%m-%dT%H:%M:%S.%NZ
 <% end %>
 </source>
