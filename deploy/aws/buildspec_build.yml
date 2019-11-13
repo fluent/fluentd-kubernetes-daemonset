@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  install:
+    commands:
+       - apt install -y make
+       - curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator
+       - chmod +x ./aws-iam-authenticator
+       - mkdir -p ~/bin && cp ./aws-iam-authenticator ~/bin/aws-iam-authenticator && export PATH=~/bin:$PATH
+       - export AWS_ACCOUNT_ID=`echo $CODEBUILD_BUILD_ARN | sed 's/arn:aws:codebuild:.*:\([0-9]*\):.*/\1/'` # extract the account id from the current build
+  build: # Build Docker image and tag it with the commit sha
+    commands:
+      - $(aws ecr get-login --no-include-email --region $AWS_REGION)
+      - $(aws ecr get-login --no-include-email --region $AWS_REGION --registry-id 514563129364)
+      - docker build -t fluentd/fluentd-kubernetes:$CODEBUILD_RESOLVED_SOURCE_VERSION docker-image/v1.7/debian-awselasticsearch6
+      - docker tag fluentd/fluentd-kubernetes:$CODEBUILD_RESOLVED_SOURCE_VERSION $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/circle-apps/fluentd-kubernetes:latest
+  post_build: # Push the Docker images to the ECR
+    commands:
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/circle-apps/fluentd-kubernetes:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/circle-apps/fluentd-kubernetes:latest
