@@ -35,7 +35,7 @@ variable "branch" {
 
 // The instance size to use for builds.  Defaults to large.
 variable "instance_size" {
-  default = "BUILD_GENERAL1_LARGE"
+  default = "BUILD_GENERAL1_SMALL"
 }
 
 // The VPC to place Codebuild jobs in.  Useful values are vpc-4e4ad735 for the dev
