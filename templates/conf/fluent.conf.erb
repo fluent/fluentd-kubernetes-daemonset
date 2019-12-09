@@ -380,4 +380,11 @@
 <% end %>
 </match>
 
+<% when "mongo" %>
+<match **>
+  @type mongo
+  connection_string "#{ENV['FLUENT_MONGO_CONNECTION_STRING']}"
+  collection "#{ENV['FLUENT_MONGO_COLLECTION']}"
+</match>
+
 <% end %>

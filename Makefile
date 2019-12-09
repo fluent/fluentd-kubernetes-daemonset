@@ -26,7 +26,8 @@ ALL_IMAGES := \
 	v1.7/debian-papertrail:v1.7.4-debian-papertrail-1.0,v1.7-debian-papertrail-1 \
 	v1.7/debian-logzio:v1.7.4-debian-logzio-1.0,v1.7-debian-logzio-1 \
 	v1.7/debian-kafka:v1.7.4-debian-kafka-1.0,v1.7-debian-kafka-1 \
-	v1.7/debian-kinesis:v1.7.4-debian-kinesis-1.0,v1.7-debian-kinesis-1
+	v1.7/debian-kinesis:v1.7.4-debian-kinesis-1.0,v1.7-debian-kinesis-1 \
+	v1.7/debian-mongo:v1.7.4-debian-mongo-1.0
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
