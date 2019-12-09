@@ -13,7 +13,7 @@
   @id in_tail_container_logs
   path /var/log/containers/*.log
   pos_file /var/log/fluentd-containers.log.pos
-  tag kubernetes.*
+  tag "#{ENV['FLUENT_CONTAINER_TAIL_TAG'] || 'kubernetes.*'}"
   read_from_head true
 <% if is_v1 %>
   <parse>
