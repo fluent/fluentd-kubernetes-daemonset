@@ -106,7 +106,6 @@ GEM
       unf_ext
     unf_ext (0.0.7.6)
     yajl-ruby (1.4.1)
-    zookeeper (1.4.11)
 
 PLATFORMS
   ruby
@@ -127,7 +126,6 @@ DEPENDENCIES
   fluentd (= 1.7.4)
   oj (= 3.8.1)
   snappy (~> 0.0.15)
-  zookeeper (~> 1.4.11)
 
 BUNDLED WITH
    1.17.2
