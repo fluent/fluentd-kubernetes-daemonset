@@ -12,21 +12,21 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v1.7/debian-elasticsearch7:v1.7.4-debian-elasticsearch7-1.1,v1.7-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.7/debian-elasticsearch6:v1.7.4-debian-elasticsearch6-1.1,v1.7-debian-elasticsearch6-1 \
-	v1.7/debian-loggly:v1.7.4-debian-loggly-1.1,v1.7-debian-loggly-1 \
-	v1.7/debian-logentries:v1.7.4-debian-logentries-1.1,v1.7-debian-logentries-1 \
-	v1.7/debian-cloudwatch:v1.7.4-debian-cloudwatch-1.1,v1.7-debian-cloudwatch-1 \
-	v1.7/debian-stackdriver:v1.7.4-debian-stackdriver-1.1,v1.7-debian-stackdriver-1 \
-	v1.7/debian-s3:v1.7.4-debian-s3-1.1,v1.7-debian-s3-1 \
-	v1.7/debian-syslog:v1.7.4-debian-syslog-1.1,v1.7-debian-syslog-1 \
-	v1.7/debian-forward:v1.7.4-debian-forward-1.1,v1.7-debian-forward-1 \
-	v1.7/debian-gcs:v1.7.4-debian-gcs-1.1,v1.7-debian-gcs-1 \
-	v1.7/debian-graylog:v1.7.4-debian-graylog-1.1,v1.7-debian-graylog-1 \
-	v1.7/debian-papertrail:v1.7.4-debian-papertrail-1.1,v1.7-debian-papertrail-1 \
-	v1.7/debian-logzio:v1.7.4-debian-logzio-1.1,v1.7-debian-logzio-1 \
-	v1.7/debian-kafka:v1.7.4-debian-kafka-1.1,v1.7-debian-kafka-1 \
-	v1.7/debian-kinesis:v1.7.4-debian-kinesis-1.1,v1.7-debian-kinesis-1
+	v1.7/debian-elasticsearch7:v1.7.4-debian-elasticsearch7-2.0,v1.7-debian-elasticsearch7-2,v1-debian-elasticsearch \
+	v1.7/debian-elasticsearch6:v1.7.4-debian-elasticsearch6-2.0,v1.7-debian-elasticsearch6-2 \
+	v1.7/debian-loggly:v1.7.4-debian-loggly-2.0,v1.7-debian-loggly-2 \
+	v1.7/debian-logentries:v1.7.4-debian-logentries-2.0,v1.7-debian-logentries-2 \
+	v1.7/debian-cloudwatch:v1.7.4-debian-cloudwatch-2.0,v1.7-debian-cloudwatch-2 \
+	v1.7/debian-stackdriver:v1.7.4-debian-stackdriver-2.0,v1.7-debian-stackdriver-2 \
+	v1.7/debian-s3:v1.7.4-debian-s3-2.0,v1.7-debian-s3-2 \
+	v1.7/debian-syslog:v1.7.4-debian-syslog-2.0,v1.7-debian-syslog-2 \
+	v1.7/debian-forward:v1.7.4-debian-forward-2.0,v1.7-debian-forward-2 \
+	v1.7/debian-gcs:v1.7.4-debian-gcs-2.0,v1.7-debian-gcs-2 \
+	v1.7/debian-graylog:v1.7.4-debian-graylog-2.0,v1.7-debian-graylog-2 \
+	v1.7/debian-papertrail:v1.7.4-debian-papertrail-2.0,v1.7-debian-papertrail-2 \
+	v1.7/debian-logzio:v1.7.4-debian-logzio-2.0,v1.7-debian-logzio-2 \
+	v1.7/debian-kafka:v1.7.4-debian-kafka-2.0,v1.7-debian-kafka-2 \
+	v1.7/debian-kinesis:v1.7.4-debian-kinesis-2.0,v1.7-debian-kinesis-2
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 

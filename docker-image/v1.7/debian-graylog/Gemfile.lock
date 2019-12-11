@@ -68,7 +68,7 @@ GEM
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
-    json (2.2.0)
+    json (2.3.0)
     kubeclient (4.5.0)
       http (>= 3.0, < 5.0)
       recursive-open-struct (~> 1.0, >= 1.0.4)

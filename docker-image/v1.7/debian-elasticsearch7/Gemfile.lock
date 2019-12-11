@@ -16,6 +16,8 @@ GEM
     elasticsearch-transport (7.4.0)
       faraday
       multi_json
+    elasticsearch-xpack (7.4.0)
+      elasticsearch-api (>= 6)
     excon (0.70.0)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
@@ -29,7 +31,7 @@ GEM
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.13)
       fluentd (>= 0.10)
-    fluent-plugin-elasticsearch (3.5.6)
+    fluent-plugin-elasticsearch (3.7.1)
       elasticsearch
       excon
       fluentd (>= 0.14.22)
@@ -122,10 +124,11 @@ PLATFORMS
 
 DEPENDENCIES
   elasticsearch (~> 7.0)
+  elasticsearch-xpack (~> 7.4.0)
   ffi
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-detect-exceptions (~> 0.0.12)
-  fluent-plugin-elasticsearch (~> 3.5.5)
+  fluent-plugin-elasticsearch (~> 3.7.1)
   fluent-plugin-grok-parser (~> 2.6.0)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kubernetes_metadata_filter (~> 2.3.0)
