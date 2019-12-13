@@ -40,7 +40,7 @@ subjects:
   namespace: kube-system
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: fluentd
@@ -49,6 +49,9 @@ metadata:
     k8s-app: fluentd-logging
     version: v1
 spec:
+  selector:
+    matchLabels:
+      k8s-app: fluentd-logging
   template:
     metadata:
       labels:
