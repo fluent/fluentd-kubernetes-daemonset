@@ -18,20 +18,18 @@ metadata:
   namespace: kube-system
   labels:
     k8s-app: fluentd
-    kubernetes.io/cluster-service: "true"
 spec:
   template:
     metadata:
       labels:
         k8s-app: fluentd
-        kubernetes.io/cluster-service: "true"
     spec:
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-logentries
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-logentries
         resources:
           limits:
             memory: 200Mi

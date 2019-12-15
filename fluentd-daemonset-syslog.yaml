@@ -1,3 +1,45 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluentd
+  namespace: kube-system
+  labels:
+    k8s-app: fluentd-logging
+    version: v1
+
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: fluentd
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: fluentd
+roleRef:
+  kind: ClusterRole
+  name: fluentd
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: fluentd
+  namespace: kube-system
+
+---
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
@@ -6,26 +48,28 @@ metadata:
   labels:
     k8s-app: fluentd-logging
     version: v1
-    kubernetes.io/cluster-service: "true"
 spec:
   template:
     metadata:
       labels:
         k8s-app: fluentd-logging
         version: v1
-        kubernetes.io/cluster-service: "true"
     spec:
+      serviceAccount: fluentd
+      serviceAccountName: fluentd
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
       - name: fluentd
-        image: fluent/fluentd-kubernetes-daemonset:syslog
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-syslog
         env:
           - name:  SYSLOG_HOST
             value: "sysloghost"
           - name:  SYSLOG_PORT
             value: "514"
+          - name:  SYSLOG_PROTOCOL
+            value: "udp"            
         resources:
           limits:
             memory: 200Mi

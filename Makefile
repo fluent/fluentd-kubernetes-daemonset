@@ -12,20 +12,21 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v1.3/debian-elasticsearch:v1.3.3-debian-elasticsearch-1.4,v1.3-debian-elasticsearch-1 \
-	v1.3/debian-loggly:v1.3.3-debian-loggly-1.2,v1.3-debian-loggly-1 \
-	v1.3/debian-logentries:v1.3.3-debian-logentries-1.2,v1.3-debian-logentries-1 \
-	v1.3/debian-cloudwatch:v1.3.3-debian-cloudwatch-1.3,v1.3-debian-cloudwatch-1 \
-	v1.3/debian-stackdriver:v1.3.3-debian-stackdriver-1.2,v1.3-debian-stackdriver-1 \
-	v1.3/debian-s3:v1.3.3-debian-s3-1.2,v1.3-debian-s3-1 \
-	v1.3/debian-syslog:v1.3.3-debian-syslog-1.2,v1.3-debian-syslog-1 \
-	v1.3/debian-forward:v1.3.3-debian-forward-1.2,v1.3-debian-forward-1 \
-	v1.3/debian-gcs:v1.3.3-debian-gcs-1.2,v1.3-debian-gcs-1 \
-	v1.3/debian-graylog:v1.3.3-debian-graylog-1.3,v1.3-debian-graylog-1 \
-	v1.3/debian-papertrail:v1.3.3-debian-papertrail-1.2,v1.3-debian-papertrail-1 \
-	v1.3/debian-logzio:v1.3.3-debian-logzio-1.2,v1.3-debian-logzio-1 \
-	v1.3/debian-kafka:v1.3.3-debian-kafka-1.2,v1.3-debian-kafka-1 \
-	v1.3/debian-kinesis:v1.3.3-debian-kinesis-1.2,v1.3-debian-kinesis-1
+	v1.7/debian-elasticsearch7:v1.7.4-debian-elasticsearch7-2.0,v1.7-debian-elasticsearch7-2,v1-debian-elasticsearch \
+	v1.7/debian-elasticsearch6:v1.7.4-debian-elasticsearch6-2.0,v1.7-debian-elasticsearch6-2 \
+	v1.7/debian-loggly:v1.7.4-debian-loggly-2.0,v1.7-debian-loggly-2 \
+	v1.7/debian-logentries:v1.7.4-debian-logentries-2.0,v1.7-debian-logentries-2 \
+	v1.7/debian-cloudwatch:v1.7.4-debian-cloudwatch-2.0,v1.7-debian-cloudwatch-2 \
+	v1.7/debian-stackdriver:v1.7.4-debian-stackdriver-2.0,v1.7-debian-stackdriver-2 \
+	v1.7/debian-s3:v1.7.4-debian-s3-2.0,v1.7-debian-s3-2 \
+	v1.7/debian-syslog:v1.7.4-debian-syslog-2.0,v1.7-debian-syslog-2 \
+	v1.7/debian-forward:v1.7.4-debian-forward-2.0,v1.7-debian-forward-2 \
+	v1.7/debian-gcs:v1.7.4-debian-gcs-2.0,v1.7-debian-gcs-2 \
+	v1.7/debian-graylog:v1.7.4-debian-graylog-2.0,v1.7-debian-graylog-2 \
+	v1.7/debian-papertrail:v1.7.4-debian-papertrail-2.0,v1.7-debian-papertrail-2 \
+	v1.7/debian-logzio:v1.7.4-debian-logzio-2.0,v1.7-debian-logzio-2 \
+	v1.7/debian-kafka:v1.7.4-debian-kafka-2.0,v1.7-debian-kafka-2 \
+	v1.7/debian-kinesis:v1.7.4-debian-kinesis-2.0,v1.7-debian-kinesis-2
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
@@ -116,7 +117,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile gemfile fluent.conf systemd.conf kubernetes.conf plugins post-push-hook entrypoint.sh
+src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins post-push-hook entrypoint.sh
 
 # Generate sources for all supported Docker images.
 #
@@ -208,6 +209,14 @@ systemd.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
+
+prometheus.conf:
+	mkdir -p docker-image/$(DOCKERFILE)/conf
+	docker run --rm -i -v $(PWD)/templates/conf/prometheus.conf.erb:/prometheus.conf.erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/prometheus.conf.erb > docker-image/$(DOCKERFILE)/conf/prometheus.conf
 
 README.md: templates/README.md.erb
 	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
