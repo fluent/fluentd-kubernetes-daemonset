@@ -18,7 +18,7 @@ GEM
       multi_json
     elasticsearch-xpack (7.4.0)
       elasticsearch-api (>= 6)
-    excon (0.71.0)
+    excon (0.71.1)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)

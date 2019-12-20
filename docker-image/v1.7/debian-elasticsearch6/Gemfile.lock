@@ -16,7 +16,7 @@ GEM
     elasticsearch-transport (6.8.0)
       faraday
       multi_json
-    excon (0.71.0)
+    excon (0.71.1)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
