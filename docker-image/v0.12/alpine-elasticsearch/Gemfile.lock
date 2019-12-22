@@ -20,7 +20,7 @@ GEM
     elasticsearch-transport (6.1.0)
       faraday
       multi_json
-    excon (0.62.0)
+    excon (0.71.1)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     fluent-plugin-elasticsearch (1.18.0)
