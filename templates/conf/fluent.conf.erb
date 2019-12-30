@@ -11,11 +11,19 @@
 @include conf.d/*.conf
 
 <% case target when "elasticsearch6","elasticsearch7" %>
+# Generate ids locally to avoid duplicate logs in ElasticSearch
+<filter **>
+   @type elasticsearch_genid
+   hash_id_key _hash
+</filter>
+
 <match **>
    @type elasticsearch
    @id out_es
    @log_level info
    include_tag_key true
+   id_key _hash
+   remove_keys _hash
    host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
    port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
    path "#{ENV['FLUENT_ELASTICSEARCH_PATH']}"
@@ -32,6 +40,7 @@
    logstash_format "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_FORMAT'] || 'true'}"
    index_name "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_INDEX_NAME'] || 'logstash'}"
    type_name "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_TYPE_NAME'] || 'fluentd'}"
+   request_timeout "#{ENV['FLUENT_ELASTICSEARCH_REQUEST_TIMEOUT'] || '5s'}"
 <% if is_v1 %>
    <buffer>
      flush_thread_count "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_FLUSH_THREAD_COUNT'] || '8'}"
