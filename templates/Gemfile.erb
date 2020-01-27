@@ -91,7 +91,8 @@ gem "fluent-plugin-remote_syslog"
 gem "fluent-plugin-kubernetes_remote_syslog"
 <% end %>
 <% when "kafka" %>
-gem "fluent-plugin-kafka", "~> 0.7.9"
+gem "rdkafka", "~> 0.7.0"
+gem "fluent-plugin-kafka", "~> 0.12.2"
 gem "snappy", "~> 0.0.15"
 <% when "kinesis" %>
 <% if is_v1 %>
