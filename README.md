@@ -26,7 +26,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.8.1-debian-graylog-1.0,v1.8-debian-graylog-1` [docker-image/v1.8/debian-graylog/Dockerfile](docker-image/v1.8/debian-graylog/Dockerfile)
 - `v1.8.1-debian-papertrail-1.0,v1.8-debian-papertrail-1` [docker-image/v1.8/debian-papertrail/Dockerfile](docker-image/v1.8/debian-papertrail/Dockerfile)
 - `v1.8.1-debian-logzio-1.0,v1.8-debian-logzio-1` [docker-image/v1.8/debian-logzio/Dockerfile](docker-image/v1.8/debian-logzio/Dockerfile)
-- `v1.8.1-debian-kafka-1.0,v1.8-debian-kafka-1` [docker-image/v1.8/debian-kafka/Dockerfile](docker-image/v1.8/debian-kafka/Dockerfile)
+- `v1.8.1-debian-kafka-2.0,v1.8-debian-kafka-2` [docker-image/v1.8/debian-kafka/Dockerfile](docker-image/v1.8/debian-kafka/Dockerfile)
 - `v1.8.1-debian-kinesis-1.0,v1.8-debian-kinesis-1` [docker-image/v1.8/debian-kinesis/Dockerfile](docker-image/v1.8/debian-kinesis/Dockerfile)
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
