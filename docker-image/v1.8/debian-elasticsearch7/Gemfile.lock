@@ -18,7 +18,7 @@ GEM
       multi_json
     elasticsearch-xpack (7.4.0)
       elasticsearch-api (>= 6)
-    excon (0.71.1)
+    excon (0.72.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.1)
@@ -125,8 +125,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  elasticsearch (~> 7.4.0)
-  elasticsearch-xpack (~> 7.4.0)
+  elasticsearch (~> 7.0)
+  elasticsearch-xpack (~> 7.0)
   ffi
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-dedot_filter (~> 1.0)
