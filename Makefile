@@ -12,11 +12,11 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v1.8/debian-elasticsearch7:v1.8.1-debian-elasticsearch7-1.1,v1.8-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.8/debian-elasticsearch6:v1.8.1-debian-elasticsearch6-1.0,v1.8-debian-elasticsearch6-1 \
+	v1.8/debian-elasticsearch7:v1.8.1-debian-elasticsearch7-1.2,v1.8-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.8/debian-elasticsearch6:v1.8.1-debian-elasticsearch6-1.1,v1.8-debian-elasticsearch6-1 \
 	v1.8/debian-loggly:v1.8.1-debian-loggly-1.0,v1.8-debian-loggly-1 \
 	v1.8/debian-logentries:v1.8.1-debian-logentries-1.0,v1.8-debian-logentries-1 \
-	v1.8/debian-cloudwatch:v1.8.1-debian-cloudwatch-1.0,v1.8-debian-cloudwatch-1 \
+	v1.8/debian-cloudwatch:v1.8.1-debian-cloudwatch-1.1,v1.8-debian-cloudwatch-1 \
 	v1.8/debian-stackdriver:v1.8.1-debian-stackdriver-1.0,v1.8-debian-stackdriver-1 \
 	v1.8/debian-s3:v1.8.1-debian-s3-1.0,v1.8-debian-s3-1 \
 	v1.8/debian-syslog:v1.8.1-debian-syslog-1.0,v1.8-debian-syslog-1 \
