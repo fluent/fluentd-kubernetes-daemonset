@@ -16,13 +16,7 @@ gem "fluent-plugin-prometheus", "~> 1.6.1"
 gem 'fluent-plugin-json-in-json-2', ">= 1.0.2"
 gem "fluent-plugin-record-modifier", "~> 2.0.0"
 gem "fluent-plugin-detect-exceptions", "~> 0.0.12"
-<% if !is_v1 %>
-gem "fluent-plugin-secure-forward"
-gem "fluent-plugin-record-reformer"
-gem "fluent-plugin-rewrite-tag-filter"
-<% else %>
 gem "fluent-plugin-rewrite-tag-filter", "~> 2.2.0"
-<% end %>
 <% case target when "elasticsearch6" %>
 gem "elasticsearch", "~> 6.0"
 gem "fluent-plugin-elasticsearch", "~> 4.0.2"
@@ -34,86 +28,37 @@ gem "fluent-plugin-dedot_filter", "~> 1.0"
 <% when "logentries" %>
 #gem "fluent-plugin-logentries"
 <% when "loggly"%>
-<% if is_v1 %>
 gem "fluent-plugin-loggly", "~> 0.0.9"
-<% else %>
-gem "fluent-plugin-loggly"
-<% end %>
 <% when "cloudwatch" %>
 gem "aws-sdk-cloudwatchlogs", "~> 1.0"
-<% if is_v1 %>
 gem "fluent-plugin-cloudwatch-logs", "~> 0.7.4"
-<% else %>
-gem "fluent-plugin-cloudwatch-logs", "0.4.5"
-<% end %>
 <% when "stackdriver" %>
-<% if is_v1 %>
 gem "fluent-plugin-google-cloud", "~> 0.4.10"
-<% else %>
-gem "fluent-plugin-google-cloud"
-<% end %>
 <% when "s3" %>
-<% if is_v1 %>
 gem "aws-sdk-s3", "~> 1.0"
 gem "fluent-plugin-s3", "~> 1.1.6"
-<% else %>
-gem "fluent-plugin-s3", "~> 0.8"
-<% end %>
 <% when "gcs" %>
-<% if is_v1 %>
 gem "fluent-plugin-gcs", "0.4.0"
-<% else %>
-gem "fluent-plugin-gcs", "~> 0.3"
-<% end %>
 <% when "graylog" %>
 gem "gelf", "3.0.0"
-<% if is_v1 %>
 gem "fluent-plugin-gelf-hs", "~> 1.0.7"
-<% else %>
-gem "fluent-plugin-gelf-hs"
-gem "fluent-plugin-record-modifier", "< 1.0.0"
-<% end %>
 <% when "logzio" %>
-<% if is_v1 %>
 gem "fluent-plugin-logzio", "~> 0.0.18"
-<% else %>
-gem "fluent-plugin-logzio"
-<% end %>
 <% when "papertrail" %>
-<% if is_v1 %>
 gem "fluent-plugin-papertrail", "~> 0.2.6"
-<% else %>
-gem "fluent-plugin-papertrail"
-<% end %>
 <% when "syslog" %>
-<% if is_v1 %>
 gem "fluent-plugin-remote_syslog"
-<% else %>
-gem "fluent-plugin-kubernetes_remote_syslog"
-<% end %>
 <% when "kafka" %>
 gem "rdkafka", "~> 0.7.0"
 gem "fluent-plugin-kafka", "~> 0.12.2"
 gem "snappy", "~> 0.0.15"
 <% when "kinesis" %>
-<% if is_v1 %>
 gem "fluent-plugin-kinesis", "~> 2.1.1"
-<% else %>
-gem "fluent-plugin-kinesis"
-<% end %>
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
 <% end %>
-<% if is_v1 %>
 gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.3.0"
-<% else %>
-gem "fluent-plugin-kubernetes_metadata_filter", "< 1.0.0"
-<% end %>
 <% if !is_alpine %>
 gem "ffi"
-<% if is_v1 %>
 gem "fluent-plugin-systemd", "~> 1.0.1"
-<% else %>
-gem "fluent-plugin-systemd"
-<% end %>
 <% end %>
