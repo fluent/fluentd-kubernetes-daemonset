@@ -1,7 +1,7 @@
 ## PaperTrail example Daemonset
 # Uncomment sections below to allow audit logs to go to a separate host
 
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: fluentd
