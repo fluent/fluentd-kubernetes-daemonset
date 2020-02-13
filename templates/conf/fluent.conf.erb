@@ -21,7 +21,11 @@
    path "#{ENV['FLUENT_ELASTICSEARCH_PATH']}"
    scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME'] || 'http'}"
    ssl_verify "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERIFY'] || 'true'}"
+<% if target == "elasticsearch7" %>
+   ssl_version "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERSION'] || 'TLSv1_2'}"
+<% else %>
    ssl_version "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERSION'] || 'TLSv1'}"
+<% end %>
    user "#{ENV['FLUENT_ELASTICSEARCH_USER']}"
    password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}"
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'false'}"
