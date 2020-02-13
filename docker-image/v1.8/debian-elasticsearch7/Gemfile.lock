@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     cool.io (1.6.0)
     dig_rb (1.0.1)
     domain_name (0.5.20190701)
@@ -33,7 +33,7 @@ GEM
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.13)
       fluentd (>= 0.10)
-    fluent-plugin-elasticsearch (4.0.2)
+    fluent-plugin-elasticsearch (4.0.3)
       elasticsearch
       excon
       fluentd (>= 0.14.22)
@@ -131,7 +131,7 @@ DEPENDENCIES
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-dedot_filter (~> 1.0)
   fluent-plugin-detect-exceptions (~> 0.0.12)
-  fluent-plugin-elasticsearch (~> 4.0.2)
+  fluent-plugin-elasticsearch (~> 4.0.3)
   fluent-plugin-grok-parser (~> 2.6.0)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kubernetes_metadata_filter (~> 2.3.0)

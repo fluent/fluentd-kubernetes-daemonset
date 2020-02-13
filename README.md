@@ -13,8 +13,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
-- `v1.8.1-debian-elasticsearch7-1.2,v1.8-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.8/debian-elasticsearch7/Dockerfile](docker-image/v1.8/debian-elasticsearch7/Dockerfile)
-- `v1.8.1-debian-elasticsearch6-1.1,v1.8-debian-elasticsearch6-1` [docker-image/v1.8/debian-elasticsearch6/Dockerfile](docker-image/v1.8/debian-elasticsearch6/Dockerfile)
+- `v1.8.1-debian-elasticsearch7-1.3,v1.8-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.8/debian-elasticsearch7/Dockerfile](docker-image/v1.8/debian-elasticsearch7/Dockerfile)
+- `v1.8.1-debian-elasticsearch6-1.2,v1.8-debian-elasticsearch6-1` [docker-image/v1.8/debian-elasticsearch6/Dockerfile](docker-image/v1.8/debian-elasticsearch6/Dockerfile)
 - `v1.8.1-debian-loggly-1.0,v1.8-debian-loggly-1` [docker-image/v1.8/debian-loggly/Dockerfile](docker-image/v1.8/debian-loggly/Dockerfile)
 - `v1.8.1-debian-logentries-1.0,v1.8-debian-logentries-1` [docker-image/v1.8/debian-logentries/Dockerfile](docker-image/v1.8/debian-logentries/Dockerfile)
 - `v1.8.1-debian-cloudwatch-1.1,v1.8-debian-cloudwatch-1` [docker-image/v1.8/debian-cloudwatch/Dockerfile](docker-image/v1.8/debian-cloudwatch/Dockerfile)
