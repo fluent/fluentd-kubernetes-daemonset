@@ -26,8 +26,8 @@
 <% else %>
    ssl_version "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERSION'] || 'TLSv1'}"
 <% end %>
-   user "#{ENV['FLUENT_ELASTICSEARCH_USER']}"
-   password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}"
+   user "#{ENV['FLUENT_ELASTICSEARCH_USER'] || use_default}"
+   password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD'] || use_default}"
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'false'}"
    reconnect_on_error "#{ENV['FLUENT_ELASTICSEARCH_RECONNECT_ON_ERROR'] || 'true'}"
    reload_on_failure "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_ON_FAILURE'] || 'true'}"
