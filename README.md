@@ -13,8 +13,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
-- `v1.8.1-debian-elasticsearch7-1.5,v1.8-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.8/debian-elasticsearch7/Dockerfile](docker-image/v1.8/debian-elasticsearch7/Dockerfile)
-- `v1.8.1-debian-elasticsearch6-1.4,v1.8-debian-elasticsearch6-1` [docker-image/v1.8/debian-elasticsearch6/Dockerfile](docker-image/v1.8/debian-elasticsearch6/Dockerfile)
+- `v1.8.1-debian-elasticsearch7-1.6,v1.8-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.8/debian-elasticsearch7/Dockerfile](docker-image/v1.8/debian-elasticsearch7/Dockerfile)
+- `v1.8.1-debian-elasticsearch6-1.5,v1.8-debian-elasticsearch6-1` [docker-image/v1.8/debian-elasticsearch6/Dockerfile](docker-image/v1.8/debian-elasticsearch6/Dockerfile)
 - `v1.8.1-debian-loggly-1.0,v1.8-debian-loggly-1` [docker-image/v1.8/debian-loggly/Dockerfile](docker-image/v1.8/debian-loggly/Dockerfile)
 - `v1.8.1-debian-logentries-1.0,v1.8-debian-logentries-1` [docker-image/v1.8/debian-logentries/Dockerfile](docker-image/v1.8/debian-logentries/Dockerfile)
 - `v1.8.1-debian-cloudwatch-1.1,v1.8-debian-cloudwatch-1` [docker-image/v1.8/debian-cloudwatch/Dockerfile](docker-image/v1.8/debian-cloudwatch/Dockerfile)
@@ -34,6 +34,8 @@ You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debia
 See dockerhub's tags page for older tags.
 
 #### Old stable
+
+v0.12 development has been ended. These images are never updated.
 
 - `v0.12-debian-elasticsearch` [docker-image/v0.12/debian-elasticsearch/Dockerfile](docker-image/v0.12/debian-elasticsearch/Dockerfile)
 - `v0.12-debian-loggly` [docker-image/v0.12/debian-loggly/Dockerfile](docker-image/v0.12/debian-loggly/Dockerfile)
@@ -90,7 +92,7 @@ Fluentd versioning is as follows:
 
 ### Default image version
 
-Default YAML uses latest v1 images like `fluent/fluentd-kubernetes-daemonset:v1-debian-kafka`. If you want to avoid unexpected image update, specify exact version for `image` like `fluent/fluentd-kubernetes-daemonset:v1.7.0-debian-kafka-1.1`.
+Default YAML uses latest v1 images like `fluent/fluentd-kubernetes-daemonset:v1-debian-kafka`. If you want to avoid unexpected image update, specify exact version for `image` like `fluent/fluentd-kubernetes-daemonset:v1.8.0-debian-kafka-1.0`.
 
 ### Run as root
 
@@ -122,6 +124,8 @@ By default, latest images launch `prometheus` plugins to monitor fluentd.
 You can disable prometheus input plugin by setting `disable` to `FLUENTD_PROMETHEUS_CONF` environment variable in your kubernetes configuration.
 
 ### Disable sed execution on elasticsearch image
+
+This is for older images. Latest elasticsearch images don't use sed.
 
 By historical reason, elasaticsearch image executes `sed` command during startup phase when `FLUENT_ELASTICSEARCH_USER` or `FLUENT_ELASTICSEARCH_PASSWORD` is specified. This sometimes causes a problem with read only mount.
 To avoid this problem, set "true" to `FLUENT_ELASTICSEARCH_SED_DISABLE` environment variable in your kubernetes configuration.
