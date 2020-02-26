@@ -15,15 +15,10 @@
   pos_file /var/log/fluentd-containers.log.pos
   tag "#{ENV['FLUENT_CONTAINER_TAIL_TAG'] || 'kubernetes.*'}"
   read_from_head true
-<% if is_v1 %>
   <parse>
     @type "#{ENV['FLUENT_CONTAINER_TAIL_PARSER_TYPE'] || 'json'}"
     time_format %Y-%m-%dT%H:%M:%S.%NZ
   </parse>
-<% else %>
-  format "#{ENV['FLUENT_CONTAINER_TAIL_PARSER_TYPE'] || 'json'}"
-  time_format %Y-%m-%dT%H:%M:%S.%NZ
-<% end %>
 </source>
 
 <source>
@@ -32,16 +27,11 @@
   path /var/log/salt/minion
   pos_file /var/log/fluentd-salt.pos
   tag salt
-<% if is_v1 %>
   <parse>
     @type regexp
     expression /^(?<time>[^ ]* [^ ,]*)[^\[]*\[[^\]]*\]\[(?<severity>[^ \]]*) *\] (?<message>.*)$/
     time_format %Y-%m-%d %H:%M:%S
   </parse>
-<% else %>
-  format /^(?<time>[^ ]* [^ ,]*)[^\[]*\[[^\]]*\]\[(?<severity>[^ \]]*) *\] (?<message>.*)$/
-  time_format %Y-%m-%d %H:%M:%S
-<% end %>
 </source>
 
 <source>
@@ -50,13 +40,9 @@
   path /var/log/startupscript.log
   pos_file /var/log/fluentd-startupscript.log.pos
   tag startupscript
-<% if is_v1 %>
   <parse>
     @type syslog
   </parse>
-<% else %>
-  format syslog
-<% end %>
 </source>
 
 <source>
@@ -65,14 +51,10 @@
   path /var/log/docker.log
   pos_file /var/log/fluentd-docker.log.pos
   tag docker
-<% if is_v1 %>
   <parse>
     @type regexp
     expression /^time="(?<time>[^)]*)" level=(?<severity>[^ ]*) msg="(?<message>[^"]*)"( err="(?<error>[^"]*)")?( statusCode=($<status_code>\d+))?/
   </parse>
-<% else %>
-  format /^time="(?<time>[^)]*)" level=(?<severity>[^ ]*) msg="(?<message>[^"]*)"( err="(?<error>[^"]*)")?( statusCode=($<status_code>\d+))?/
-<% end %>
 </source>
 
 <source>
@@ -81,13 +63,9 @@
   path /var/log/etcd.log
   pos_file /var/log/fluentd-etcd.log.pos
   tag etcd
-<% if is_v1 %>
   <parse>
     @type none
   </parse>
-<% else %>
-  format none
-<% end %>
 </source>
 
 <source>
@@ -97,13 +75,9 @@
   path /var/log/kubelet.log
   pos_file /var/log/fluentd-kubelet.log.pos
   tag kubelet
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -113,13 +87,9 @@
   path /var/log/kube-proxy.log
   pos_file /var/log/fluentd-kube-proxy.log.pos
   tag kube-proxy
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -129,13 +99,9 @@
   path /var/log/kube-apiserver.log
   pos_file /var/log/fluentd-kube-apiserver.log.pos
   tag kube-apiserver
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -145,13 +111,9 @@
   path /var/log/kube-controller-manager.log
   pos_file /var/log/fluentd-kube-controller-manager.log.pos
   tag kube-controller-manager
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -161,13 +123,9 @@
   path /var/log/kube-scheduler.log
   pos_file /var/log/fluentd-kube-scheduler.log.pos
   tag kube-scheduler
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -177,13 +135,9 @@
   path /var/log/rescheduler.log
   pos_file /var/log/fluentd-rescheduler.log.pos
   tag rescheduler
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -193,13 +147,9 @@
   path /var/log/glbc.log
   pos_file /var/log/fluentd-glbc.log.pos
   tag glbc
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 <source>
@@ -209,13 +159,9 @@
   path /var/log/cluster-autoscaler.log
   pos_file /var/log/fluentd-cluster-autoscaler.log.pos
   tag cluster-autoscaler
-<% if is_v1 %>
   <parse>
     @type kubernetes
   </parse>
-<% else %>
-  format kubernetes
-<% end %>
 </source>
 
 # Example:
@@ -228,7 +174,6 @@
   path /var/log/kubernetes/kube-apiserver-audit.log
   pos_file /var/log/kube-apiserver-audit.log.pos
   tag kube-apiserver-audit
-<% if is_v1 %>
   <parse>
     @type multiline
     format_firstline /^\S+\s+AUDIT:/
@@ -241,18 +186,6 @@
     format1 /^(?<time>\S+) AUDIT:(?: (?:id="(?<id>(?:[^"\\]|\\.)*)"|ip="(?<ip>(?:[^"\\]|\\.)*)"|method="(?<method>(?:[^"\\]|\\.)*)"|user="(?<user>(?:[^"\\]|\\.)*)"|groups="(?<groups>(?:[^"\\]|\\.)*)"|as="(?<as>(?:[^"\\]|\\.)*)"|asgroups="(?<asgroups>(?:[^"\\]|\\.)*)"|namespace="(?<namespace>(?:[^"\\]|\\.)*)"|uri="(?<uri>(?:[^"\\]|\\.)*)"|response="(?<response>(?:[^"\\]|\\.)*)"|\w+="(?:[^"\\]|\\.)*"))*/
     time_format %Y-%m-%dT%T.%L%Z
   </parse>
-<% else %>
-  format multiline
-  format_firstline /^\S+\s+AUDIT:/
-  # Fields must be explicitly captured by name to be parsed into the record.
-  # Fields may not always be present, and order may change, so this just looks
-  # for a list of key="\"quoted\" value" pairs separated by spaces.
-  # Unknown fields are ignored.
-  # Note: We can't separate query/response lines as format1/format2 because
-  #       they don't always come one after the other for a given query.
-  format1 /^(?<time>\S+) AUDIT:(?: (?:id="(?<id>(?:[^"\\]|\\.)*)"|ip="(?<ip>(?:[^"\\]|\\.)*)"|method="(?<method>(?:[^"\\]|\\.)*)"|user="(?<user>(?:[^"\\]|\\.)*)"|groups="(?<groups>(?:[^"\\]|\\.)*)"|as="(?<as>(?:[^"\\]|\\.)*)"|asgroups="(?<asgroups>(?:[^"\\]|\\.)*)"|namespace="(?<namespace>(?:[^"\\]|\\.)*)"|uri="(?<uri>(?:[^"\\]|\\.)*)"|response="(?<response>(?:[^"\\]|\\.)*)"|\w+="(?:[^"\\]|\\.)*"))*/
-  time_format %FT%T.%L%Z
-<% end %>
 </source>
 
 <filter kubernetes.**>
