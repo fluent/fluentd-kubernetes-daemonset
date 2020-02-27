@@ -8,12 +8,7 @@
 <source>
   @type systemd
   @id in_systemd_kubelet
-<% if is_v1 %>
   matches [{ "_SYSTEMD_UNIT": "kubelet.service" }]
-<% else %>
-  filters [{ "_SYSTEMD_UNIT": "kubelet.service" }]
-<% end %>
-<% if is_v1 %>
   <storage>
     @type local
     persistent true
@@ -24,12 +19,6 @@
     fields_strip_underscores true
   </entry>
 <% end %>
-<% else %>
-  pos_file /var/log/fluentd-journald-kubelet.pos
-<% if target.start_with?("elasticsearch") %>
-  strip_underscores true
-<% end %>
-<% end %>
   read_from_head true
   tag kubelet
 </source>
@@ -38,12 +27,7 @@
 <source>
   @type systemd
   @id in_systemd_docker
-<% if is_v1 %>
   matches [{ "_SYSTEMD_UNIT": "docker.service" }]
-<% else %>
-  filters [{ "_SYSTEMD_UNIT": "docker.service" }]
-<% end %>
-<% if is_v1 %>
   <storage>
     @type local
     persistent true
@@ -54,12 +38,6 @@
     fields_strip_underscores true
   </entry>
 <% end %>
-<% else %>
-  pos_file /var/log/fluentd-journald-docker.pos
-<% if target.start_with?("elasticsearch") %>
-  strip_underscores true
-<% end %>
-<% end %>
   read_from_head true
   tag docker.systemd
 </source>
@@ -68,12 +46,7 @@
 <source>
   @type systemd
   @id in_systemd_bootkube
-<% if is_v1 %>
   matches [{ "_SYSTEMD_UNIT": "bootkube.service" }]
-<% else %>
-  filters [{ "_SYSTEMD_UNIT": "bootkube.service" }]
-<% end %>
-<% if is_v1 %>
   <storage>
     @type local
     persistent true
@@ -83,12 +56,6 @@
   <entry>
     fields_strip_underscores true
   </entry>
-<% end %>
-<% else %>
-  pos_file /var/log/fluentd-journald-bootkube.pos
-<% if target.start_with?("elasticsearch") %>
-  strip_underscores true
-<% end %>
 <% end %>
   read_from_head true
   tag bootkube

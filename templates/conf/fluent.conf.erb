@@ -43,7 +43,6 @@
    template_overwrite "#{ENV['FLUENT_ELASTICSEARCH_TEMPLATE_OVERWRITE'] || use_default}"
    sniffer_class_name "#{ENV['FLUENT_SNIFFER_CLASS_NAME'] || 'Fluent::Plugin::ElasticsearchSimpleSniffer'}"
    request_timeout "#{ENV['FLUENT_ELASTICSEARCH_REQUEST_TIMEOUT'] || '5s'}"
-<% if is_v1 %>
    <buffer>
      flush_thread_count "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_FLUSH_THREAD_COUNT'] || '8'}"
      flush_interval "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_FLUSH_INTERVAL'] || '5s'}"
@@ -52,14 +51,6 @@
      retry_max_interval "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_RETRY_MAX_INTERVAL'] || '30'}"
      retry_forever true
    </buffer>
-<% else %>
-   buffer_chunk_limit "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_CHUNK_LIMIT_SIZE'] || '2M'}"
-   buffer_queue_limit "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_QUEUE_LIMIT_LENGTH'] || '32'}"
-   flush_interval "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_FLUSH_INTERVAL'] || '5s'}"
-   max_retry_wait "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_RETRY_MAX_INTERVAL'] || '30'}"
-   disable_retry_limit
-   num_threads "#{ENV['FLUENT_ELASTICSEARCH_BUFFER_FLUSH_THREAD_COUNT'] || '8'}"
-<% end %>
 </match>
 <%  when "logentries"%>
 <match **>
@@ -85,10 +76,8 @@
   auto_create_stream true
   use_tag_as_stream true
   retention_in_days "#{ENV['RETENTION_IN_DAYS'] || 'nil'}"
-<% if is_v1 %>
   json_handler yajl # To avoid UndefinedConversionError
   log_rejected_request "#{ENV['LOG_REJECTED_REQUEST']}" # Log rejected request for missing parts
-<% end %>
 </match>
 <%  when "s3"%>
 <match **>
@@ -99,7 +88,6 @@
   @log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
   s3_region "#{ENV['S3_BUCKET_REGION']}"
-<% if is_v1 %>
   s3_object_key_format %{path}%Y/%m/%d/cluster-log-%{index}.%{file_extension}
   <inject>
     time_key time
@@ -113,16 +101,6 @@
     timekey_use_utc true
     chunk_limit_size 256m
   </buffer>
-<% else %>
-  s3_object_key_format %{path}%{time_slice}/cluster-log-%{index}.%{file_extension}
-  time_slice_format %Y/%m/%d
-  time_slice_wait 10m
-  utc
-  include_time_key true
-  include_tag_key true
-  buffer_chunk_limit 256m
-  buffer_path /var/log/fluentd-buffers/s3.buffer
-<% end %>
 </match>
 <%  when "gcs"%>
 <match **>
@@ -196,7 +174,6 @@
   endpoint_url "https://listener.logz.io:8071?token=#{ENV['LOGZIO_TOKEN']}&type=#{ENV['LOGZIO_LOGTYPE']}"
   output_include_time true
   output_include_tags true
-<% if is_v1 %>
   <buffer>
     # Set the buffer type to file to improve the reliability and reduce the memory consumption
     @type file
@@ -219,28 +196,6 @@
     # Use multiple threads for processing.
     flush_thread_count 2
   </buffer>
-<% else %>
-  # Set the buffer type to file to improve the reliability and reduce the memory consumption
-  buffer_type file
-  buffer_path /var/log/fluentd-buffers/stackdriver.buffer
-  # Set queue_full action to block because we want to pause gracefully
-  # in case of the off-the-limits load instead of throwing an exception
-  buffer_queue_full_action block
-  # Set the chunk limit conservatively to avoid exceeding the GCL limit
-  # of 10MiB per write request.
-  buffer_chunk_limit 2M
-  # Cap the combined memory usage of this buffer and the one below to
-  # 2MiB/chunk * (6 + 2) chunks = 16 MiB
-  buffer_queue_limit 6
-  # Never wait more than 5 seconds before flushing logs in the non-error case.
-  flush_interval 5s
-  # Never wait longer than 30 seconds between retries.
-  max_retry_wait 30
-  # Disable the limit on the number of retries (retry forever).
-  # disable_retry_limit
-  # Use multiple threads for processing.
-  num_threads 2
-<% end %>
 </match>
 
 <% when "papertrail"%>
@@ -316,7 +271,6 @@
 </match>
 
 <% when "syslog" %>
-<% if is_v1 %>
 <match **>
   @type remote_syslog
   @id out_kube_remote_syslog
@@ -339,22 +293,6 @@
     @type ltsv
   </format>
 </match>
-<% else %>
-<match **>
-  @type kubernetes_remote_syslog
-  @id out_kube_remote_syslog
-  host "#{ENV['SYSLOG_HOST']}"
-  port "#{ENV['SYSLOG_PORT']}"
-  facility "#{ENV['SYSLOG_FACILITY'] || 'user'}"
-  severity "#{ENV['SYSLOG_SEVERITY'] || 'debug'}"
-  tag "#{ENV['SYSLOG_TAG'] || 'fluentd'}"
-  protocol "#{ENV['SYSLOG_PROTOCOL'] || 'tcp'}"
-  tls "#{ENV['SYSLOG_TLS'] || 'false'}"
-  ca_file "#{ENV['SYSLOG_CA_FILE'] || ''}"
-  packet_size 65535
-  output_data_type ltsv
-</match>
-<% end %>
 
 <% when "forward" %>
 <match **>
@@ -374,7 +312,6 @@
   region "#{ENV['FLUENT_KINESIS_STREAMS_REGION'] || nil}"
   stream_name "#{ENV['FLUENT_KINESIS_STREAMS_STREAM_NAME']}"
   include_time_key "#{ENV['FLUENT_KINESIS_STREAMS_INCLUDE_TIME_KEY'] || false}"
-<% if is_v1 %>
   <buffer>
     flush_interval 1
     chunk_limit_size "#{ENV['FLUENT_KINESIS_STREAMS_CHUNK_LIMIT_SIZE'] || '1m'}"
@@ -382,13 +319,6 @@
     flush_thread_burst_interval 0.01
     flush_thread_count 15
   </buffer>
-<% else %>
-  flush_interval 1
-  buffer_chunk_limit 1m
-  try_flush_interval 0.1
-  queued_chunk_flush_interval 0.01
-  num_threads 15
-<% end %>
 </match>
 
 <% end %>
