@@ -98,6 +98,18 @@ To avoid permission error, you need to set `FLUENT_UID` environment variable to 
 These images have default configuration and support some environment variables for parameters
 but it sometimes doesn't fit your case. If you want to use your configuration, use ConfigMap feature.
 
+Each image has following configurations:
+
+- fluent.conf: Destination setting, Elaticsearch, kafka and etc.
+- kubernetes.conf: k8s specific setting. `tail` input for log files and `kubernetes_metadata` filter
+- prometheus.conf: prometheus plugin for fluentd monitoring
+- systemd.conf: systemd plugin for collecting systemd-journal log. See also "Disable systemd input" section.
+
+Overwrite conf file via ConfigMap. See also several examples:
+
+- [Cluster-level Logging in Kubernetes with Fluentd](https://medium.com/kubernetes-tutorials/cluster-level-logging-in-kubernetes-with-fluentd-e59aa2b6093a)
+- https://github.com/fluent/fluentd-kubernetes-daemonset/pull/349#issuecomment-579097659
+
 ### Disable systemd input
 
 If you don't setup systemd in the container, fluentd shows following messages by default configuration.
@@ -161,6 +173,8 @@ Some images are contributed by users. If you have a problem/question for followi
 - Amazon Kinesis : @shiftky
 - logz.io : @SaMnCo / @jamielennox
 - splunkhec: @FutureSharks
+
+Currently, we don't accept new destination request. See https://github.com/fluent/fluentd-kubernetes-daemonset/issues/293
 
 ### References
 
