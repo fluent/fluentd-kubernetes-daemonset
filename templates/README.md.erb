@@ -110,6 +110,14 @@ Overwrite conf file via ConfigMap. See also several examples:
 - [Cluster-level Logging in Kubernetes with Fluentd](https://medium.com/kubernetes-tutorials/cluster-level-logging-in-kubernetes-with-fluentd-e59aa2b6093a)
 - https://github.com/fluent/fluentd-kubernetes-daemonset/pull/349#issuecomment-579097659
 
+### Use FLUENT_CONTAINER_TAIL_EXCLUDE_PATH to exclude specific container logs
+
+You can exclude container logs from `/var/log/containers/` with `FLUENT_CONTAINER_TAIL_EXCLUDE_PATH`.
+If you have a trouble with specific log, use this envvar, e.g. `["/var/log/containers/logname-*"]`.
+
+See also: https://docs.fluentd.org/input/tail#exclude_path
+Fluentd log issue with backslash: https://github.com/fluent/fluentd/issues/2545
+
 ### Disable systemd input
 
 If you don't setup systemd in the container, fluentd shows following messages by default configuration.
