@@ -120,6 +120,8 @@ Overwrite conf file via ConfigMap. See also several examples:
 
 ### Use FLUENT_CONTAINER_TAIL_EXCLUDE_PATH to exclude specific container logs
 
+Since v1.9.3 or later images.
+
 You can exclude container logs from `/var/log/containers/` with `FLUENT_CONTAINER_TAIL_EXCLUDE_PATH`.
 If you have a trouble with specific log, use this envvar, e.g. `["/var/log/containers/logname-*"]`.
 
