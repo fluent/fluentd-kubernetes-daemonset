@@ -17,7 +17,7 @@ ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.6.0
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
-  RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %> build-essential patch zlib1g-dev liblzma-dev<% elsif target == "kafka" %> build-essential autoconf automake libtool pkg-config<% end %><% if requires_git %> git<% end %>" \
+RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %> build-essential patch zlib1g-dev liblzma-dev<% elsif target == "kafka" %> build-essential autoconf automake libtool pkg-config<% end %><% if requires_git %> git<% end %>" \
   runtimeDeps="<% if target == "kafka" %>krb5-kdc libsasl2-modules-gssapi-mit libsasl2-dev <% end %>" \
      <% if target == "kafka" %> && export DEBIAN_FRONTEND=noninteractive <% end %> && apt-get update \
      && apt-get upgrade -y \
