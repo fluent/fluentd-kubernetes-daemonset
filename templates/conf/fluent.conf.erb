@@ -148,6 +148,28 @@
   # Use multiple threads for processing.
   num_threads 2
 </match>
+<% when "azureblob"%>
+<match **>
+  @type azure-storage-append-blob
+
+  azure_storage_account    "#{ENV['AZUREBLOB_ACCOUNT_NAME']}"
+  azure_storage_access_key "#{ENV['AZUREBLOB_ACCOUNT_KEY']}"
+  azure_container          "#{ENV['AZUREBLOB_CONTAINER']}"
+  auto_create_container    true
+  path                     "#{ENV['AZUREBLOB_LOG_PATH']}"
+  azure_object_key_format  %{path}%{time_slice}_%{index}.log
+  time_slice_format        %Y%m%d-%H
+  # if you want to use %{tag} or %Y/%m/%d/ like syntax in path / azure_blob_name_format,
+  # need to specify tag for %{tag} and time for %Y/%m/%d in <buffer> argument.
+  <buffer>
+    @type file
+    path /var/log/fluent/azurestorageappendblob
+    timekey 60 # 1 minute
+    timekey_wait 60
+    timekey_use_utc true # use utc
+    chunk_limit_size 256m
+  </buffer>
+</match>
 <% when "graylog"%>
 # The gelf plugin assumes input in utf-8
 <filter **>

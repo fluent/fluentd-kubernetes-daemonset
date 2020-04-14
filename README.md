@@ -13,6 +13,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
+- `v1.11.1-debian-azureblob-1.0,v1.11-debian-azureblob-1` [docker-image/v1.11/debian-azureblob/Dockerfile](docker-image/v1.11/debian-azureblob/Dockerfile)
 - `v1.11.1-debian-elasticsearch7-1.3,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.11/debian-elasticsearch7/Dockerfile](docker-image/v1.11/debian-elasticsearch7/Dockerfile)
 - `v1.11.1-debian-elasticsearch6-1.0,v1.11-debian-elasticsearch6-1` [docker-image/v1.11/debian-elasticsearch6/Dockerfile](docker-image/v1.11/debian-elasticsearch6/Dockerfile)
 - `v1.11.1-debian-loggly-1.0,v1.11-debian-loggly-1` [docker-image/v1.11/debian-loggly/Dockerfile](docker-image/v1.11/debian-loggly/Dockerfile)
@@ -168,7 +169,7 @@ oc patch ds fluentd -p "spec:
       - name: fluentd
         securityContext:
           privileged: true"
-oc delete pod -l k8s-app=fluentd-logging
+oc delete pod -l k8s-app = fluentd-logging
 ```
 
 This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
