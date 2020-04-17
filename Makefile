@@ -12,21 +12,21 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 ALL_IMAGES := \
-	v1.10/debian-elasticsearch7:v1.10.1-debian-elasticsearch7-1.0,v1.10-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.10/debian-elasticsearch6:v1.10.1-debian-elasticsearch6-1.0,v1.10-debian-elasticsearch6-1 \
-	v1.10/debian-loggly:v1.10.1-debian-loggly-1.0,v1.10-debian-loggly-1 \
-	v1.10/debian-logentries:v1.10.1-debian-logentries-1.0,v1.10-debian-logentries-1 \
-	v1.10/debian-cloudwatch:v1.10.1-debian-cloudwatch-1.0,v1.10-debian-cloudwatch-1 \
-	v1.10/debian-stackdriver:v1.10.1-debian-stackdriver-1.0,v1.10-debian-stackdriver-1 \
-	v1.10/debian-s3:v1.10.1-debian-s3-1.0,v1.10-debian-s3-1 \
-	v1.10/debian-syslog:v1.10.1-debian-syslog-1.0,v1.10-debian-syslog-1 \
-	v1.10/debian-forward:v1.10.1-debian-forward-1.0,v1.10-debian-forward-1 \
-	v1.10/debian-gcs:v1.10.1-debian-gcs-1.0,v1.10-debian-gcs-1 \
-	v1.10/debian-graylog:v1.10.1-debian-graylog-1.0,v1.10-debian-graylog-1 \
-	v1.10/debian-papertrail:v1.10.1-debian-papertrail-1.0,v1.10-debian-papertrail-1 \
-	v1.10/debian-logzio:v1.10.1-debian-logzio-1.0,v1.10-debian-logzio-1 \
-	v1.10/debian-kafka:v1.10.1-debian-kafka-1.0,v1.10-debian-kafka-2 \
-	v1.10/debian-kinesis:v1.10.1-debian-kinesis-1.0,v1.10-debian-kinesis-1
+	v1.10/debian-elasticsearch7:v1.10.2-debian-elasticsearch7-1.0,v1.10-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.10/debian-elasticsearch6:v1.10.2-debian-elasticsearch6-1.0,v1.10-debian-elasticsearch6-1 \
+	v1.10/debian-loggly:v1.10.2-debian-loggly-1.0,v1.10-debian-loggly-1 \
+	v1.10/debian-logentries:v1.10.2-debian-logentries-1.0,v1.10-debian-logentries-1 \
+	v1.10/debian-cloudwatch:v1.10.2-debian-cloudwatch-1.0,v1.10-debian-cloudwatch-1 \
+	v1.10/debian-stackdriver:v1.10.2-debian-stackdriver-1.0,v1.10-debian-stackdriver-1 \
+	v1.10/debian-s3:v1.10.2-debian-s3-1.0,v1.10-debian-s3-1 \
+	v1.10/debian-syslog:v1.10.2-debian-syslog-1.0,v1.10-debian-syslog-1 \
+	v1.10/debian-forward:v1.10.2-debian-forward-1.0,v1.10-debian-forward-1 \
+	v1.10/debian-gcs:v1.10.2-debian-gcs-1.0,v1.10-debian-gcs-1 \
+	v1.10/debian-graylog:v1.10.2-debian-graylog-1.0,v1.10-debian-graylog-1 \
+	v1.10/debian-papertrail:v1.10.2-debian-papertrail-1.0,v1.10-debian-papertrail-1 \
+	v1.10/debian-logzio:v1.10.2-debian-logzio-1.0,v1.10-debian-logzio-1 \
+	v1.10/debian-kafka:v1.10.2-debian-kafka-1.0,v1.10-debian-kafka-2 \
+	v1.10/debian-kinesis:v1.10.2-debian-kinesis-1.0,v1.10-debian-kinesis-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
