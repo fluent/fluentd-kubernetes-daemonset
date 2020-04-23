@@ -1,5 +1,4 @@
 <% fluentd_ver = version.split("-").first %>
-<% is_v1 = fluentd_ver.start_with?('v1') %>
 <% target = (dockerfile.split("/").last.split("-").last) %>
 <% requires_git = %w(graylog).include? target %>
 # AUTOMATICALLY GENERATED
@@ -24,7 +23,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %>
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps $runtimeDeps net-tools \
-    && gem install bundler --version 2.1.2 \
+    && gem install bundler --version 2.1.4 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \

@@ -3,7 +3,7 @@
 
 source "https://rubygems.org"
 
-gem "fluentd", "1.10.2"
+gem "fluentd", "1.10.3"
 gem "oj", "3.8.1"
 gem "fluent-plugin-multi-format-parser", "~> 1.0.0"
 gem "fluent-plugin-concat", "~> 2.4.0"
@@ -14,7 +14,7 @@ gem "fluent-plugin-record-modifier", "~> 2.0.0"
 gem "fluent-plugin-detect-exceptions", "~> 0.0.12"
 gem "fluent-plugin-rewrite-tag-filter", "~> 2.2.0"
 gem "aws-sdk-cloudwatchlogs", "~> 1.0"
-gem "fluent-plugin-cloudwatch-logs", "~> 0.8.0"
+gem "fluent-plugin-cloudwatch-logs", "~> 0.9.3"
 gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.3.0"
 gem "ffi"
 gem "fluent-plugin-systemd", "~> 1.0.1"
