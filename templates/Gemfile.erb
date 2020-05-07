@@ -1,5 +1,4 @@
 <% fluentd_ver = version.split("-").first[1..-1] %>
-<% is_v1 = fluentd_ver.start_with?('1') %>
 <% target = (dockerfile.split("/").last.split("-").last) %>
 <% is_alpine = (dockerfile.split("/").last.split("-").first == "alpine") %>
 # AUTOMATICALLY GENERATED
