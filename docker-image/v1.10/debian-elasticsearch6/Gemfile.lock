@@ -28,7 +28,7 @@ GEM
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.13)
       fluentd (>= 0.10)
-    fluent-plugin-elasticsearch (4.0.7)
+    fluent-plugin-elasticsearch (4.0.8)
       elasticsearch
       excon
       fluentd (>= 0.14.22)
