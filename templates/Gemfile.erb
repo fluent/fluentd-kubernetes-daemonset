@@ -53,6 +53,12 @@ gem "fluent-plugin-kafka", "~> 0.12.2"
 gem "snappy", "~> 0.0.15"
 <% when "kinesis" %>
 gem "fluent-plugin-kinesis", "~> 2.1.1"
+<% when "aws" %>
+gem "aws-sdk-s3", "~> 1.0"
+gem "aws-sdk-cloudwatchlogs", "~> 1.0"
+gem "fluent-plugin-s3", "~> 1.1.6"
+gem "fluent-plugin-kinesis", "~> 2.1.1"
+gem "fluent-plugin-cloudwatch-logs", "~> 0.9.3"
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
 <% end %>

@@ -26,7 +26,8 @@ ALL_IMAGES := \
 	v1.10/debian-papertrail:v1.10.4-debian-papertrail-1.0,v1.10-debian-papertrail-1 \
 	v1.10/debian-logzio:v1.10.4-debian-logzio-1.0,v1.10-debian-logzio-1 \
 	v1.10/debian-kafka:v1.10.4-debian-kafka-1.0,v1.10-debian-kafka-2 \
-	v1.10/debian-kinesis:v1.10.4-debian-kinesis-1.0,v1.10-debian-kinesis-1
+	v1.10/debian-kinesis:v1.10.4-debian-kinesis-1.0,v1.10-debian-kinesis-1 \
+	v1.10/debian-aws:v1.10.2-debian-aws-1.0,v1.10-debian-aws-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
