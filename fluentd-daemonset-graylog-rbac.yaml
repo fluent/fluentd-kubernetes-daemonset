@@ -74,6 +74,10 @@ spec:
             value: "graylog-server-ip-or-dns-name"
           - name:  FLUENT_GRAYLOG_PORT
             value: "12201"
+          - name:  FLUENT_GRAYLOG_PROTOCOL
+            value: "udp"
+          - name:  FLUENTD_SYSTEMD_CONF
+            value: "disable"
         resources:
           requests:
             cpu: 200m
