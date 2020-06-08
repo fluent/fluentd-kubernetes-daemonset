@@ -123,7 +123,7 @@ DEPENDENCIES
   ffi
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-detect-exceptions (~> 0.0.12)
-  fluent-plugin-elasticsearch (~> 4.0.3)
+  fluent-plugin-elasticsearch (~> 4.0.9)
   fluent-plugin-grok-parser (~> 2.6.0)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kubernetes_metadata_filter (~> 2.3.0)
@@ -136,4 +136,4 @@ DEPENDENCIES
   oj (= 3.8.1)
 
 BUNDLED WITH
-   2.1.4
+   2.1.2
