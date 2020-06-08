@@ -7,20 +7,20 @@ GEM
     cool.io (1.6.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (7.6.0)
-      elasticsearch-api (= 7.6.0)
-      elasticsearch-transport (= 7.6.0)
-    elasticsearch-api (7.6.0)
+    elasticsearch (7.7.0)
+      elasticsearch-api (= 7.7.0)
+      elasticsearch-transport (= 7.7.0)
+    elasticsearch-api (7.7.0)
       multi_json
-    elasticsearch-transport (7.6.0)
+    elasticsearch-transport (7.7.0)
       faraday (~> 1)
       multi_json
-    elasticsearch-xpack (7.4.0)
+    elasticsearch-xpack (7.7.0)
       elasticsearch-api (>= 6)
     excon (0.73.0)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.12.2)
+    ffi (1.13.0)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
@@ -32,7 +32,7 @@ GEM
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.13)
       fluentd (>= 0.10)
-    fluent-plugin-elasticsearch (4.0.8)
+    fluent-plugin-elasticsearch (4.0.9)
       elasticsearch
       excon
       fluentd (>= 0.14.22)
@@ -124,12 +124,12 @@ PLATFORMS
 
 DEPENDENCIES
   elasticsearch (~> 7.0)
-  elasticsearch-xpack (~> 7.4.0)
+  elasticsearch-xpack (~> 7.0)
   ffi
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-dedot_filter (~> 1.0)
   fluent-plugin-detect-exceptions (~> 0.0.12)
-  fluent-plugin-elasticsearch (~> 4.0.3)
+  fluent-plugin-elasticsearch (~> 4.0.9)
   fluent-plugin-grok-parser (~> 2.6.0)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kubernetes_metadata_filter (~> 2.3.0)
