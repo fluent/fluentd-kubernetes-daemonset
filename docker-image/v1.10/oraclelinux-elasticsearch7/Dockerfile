@@ -17,6 +17,7 @@ COPY docker-image/v1.10/oraclelinux-elasticsearch7/Gemfile.lock /fluentd/
 RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
   runtimeDeps="" \
     && yum -y update \
+    && yum-config-manager --save --setopt=ol7_ociyum_config.skip_if_unavailable=true \
     && yum install -y \
     $buildDeps $runtimeDeps net-tools \
     && yum clean all \
