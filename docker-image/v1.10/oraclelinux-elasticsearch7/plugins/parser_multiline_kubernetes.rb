@@ -14,6 +14,9 @@
 #    limitations under the License.
 #
 
+# Copyright (C) 2020, Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.ARG FLUENTD_IMG
+
 # The following Fluentd parser plugin, aims to simplify the parsing of multiline
 # logs found in Kubernetes nodes. Since many log files shared the same format and
 # in order to simplify the configuration, this plugin provides a 'kubernetes' format
@@ -46,6 +49,7 @@
 # </source>
 #
 # ----   EOF       ---
+
 
 require 'fluent/plugin/parser_multiline'
 
