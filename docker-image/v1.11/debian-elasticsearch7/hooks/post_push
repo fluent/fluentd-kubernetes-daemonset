@@ -9,7 +9,7 @@ tagStart=$(expr index "$IMAGE_NAME" :)
 repoName=${IMAGE_NAME:0:tagStart-1}
 
 # Tag and push image for each additional tag
-for tag in {v1.11.1-debian-elasticsearch7-1.2,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch}; do
+for tag in {v1.11.1-debian-elasticsearch7-1.3,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch}; do
   docker tag $IMAGE_NAME ${repoName}:${tag}
   docker push ${repoName}:${tag}
 done
