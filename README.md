@@ -19,7 +19,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.11.1-debian-logentries-1.0,v1.11-debian-logentries-1` [docker-image/v1.11/debian-logentries/Dockerfile](docker-image/v1.11/debian-logentries/Dockerfile)
 - `v1.11.1-debian-cloudwatch-1.1,v1.11-debian-cloudwatch-1` [docker-image/v1.11/debian-cloudwatch/Dockerfile](docker-image/v1.11/debian-cloudwatch/Dockerfile)
 - `v1.11.1-debian-stackdriver-1.0,v1.11-debian-stackdriver-1` [docker-image/v1.11/debian-stackdriver/Dockerfile](docker-image/v1.11/debian-stackdriver/Dockerfile)
-- `v1.11.1-debian-s3-1.0,v1.11-debian-s3-1` [docker-image/v1.11/debian-s3/Dockerfile](docker-image/v1.11/debian-s3/Dockerfile)
+- `v1.11.1-debian-s3-1.1,v1.11-debian-s3-1` [docker-image/v1.11/debian-s3/Dockerfile](docker-image/v1.11/debian-s3/Dockerfile)
 - `v1.11.1-debian-syslog-1.0,v1.11-debian-syslog-1` [docker-image/v1.11/debian-syslog/Dockerfile](docker-image/v1.11/debian-syslog/Dockerfile)
 - `v1.11.1-debian-forward-1.0,v1.11-debian-forward-1` [docker-image/v1.11/debian-forward/Dockerfile](docker-image/v1.11/debian-forward/Dockerfile)
 - `v1.11.1-debian-gcs-1.0,v1.11-debian-gcs-1` [docker-image/v1.11/debian-gcs/Dockerfile](docker-image/v1.11/debian-gcs/Dockerfile)
