@@ -168,7 +168,7 @@ oc patch ds fluentd -p "spec:
       - name: fluentd
         securityContext:
           privileged: true"
-oc delete pod -l k8s-app = fluentd-logging
+oc delete pod -l k8s-app=fluentd-logging
 ```
 
 This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
