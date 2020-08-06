@@ -160,7 +160,7 @@ oc patch ds fluentd -p "spec:
       - name: fluentd
         securityContext:
           privileged: true"
-oc delete pod -l k8s-app = fluentd-logging
+oc delete pod -l k8s-app=fluentd-logging
 ```
 
 This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/04/20/170257).
@@ -175,7 +175,7 @@ zookeeper gem doesn't work on Debian 10, so kafka image doesn't include zookeepe
 
 Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
 
-- cloudwatch : @so0k
+- azureblob : @elsesiy
 - papertrail : @alexouzounis
 - kafka : @erhudy
 - graylog : @rtnpro
@@ -184,7 +184,8 @@ Some images are contributed by users. If you have a problem/question for followi
 - logz.io : @SaMnCo / @jamielennox
 - splunkhec: @FutureSharks
 
-Currently, we don't accept new destination request. See https://github.com/fluent/fluentd-kubernetes-daemonset/issues/293
+Currently, we don't accept new destination request without contribution.
+See https://github.com/fluent/fluentd-kubernetes-daemonset/issues/293
 
 ### References
 
