@@ -65,12 +65,19 @@ spec:
         env:
           - name:  AZUREBLOB_ACCOUNT_NAME
             value: "mystorageaccount"
+          # To use Managed Identity, remove AZUREBLOB_ACCOUNT_KEY
           - name:  AZUREBLOB_ACCOUNT_KEY
             value: "mystorageaccountkey"
           - name:  AZUREBLOB_CONTAINER
             value: "mycontainer"
           - name:  AZUREBLOB_LOG_PATH
             value: "mylogpath"
+          # Optional Managed Identity configuration options
+          # See https://github.com/microsoft/fluent-plugin-azure-storage-append-blob#configuration
+          - name: AZUREBLOB_IMDS_API_VERSION
+            value: "2019-08-15"
+          - name: AZUREBLOB_TOKEN_REFRESH_INTERVAL
+            value: "60"
         resources:
           limits:
             memory: 200Mi
