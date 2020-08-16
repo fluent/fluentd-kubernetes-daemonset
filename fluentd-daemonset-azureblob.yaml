@@ -74,9 +74,9 @@ spec:
             value: "mylogpath"
           # Optional Managed Identity configuration options
           # See https://github.com/microsoft/fluent-plugin-azure-storage-append-blob#configuration
-          - name: AZUREBLOB_IMDS_API_VERSION
+          - name:  AZUREBLOB_IMDS_API_VERSION
             value: "2019-08-15"
-          - name: AZUREBLOB_TOKEN_REFRESH_INTERVAL
+          - name:  AZUREBLOB_TOKEN_REFRESH_INTERVAL
             value: "60"
         resources:
           limits:
