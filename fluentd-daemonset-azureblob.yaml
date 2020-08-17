@@ -65,9 +65,12 @@ spec:
         env:
           - name:  AZUREBLOB_ACCOUNT_NAME
             value: "mystorageaccount"
-          # To use Managed Identity, remove AZUREBLOB_ACCOUNT_KEY
+          # Use AZUREBLOB_ACCOUNT_KEY for access key authorization, AZUREBLOB_SAS_TOKEN for shared access signature authorization, 
+          # or neither to use Managed Service Identity.
           - name:  AZUREBLOB_ACCOUNT_KEY
             value: "mystorageaccountkey"
+          - name:  AZUREBLOB_SAS_TOKEN
+            value: "mysastoken"
           - name:  AZUREBLOB_CONTAINER
             value: "mycontainer"
           - name:  AZUREBLOB_LOG_PATH
