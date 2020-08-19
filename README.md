@@ -13,7 +13,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
-- `v1.11.2-debian-azureblob-1.0,v1.11-debian-azureblob-1` [docker-image/v1.11/debian-azureblob/Dockerfile](docker-image/v1.11/debian-azureblob/Dockerfile)
+- `v1.11.2-debian-azureblob-1.1,v1.11-debian-azureblob-1` [docker-image/v1.11/debian-azureblob/Dockerfile](docker-image/v1.11/debian-azureblob/Dockerfile)
 - `v1.11.2-debian-elasticsearch7-1.0,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.11/debian-elasticsearch7/Dockerfile](docker-image/v1.11/debian-elasticsearch7/Dockerfile)
 - `v1.11.2-debian-elasticsearch6-1.0,v1.11-debian-elasticsearch6-1` [docker-image/v1.11/debian-elasticsearch6/Dockerfile](docker-image/v1.11/debian-elasticsearch6/Dockerfile)
 - `v1.11.2-debian-loggly-1.0,v1.11-debian-loggly-1` [docker-image/v1.11/debian-loggly/Dockerfile](docker-image/v1.11/debian-loggly/Dockerfile)
