@@ -180,6 +180,16 @@ This is from [nekop's japanese article](https://nekop.hatenablog.com/entry/2018/
 
 zookeeper gem doesn't work on Debian 10, so kafka image doesn't include zookeeper gem.
 
+### Windows k8s daemonset doesn't support in this repository
+
+Maintainers don't have k8s experience on Windows.
+Some users create k8s daemonset on Windows:
+
+- https://github.com/bgsilvait/k8s-fluentd-windows
+- https://github.com/k1nger/fluentd-windows-daemon
+
+Please check them out.
+
 ## Maintainers
 
 Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
