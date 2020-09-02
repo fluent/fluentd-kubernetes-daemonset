@@ -13,6 +13,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
+##### x86_64 images
 - `v1.11.2-debian-azureblob-1.1,v1.11-debian-azureblob-1` [docker-image/v1.11/debian-azureblob/Dockerfile](docker-image/v1.11/debian-azureblob/Dockerfile)
 - `v1.11.2-debian-elasticsearch7-1.0,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.11/debian-elasticsearch7/Dockerfile](docker-image/v1.11/debian-elasticsearch7/Dockerfile)
 - `v1.11.2-debian-elasticsearch6-1.0,v1.11-debian-elasticsearch6-1` [docker-image/v1.11/debian-elasticsearch6/Dockerfile](docker-image/v1.11/debian-elasticsearch6/Dockerfile)
@@ -29,6 +30,25 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.11.2-debian-logzio-1.0,v1.11-debian-logzio-1` [docker-image/v1.11/debian-logzio/Dockerfile](docker-image/v1.11/debian-logzio/Dockerfile)
 - `v1.11.2-debian-kafka-1.0,v1.11-debian-kafka-2` [docker-image/v1.11/debian-kafka/Dockerfile](docker-image/v1.11/debian-kafka/Dockerfile)
 - `v1.11.2-debian-kinesis-1.0,v1.11-debian-kinesis-1` [docker-image/v1.11/debian-kinesis/Dockerfile](docker-image/v1.11/debian-kinesis/Dockerfile)
+
+##### arm64 images
+- `v1.11.2-debian-azureblob-arm64-1.0,v1.11-debian-azureblob-arm64-1` [docker-image/v1.11/arm64/debian-azureblob/Dockerfile](docker-image/v1.11/arm64/debian-azureblob/Dockerfile)
+- `v1.11.2-debian-elasticsearch7-arm64-1.0,v1.11-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64` [docker-image/v1.11/arm64/debian-elasticsearch7/Dockerfile](docker-image/v1.11/arm64/debian-elasticsearch7/Dockerfile)
+- `v1.11.2-debian-elasticsearch6-arm64-1.0,v1.11-debian-elasticsearch6-arm64-1` [docker-image/v1.11/arm64/debian-elasticsearch6/Dockerfile](docker-image/v1.11/arm64/debian-elasticsearch6/Dockerfile)
+- `v1.11.2-debian-loggly-arm64-1.0,v1.11-debian-loggly-arm64-1` [docker-image/v1.11/arm64/debian-loggly/Dockerfile](docker-image/v1.11/arm64/debian-loggly/Dockerfile)
+- `v1.11.2-debian-logentries-arm64-1.0,v1.11-debian-logentries-arm64-1` [docker-image/v1.11/arm64/debian-logentries/Dockerfile](docker-image/v1.11/arm64/debian-logentries/Dockerfile)
+- `v1.11.2-debian-cloudwatch-arm64-1.0,v1.11-debian-cloudwatch-arm64-1` [docker-image/v1.11/arm64/debian-cloudwatch/Dockerfile](docker-image/v1.11/arm64/debian-cloudwatch/Dockerfile)
+- `v1.11.2-debian-stackdriver-arm64-1.0,v1.11-debian-stackdriver-arm64-1` [docker-image/v1.11/arm64/debian-stackdriver/Dockerfile](docker-image/v1.11/arm64/debian-stackdriver/Dockerfile)
+- `v1.11.2-debian-s3-arm64-1.0,v1.11-debian-s3-arm64-1` [docker-image/v1.11/arm64/debian-s3/Dockerfile](docker-image/v1.11/arm64/debian-s3/Dockerfile)
+- `v1.11.2-debian-syslog-arm64-1.0,v1.11-debian-syslog-arm64-1` [docker-image/v1.11/arm64/debian-syslog/Dockerfile](docker-image/v1.11/arm64/debian-syslog/Dockerfile)
+- `v1.11.2-debian-forward-arm64-1.0,v1.11-debian-forward-arm64-1` [docker-image/v1.11/arm64/debian-forward/Dockerfile](docker-image/v1.11/arm64/debian-forward/Dockerfile)
+- `v1.11.2-debian-gcs-arm64-1.0,v1.11-debian-gcs-arm64-1` [docker-image/v1.11/arm64/debian-gcs/Dockerfile](docker-image/v1.11/arm64/debian-gcs/Dockerfile)
+- `v1.11.2-debian-graylog-arm64-1.0,v1.11-debian-graylog-arm64-1` [docker-image/v1.11/arm64/debian-graylog/Dockerfile](docker-image/v1.11/arm64/debian-graylog/Dockerfile)
+- `v1.11.2-debian-papertrail-arm64-1.0,v1.11-debian-papertrail-arm64-1` [docker-image/v1.11/arm64/debian-papertrail/Dockerfile](docker-image/v1.11/arm64/debian-papertrail/Dockerfile)
+- `v1.11.2-debian-logzio-arm64-1.0,v1.11-debian-logzio-arm64-1` [docker-image/v1.11/arm64/debian-logzio/Dockerfile](docker-image/v1.11/arm64/debian-logzio/Dockerfile)
+- `v1.11.2-debian-kafka-arm64-1.0,v1.11-debian-kafka-arm64-2` [docker-image/v1.11/arm64/debian-kafka/Dockerfile](docker-image/v1.11/arm64/debian-kafka/Dockerfile)
+- `v1.11.2-debian-kinesis-arm64-1.0,v1.11-debian-kinesis-arm64-1` [docker-image/v1.11/arm64/debian-kinesis/Dockerfile](docker-image/v1.11/arm64/debian-kinesis/Dockerfile)
+
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
 
