@@ -9,17 +9,26 @@
 
 See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
 <% images = all_images.split(" ") %>
-<% debian = images.select { |i| i.match("debian") } %>
+<% debian_arm64 = images.select { |i| i.match(/debian-.*-arm64/) } %>
+<% debian = images.select { |i| i.match("debian") }.reject { |i| debian_arm64.include?(i) } %>
 <% alpine = images.select { |i| i.match("alpine") } %>
 
 ### Debian
 
 #### Current stable
 
+##### x86_64 images
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
 - `<%= tags %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% end %>
+
+##### arm64 images
+<% debian_arm64.each do |image| %>
+<% path = image.split(":").first; tags = image.split(":").last %>
+- `<%= tags %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
+<% end %>
+
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
 
