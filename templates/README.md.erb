@@ -9,7 +9,7 @@
 
 See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags
 <% images = all_images.split(" ") %>
-<% debian_arm64 = images.select { |i| i.match(/debian-.*-arm64/) } %>
+<% debian_arm64 = images.select { |i| i.match(/arm64/) } %>
 <% debian = images.select { |i| i.match("debian") }.reject { |i| debian_arm64.include?(i) } %>
 <% alpine = images.select { |i| i.match("alpine") } %>
 
