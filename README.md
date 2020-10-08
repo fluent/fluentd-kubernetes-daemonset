@@ -29,7 +29,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.11.3-debian-papertrail-1.0,v1.11-debian-papertrail-1` [docker-image/v1.11/debian-papertrail/Dockerfile](docker-image/v1.11/debian-papertrail/Dockerfile)
 - `v1.11.3-debian-logzio-1.0,v1.11-debian-logzio-1` [docker-image/v1.11/debian-logzio/Dockerfile](docker-image/v1.11/debian-logzio/Dockerfile)
 - `v1.11.3-debian-kafka-1.0,v1.11-debian-kafka-2` [docker-image/v1.11/debian-kafka/Dockerfile](docker-image/v1.11/debian-kafka/Dockerfile)
-- `v1.11.3-debian-kinesis-1.0,v1.11-debian-kinesis-1` [docker-image/v1.11/debian-kinesis/Dockerfile](docker-image/v1.11/debian-kinesis/Dockerfile)
+- `v1.11.3-debian-kinesis-2.0,v1.11-debian-kinesis-2` [docker-image/v1.11/debian-kinesis/Dockerfile](docker-image/v1.11/debian-kinesis/Dockerfile)
 
 ##### arm64 images
 - `v1.11.3-debian-azureblob-arm64-1.0,v1.11-debian-azureblob-arm64-1` [docker-image/v1.11/arm64/debian-azureblob/Dockerfile](docker-image/v1.11/arm64/debian-azureblob/Dockerfile)
@@ -47,7 +47,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.11.3-debian-papertrail-arm64-1.0,v1.11-debian-papertrail-arm64-1` [docker-image/v1.11/arm64/debian-papertrail/Dockerfile](docker-image/v1.11/arm64/debian-papertrail/Dockerfile)
 - `v1.11.3-debian-logzio-arm64-1.0,v1.11-debian-logzio-arm64-1` [docker-image/v1.11/arm64/debian-logzio/Dockerfile](docker-image/v1.11/arm64/debian-logzio/Dockerfile)
 - `v1.11.3-debian-kafka-arm64-1.0,v1.11-debian-kafka-arm64-2` [docker-image/v1.11/arm64/debian-kafka/Dockerfile](docker-image/v1.11/arm64/debian-kafka/Dockerfile)
-- `v1.11.3-debian-kinesis-arm64-1.0,v1.11-debian-kinesis-arm64-1` [docker-image/v1.11/arm64/debian-kinesis/Dockerfile](docker-image/v1.11/arm64/debian-kinesis/Dockerfile)
+- `v1.11.3-debian-kinesis-arm64-2.0,v1.11-debian-kinesis-arm64-2` [docker-image/v1.11/arm64/debian-kinesis/Dockerfile](docker-image/v1.11/arm64/debian-kinesis/Dockerfile)
 
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
