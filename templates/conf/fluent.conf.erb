@@ -151,6 +151,7 @@
 <% when "azureblob"%>
 <match **>
   @type azure-storage-append-blob
+  @id out_azure_storage_append_blob
 
   azure_storage_account         "#{ENV['AZUREBLOB_ACCOUNT_NAME']}"
   azure_storage_access_key      "#{ENV['AZUREBLOB_ACCOUNT_KEY']}"
@@ -177,6 +178,7 @@
 # The gelf plugin assumes input in utf-8
 <filter **>
   @type record_modifier
+  @id graylog_encode_utf8
   char_encoding utf-8
 </filter>
 
@@ -275,6 +277,8 @@
 <% when "splunkhec" %>
 <match **>
   @type splunk_hec
+  @id out_splunk_hec
+
   host "#{ENV['FLUENT_SPLUNK_HEC_HOST'] || nil}"
   port "#{ENV['FLUENT_SPLUNK_HEC_PORT'] || '8089'}"
   token "#{ENV['FLUENT_SPLUNK_HEC_TOKEN'] || nil}"
