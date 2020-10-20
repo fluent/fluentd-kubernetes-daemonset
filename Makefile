@@ -17,7 +17,7 @@ X86_IMAGES := \
 	v1.11/debian-elasticsearch6:v1.11.4-debian-elasticsearch6-1.0,v1.11-debian-elasticsearch6-1 \
 	v1.11/debian-loggly:v1.11.4-debian-loggly-1.0,v1.11-debian-loggly-1 \
 	v1.11/debian-logentries:v1.11.4-debian-logentries-1.0,v1.11-debian-logentries-1 \
-	v1.11/debian-cloudwatch:v1.11.4-debian-cloudwatch-1.0,v1.11-debian-cloudwatch-1 \
+	v1.11/debian-cloudwatch:v1.11.4-debian-cloudwatch-1.1,v1.11-debian-cloudwatch-1 \
 	v1.11/debian-stackdriver:v1.11.4-debian-stackdriver-1.0,v1.11-debian-stackdriver-1 \
 	v1.11/debian-s3:v1.11.4-debian-s3-1.0,v1.11-debian-s3-1 \
 	v1.11/debian-syslog:v1.11.4-debian-syslog-1.0,v1.11-debian-syslog-1 \
@@ -37,7 +37,7 @@ ARM64_IMAGES := \
 	v1.11/arm64/debian-elasticsearch6:v1.11.4-debian-elasticsearch6-arm64-1.0,v1.11-debian-elasticsearch6-arm64-1 \
 	v1.11/arm64/debian-loggly:v1.11.4-debian-loggly-arm64-1.0,v1.11-debian-loggly-arm64-1 \
 	v1.11/arm64/debian-logentries:v1.11.4-debian-logentries-arm64-1.0,v1.11-debian-logentries-arm64-1 \
-	v1.11/arm64/debian-cloudwatch:v1.11.4-debian-cloudwatch-arm64-1.0,v1.11-debian-cloudwatch-arm64-1 \
+	v1.11/arm64/debian-cloudwatch:v1.11.4-debian-cloudwatch-arm64-1.1,v1.11-debian-cloudwatch-arm64-1 \
 	v1.11/arm64/debian-stackdriver:v1.11.4-debian-stackdriver-arm64-1.0,v1.11-debian-stackdriver-arm64-1 \
 	v1.11/arm64/debian-s3:v1.11.4-debian-s3-arm64-1.0,v1.11-debian-s3-arm64-1 \
 	v1.11/arm64/debian-syslog:v1.11.4-debian-syslog-arm64-1.0,v1.11-debian-syslog-arm64-1 \
