@@ -212,6 +212,12 @@ Some users create k8s daemonset on Windows:
 
 Please check them out.
 
+### kafka image suggestion
+
+Using debian-kafka2/debian-kafka2-arm64 images are better than using debian-kafka/debian-kafka-arm64 images.
+Because debian-kafka2/debian-kafka2-arm64 images use `out_kafka2` plugin but debina-kafka/debian-kafka-arm64 images use deprecated `out_kafka_buffered` plugin.
+
+
 ## Maintainers
 
 Some images are contributed by users. If you have a problem/question for following images, ask it to contributors.
