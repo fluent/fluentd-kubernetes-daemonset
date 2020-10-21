@@ -50,7 +50,7 @@ gem "fluent-plugin-logzio", "~> 0.0.18"
 gem "fluent-plugin-papertrail", "~> 0.2.6"
 <% when "syslog" %>
 gem "fluent-plugin-remote_syslog"
-<% when "kafka" %>
+<% when "kafka", "kafka2" %>
 gem "rdkafka", "~> 0.7.0"
 gem "fluent-plugin-kafka", "~> 0.12.2"
 gem "snappy", "~> 0.0.15"

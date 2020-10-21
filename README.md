@@ -29,6 +29,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.11.4-debian-papertrail-1.0,v1.11-debian-papertrail-1` [docker-image/v1.11/debian-papertrail/Dockerfile](docker-image/v1.11/debian-papertrail/Dockerfile)
 - `v1.11.4-debian-logzio-1.0,v1.11-debian-logzio-1` [docker-image/v1.11/debian-logzio/Dockerfile](docker-image/v1.11/debian-logzio/Dockerfile)
 - `v1.11.4-debian-kafka-1.0,v1.11-debian-kafka-1` [docker-image/v1.11/debian-kafka/Dockerfile](docker-image/v1.11/debian-kafka/Dockerfile)
+- `v1.11.4-debian-kafka2-1.0,v1.11-debian-kafka2-1` [docker-image/v1.11/debian-kafka2/Dockerfile](docker-image/v1.11/debian-kafka2/Dockerfile)
 - `v1.11.4-debian-kinesis-1.0,v1.11-debian-kinesis-1` [docker-image/v1.11/debian-kinesis/Dockerfile](docker-image/v1.11/debian-kinesis/Dockerfile)
 
 ##### arm64 images
@@ -47,6 +48,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.11.4-debian-papertrail-arm64-1.0,v1.11-debian-papertrail-arm64-1` [docker-image/v1.11/arm64/debian-papertrail/Dockerfile](docker-image/v1.11/arm64/debian-papertrail/Dockerfile)
 - `v1.11.4-debian-logzio-arm64-1.0,v1.11-debian-logzio-arm64-1` [docker-image/v1.11/arm64/debian-logzio/Dockerfile](docker-image/v1.11/arm64/debian-logzio/Dockerfile)
 - `v1.11.4-debian-kafka-arm64-1.0,v1.11-debian-kafka-arm64-1` [docker-image/v1.11/arm64/debian-kafka/Dockerfile](docker-image/v1.11/arm64/debian-kafka/Dockerfile)
+- `v1.11.4-debian-kafka2-arm64-1.0,v1.11-debian-kafka2-arm64-1` [docker-image/v1.11/arm64/debian-kafka2/Dockerfile](docker-image/v1.11/arm64/debian-kafka2/Dockerfile)
 - `v1.11.4-debian-kinesis-arm64-1.0,v1.11-debian-kinesis-arm64-1` [docker-image/v1.11/arm64/debian-kinesis/Dockerfile](docker-image/v1.11/arm64/debian-kinesis/Dockerfile)
 
 
