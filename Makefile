@@ -27,6 +27,7 @@ X86_IMAGES := \
 	v1.11/debian-papertrail:v1.11.4-debian-papertrail-1.0,v1.11-debian-papertrail-1 \
 	v1.11/debian-logzio:v1.11.4-debian-logzio-1.0,v1.11-debian-logzio-1 \
 	v1.11/debian-kafka:v1.11.4-debian-kafka-1.0,v1.11-debian-kafka-1 \
+	v1.11/debian-kafka2:v1.11.4-debian-kafka2-1.0,v1.11-debian-kafka2-1 \
 	v1.11/debian-kinesis:v1.11.4-debian-kinesis-1.0,v1.11-debian-kinesis-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
@@ -47,6 +48,7 @@ ARM64_IMAGES := \
 	v1.11/arm64/debian-papertrail:v1.11.4-debian-papertrail-arm64-1.0,v1.11-debian-papertrail-arm64-1 \
 	v1.11/arm64/debian-logzio:v1.11.4-debian-logzio-arm64-1.0,v1.11-debian-logzio-arm64-1 \
 	v1.11/arm64/debian-kafka:v1.11.4-debian-kafka-arm64-1.0,v1.11-debian-kafka-arm64-1 \
+	v1.11/arm64/debian-kafka2:v1.11.4-debian-kafka2-arm64-1.0,v1.11-debian-kafka2-arm64-1 \
 	v1.11/arm64/debian-kinesis:v1.11.4-debian-kinesis-arm64-1.0,v1.11-debian-kinesis-arm64-1
 
 ALL_IMAGES := $(X86_IMAGES) $(ARM64_IMAGES)
