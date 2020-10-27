@@ -29,8 +29,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem  
-
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
 COPY ./conf/systemd.conf /fluentd/etc/

@@ -93,7 +93,7 @@
   @log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
   s3_region "#{ENV['S3_BUCKET_REGION']}"
-  s3_object_key_format %{path}%Y/%m/%d/cluster-log-%{index}.%{file_extension}
+  s3_object_key_format "#{ENV['S3_OBJECT_KEY_FORMAT'] || '%{path}%Y/%m/%d/cluster-log-%{index}.%{file_extension}'}"
   <inject>
     time_key time
     tag_key tag
