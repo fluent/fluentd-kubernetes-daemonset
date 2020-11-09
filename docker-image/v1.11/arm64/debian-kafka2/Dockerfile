@@ -8,7 +8,7 @@ ENV QEMU_DOWNLOAD_SHA256 a1ef52971537e11915565233f48aa179839f676008d7911c05b3ae9
 RUN apk add curl --no-cache
 RUN curl -sL -o qemu-3.0.0+resin-aarch64.tar.gz https://github.com/balena-io/qemu/releases/download/v3.0.0%2Bresin/qemu-3.0.0+resin-aarch64.tar.gz && echo "$QEMU_DOWNLOAD_SHA256 *qemu-3.0.0+resin-aarch64.tar.gz" | sha256sum -c - | tar zxvf qemu-3.0.0+resin-aarch64.tar.gz -C . && mv qemu-3.0.0+resin-aarch64/qemu-aarch64-static .
 
-FROM fluent/fluentd:v1.11.4-debian-arm64-1.0
+FROM fluent/fluentd:v1.11.5-debian-arm64-1.0
 COPY --from=builder /go/qemu-aarch64-static /usr/bin/
 
 LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
@@ -37,7 +37,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev build-essential autoconf au
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem  \
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
     && ldd $(gem contents rdkafka | grep librdkafka.so) | grep libsasl2.so.2
     
 # Copy configuration files
