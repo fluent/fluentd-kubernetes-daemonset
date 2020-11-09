@@ -45,7 +45,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %>
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem <% if target == "kafka" || target == "kafka2" %> \
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem<% if target == "kafka" || target == "kafka2" %> \
     && ldd $(gem contents rdkafka | grep librdkafka.so) | grep libsasl2.so.2
     <% end %>
 
