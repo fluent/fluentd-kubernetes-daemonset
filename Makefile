@@ -19,7 +19,7 @@ X86_IMAGES := \
 	v1.11/debian-logentries:v1.11.5-debian-logentries-1.0,v1.11-debian-logentries-1 \
 	v1.11/debian-cloudwatch:v1.11.5-debian-cloudwatch-1.0,v1.11-debian-cloudwatch-1 \
 	v1.11/debian-stackdriver:v1.11.5-debian-stackdriver-1.0,v1.11-debian-stackdriver-1 \
-	v1.11/debian-s3:v1.11.5-debian-s3-1.0,v1.11-debian-s3-1 \
+	v1.11/debian-s3:v1.11.5-debian-s3-1.1,v1.11-debian-s3-1 \
 	v1.11/debian-syslog:v1.11.5-debian-syslog-1.0,v1.11-debian-syslog-1 \
 	v1.11/debian-forward:v1.11.5-debian-forward-1.0,v1.11-debian-forward-1 \
 	v1.11/debian-gcs:v1.11.5-debian-gcs-1.0,v1.11-debian-gcs-1 \
@@ -40,7 +40,7 @@ ARM64_IMAGES := \
 	v1.11/arm64/debian-logentries:v1.11.5-debian-logentries-arm64-1.0,v1.11-debian-logentries-arm64-1 \
 	v1.11/arm64/debian-cloudwatch:v1.11.5-debian-cloudwatch-arm64-1.0,v1.11-debian-cloudwatch-arm64-1 \
 	v1.11/arm64/debian-stackdriver:v1.11.5-debian-stackdriver-arm64-1.0,v1.11-debian-stackdriver-arm64-1 \
-	v1.11/arm64/debian-s3:v1.11.5-debian-s3-arm64-1.0,v1.11-debian-s3-arm64-1 \
+	v1.11/arm64/debian-s3:v1.11.5-debian-s3-arm64-1.1,v1.11-debian-s3-arm64-1 \
 	v1.11/arm64/debian-syslog:v1.11.5-debian-syslog-arm64-1.0,v1.11-debian-syslog-arm64-1 \
 	v1.11/arm64/debian-forward:v1.11.5-debian-forward-arm64-1.0,v1.11-debian-forward-arm64-1 \
 	v1.11/arm64/debian-gcs:v1.11.5-debian-gcs-arm64-1.0,v1.11-debian-gcs-arm64-1 \
