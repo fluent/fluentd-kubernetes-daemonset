@@ -66,9 +66,11 @@ spec:
           - name:  AZUREBLOB_ACCOUNT_NAME
             value: "mystorageaccount"
           # Use AZUREBLOB_ACCOUNT_KEY for access key authorization, AZUREBLOB_SAS_TOKEN for shared access signature authorization, 
-          # or neither to use Managed Service Identity.
+          # AZUREBLOB_CONNECTION_STRING to use the full connection string generated in the Azure Portal or neither to use Managed Service Identity.
           - name:  AZUREBLOB_ACCOUNT_KEY
             value: "mystorageaccountkey"
+          - name:  AZUREBLOB_CONNECTION_STRING
+            value: "mystorageaccountconnstr"
           - name:  AZUREBLOB_SAS_TOKEN
             value: "mysastoken"
           - name:  AZUREBLOB_CONTAINER
