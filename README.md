@@ -15,7 +15,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 ##### x86_64 images
 - `v1.11.5-debian-azureblob-2.0,v1.11-debian-azureblob-2` [docker-image/v1.11/debian-azureblob/Dockerfile](docker-image/v1.11/debian-azureblob/Dockerfile)
-- `v1.11.5-debian-elasticsearch7-1.1,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.11/debian-elasticsearch7/Dockerfile](docker-image/v1.11/debian-elasticsearch7/Dockerfile)
+- `v1.11.5-debian-elasticsearch7-1.2,v1.11-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.11/debian-elasticsearch7/Dockerfile](docker-image/v1.11/debian-elasticsearch7/Dockerfile)
 - `v1.11.5-debian-elasticsearch6-1.1,v1.11-debian-elasticsearch6-1` [docker-image/v1.11/debian-elasticsearch6/Dockerfile](docker-image/v1.11/debian-elasticsearch6/Dockerfile)
 - `v1.11.5-debian-loggly-1.0,v1.11-debian-loggly-1` [docker-image/v1.11/debian-loggly/Dockerfile](docker-image/v1.11/debian-loggly/Dockerfile)
 - `v1.11.5-debian-logentries-1.0,v1.11-debian-logentries-1` [docker-image/v1.11/debian-logentries/Dockerfile](docker-image/v1.11/debian-logentries/Dockerfile)
@@ -34,7 +34,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 ##### arm64 images
 - `v1.11.5-debian-azureblob-arm64-2.0,v1.11-debian-azureblob-arm64-2` [docker-image/v1.11/arm64/debian-azureblob/Dockerfile](docker-image/v1.11/arm64/debian-azureblob/Dockerfile)
-- `v1.11.5-debian-elasticsearch7-arm64-1.1,v1.11-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64` [docker-image/v1.11/arm64/debian-elasticsearch7/Dockerfile](docker-image/v1.11/arm64/debian-elasticsearch7/Dockerfile)
+- `v1.11.5-debian-elasticsearch7-arm64-1.2,v1.11-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64` [docker-image/v1.11/arm64/debian-elasticsearch7/Dockerfile](docker-image/v1.11/arm64/debian-elasticsearch7/Dockerfile)
 - `v1.11.5-debian-elasticsearch6-arm64-1.1,v1.11-debian-elasticsearch6-arm64-1` [docker-image/v1.11/arm64/debian-elasticsearch6/Dockerfile](docker-image/v1.11/arm64/debian-elasticsearch6/Dockerfile)
 - `v1.11.5-debian-loggly-arm64-1.0,v1.11-debian-loggly-arm64-1` [docker-image/v1.11/arm64/debian-loggly/Dockerfile](docker-image/v1.11/arm64/debian-loggly/Dockerfile)
 - `v1.11.5-debian-logentries-arm64-1.0,v1.11-debian-logentries-arm64-1` [docker-image/v1.11/arm64/debian-logentries/Dockerfile](docker-image/v1.11/arm64/debian-logentries/Dockerfile)
