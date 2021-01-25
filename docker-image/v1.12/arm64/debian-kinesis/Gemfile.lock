@@ -118,7 +118,7 @@ GEM
       ffi (~> 1.9)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2020.6)
+    tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext

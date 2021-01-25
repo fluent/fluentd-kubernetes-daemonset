@@ -178,12 +178,12 @@ dockerfile:
 gemfile:
 	mkdir -p docker-image/$(DOCKERFILE)
 	docker run --rm -i -v $(PWD)/templates/Gemfile.erb:/Gemfile.erb:ro \
-		ruby:alpine erb -U -T 1 \
+		ruby:alpine3.10 erb -U -T 1 \
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/Gemfile.erb > docker-image/$(DOCKERFILE)/Gemfile
 	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
-		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print" > docker-image/${DOCKERFILE}/Gemfile.lock
+		ruby:alpine3.10 sh -c "apk add --no-cache --quiet git && bundle lock --print" > docker-image/${DOCKERFILE}/Gemfile.lock
 
 # Generate entrypoint.sh from template.
 #
