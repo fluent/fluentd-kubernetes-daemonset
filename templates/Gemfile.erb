@@ -7,15 +7,15 @@
 source "https://rubygems.org"
 
 gem "fluentd", "<%= fluentd_ver %>"
-gem "oj", "3.8.1"
+gem "oj", "3.11.0"
 gem "fluent-plugin-multi-format-parser", "~> 1.0.0"
 gem "fluent-plugin-concat", "~> 2.4.0"
-gem "fluent-plugin-grok-parser", "~> 2.6.0"
-gem "fluent-plugin-prometheus", "~> 1.6.1"
+gem "fluent-plugin-grok-parser", "~> 2.6.2"
+gem "fluent-plugin-prometheus", "~> 1.8.5"
 gem 'fluent-plugin-json-in-json-2', ">= 1.0.2"
-gem "fluent-plugin-record-modifier", "~> 2.0.0"
-gem "fluent-plugin-detect-exceptions", "~> 0.0.12"
-gem "fluent-plugin-rewrite-tag-filter", "~> 2.2.0"
+gem "fluent-plugin-record-modifier", "~> 2.1.0"
+gem "fluent-plugin-detect-exceptions", "~> 0.0.13"
+gem "fluent-plugin-rewrite-tag-filter", "~> 2.4.0"
 <% case target when "elasticsearch6" %>
 gem "elasticsearch", "~> 6.0"
 gem "fluent-plugin-elasticsearch", "~> 4.0.9"
@@ -35,7 +35,7 @@ gem "fluent-plugin-cloudwatch-logs", "~> 0.11.1"
 gem "fluent-plugin-google-cloud", "~> 0.4.10"
 <% when "azureblob" %>
 gem "azure-storage-blob", "~> 2.0"
-gem "fluent-plugin-azure-storage-append-blob-lts", "~> 0.3.0"
+gem "fluent-plugin-azure-storage-append-blob-lts", "~> 0.4.0"
 <% when "s3" %>
 gem "aws-sdk-s3", "~> 1.75"
 gem "fluent-plugin-s3", "~> 1.4.0"
@@ -59,7 +59,7 @@ gem "fluent-plugin-kinesis", "~> 3.2.3"
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
 <% end %>
-gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.5.0"
+gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.6.0"
 <% if !is_alpine %>
 gem "ffi"
 gem "fluent-plugin-systemd", "~> 1.0.1"
