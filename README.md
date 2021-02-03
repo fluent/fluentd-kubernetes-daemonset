@@ -14,7 +14,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 #### Current stable
 
 ##### x86_64 images
-- `v1.12.0-debian-azureblob-1.0,v1.12-debian-azureblob-1` [docker-image/v1.12/debian-azureblob/Dockerfile](docker-image/v1.12/debian-azureblob/Dockerfile)
+- `v1.12.0-debian-azureblob-1.1,v1.12-debian-azureblob-1` [docker-image/v1.12/debian-azureblob/Dockerfile](docker-image/v1.12/debian-azureblob/Dockerfile)
 - `v1.12.0-debian-elasticsearch7-1.0,v1.12-debian-elasticsearch7-1,v1-debian-elasticsearch` [docker-image/v1.12/debian-elasticsearch7/Dockerfile](docker-image/v1.12/debian-elasticsearch7/Dockerfile)
 - `v1.12.0-debian-elasticsearch6-1.0,v1.12-debian-elasticsearch6-1` [docker-image/v1.12/debian-elasticsearch6/Dockerfile](docker-image/v1.12/debian-elasticsearch6/Dockerfile)
 - `v1.12.0-debian-loggly-1.0,v1.12-debian-loggly-1` [docker-image/v1.12/debian-loggly/Dockerfile](docker-image/v1.12/debian-loggly/Dockerfile)
@@ -33,7 +33,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `v1.12.0-debian-kinesis-1.0,v1.12-debian-kinesis-1` [docker-image/v1.12/debian-kinesis/Dockerfile](docker-image/v1.12/debian-kinesis/Dockerfile)
 
 ##### arm64 images
-- `v1.12.0-debian-azureblob-arm64-1.0,v1.12-debian-azureblob-arm64-1` [docker-image/v1.12/arm64/debian-azureblob/Dockerfile](docker-image/v1.12/arm64/debian-azureblob/Dockerfile)
+- `v1.12.0-debian-azureblob-arm64-1.1,v1.12-debian-azureblob-arm64-1` [docker-image/v1.12/arm64/debian-azureblob/Dockerfile](docker-image/v1.12/arm64/debian-azureblob/Dockerfile)
 - `v1.12.0-debian-elasticsearch7-arm64-1.0,v1.12-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64` [docker-image/v1.12/arm64/debian-elasticsearch7/Dockerfile](docker-image/v1.12/arm64/debian-elasticsearch7/Dockerfile)
 - `v1.12.0-debian-elasticsearch6-arm64-1.0,v1.12-debian-elasticsearch6-arm64-1` [docker-image/v1.12/arm64/debian-elasticsearch6/Dockerfile](docker-image/v1.12/arm64/debian-elasticsearch6/Dockerfile)
 - `v1.12.0-debian-loggly-arm64-1.0,v1.12-debian-loggly-arm64-1` [docker-image/v1.12/arm64/debian-loggly/Dockerfile](docker-image/v1.12/arm64/debian-loggly/Dockerfile)
