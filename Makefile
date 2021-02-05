@@ -224,6 +224,7 @@ kubernetes.conf:
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 		/kubernetes.conf.erb > docker-image/$(DOCKERFILE)/conf/kubernetes.conf
+	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
 
 systemd.conf:
 	mkdir -p docker-image/$(DOCKERFILE)/conf
