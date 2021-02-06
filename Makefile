@@ -159,16 +159,28 @@ src-all: README.md
 # Render the given erb template.
 #
 # Usage:
-#	make container-image-template [TEMPLATE_FILE=] [DOCKERFILE=] [VERSION=]
+#	make container-image-template [FILE=] [DOCKERFILE=] [VERSION=]
 
 container-image-template:
-	mkdir -p docker-image/$(DOCKERFILE)/$(dir $(TEMPLATE_FILE))
-	docker run --rm -i -v $(PWD)/templates/$(TEMPLATE_FILE).erb:/$(basename $(TEMPLATE_FILE)).erb:ro \
+	mkdir -p docker-image/$(DOCKERFILE)/$(dir $(FILE))
+	docker run --rm -i -v $(PWD)/templates/$(FILE).erb:/$(basename $(FILE)).erb:ro \
 		ruby:alpine erb -U -T 1 \
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
-		/$(basename $(TEMPLATE_FILE)).erb > docker-image/$(DOCKERFILE)/$(TEMPLATE_FILE)
+		/$(basename $(FILE)).erb > docker-image/$(DOCKERFILE)/$(FILE)
 
+# Render the given erb template for all images.
+#
+# Usage:
+#	make container-image-template [FILE=] [DOCKERFILE=] [VERSION=]
+
+container-image-template-all:
+	(set -e ; $(foreach img,$(ALL_IMAGES), \
+		make container-image-template $(FILE) \
+			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
+			VERSION=$(word 1,$(subst $(comma), ,\
+			                 $(word 2,$(subst :, ,$(img))))) ; \
+	))
 
 
 # Generate Dockerfile from template.
@@ -177,17 +189,21 @@ container-image-template:
 #	make dockerfile [DOCKERFILE=] [VERSION=]
 
 dockerfile:
-	make container-image-template TEMPLATE_FILE=Dockerfile
+	make container-image-template FILE=Dockerfile
 	cp $(PWD)/templates/.dockerignore docker-image/$(DOCKERFILE)/.dockerignore
+dockerfile-all:
+	make container-image-template-all FILE=dockerfile
 
 # Generate Gemfile and Gemfile.lock from template.
 #
 # Usage:
 #	make gemfile [DOCKERFILE=] [VERSION=]
 gemfile:
-	make container-image-template TEMPLATE_FILE=Gemfile
+	make container-image-template FILE=Gemfile
 	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
 		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
+gemfile-all:
+	make container-image-template-all FILE=gemfile
 
 # Generate entrypoint.sh from template.
 #
@@ -195,8 +211,10 @@ gemfile:
 #	make entrypoint.sh [DOCKERFILE=] [VERSION=]
 
 entrypoint.sh:
-	make container-image-template TEMPLATE_FILE=entrypoint.sh
+	make container-image-template FILE=entrypoint.sh
 	chmod 755 docker-image/$(DOCKERFILE)/entrypoint.sh
+entrypoint.sh-all:
+	make container-image-template-all FILE=entrypoint.sh
 
 # Generate fluent.conf from template.
 #
@@ -204,7 +222,9 @@ entrypoint.sh:
 #	make fluent.conf [DOCKERFILE=] [VERSION=]
 
 fluent.conf:
-	make container-image-template TEMPLATE_FILE=conf/fluent.conf
+	make container-image-template FILE=conf/fluent.conf
+fluent.conf-all:
+	make container-image-template-all FILE=fluent.conf
 
 # Generate kubernetes.conf from template.
 #
@@ -212,18 +232,17 @@ fluent.conf:
 #	make kubernetes.conf [DOCKERFILE=] [VERSION=]
 
 kubernetes.conf:
-	docker run --rm -i -v $(PWD)/templates/conf/kubernetes.conf.erb:/kubernetes.conf.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/kubernetes.conf.erb > docker-image/$(DOCKERFILE)/conf/kubernetes.conf
+	make container-image-template FILE=conf/kubernetes.conf
+	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
+kubernetes.conf-all:
+	make container-image-template-all FILE=kubernetes.conf
 	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
 
 systemd.conf:
-	make container-image-template TEMPLATE_FILE=conf/systemd.conf
+	make container-image-template FILE=conf/systemd.conf
 
 prometheus.conf:
-	make container-image-template TEMPLATE_FILE=conf/prometheus.conf
+	make container-image-template FILE=conf/prometheus.conf
 
 README.md: templates/README.md.erb
 	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
@@ -292,72 +311,6 @@ post-push-hook:
 		ruby:alpine erb -U \
 			image_tags='$(TAGS)' \
 		/post_push.erb > docker-image/$(DOCKERFILE)/hooks/post_push
-
-
-# Generate Dockerfile from template for all supported Docker images.
-#
-# Usage:
-#	make dockerfile-all
-
-dockerfile-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make dockerfile \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
-			VERSION=$(word 1,$(subst $(comma), ,\
-			                 $(word 2,$(subst :, ,$(img))))) ; \
-	))
-
-# Generate Gemfile and Gemfile.lock from template for all supported Docker images.
-#
-# Usage:
-#	make gemfile-all
-
-gemfile-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make gemfile \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
-			VERSION=$(word 1,$(subst $(comma), ,\
-			                 $(word 2,$(subst :, ,$(img))))) ; \
-	))
-
-# Generate entrypoint.sh from template for all supported Docker images.
-#
-# Usage:
-#	make entrypoint.sh-all
-
-entrypoint.sh-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make entrypoint.sh \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
-			VERSION=$(word 1,$(subst $(comma), ,\
-			                 $(word 2,$(subst :, ,$(img))))) ; \
-	))
-
-# Generate fluent.conf from template for all supported Docker images.
-#
-# Usage:
-#	make fluent.conf-all
-
-fluent.conf-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make fluent.conf \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
-			VERSION=$(word 1,$(subst $(comma), ,\
-			                 $(word 2,$(subst :, ,$(img))))) ; \
-	))
-
-# Generate kubernetes.conf from template for all supported Docker images.
-#
-# Usage:
-#	make kubernetes.conf-all
-
-kubernetes.conf-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make kubernetes.conf \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
-			VERSION=$(word 1,$(subst $(comma), ,\
-			                 $(word 2,$(subst :, ,$(img))))) ; \
-	))
 
 # copy plugins required for all supported Docker images.
 #
