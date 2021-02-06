@@ -140,7 +140,7 @@ release-all:
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
 
-src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins post-push-hook post-checkout-hook entrypoint.sh
+src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins post-push-hook post-checkout-hook entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kubelet.conf kube-proxy.conf kube-scheduler.conf rescheduler.conf salt.conf startupscript.conf
 
 # Generate sources for all supported Docker images.
 #
@@ -237,6 +237,35 @@ kubernetes.conf:
 kubernetes.conf-all:
 	make container-image-template-all FILE=kubernetes.conf
 	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
+
+cluster-autoscaler.conf:
+	make container-image-template FILE=conf/kubernetes/cluster-autoscaler.conf
+containers.conf:
+	make container-image-template FILE=conf/kubernetes/containers.conf
+docker.conf:
+	make container-image-template FILE=conf/kubernetes/docker.conf
+etcd.conf:
+	make container-image-template FILE=conf/kubernetes/etcd.conf
+glbc.conf:
+	make container-image-template FILE=conf/kubernetes/glbc.conf
+kube-apiserver-audit.conf:
+	make container-image-template FILE=conf/kubernetes/kube-apiserver-audit.conf
+kube-apiserver.conf:
+	make container-image-template FILE=conf/kubernetes/kube-apiserver.conf
+kube-controller-manager.conf:
+	make container-image-template FILE=conf/kubernetes/kube-controller-manager.conf
+kubelet.conf:
+	make container-image-template FILE=conf/kubernetes/kubelet.conf
+kube-proxy.conf:
+	make container-image-template FILE=conf/kubernetes/kube-proxy.conf
+kube-scheduler.conf:
+	make container-image-template FILE=conf/kubernetes/kube-scheduler.conf
+rescheduler.conf:
+	make container-image-template FILE=conf/kubernetes/rescheduler.conf
+salt.conf:
+	make container-image-template FILE=conf/kubernetes/salt.conf
+startupscript.conf:
+	make container-image-template FILE=conf/kubernetes/startupscript.conf
 
 systemd.conf:
 	make container-image-template FILE=conf/systemd.conf
