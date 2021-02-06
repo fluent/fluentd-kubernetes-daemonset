@@ -156,6 +156,20 @@ src-all: README.md
 			TAGS=$(word 2,$(subst :, ,$(img))) ; \
 	))
 
+# Render the given erb template.
+#
+# Usage:
+#	make container-image-template [TEMPLATE_FILE=] [DOCKERFILE=] [VERSION=]
+
+container-image-template:
+	mkdir -p docker-image/$(DOCKERFILE)/$(dir $(TEMPLATE_FILE))
+	docker run --rm -i -v $(PWD)/templates/$(TEMPLATE_FILE).erb:/$(basename $(TEMPLATE_FILE)).erb:ro \
+		ruby:alpine erb -U -T 1 \
+			dockerfile='$(DOCKERFILE)' \
+			version='$(VERSION)' \
+		/$(basename $(TEMPLATE_FILE)).erb > docker-image/$(DOCKERFILE)/$(TEMPLATE_FILE)
+
+
 
 # Generate Dockerfile from template.
 #
@@ -163,25 +177,15 @@ src-all: README.md
 #	make dockerfile [DOCKERFILE=] [VERSION=]
 
 dockerfile:
-	mkdir -p docker-image/$(DOCKERFILE)
+	make container-image-template TEMPLATE_FILE=Dockerfile
 	cp $(PWD)/templates/.dockerignore docker-image/$(DOCKERFILE)/.dockerignore
-	docker run --rm -i -v $(PWD)/templates/Dockerfile.erb:/Dockerfile.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/Dockerfile.erb > docker-image/$(DOCKERFILE)/Dockerfile
 
 # Generate Gemfile and Gemfile.lock from template.
 #
 # Usage:
 #	make gemfile [DOCKERFILE=] [VERSION=]
 gemfile:
-	mkdir -p docker-image/$(DOCKERFILE)
-	docker run --rm -i -v $(PWD)/templates/Gemfile.erb:/Gemfile.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/Gemfile.erb > docker-image/$(DOCKERFILE)/Gemfile
+	make container-image-template TEMPLATE_FILE=Gemfile
 	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
 		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
 
@@ -191,12 +195,7 @@ gemfile:
 #	make entrypoint.sh [DOCKERFILE=] [VERSION=]
 
 entrypoint.sh:
-	mkdir -p docker-image/$(DOCKERFILE)
-	docker run --rm -i -v $(PWD)/templates/entrypoint.sh.erb:/entrypoint.sh.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/entrypoint.sh.erb > docker-image/$(DOCKERFILE)/entrypoint.sh
+	make container-image-template TEMPLATE_FILE=entrypoint.sh
 	chmod 755 docker-image/$(DOCKERFILE)/entrypoint.sh
 
 # Generate fluent.conf from template.
@@ -205,12 +204,7 @@ entrypoint.sh:
 #	make fluent.conf [DOCKERFILE=] [VERSION=]
 
 fluent.conf:
-	mkdir -p docker-image/$(DOCKERFILE)/conf
-	docker run --rm -i -v $(PWD)/templates/conf/fluent.conf.erb:/fluent.conf.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/fluent.conf.erb > docker-image/$(DOCKERFILE)/conf/fluent.conf
+	make container-image-template TEMPLATE_FILE=conf/fluent.conf
 
 # Generate kubernetes.conf from template.
 #
@@ -218,7 +212,6 @@ fluent.conf:
 #	make kubernetes.conf [DOCKERFILE=] [VERSION=]
 
 kubernetes.conf:
-	mkdir -p docker-image/$(DOCKERFILE)/conf
 	docker run --rm -i -v $(PWD)/templates/conf/kubernetes.conf.erb:/kubernetes.conf.erb:ro \
 		ruby:alpine erb -U -T 1 \
 			dockerfile='$(DOCKERFILE)' \
@@ -227,20 +220,10 @@ kubernetes.conf:
 	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
 
 systemd.conf:
-	mkdir -p docker-image/$(DOCKERFILE)/conf
-	docker run --rm -i -v $(PWD)/templates/conf/systemd.conf.erb:/systemd.conf.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/systemd.conf.erb > docker-image/$(DOCKERFILE)/conf/systemd.conf
+	make container-image-template TEMPLATE_FILE=conf/systemd.conf
 
 prometheus.conf:
-	mkdir -p docker-image/$(DOCKERFILE)/conf
-	docker run --rm -i -v $(PWD)/templates/conf/prometheus.conf.erb:/prometheus.conf.erb:ro \
-		ruby:alpine erb -U -T 1 \
-			dockerfile='$(DOCKERFILE)' \
-			version='$(VERSION)' \
-		/prometheus.conf.erb > docker-image/$(DOCKERFILE)/conf/prometheus.conf
+	make container-image-template TEMPLATE_FILE=conf/prometheus.conf
 
 README.md: templates/README.md.erb
 	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
