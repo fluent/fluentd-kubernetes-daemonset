@@ -4,11 +4,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     aws-eventstream (1.1.0)
-    aws-partitions (1.422.0)
-    aws-sdk-cloudwatchlogs (1.38.0)
-      aws-sdk-core (~> 3, >= 3.109.0)
+    aws-partitions (1.426.0)
+    aws-sdk-cloudwatchlogs (1.39.0)
+      aws-sdk-core (~> 3, >= 3.112.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-core (3.111.2)
+    aws-sdk-core (3.112.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
@@ -25,7 +25,7 @@ GEM
       rake
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-plugin-cloudwatch-logs (0.11.2)
+    fluent-plugin-cloudwatch-logs (0.13.3)
       aws-sdk-cloudwatchlogs (~> 1.0)
       fluentd (>= 1.8.0)
     fluent-plugin-concat (2.4.0)
@@ -125,7 +125,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-cloudwatchlogs (~> 1.0)
   ffi
-  fluent-plugin-cloudwatch-logs (~> 0.11.1)
+  fluent-plugin-cloudwatch-logs (~> 0.13.3)
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-detect-exceptions (~> 0.0.13)
   fluent-plugin-grok-parser (~> 2.6.2)
