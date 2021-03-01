@@ -20,13 +20,19 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 ##### x86_64 images
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
-- `<%= tags %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
+- `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
+<% tags.split(",").each do |tag| %>
+  - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
+<% end %>
 <% end %>
 
 ##### arm64 images
 <% debian_arm64.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
-- `<%= tags %>` [docker-image/<%= path %>/Dockerfile](docker-image/<%= path %>/Dockerfile)
+- `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
+<% tags.split(",").each do |tag| %>
+  - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
+<% end %>
 <% end %>
 
 
