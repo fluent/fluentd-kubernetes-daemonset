@@ -3,8 +3,10 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    avro (1.10.1)
+      multi_json (~> 1)
     concurrent-ruby (1.1.8)
-    cool.io (1.7.0)
+    cool.io (1.7.1)
     digest-crc (0.6.3)
       rake (>= 12.0.0, < 14.0.0)
     domain_name (0.5.20190701)
@@ -15,6 +17,9 @@ GEM
       rake
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
+    fluent-plugin-avro (1.1.1)
+      avro
+      fluentd (>= 0.14.0, < 2)
     fluent-plugin-concat (2.4.0)
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.13)
@@ -34,6 +39,8 @@ GEM
       lru_redux
     fluent-plugin-multi-format-parser (1.0.0)
       fluentd (>= 0.14.0, < 2)
+    fluent-plugin-parser-cri (0.1.0)
+      fluentd (>= 1)
     fluent-plugin-prometheus (1.8.5)
       fluentd (>= 1.9.1, < 2)
       prometheus-client (< 0.10)
@@ -79,7 +86,7 @@ GEM
     ltsv (0.1.2)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2020.1104)
+    mime-types-data (3.2021.0225)
     mini_portile2 (2.5.0)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -102,7 +109,7 @@ GEM
       netrc (~> 0.8)
     ruby-kafka (0.7.10)
       digest-crc
-    serverengine (2.2.2)
+    serverengine (2.2.3)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
     snappy (0.0.17)
@@ -123,6 +130,7 @@ PLATFORMS
 
 DEPENDENCIES
   ffi
+  fluent-plugin-avro (~> 1.1.1)
   fluent-plugin-concat (~> 2.4.0)
   fluent-plugin-detect-exceptions (~> 0.0.13)
   fluent-plugin-grok-parser (~> 2.6.2)
@@ -130,6 +138,7 @@ DEPENDENCIES
   fluent-plugin-kafka (~> 0.12.2)
   fluent-plugin-kubernetes_metadata_filter (~> 2.6.0)
   fluent-plugin-multi-format-parser (~> 1.0.0)
+  fluent-plugin-parser-cri (~> 0.1.0)
   fluent-plugin-prometheus (~> 1.8.5)
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
