@@ -117,6 +117,7 @@ Each image has following configurations:
 
 - fluent.conf: Destination setting, Elaticsearch, kafka and etc.
 - kubernetes.conf: k8s specific setting. `tail` input for log files and `kubernetes_metadata` filter
+- tail_container_parse.conf: parser setting for `/var/log/containers/*.log`. See also "Use CRI parser for containerd/cri-o" logs section
 - prometheus.conf: prometheus plugin for fluentd monitoring
 - systemd.conf: systemd plugin for collecting systemd-journal log. See also "Disable systemd input" section.
 
@@ -124,6 +125,24 @@ Overwrite conf file via ConfigMap. See also several examples:
 
 - [Cluster-level Logging in Kubernetes with Fluentd](https://medium.com/kubernetes-tutorials/cluster-level-logging-in-kubernetes-with-fluentd-e59aa2b6093a)
 - https://github.com/fluent/fluentd-kubernetes-daemonset/pull/349#issuecomment-579097659
+
+### Use CRI parser for containerd/cri-o logs
+
+This feature is available since v1.12.0-xxx-1.1.
+
+By default, these images use `json` parser for `/var/log/containers/` files because docker generates json formatted logs.
+On the other hand, containerd/cri-o use different log format. To parse such logs, you need to use [`cri` parser](https://github.com/fluent/fluent-plugin-parser-cri) instead.
+
+You can use `cri` parser by overwriting `tail_container_parse.conf` via ConfigMap.
+
+```
+# configuration example
+<parse>
+  @type cri
+</parse>
+```
+
+See also [CRI parser README](https://github.com/fluent/fluent-plugin-parser-cri#log-and-configuration-example)
 
 ### Use FLUENT_CONTAINER_TAIL_EXCLUDE_PATH to exclude specific container logs
 
