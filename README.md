@@ -37,7 +37,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-stackdriver-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-stackdriver-1`
 - `S3` [Dockerfile](docker-image/v1.12/debian-s3/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-s3-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-s3-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-s3-1`
 - `Syslog` [Dockerfile](docker-image/v1.12/debian-syslog/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-syslog-1.1`
@@ -91,7 +91,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-stackdriver-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-stackdriver-arm64-1`
 - `S3` [Dockerfile](docker-image/v1.12/arm64/debian-s3/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-s3-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-s3-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-s3-arm64-1`
 - `Syslog` [Dockerfile](docker-image/v1.12/arm64/debian-syslog/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-syslog-arm64-1.1`
