@@ -18,7 +18,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-azureblob-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-azureblob-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.12/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-elasticsearch7-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-elasticsearch7-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-elasticsearch7-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.12/debian-elasticsearch6/Dockerfile)
@@ -72,7 +72,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-azureblob-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-azureblob-arm64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.12/arm64/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-elasticsearch7-arm64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-elasticsearch7-arm64-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-elasticsearch7-arm64-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.12/arm64/debian-elasticsearch6/Dockerfile)
