@@ -58,10 +58,10 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-logzio-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-logzio-1`
 - `Kafka` [Dockerfile](docker-image/v1.12/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kafka-1`
 - `Kafka2` [Dockerfile](docker-image/v1.12/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka2-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka2-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kafka2-1`
 - `Kinesis` [Dockerfile](docker-image/v1.12/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kinesis-1.1`
@@ -112,10 +112,10 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-logzio-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-logzio-arm64-1`
 - `Kafka` [Dockerfile](docker-image/v1.12/arm64/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kafka-arm64-1`
 - `Kafka2` [Dockerfile](docker-image/v1.12/arm64/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka2-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kafka2-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kafka2-arm64-1`
 - `Kinesis` [Dockerfile](docker-image/v1.12/arm64/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.0-debian-kinesis-arm64-1.1`
