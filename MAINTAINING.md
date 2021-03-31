@@ -3,8 +3,6 @@ How to use and maintain this project
 
 All operations are automated as much as possible.
 
-- Images and description [on Docker Hub][1] will be automatically rebuilt on
-  [pushes to `master` branch][2] and on updates of parent Docker images.
 - Generation of each `Dockerfile` and its context is automated via `Makefile`.
 
 
