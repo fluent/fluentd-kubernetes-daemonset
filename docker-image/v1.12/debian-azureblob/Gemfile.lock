@@ -29,7 +29,7 @@ GEM
       rake
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-plugin-azure-storage-append-blob-lts (0.6.2)
+    fluent-plugin-azure-storage-append-blob-lts (0.6.3)
       azure-storage-blob (~> 2.0)
       fluentd (>= 0.14.10, < 2)
     fluent-plugin-concat (2.4.0)
