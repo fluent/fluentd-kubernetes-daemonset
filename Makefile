@@ -13,8 +13,8 @@
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
 	v1.12/debian-azureblob:v1.12.2-debian-azureblob-1.1,v1.12-debian-azureblob-1 \
-	v1.12/debian-elasticsearch7:v1.12.2-debian-elasticsearch7-1.0,v1.12-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.12/debian-elasticsearch6:v1.12.2-debian-elasticsearch6-1.0,v1.12-debian-elasticsearch6-1 \
+	v1.12/debian-elasticsearch7:v1.12.2-debian-elasticsearch7-1.1,v1.12-debian-elasticsearch7-1,v1-debian-elasticsearch \
+	v1.12/debian-elasticsearch6:v1.12.2-debian-elasticsearch6-1.1,v1.12-debian-elasticsearch6-1 \
 	v1.12/debian-loggly:v1.12.2-debian-loggly-1.0,v1.12-debian-loggly-1 \
 	v1.12/debian-logentries:v1.12.2-debian-logentries-1.0,v1.12-debian-logentries-1 \
 	v1.12/debian-cloudwatch:v1.12.2-debian-cloudwatch-1.3,v1.12-debian-cloudwatch-1 \
@@ -34,8 +34,8 @@ X86_IMAGES := \
 
 ARM64_IMAGES := \
 	v1.12/arm64/debian-azureblob:v1.12.2-debian-azureblob-arm64-1.3,v1.12-debian-azureblob-arm64-1 \
-	v1.12/arm64/debian-elasticsearch7:v1.12.2-debian-elasticsearch7-arm64-1.3,v1.12-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
-	v1.12/arm64/debian-elasticsearch6:v1.12.2-debian-elasticsearch6-arm64-1.0,v1.12-debian-elasticsearch6-arm64-1 \
+	v1.12/arm64/debian-elasticsearch7:v1.12.2-debian-elasticsearch7-arm64-1.4,v1.12-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
+	v1.12/arm64/debian-elasticsearch6:v1.12.2-debian-elasticsearch6-arm64-1.1,v1.12-debian-elasticsearch6-arm64-1 \
 	v1.12/arm64/debian-loggly:v1.12.2-debian-loggly-arm64-1.0,v1.12-debian-loggly-arm64-1 \
 	v1.12/arm64/debian-logentries:v1.12.2-debian-logentries-arm64-1.0,v1.12-debian-logentries-arm64-1 \
 	v1.12/arm64/debian-cloudwatch:v1.12.2-debian-cloudwatch-arm64-1.3,v1.12-debian-cloudwatch-arm64-1 \

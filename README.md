@@ -18,11 +18,11 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-azureblob-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-azureblob-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.12/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch7-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch7-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-elasticsearch7-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.12/debian-elasticsearch6/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch6-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch6-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-elasticsearch6-1`
 - `Loggly` [Dockerfile](docker-image/v1.12/debian-loggly/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-loggly-1.0`
@@ -72,11 +72,11 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-azureblob-arm64-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-azureblob-arm64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.12/arm64/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch7-arm64-1.3`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch7-arm64-1.4`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-elasticsearch7-arm64-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.12/arm64/debian-elasticsearch6/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch6-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-elasticsearch6-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-elasticsearch6-arm64-1`
 - `Loggly` [Dockerfile](docker-image/v1.12/arm64/debian-loggly/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.2-debian-loggly-arm64-1.0`
