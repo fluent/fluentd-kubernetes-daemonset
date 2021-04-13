@@ -54,7 +54,7 @@ spec:
           path: /var/log
       - name: varlibdockercontainers
         hostPath:
-          path: /var/lib/docker/containers
+          path: /var/log/pods
 #---
 #apiVersion: v1
 #kind: ConfigMap

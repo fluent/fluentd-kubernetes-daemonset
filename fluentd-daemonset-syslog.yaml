@@ -92,4 +92,4 @@ spec:
           path: /var/log
       - name: varlibdockercontainers
         hostPath:
-          path: /var/lib/docker/containers
+          path: /var/log/pods
