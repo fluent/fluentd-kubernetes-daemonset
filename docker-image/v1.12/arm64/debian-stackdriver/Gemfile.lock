@@ -19,7 +19,7 @@ GEM
     extlib (0.9.16)
     faraday (0.17.4)
       multipart-post (>= 1.2, < 3)
-    ffi (1.15.0)
+    ffi (1.15.1)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
@@ -55,10 +55,10 @@ GEM
     fluent-plugin-rewrite-tag-filter (2.4.0)
       fluent-config-regexp-type
       fluentd (>= 0.14.2, < 2)
-    fluent-plugin-systemd (1.0.4)
+    fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.12.3)
+    fluentd (1.12.4)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
@@ -81,7 +81,7 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
-    googleauth (0.16.1)
+    googleauth (0.16.2)
       faraday (>= 0.17.3, < 2.0)
       jwt (>= 1.4, < 3.0)
       memoist (~> 0.16)
@@ -137,7 +137,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     retriable (1.4.1)
-    serverengine (2.2.3)
+    serverengine (2.2.4)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
     signet (0.15.0)
@@ -176,7 +176,7 @@ DEPENDENCIES
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.2)
-  fluentd (= 1.12.3)
+  fluentd (= 1.12.4)
   oj (= 3.11.0)
 
 BUNDLED WITH
