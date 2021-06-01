@@ -64,7 +64,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-kafka2-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kafka2-1`
 - `Kinesis` [Dockerfile](docker-image/v1.12/debian-kinesis/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-kinesis-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-kinesis-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kinesis-1`
 
 ##### arm64 images
@@ -118,7 +118,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-kafka2-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kafka2-arm64-1`
 - `Kinesis` [Dockerfile](docker-image/v1.12/arm64/debian-kinesis/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-kinesis-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-kinesis-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-kinesis-arm64-1`
 
 
