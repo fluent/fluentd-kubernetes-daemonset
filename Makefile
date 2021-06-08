@@ -12,23 +12,23 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
-	v1.12/debian-azureblob:v1.12.4-debian-azureblob-1.0,v1.12-debian-azureblob-1 \
-	v1.12/debian-elasticsearch7:v1.12.4-debian-elasticsearch7-1.0,v1.12-debian-elasticsearch7-1,v1-debian-elasticsearch \
-	v1.12/debian-elasticsearch6:v1.12.4-debian-elasticsearch6-1.0,v1.12-debian-elasticsearch6-1 \
-	v1.12/debian-loggly:v1.12.4-debian-loggly-1.0,v1.12-debian-loggly-1 \
-	v1.12/debian-logentries:v1.12.4-debian-logentries-1.0,v1.12-debian-logentries-1 \
-	v1.12/debian-cloudwatch:v1.12.4-debian-cloudwatch-1.3,v1.12-debian-cloudwatch-1 \
-	v1.12/debian-stackdriver:v1.12.4-debian-stackdriver-1.0,v1.12-debian-stackdriver-1 \
-	v1.12/debian-s3:v1.12.4-debian-s3-1.0,v1.12-debian-s3-1 \
-	v1.12/debian-syslog:v1.12.4-debian-syslog-1.0,v1.12-debian-syslog-1 \
-	v1.12/debian-forward:v1.12.4-debian-forward-1.0,v1.12-debian-forward-1 \
-	v1.12/debian-gcs:v1.12.4-debian-gcs-1.0,v1.12-debian-gcs-1 \
-	v1.12/debian-graylog:v1.12.4-debian-graylog-1.0,v1.12-debian-graylog-1 \
-	v1.12/debian-papertrail:v1.12.4-debian-papertrail-1.0,v1.12-debian-papertrail-1 \
-	v1.12/debian-logzio:v1.12.4-debian-logzio-1.0,v1.12-debian-logzio-1 \
-	v1.12/debian-kafka:v1.12.4-debian-kafka-1.0,v1.12-debian-kafka-1 \
-	v1.12/debian-kafka2:v1.12.4-debian-kafka2-1.0,v1.12-debian-kafka2-1 \
-	v1.12/debian-kinesis:v1.12.4-debian-kinesis-1.1,v1.12-debian-kinesis-1
+	v1.12/debian-azureblob:v1.12.4-debian-azureblob-amd64-1.0,v1.12-debian-azureblob-amd64-1 \
+	v1.12/debian-elasticsearch7:v1.12.4-debian-elasticsearch7-amd64-1.0,v1.12-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
+	v1.12/debian-elasticsearch6:v1.12.4-debian-elasticsearch6-amd64-1.0,v1.12-debian-elasticsearch6-amd64-1 \
+	v1.12/debian-loggly:v1.12.4-debian-loggly-amd64-1.0,v1.12-debian-loggly-amd64-1 \
+	v1.12/debian-logentries:v1.12.4-debian-logentries-amd64-1.0,v1.12-debian-logentries-amd64-1 \
+	v1.12/debian-cloudwatch:v1.12.4-debian-cloudwatch-amd64-1.3,v1.12-debian-cloudwatch-amd64-1 \
+	v1.12/debian-stackdriver:v1.12.4-debian-stackdriver-amd64-1.0,v1.12-debian-stackdriver-amd64-1 \
+	v1.12/debian-s3:v1.12.4-debian-s3-amd64-1.0,v1.12-debian-s3-amd64-1 \
+	v1.12/debian-syslog:v1.12.4-debian-syslog-amd64-1.0,v1.12-debian-syslog-amd64-1 \
+	v1.12/debian-forward:v1.12.4-debian-forward-amd64-1.0,v1.12-debian-forward-amd64-1 \
+	v1.12/debian-gcs:v1.12.4-debian-gcs-amd64-1.0,v1.12-debian-gcs-amd64-1 \
+	v1.12/debian-graylog:v1.12.4-debian-graylog-amd64-1.0,v1.12-debian-graylog-amd64-1 \
+	v1.12/debian-papertrail:v1.12.4-debian-papertrail-amd64-1.0,v1.12-debian-papertrail-amd64-1 \
+	v1.12/debian-logzio:v1.12.4-debian-logzio-amd64-1.0,v1.12-debian-logzio-amd64-1 \
+	v1.12/debian-kafka:v1.12.4-debian-kafka-amd64-1.0,v1.12-debian-kafka-amd64-1 \
+	v1.12/debian-kafka2:v1.12.4-debian-kafka2-amd64-1.0,v1.12-debian-kafka2-amd64-1 \
+	v1.12/debian-kinesis:v1.12.4-debian-kinesis-amd64-1.1,v1.12-debian-kinesis-amd64-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
