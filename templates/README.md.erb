@@ -17,6 +17,15 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
+##### Multi-Arch images
+<% debian.each do |image| %>
+<% path = image.split(":").first.sub("-amd64",""); tags = image.split(":").last %>
+- `<%= tags.split(",").first.split("-")[2].capitalize %>`
+<% tags.split(",").each do |tag| %>
+  - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag.sub("-amd64","") %>`
+<% end %>
+<% end %>
+
 ##### x86_64 images
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
