@@ -17,8 +17,12 @@ for tag in {v1.12.4-debian-elasticsearch6-arm64-1.0,v1.12-debian-elasticsearch6-
   docker tag $IMAGE_NAME ${repoName}:${tag}
   docker push ${repoName}:${tag}
   # Note: this will fail until both the amd64 and arm64 images have been pushed
+  archTag=${tag/amd64/ARCH}
+  archTag=${archTag/arm64/ARCH}
+  noArchTag=${tag/-amd64/}
+  noArchTag=${noArchTag/-arm64/}
   ./manifest-tool push from-args \
       --platforms linux/amd64,linux/arm64 \
-      --template ${repoName}:${tag/amd64|arm64/ARCH} \
-      --target ${repoName}:${tag/-amd64|-arm64/}
+      --template ${repoName}:${archTag} \
+      --target ${repoName}:${noArchTag}
 done
