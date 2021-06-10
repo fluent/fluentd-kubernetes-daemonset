@@ -21,8 +21,9 @@ for tag in {v1.12.4-debian-kinesis-arm64-1.2,v1.12-debian-kinesis-arm64-1}; do
   archTag=${archTag/arm64/ARCH}
   noArchTag=${tag/-amd64/}
   noArchTag=${noArchTag/-arm64/}
+  # Accept manifest-tool command failure.
   ./manifest-tool push from-args \
       --platforms linux/amd64,linux/arm64 \
       --template ${repoName}:${archTag} \
-      --target ${repoName}:${noArchTag}
+      --target ${repoName}:${noArchTag} || true
 done

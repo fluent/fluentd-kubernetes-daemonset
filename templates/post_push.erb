@@ -21,8 +21,9 @@ for tag in {<%= image_tags %>}; do
   archTag=${archTag/arm64/ARCH}
   noArchTag=${tag/-amd64/}
   noArchTag=${noArchTag/-arm64/}
+  # Accept manifest-tool command failure.
   ./manifest-tool push from-args \
       --platforms linux/amd64,linux/arm64 \
       --template ${repoName}:${archTag} \
-      --target ${repoName}:${noArchTag}
+      --target ${repoName}:${noArchTag} || true
 done
