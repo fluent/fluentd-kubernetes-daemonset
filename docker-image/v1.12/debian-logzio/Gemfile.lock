@@ -3,8 +3,7 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    concurrent-ruby (1.1.8)
-    connection_pool (2.2.5)
+    concurrent-ruby (1.1.9)
     cool.io (1.7.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -27,9 +26,9 @@ GEM
       fluentd (>= 0.14.0, < 1.13)
       kubeclient (< 5)
       lru_redux
-    fluent-plugin-logzio (0.0.21)
+    fluent-plugin-logzio (0.0.20)
       fluentd (>= 0.14.0, < 2)
-      net-http-persistent (~> 3.0)
+      net-http-persistent (~> 2.9)
     fluent-plugin-multi-format-parser (1.0.0)
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-parser-cri (0.1.0)
@@ -63,7 +62,7 @@ GEM
       http-form_data (~> 2.2)
       http-parser (~> 1.2.0)
     http-accept (1.7.0)
-    http-cookie (1.0.3)
+    http-cookie (1.0.4)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
     http-parser (1.2.3)
@@ -71,7 +70,7 @@ GEM
     http_parser.rb (0.6.0)
     jsonpath (1.1.0)
       multi_json
-    kubeclient (4.9.1)
+    kubeclient (4.9.2)
       http (>= 3.0, < 5.0)
       jsonpath (~> 1.0)
       recursive-open-struct (~> 1.1, >= 1.1.1)
@@ -82,8 +81,7 @@ GEM
     mime-types-data (3.2021.0225)
     msgpack (1.4.2)
     multi_json (1.15.0)
-    net-http-persistent (3.1.0)
-      connection_pool (~> 2.2)
+    net-http-persistent (2.9.4)
     netrc (0.11.0)
     oj (3.11.0)
     prometheus-client (0.9.0)
@@ -134,4 +132,4 @@ DEPENDENCIES
   oj (= 3.11.0)
 
 BUNDLED WITH
-   2.2.3
+   2.2.15
