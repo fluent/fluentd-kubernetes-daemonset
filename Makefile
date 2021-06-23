@@ -38,7 +38,7 @@ ARM64_IMAGES := \
 	v1.12/arm64/debian-elasticsearch6:v1.12.4-debian-elasticsearch6-arm64-1.1,v1.12-debian-elasticsearch6-arm64-1 \
 	v1.12/arm64/debian-loggly:v1.12.4-debian-loggly-arm64-1.1,v1.12-debian-loggly-arm64-1 \
 	v1.12/arm64/debian-logentries:v1.12.4-debian-logentries-arm64-1.1,v1.12-debian-logentries-arm64-1 \
-	v1.12/arm64/debian-cloudwatch:v1.12.4-debian-cloudwatch-arm64-1.1,v1.12-debian-cloudwatch-arm64-1 \
+	v1.12/arm64/debian-cloudwatch:v1.12.4-debian-cloudwatch-arm64-1.4,v1.12-debian-cloudwatch-arm64-1 \
 	v1.12/arm64/debian-stackdriver:v1.12.4-debian-stackdriver-arm64-1.1,v1.12-debian-stackdriver-arm64-1 \
 	v1.12/arm64/debian-s3:v1.12.4-debian-s3-arm64-1.1,v1.12-debian-s3-arm64-1 \
 	v1.12/arm64/debian-syslog:v1.12.4-debian-syslog-arm64-1.1,v1.12-debian-syslog-arm64-1 \

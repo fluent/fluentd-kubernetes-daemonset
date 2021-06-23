@@ -139,7 +139,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-logentries-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-logentries-arm64-1`
 - `Cloudwatch` [Dockerfile](docker-image/v1.12/arm64/debian-cloudwatch/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-cloudwatch-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-cloudwatch-arm64-1.4`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12-debian-cloudwatch-arm64-1`
 - `Stackdriver` [Dockerfile](docker-image/v1.12/arm64/debian-stackdriver/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.12.4-debian-stackdriver-arm64-1.1`
