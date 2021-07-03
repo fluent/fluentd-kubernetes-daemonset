@@ -79,23 +79,21 @@ eq = $(if $(or $(1),$(2)),$(and $(findstring $(1),$(2)),\
 
 ## Docker image management
 
+no-cache-arg = $(if $(call eq, $(no-cache), yes), --no-cache, $(empty))
+
 # Build Docker image.
 #
 # Usage:
 #	make image [no-cache=(yes|no)] [DOCKERFILE=] [VERSION=]
-
-no-cache-arg = $(if $(call eq, $(no-cache), yes), --no-cache, $(empty))
-
 image:
 	docker build $(no-cache-arg) -t $(IMAGE_NAME):$(VERSION) docker-image/$(DOCKERFILE)
+
+parsed-tags = $(subst $(comma), $(space), $(TAGS))
 
 # Tag Docker image with given tags.
 #
 # Usage:
 #	make tags [VERSION=] [TAGS=t1,t2,...]
-
-parsed-tags = $(subst $(comma), $(space), $(TAGS))
-
 tags:
 	(set -e ; $(foreach tag, $(parsed-tags), \
 		docker tag $(IMAGE_NAME):$(VERSION) $(IMAGE_NAME):$(tag) ; \
@@ -105,7 +103,6 @@ tags:
 #
 # Usage:
 #	make push [TAGS=t1,t2,...]
-
 push:
 	(set -e ; $(foreach tag, $(parsed-tags), \
 		docker push $(IMAGE_NAME):$(tag) ; \
@@ -115,14 +112,12 @@ push:
 #
 # Usage:
 #	make release [no-cache=(yes|no)] [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
-
 release: | image tags push
 
 # Make manual release of all supported Docker images to Docker Hub.
 #
 # Usage:
 #	make release-all [no-cache=(yes|no)]
-
 release-all:
 	(set -e ; $(foreach img,$(ALL_IMAGES), \
 		make release no-cache=$(no-cache) \
@@ -139,14 +134,12 @@ release-all:
 #
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
-
 src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins post-push-hook post-checkout-hook entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf
 
 # Generate sources for all supported Docker images.
 #
 # Usage:
 #	make src-all
-
 src-all: README.md
 	(set -e ; $(foreach img,$(ALL_IMAGES), \
 		make src \
@@ -160,7 +153,6 @@ src-all: README.md
 #
 # Usage:
 #	make container-image-template [FILE=] [DOCKERFILE=] [VERSION=]
-
 container-image-template:
 	mkdir -p docker-image/$(DOCKERFILE)/$(dir $(FILE))
 	docker run --rm -i -v $(PWD)/templates/$(FILE).erb:/$(basename $(FILE)).erb:ro \
@@ -169,14 +161,13 @@ container-image-template:
 			version='$(VERSION)' \
 		/$(basename $(FILE)).erb > docker-image/$(DOCKERFILE)/$(FILE)
 
-# Render the given erb template for all images.
+# Execute the given TARGET for each images
 #
 # Usage:
-#	make container-image-template [FILE=] [DOCKERFILE=] [VERSION=]
-
-container-image-template-all:
+#	make each-image TARGET=
+each-image:
 	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make container-image-template $(FILE) \
+		make $(TARGET) \
 			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
 			VERSION=$(word 1,$(subst $(comma), ,\
 			                 $(word 2,$(subst :, ,$(img))))) ; \
@@ -187,12 +178,11 @@ container-image-template-all:
 #
 # Usage:
 #	make dockerfile [DOCKERFILE=] [VERSION=]
-
 dockerfile:
 	make container-image-template FILE=Dockerfile
 	cp $(PWD)/templates/.dockerignore docker-image/$(DOCKERFILE)/.dockerignore
 dockerfile-all:
-	make container-image-template-all FILE=dockerfile
+	make each-image TARGET=dockerfile
 
 # Generate Gemfile and Gemfile.lock from template.
 #
@@ -202,78 +192,131 @@ gemfile:
 	make container-image-template FILE=Gemfile
 	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
 		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
+
+# Generate Gemfile and Gemfile.lock from template for all supported Docker images.
+#
+# Usage:
+#	make gemfile-all
 gemfile-all:
-	make container-image-template-all FILE=gemfile
+	make each-image TARGET=gemfile
 
 # Generate entrypoint.sh from template.
 #
 # Usage:
 #	make entrypoint.sh [DOCKERFILE=] [VERSION=]
-
 entrypoint.sh:
 	make container-image-template FILE=entrypoint.sh
 	chmod 755 docker-image/$(DOCKERFILE)/entrypoint.sh
+
+# Generate entrypoint.sh from template for all supported Docker images.
+#
+# Usage:
+#	make entrypoint.sh-all
 entrypoint.sh-all:
-	make container-image-template-all FILE=entrypoint.sh
+	make each-image TARGET=entrypoint.sh
 
 # Generate fluent.conf from template.
 #
 # Usage:
 #	make fluent.conf [DOCKERFILE=] [VERSION=]
-
 fluent.conf:
 	make container-image-template FILE=conf/fluent.conf
 fluent.conf-all:
-	make container-image-template-all FILE=fluent.conf
+	make each-image TARGET=fluent.conf
 
 # Generate kubernetes.conf from template.
 #
 # Usage:
 #	make kubernetes.conf [DOCKERFILE=] [VERSION=]
-
 kubernetes.conf:
 	make container-image-template FILE=conf/kubernetes.conf
 	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
 kubernetes.conf-all:
-	make container-image-template-all FILE=kubernetes.conf
-	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
-
+	make each-image TARGET=kubernetes.conf
 
 cluster-autoscaler.conf:
 	make container-image-template FILE=conf/kubernetes/cluster-autoscaler.conf
+cluster-autoscaler.conf-all:
+	make each-image TARGET=cluster-autoscaler.conf
+
 containers.conf:
 	make container-image-template FILE=conf/kubernetes/containers.conf
+containers.conf-all:
+	make each-image TARGET=containers.conf
+
 docker.conf:
 	make container-image-template FILE=conf/kubernetes/docker.conf
+docker.conf-all:
+	make each-image TARGET=docker.conf
+
 etcd.conf:
 	make container-image-template FILE=conf/kubernetes/etcd.conf
+etcd.conf-all:
+	make each-image TARGET=etcd.conf
+
 glbc.conf:
 	make container-image-template FILE=conf/kubernetes/glbc.conf
+glbc.conf-all:
+	make each-image TARGET=glbc.conf
+
 kube-apiserver-audit.conf:
 	make container-image-template FILE=conf/kubernetes/kube-apiserver-audit.conf
+kube-apiserver-audit.conf-all:
+	make each-image TARGET=kube-apiserver-audit.conf
+
 kube-apiserver.conf:
 	make container-image-template FILE=conf/kubernetes/kube-apiserver.conf
+kube-apiserver.conf-all:
+	make each-image TARGET=kube-apiserver.conf
+
 kube-controller-manager.conf:
 	make container-image-template FILE=conf/kubernetes/kube-controller-manager.conf
+kube-controller-manager.conf-all:
+	make each-image TARGET=kube-controller-manager.conf
+
 kubelet.conf:
 	make container-image-template FILE=conf/kubernetes/kubelet.conf
+kubelet.conf-all:
+	make each-image TARGET=kubelet.conf
+
 kube-proxy.conf:
 	make container-image-template FILE=conf/kubernetes/kube-proxy.conf
+kube-proxy.conf-all:
+	make each-image TARGET=kube-proxy.conf
+
 kube-scheduler.conf:
 	make container-image-template FILE=conf/kubernetes/kube-scheduler.conf
+kube-scheduler.conf-all:
+	make each-image TARGET=kube-scheduler.conf
+
 rescheduler.conf:
 	make container-image-template FILE=conf/kubernetes/rescheduler.conf
+rescheduler.conf-all:
+	make each-image TARGET=rescheduler.conf
+
 salt.conf:
 	make container-image-template FILE=conf/kubernetes/salt.conf
+salt.conf-all:
+	make each-image TARGET=salt.conf
+
 startupscript.conf:
 	make container-image-template FILE=conf/kubernetes/startupscript.conf
+startupscript.conf-all:
+	make each-image TARGET=startupscript.conf
+
 
 
 systemd.conf:
 	make container-image-template FILE=conf/systemd.conf
+systemd.conf-all:
+	make each-image TARGET=systemd.conf
+
 
 prometheus.conf:
 	make container-image-template FILE=conf/prometheus.conf
+prometheus.conf-all:
+	make each-image TARGET=prometheus.conf
+
 
 README.md: templates/README.md.erb
 	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
@@ -285,11 +328,20 @@ README.md: templates/README.md.erb
 #
 # Usage:
 #    make plugins [DOCKERFILE=]
-
 plugins:
 	mkdir -p docker-image/$(DOCKERFILE)/plugins
 	cp -R plugins/$(FLUENTD_VERSION)/shared/. docker-image/$(DOCKERFILE)/plugins/
 	cp -R plugins/$(FLUENTD_VERSION)/$(TARGET)/. docker-image/$(DOCKERFILE)/plugins/
+
+# copy plugins required for all supported Docker images.
+#
+# Usage:
+#	make plugins-all
+plugins-all:
+	(set -e ; $(foreach img,$(ALL_IMAGES), \
+		make plugins \
+			DOCKERFILE=$(word 1,$(subst :, ,$(img))) ; \
+	))
 
 # Create `post_checkout` Docker Hub hook.
 #
@@ -301,10 +353,9 @@ plugins:
 #
 # Usage:
 #	make post-checkout-hook [DOCKERFILE=]
-
 post-checkout-hook:
 	if [ -n "$(findstring /arm64/,$(DOCKERFILE))" ]; then \
-		mkdir -p $(DOCKERFILE)/hooks; \
+		mkdir -p docker-image/$(DOCKERFILE)/hooks; \
 		docker run --rm -i -v $(PWD)/templates/post_checkout.erb:/post_checkout.erb:ro \
 			ruby:alpine erb -U \
 				dockerfile='$(DOCKERFILE)' \
@@ -316,14 +367,8 @@ post-checkout-hook:
 #
 # Usage:
 #	make post-checkout-hook-all
-
 post-checkout-hook-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make post-checkout-hook \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) ; \
-	))
-
-
+	make each-image TARGET=post-checkout-hook
 
 # Create `post_push` Docker Hub hook.
 #
@@ -343,17 +388,6 @@ post-push-hook:
 			image_tags='$(TAGS)' \
 		/post_push.erb > docker-image/$(DOCKERFILE)/hooks/post_push
 
-# copy plugins required for all supported Docker images.
-#
-# Usage:
-#	make plugins-all
-
-plugins-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make plugins \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) ; \
-	))
-
 # Create `post_push` Docker Hub hook for all supported Docker images.
 #
 # Usage:
@@ -370,12 +404,29 @@ post-push-hook-all:
 .PHONY: image tags push \
         release release-all \
         src src-all \
+        container-image-template each-image \
         dockerfile dockerfile-all \
         gemfile gemfile-all \
         entrypoint.sh entrypoint.sh-all \
         fluent.conf fluent.conf-all \
         kubernetes.conf kubernetes.conf-all\
+        cluster-autoscaler.conf cluster-autoscaler.conf-all \
+        containers.conf containers.conf-all \
+        docker.conf docker.conf-all \
+        etcd.conf etcd.conf-all \
+        glbc.conf glbc.conf-all \
+        kube-apiserver-audit.conf kube-apiserver-audit.conf-all \
+        kube-apiserver.conf kube-apiserver.conf-all \
+        kube-controller-manager.conf kube-controller-manager.conf-all \
+        kubelet.conf kubelet.conf-all \
+        kube-proxy.conf kube-proxy.conf-all \
+        kube-scheduler.conf kube-scheduler.conf-all \
+        rescheduler.conf rescheduler.conf-all \
+        salt.conf salt.conf-all \
+        startupscript.conf startupscript.conf-all \
+        systemd.conf systemd.conf-all \
+        prometheus.conf prometheus.conf-all \
         plugins plugins-all \
-        post-push-hook post-push-hook-all \
         post-checkout-hook post-checkout-hook-all \
+        post-push-hook post-push-hook-all \
 	README.md
