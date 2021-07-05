@@ -17,6 +17,13 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
+As the limitation of the number builds on hub.docker.com, there are some restrictions:
+
+* `stackdriver`, `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
+* `logentries`, `loggy`, `logzio`, `s3` arm64 images won't be published anymore
+
+If you want to use above images, build it by yourself. Dockefile itself is still maintained in this repository.
+
 ##### Multi-Arch images
 <% debian.each do |image| %>
 <% path = image.split(":").first.sub("-amd64",""); tags = image.split(":").last %>

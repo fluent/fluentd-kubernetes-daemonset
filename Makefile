@@ -18,13 +18,10 @@ X86_IMAGES := \
 	v1.13/debian-loggly:v1.13.1-debian-loggly-amd64-1.0,v1.13-debian-loggly-amd64-1 \
 	v1.13/debian-logentries:v1.13.1-debian-logentries-amd64-1.0,v1.13-debian-logentries-amd64-1 \
 	v1.13/debian-cloudwatch:v1.13.1-debian-cloudwatch-amd64-1.0,v1.13-debian-cloudwatch-amd64-1 \
-	v1.13/debian-stackdriver:v1.13.1-debian-stackdriver-amd64-1.0,v1.13-debian-stackdriver-amd64-1 \
 	v1.13/debian-s3:v1.13.1-debian-s3-amd64-1.0,v1.13-debian-s3-amd64-1 \
-	v1.13/debian-syslog:v1.13.1-debian-syslog-amd64-1.0,v1.13-debian-syslog-amd64-1 \
 	v1.13/debian-forward:v1.13.1-debian-forward-amd64-1.0,v1.13-debian-forward-amd64-1 \
 	v1.13/debian-gcs:v1.13.1-debian-gcs-amd64-1.0,v1.13-debian-gcs-amd64-1 \
 	v1.13/debian-graylog:v1.13.1-debian-graylog-amd64-1.0,v1.13-debian-graylog-amd64-1 \
-	v1.13/debian-papertrail:v1.13.1-debian-papertrail-amd64-1.0,v1.13-debian-papertrail-amd64-1 \
 	v1.13/debian-logzio:v1.13.1-debian-logzio-amd64-1.0,v1.13-debian-logzio-amd64-1 \
 	v1.13/debian-kafka:v1.13.1-debian-kafka-amd64-1.0,v1.13-debian-kafka-amd64-1 \
 	v1.13/debian-kafka2:v1.13.1-debian-kafka2-amd64-1.0,v1.13-debian-kafka2-amd64-1 \
@@ -36,17 +33,10 @@ ARM64_IMAGES := \
 	v1.13/arm64/debian-azureblob:v1.13.1-debian-azureblob-arm64-1.0,v1.13-debian-azureblob-arm64-1 \
 	v1.13/arm64/debian-elasticsearch7:v1.13.1-debian-elasticsearch7-arm64-1.0,v1.13-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
 	v1.13/arm64/debian-elasticsearch6:v1.13.1-debian-elasticsearch6-arm64-1.0,v1.13-debian-elasticsearch6-arm64-1 \
-	v1.13/arm64/debian-loggly:v1.13.1-debian-loggly-arm64-1.0,v1.13-debian-loggly-arm64-1 \
-	v1.13/arm64/debian-logentries:v1.13.1-debian-logentries-arm64-1.0,v1.13-debian-logentries-arm64-1 \
 	v1.13/arm64/debian-cloudwatch:v1.13.1-debian-cloudwatch-arm64-1.0,v1.13-debian-cloudwatch-arm64-1 \
-	v1.13/arm64/debian-stackdriver:v1.13.1-debian-stackdriver-arm64-1.0,v1.13-debian-stackdriver-arm64-1 \
-	v1.13/arm64/debian-s3:v1.13.1-debian-s3-arm64-1.0,v1.13-debian-s3-arm64-1 \
-	v1.13/arm64/debian-syslog:v1.13.1-debian-syslog-arm64-1.0,v1.13-debian-syslog-arm64-1 \
 	v1.13/arm64/debian-forward:v1.13.1-debian-forward-arm64-1.0,v1.13-debian-forward-arm64-1 \
 	v1.13/arm64/debian-gcs:v1.13.1-debian-gcs-arm64-1.0,v1.13-debian-gcs-arm64-1 \
 	v1.13/arm64/debian-graylog:v1.13.1-debian-graylog-arm64-1.0,v1.13-debian-graylog-arm64-1 \
-	v1.13/arm64/debian-papertrail:v1.13.1-debian-papertrail-arm64-1.0,v1.13-debian-papertrail-arm64-1 \
-	v1.13/arm64/debian-logzio:v1.13.1-debian-logzio-arm64-1.0,v1.13-debian-logzio-arm64-1 \
 	v1.13/arm64/debian-kafka:v1.13.1-debian-kafka-arm64-1.0,v1.13-debian-kafka-arm64-1 \
 	v1.13/arm64/debian-kafka2:v1.13.1-debian-kafka2-arm64-1.0,v1.13-debian-kafka2-arm64-1 \
 	v1.13/arm64/debian-kinesis:v1.13.1-debian-kinesis-arm64-1.0,v1.13-debian-kinesis-arm64-1
