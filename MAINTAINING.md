@@ -43,6 +43,8 @@ To update versions of images following steps are required:
 
 Go to [Build settings page](https://hub.docker.com/repository/docker/fluent/fluentd-kubernetes-daemonset/builds) and then, push `[Trigger ▷]` buttons.
 
+When Fluentd is bump up every minor version (e.g. v1.12 to v1.13), we need to reconfigure `Dockerfile location` via `[Configure Automated Builds]` button.
+
 Built tags will be published at [TAGS page](https://hub.docker.com/r/fluent/fluentd-kubernetes-daemonset/tags).
 
 ## Testing
