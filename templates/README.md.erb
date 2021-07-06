@@ -12,6 +12,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 <% debian_arm64 = images.select { |i| i.match(/debian-.*-arm64/) } %>
 <% debian = images.select { |i| i.match("debian") }.reject { |i| debian_arm64.include?(i) } %>
 <% alpine = images.select { |i| i.match("alpine") } %>
+<% no_built_x86_64_images = %w(stackdriver papertrail syslog) %>
+<% no_built_arm64_images = %w(stackdriver papertrail syslog logentries loggly logzio s3) %>
+<% no_built_multiarch_images = no_built_arm64_images.dup.concat(no_built_x86_64_images).uniq %>
 
 ### Debian
 
@@ -27,7 +30,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
 ##### Multi-Arch images
 <% debian.each do |image| %>
 <% path = image.split(":").first.sub("-amd64",""); tags = image.split(":").last %>
-<% next if %w(stackdriver papertrail syslog logentries loggly logzio s3).any? do |component| tags.include?(component) end %>
+<% next if no_built_multiarch_images.any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>`
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag.sub("-amd64","") %>`
@@ -37,7 +40,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
 ##### x86_64 images
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
-<% next if %w(stackdriver papertrail syslog).any? do |component| tags.include?(component) end %>
+<% next if no_built_x86_64_images.any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
@@ -47,7 +50,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
 ##### arm64 images
 <% debian_arm64.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
-<% next if %w(stackdriver papertrail syslog logentries loggly logzio s3).any? do |component| tags.include?(component) end %>
+<% next if no_built_arm64_images.any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
