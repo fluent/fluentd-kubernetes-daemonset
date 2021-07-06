@@ -40,8 +40,8 @@ If you want to use above non published images, build it by yourself. Dockefile i
 ##### x86_64 images
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
-<% next if no_built_x86_64_images.any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
+<% next if no_built_x86_64_images.any? do |component| tags.include?(component) end %>
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
 <% end %>
@@ -50,8 +50,8 @@ If you want to use above non published images, build it by yourself. Dockefile i
 ##### arm64 images
 <% debian_arm64.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
-<% next if no_built_arm64_images.any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
+<% next if no_built_arm64_images.any? do |component| tags.include?(component) end %>
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
 <% end %>

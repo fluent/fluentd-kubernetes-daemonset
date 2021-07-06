@@ -73,9 +73,11 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Cloudwatch` [Dockerfile](docker-image/v1.13/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-amd64-1`
+- `Stackdriver` [Dockerfile](docker-image/v1.13/debian-stackdriver/Dockerfile)
 - `S3` [Dockerfile](docker-image/v1.13/debian-s3/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-s3-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-s3-amd64-1`
+- `Syslog` [Dockerfile](docker-image/v1.13/debian-syslog/Dockerfile)
 - `Forward` [Dockerfile](docker-image/v1.13/debian-forward/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-amd64-1`
@@ -85,6 +87,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Graylog` [Dockerfile](docker-image/v1.13/debian-graylog/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-amd64-1`
+- `Papertrail` [Dockerfile](docker-image/v1.13/debian-papertrail/Dockerfile)
 - `Logzio` [Dockerfile](docker-image/v1.13/debian-logzio/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-logzio-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-logzio-amd64-1`
@@ -109,9 +112,14 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Elasticsearch6` [Dockerfile](docker-image/v1.13/arm64/debian-elasticsearch6/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-arm64-1`
+- `Loggly` [Dockerfile](docker-image/v1.13/arm64/debian-loggly/Dockerfile)
+- `Logentries` [Dockerfile](docker-image/v1.13/arm64/debian-logentries/Dockerfile)
 - `Cloudwatch` [Dockerfile](docker-image/v1.13/arm64/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-arm64-1`
+- `Stackdriver` [Dockerfile](docker-image/v1.13/arm64/debian-stackdriver/Dockerfile)
+- `S3` [Dockerfile](docker-image/v1.13/arm64/debian-s3/Dockerfile)
+- `Syslog` [Dockerfile](docker-image/v1.13/arm64/debian-syslog/Dockerfile)
 - `Forward` [Dockerfile](docker-image/v1.13/arm64/debian-forward/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-arm64-1`
@@ -121,6 +129,8 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Graylog` [Dockerfile](docker-image/v1.13/arm64/debian-graylog/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-arm64-1`
+- `Papertrail` [Dockerfile](docker-image/v1.13/arm64/debian-papertrail/Dockerfile)
+- `Logzio` [Dockerfile](docker-image/v1.13/arm64/debian-logzio/Dockerfile)
 - `Kafka` [Dockerfile](docker-image/v1.13/arm64/debian-kafka/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-arm64-1`
