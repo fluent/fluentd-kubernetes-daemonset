@@ -17,9 +17,17 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
+As the current limitation about the number of automated builds on hub.docker.com, there are some restrictions to ship daemonset images:
+
+* `stackdriver`, `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
+* `logentries`, `loggly`, `logzio`, `s3` arm64 images won't be published anymore (x86_64 only supported)
+
+If you want to use above non published images, build it by yourself. Dockefile itself is still maintained in this repository.
+
 ##### Multi-Arch images
 <% debian.each do |image| %>
 <% path = image.split(":").first.sub("-amd64",""); tags = image.split(":").last %>
+<% next if %w(stackdriver papertrail syslog logentries loggly logzio s3).any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>`
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag.sub("-amd64","") %>`
@@ -29,6 +37,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 ##### x86_64 images
 <% debian.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
+<% next if %w(stackdriver papertrail syslog).any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
@@ -38,6 +47,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 ##### arm64 images
 <% debian_arm64.each do |image| %>
 <% path = image.split(":").first; tags = image.split(":").last %>
+<% next if %w(stackdriver papertrail syslog logentries loggly logzio s3).any? do |component| tags.include?(component) end %>
 - `<%= tags.split(",").first.split("-")[2].capitalize %>` [Dockerfile](docker-image/<%= path %>/Dockerfile)
 <% tags.split(",").each do |tag| %>
   - `docker pull fluent/fluentd-kubernetes-daemonset:<%= tag %>`
