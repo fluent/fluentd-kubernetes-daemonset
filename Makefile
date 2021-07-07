@@ -230,7 +230,6 @@ fluent.conf-all:
 #	make kubernetes.conf [DOCKERFILE=] [VERSION=]
 kubernetes.conf:
 	make container-image-template FILE=conf/kubernetes.conf
-	cp $(PWD)/templates/conf/tail_container_parse.conf docker-image/$(DOCKERFILE)/conf
 kubernetes.conf-all:
 	make each-image TARGET=kubernetes.conf
 
