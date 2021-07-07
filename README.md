@@ -22,124 +22,124 @@ If you want to use above non published images, build it by yourself. Dockefile i
 
 ##### Multi-Arch images
 - `Azureblob`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-azureblob-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-azureblob-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-3`
 - `Elasticsearch7`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch7-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch7-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Elasticsearch6`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-3`
 - `Cloudwatch`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-3`
 - `Forward`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-3`
 - `Gcs`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-gcs-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-gcs-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-3`
 - `Graylog`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-3`
 - `Kafka`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-3`
 - `Kafka2`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka2-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka2-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka2-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka2-3`
 - `Kinesis`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kinesis-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kinesis-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kinesis-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kinesis-3`
 
 ##### x86_64 images
 - `Azureblob` [Dockerfile](docker-image/v1.13/debian-azureblob/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-azureblob-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-azureblob-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-amd64-3`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.13/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch7-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch7-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-amd64-3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.13/debian-elasticsearch6/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-amd64-3`
 - `Loggly` [Dockerfile](docker-image/v1.13/debian-loggly/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-loggly-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-loggly-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-loggly-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-loggly-amd64-3`
 - `Logentries` [Dockerfile](docker-image/v1.13/debian-logentries/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-logentries-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-logentries-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-logentries-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-logentries-amd64-3`
 - `Cloudwatch` [Dockerfile](docker-image/v1.13/debian-cloudwatch/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-amd64-3`
 - `Stackdriver` [Dockerfile](docker-image/v1.13/debian-stackdriver/Dockerfile)
 - `S3` [Dockerfile](docker-image/v1.13/debian-s3/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-s3-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-s3-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-s3-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-s3-amd64-3`
 - `Syslog` [Dockerfile](docker-image/v1.13/debian-syslog/Dockerfile)
 - `Forward` [Dockerfile](docker-image/v1.13/debian-forward/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-amd64-3`
 - `Gcs` [Dockerfile](docker-image/v1.13/debian-gcs/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-gcs-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-gcs-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-amd64-3`
 - `Graylog` [Dockerfile](docker-image/v1.13/debian-graylog/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-amd64-3`
 - `Papertrail` [Dockerfile](docker-image/v1.13/debian-papertrail/Dockerfile)
 - `Logzio` [Dockerfile](docker-image/v1.13/debian-logzio/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-logzio-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-logzio-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-logzio-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-logzio-amd64-3`
 - `Kafka` [Dockerfile](docker-image/v1.13/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-amd64-3`
 - `Kafka2` [Dockerfile](docker-image/v1.13/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka2-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka2-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka2-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka2-amd64-3`
 - `Kinesis` [Dockerfile](docker-image/v1.13/debian-kinesis/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kinesis-amd64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kinesis-amd64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kinesis-amd64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kinesis-amd64-3`
 
 ##### arm64 images
 - `Azureblob` [Dockerfile](docker-image/v1.13/arm64/debian-azureblob/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-azureblob-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-azureblob-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-arm64-3`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.13/arm64/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch7-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch7-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-arm64-3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.13/arm64/debian-elasticsearch6/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-elasticsearch6-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch6-arm64-3`
 - `Loggly` [Dockerfile](docker-image/v1.13/arm64/debian-loggly/Dockerfile)
 - `Logentries` [Dockerfile](docker-image/v1.13/arm64/debian-logentries/Dockerfile)
 - `Cloudwatch` [Dockerfile](docker-image/v1.13/arm64/debian-cloudwatch/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-cloudwatch-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-cloudwatch-arm64-3`
 - `Stackdriver` [Dockerfile](docker-image/v1.13/arm64/debian-stackdriver/Dockerfile)
 - `S3` [Dockerfile](docker-image/v1.13/arm64/debian-s3/Dockerfile)
 - `Syslog` [Dockerfile](docker-image/v1.13/arm64/debian-syslog/Dockerfile)
 - `Forward` [Dockerfile](docker-image/v1.13/arm64/debian-forward/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-forward-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-arm64-3`
 - `Gcs` [Dockerfile](docker-image/v1.13/arm64/debian-gcs/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-gcs-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-gcs-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-arm64-3`
 - `Graylog` [Dockerfile](docker-image/v1.13/arm64/debian-graylog/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-graylog-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-graylog-arm64-3`
 - `Papertrail` [Dockerfile](docker-image/v1.13/arm64/debian-papertrail/Dockerfile)
 - `Logzio` [Dockerfile](docker-image/v1.13/arm64/debian-logzio/Dockerfile)
 - `Kafka` [Dockerfile](docker-image/v1.13/arm64/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka-arm64-3`
 - `Kafka2` [Dockerfile](docker-image/v1.13/arm64/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka2-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka2-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kafka2-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kafka2-arm64-3`
 - `Kinesis` [Dockerfile](docker-image/v1.13/arm64/debian-kinesis/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kinesis-arm64-2.0`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kinesis-arm64-2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.1-debian-kinesis-arm64-3.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-kinesis-arm64-3`
 
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
