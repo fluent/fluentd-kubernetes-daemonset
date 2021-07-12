@@ -324,7 +324,7 @@ Please check them out.
 ### kafka image suggestion
 
 Using debian-kafka2/debian-kafka2-arm64 images are better than using debian-kafka/debian-kafka-arm64 images.
-Because debian-kafka2/debian-kafka2-arm64 images use `out_kafka2` plugin but debina-kafka/debian-kafka-arm64 images use deprecated `out_kafka_buffered` plugin.
+Because debian-kafka2/debian-kafka2-arm64 images use `out_kafka2` plugin but debian-kafka/debian-kafka-arm64 images use deprecated `out_kafka_buffered` plugin.
 
 
 ## Maintainers
