@@ -56,7 +56,7 @@ GEM
       tzinfo-data (~> 1.0)
       webrick (>= 1.4.2, < 1.8.0)
       yajl-ruby (~> 1.0)
-    gelf (3.0.0)
+    gelf (3.1.0)
       json
     http (4.4.1)
       addressable (~> 2.3)
@@ -131,7 +131,7 @@ DEPENDENCIES
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.2)
   fluentd (= 1.12.4)
-  gelf (= 3.0.0)
+  gelf (= 3.1.0)
   oj (= 3.11.0)
 
 BUNDLED WITH
