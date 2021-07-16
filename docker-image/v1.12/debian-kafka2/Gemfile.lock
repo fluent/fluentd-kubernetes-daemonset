@@ -20,7 +20,7 @@ GEM
     fluent-plugin-avro (1.1.1)
       avro
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-concat (2.4.0)
+    fluent-plugin-concat (2.5.0)
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.13)
       fluentd (>= 0.10)
@@ -136,7 +136,7 @@ PLATFORMS
 DEPENDENCIES
   ffi
   fluent-plugin-avro (~> 1.1.1)
-  fluent-plugin-concat (~> 2.4.0)
+  fluent-plugin-concat (~> 2.5.0)
   fluent-plugin-detect-exceptions (~> 0.0.13)
   fluent-plugin-grok-parser (~> 2.6.2)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
