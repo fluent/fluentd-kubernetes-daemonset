@@ -19,7 +19,7 @@ GEM
     extlib (0.9.16)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
-    ffi (1.13.1)
+    ffi (1.15.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
