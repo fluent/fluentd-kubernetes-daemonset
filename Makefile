@@ -323,6 +323,9 @@ README.md: templates/README.md.erb
 	                all_images='$(ALL_IMAGES)' \
 		/README.md.erb > README.md
 
+.github/dependabot.yml: templates/dependabot.yml.erb
+	erb $< > $@
+
 # Generate plugins for version
 #
 # Usage:
