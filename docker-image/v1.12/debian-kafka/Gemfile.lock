@@ -116,7 +116,7 @@ GEM
     serverengine (2.2.4)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
-    snappy (0.0.17)
+    snappy (0.2.0)
     strptime (0.2.5)
     systemd-journal (1.4.2)
       ffi (~> 1.9)
@@ -152,7 +152,7 @@ DEPENDENCIES
   fluentd (= 1.12.4)
   oj (= 3.11.0)
   rdkafka (~> 0.7.0)
-  snappy (~> 0.0.15)
+  snappy (~> 0.2.0)
 
 BUNDLED WITH
    2.2.15
