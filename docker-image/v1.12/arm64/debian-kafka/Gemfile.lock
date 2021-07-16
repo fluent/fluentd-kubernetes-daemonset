@@ -42,7 +42,7 @@ GEM
     fluent-plugin-parser-avro (0.3.1)
       avro
       fluentd (>= 0.14.10, < 2)
-    fluent-plugin-parser-cri (0.1.0)
+    fluent-plugin-parser-cri (0.1.1)
       fluentd (>= 1)
     fluent-plugin-prometheus (1.8.5)
       fluentd (>= 1.9.1, < 2)
@@ -144,7 +144,7 @@ DEPENDENCIES
   fluent-plugin-kubernetes_metadata_filter (~> 2.6.0)
   fluent-plugin-multi-format-parser (~> 1.0.0)
   fluent-plugin-parser-avro (~> 0.3.1)
-  fluent-plugin-parser-cri (~> 0.1.0)
+  fluent-plugin-parser-cri (~> 0.1.1)
   fluent-plugin-prometheus (~> 1.8.5)
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
