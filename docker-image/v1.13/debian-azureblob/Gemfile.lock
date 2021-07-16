@@ -117,7 +117,7 @@ GEM
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    oj (3.11.0)
+    oj (3.12.1)
     prometheus-client (0.9.0)
       quantile (~> 0.2.1)
     public_suffix (4.0.6)
@@ -166,7 +166,7 @@ DEPENDENCIES
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.2)
   fluentd (= 1.13.2)
-  oj (= 3.11.0)
+  oj (= 3.12.1)
 
 BUNDLED WITH
    2.2.15
