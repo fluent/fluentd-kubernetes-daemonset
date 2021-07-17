@@ -8,7 +8,8 @@ updates:
     schedule:
       interval: "daily"
   # Watch dependencies for current stable only
-<% available_gemfile_paths = Dir.glob("docker-image/**/*/Gemfile") %>
+<% latest_version = Dir.glob("docker-image/*").sort.last %>
+<% available_gemfile_paths = Dir.glob("#{latest_version}/**/Gemfile") %>
 <% available_gemfile_paths.each do |gemfile_path| %>
 <% path = File.dirname(gemfile_path) %>
   - package-ecosystem: "bundler"
