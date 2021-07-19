@@ -52,7 +52,7 @@ GEM
       tzinfo (>= 1.0, < 3.0)
       tzinfo-data (~> 1.0)
       yajl-ruby (~> 1.0)
-    gelf (3.0.0)
+    gelf (3.1.0)
       json
     http (4.4.1)
       addressable (~> 2.3)
@@ -66,7 +66,7 @@ GEM
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
-    json (2.3.1)
+    json (2.5.1)
     jsonpath (1.0.5)
       multi_json
       to_regexp (~> 0.2.1)
@@ -127,7 +127,7 @@ DEPENDENCIES
   fluent-plugin-rewrite-tag-filter (~> 2.2.0)
   fluent-plugin-systemd (~> 1.0.1)
   fluentd (= 1.11.5)
-  gelf (= 3.0.0)
+  gelf (= 3.1.0)
   oj (= 3.8.1)
 
 BUNDLED WITH
