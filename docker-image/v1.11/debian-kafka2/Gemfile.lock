@@ -8,7 +8,7 @@ GEM
     digest-crc (0.6.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    ffi (1.13.1)
+    ffi (1.15.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
