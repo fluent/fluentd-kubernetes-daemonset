@@ -7,6 +7,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
   # Watch dependencies for current stable only
 <% latest_version = Dir.glob("docker-image/*").sort.last %>
 <% available_gemfile_paths = Dir.glob("#{latest_version}/**/Gemfile") %>
@@ -16,4 +17,5 @@ updates:
     directory: "/<%= path %>"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 <% end %>

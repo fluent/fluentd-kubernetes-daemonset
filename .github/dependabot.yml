@@ -7,6 +7,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
   # Watch dependencies for current stable only
 
 
@@ -16,202 +17,236 @@ updates:
     directory: "/docker-image/v1.13/debian-loggly"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-gcs"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-forward"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-elasticsearch6"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-loggly"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-gcs"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-forward"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-elasticsearch6"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-logentries"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-kafka2"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-s3"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-syslog"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-azureblob"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-stackdriver"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-papertrail"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-cloudwatch"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-logzio"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-elasticsearch7"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-kinesis"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-graylog"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/arm64/debian-kafka"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-logentries"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-kafka2"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-s3"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-syslog"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-azureblob"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-stackdriver"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-papertrail"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-cloudwatch"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-logzio"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-elasticsearch7"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-kinesis"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-graylog"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.13/debian-kafka"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 0
 
