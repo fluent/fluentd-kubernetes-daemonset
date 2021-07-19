@@ -120,7 +120,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.1.1)
     netrc (0.11.0)
-    oj (3.8.1)
+    oj (3.12.1)
     os (1.1.1)
     prometheus-client (0.9.0)
       quantile (~> 0.2.1)
@@ -179,7 +179,7 @@ DEPENDENCIES
   fluent-plugin-rewrite-tag-filter (~> 2.2.0)
   fluent-plugin-systemd (~> 1.0.1)
   fluentd (= 1.11.5)
-  oj (= 3.8.1)
+  oj (= 3.12.1)
 
 BUNDLED WITH
    2.1.4
