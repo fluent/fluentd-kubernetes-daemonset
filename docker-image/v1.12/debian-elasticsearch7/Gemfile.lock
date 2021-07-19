@@ -37,7 +37,7 @@ GEM
       rake
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
-    fluent-plugin-concat (2.4.0)
+    fluent-plugin-concat (2.5.0)
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-dedot_filter (1.0.0)
       fluentd (>= 0.14.0, < 2)
@@ -146,7 +146,7 @@ DEPENDENCIES
   elasticsearch (~> 7.0)
   elasticsearch-xpack (~> 7.0)
   ffi
-  fluent-plugin-concat (~> 2.4.0)
+  fluent-plugin-concat (~> 2.5.0)
   fluent-plugin-dedot_filter (~> 1.0)
   fluent-plugin-detect-exceptions (~> 0.0.13)
   fluent-plugin-elasticsearch (~> 5.0.2)
