@@ -9,7 +9,7 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 0
   # Watch dependencies for current stable only
-<% latest_version = Dir.glob("docker-image/*").sort.last %>
+<% latest_version = Dir.glob("docker-image/*").sort_by {|version| Gem::Version.new(version.split('/').last.delete('v'))}.last %>
 <% available_gemfile_paths = Dir.glob("#{latest_version}/**/Gemfile") %>
 <% available_gemfile_paths.each do |gemfile_path| %>
 <% path = File.dirname(gemfile_path) %>
