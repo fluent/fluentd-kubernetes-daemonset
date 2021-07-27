@@ -50,6 +50,10 @@ spec:
             value: "ThisIsASuperLongToken"
           - name: LOGZIO_LOGTYPE
             value: "kubernetes"
+          # Prefix for visualization in Kibana(prefix-pattern)
+          # ==================================================
+         - name: FLUENT_ELASTICSEARCH_LOGSTASH_PREFIX
+           value: fluentd
         resources:
           limits:
             memory: 200Mi
