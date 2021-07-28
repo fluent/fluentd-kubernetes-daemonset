@@ -4,7 +4,7 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     aws-eventstream (1.1.1)
-    aws-partitions (1.477.0)
+    aws-partitions (1.480.0)
     aws-sdk-core (3.117.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -13,7 +13,7 @@ GEM
     aws-sdk-firehose (1.37.0)
       aws-sdk-core (~> 3, >= 3.112.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-kinesis (1.32.0)
+    aws-sdk-kinesis (1.32.1)
       aws-sdk-core (~> 3, >= 3.112.0)
       aws-sigv4 (~> 1.1)
     aws-sigv4 (1.2.4)
@@ -42,7 +42,7 @@ GEM
       aws-sdk-kinesis (~> 1, != 1.5, != 1.4, != 1.14)
       fluentd (>= 0.14.22, < 2)
       google-protobuf (~> 3)
-    fluent-plugin-kubernetes_metadata_filter (2.7.1)
+    fluent-plugin-kubernetes_metadata_filter (2.7.2)
       fluentd (>= 0.14.0, < 1.14)
       kubeclient (< 5)
       lru_redux
@@ -61,7 +61,7 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.13.2)
+    fluentd (1.13.3)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.8.0)
@@ -145,8 +145,8 @@ DEPENDENCIES
   fluent-plugin-prometheus (~> 1.8.5)
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
-  fluent-plugin-systemd (~> 1.0.2)
-  fluentd (= 1.13.2)
+  fluent-plugin-systemd (~> 1.0.5)
+  fluentd (= 1.13.3)
   oj (= 3.11.0)
 
 BUNDLED WITH
