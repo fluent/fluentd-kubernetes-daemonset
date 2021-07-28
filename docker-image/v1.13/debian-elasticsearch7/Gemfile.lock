@@ -17,7 +17,7 @@ GEM
       multi_json
     elasticsearch-xpack (7.13.3)
       elasticsearch-api (>= 6)
-    excon (0.84.0)
+    excon (0.85.0)
     faraday (1.5.1)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -56,7 +56,7 @@ GEM
     fluent-plugin-json-in-json-2 (1.0.2)
       fluentd (>= 0.14.0, < 2)
       yajl-ruby (~> 1.0)
-    fluent-plugin-kubernetes_metadata_filter (2.7.1)
+    fluent-plugin-kubernetes_metadata_filter (2.7.2)
       fluentd (>= 0.14.0, < 1.14)
       kubeclient (< 5)
       lru_redux
@@ -75,7 +75,7 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.13.2)
+    fluentd (1.13.3)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.8.0)
@@ -126,7 +126,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    ruby2_keywords (0.0.4)
+    ruby2_keywords (0.0.5)
     serverengine (2.2.4)
       sigdump (~> 0.2.2)
     sigdump (0.2.4)
@@ -162,8 +162,8 @@ DEPENDENCIES
   fluent-plugin-prometheus (~> 1.8.5)
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
-  fluent-plugin-systemd (~> 1.0.2)
-  fluentd (= 1.13.2)
+  fluent-plugin-systemd (~> 1.0.5)
+  fluentd (= 1.13.3)
   oj (= 3.11.0)
 
 BUNDLED WITH

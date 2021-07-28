@@ -7,7 +7,7 @@ GEM
       multi_json (~> 1)
     concurrent-ruby (1.1.9)
     cool.io (1.7.1)
-    digest-crc (0.6.3)
+    digest-crc (0.6.4)
       rake (>= 12.0.0, < 14.0.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -33,7 +33,7 @@ GEM
       fluentd (>= 0.10.58, < 2)
       ltsv
       ruby-kafka (>= 1.2.0, < 2)
-    fluent-plugin-kubernetes_metadata_filter (2.7.1)
+    fluent-plugin-kubernetes_metadata_filter (2.7.2)
       fluentd (>= 0.14.0, < 1.14)
       kubeclient (< 5)
       lru_redux
@@ -55,7 +55,7 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.13.2)
+    fluentd (1.13.3)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.8.0)
@@ -148,8 +148,8 @@ DEPENDENCIES
   fluent-plugin-prometheus (~> 1.8.5)
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
-  fluent-plugin-systemd (~> 1.0.2)
-  fluentd (= 1.13.2)
+  fluent-plugin-systemd (~> 1.0.5)
+  fluentd (= 1.13.3)
   oj (= 3.11.0)
   rdkafka (~> 0.7.0)
   snappy (~> 0.0.15)
