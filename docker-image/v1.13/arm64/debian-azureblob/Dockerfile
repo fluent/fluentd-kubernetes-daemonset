@@ -28,7 +28,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps $runtimeDeps net-tools \
-    && gem install bundler --version 2.2.6 \
+    && gem install bundler --version 2.2.24 \
     && bundle config silence_root_warning true && bundle config build.nokogiri --use-system-libraries \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \
