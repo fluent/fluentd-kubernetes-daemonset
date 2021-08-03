@@ -24,6 +24,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Azureblob`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-azureblob-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-1`
+- `Azureservicebus`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-azureservicebus-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureservicebus-1`
 - `Elasticsearch7`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-elasticsearch7-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-1`
@@ -57,6 +60,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Azureblob` [Dockerfile](docker-image/v1.13/debian-azureblob/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-azureblob-amd64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-amd64-1`
+- `Azureservicebus` [Dockerfile](docker-image/v1.13/debian-azureservicebus/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-azureservicebus-amd64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureservicebus-amd64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.13/debian-elasticsearch7/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-elasticsearch7-amd64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-amd64-1`
@@ -105,6 +111,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Azureblob` [Dockerfile](docker-image/v1.13/arm64/debian-azureblob/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-azureblob-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureblob-arm64-1`
+- `Azureservicebus` [Dockerfile](docker-image/v1.13/arm64/debian-azureservicebus/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-azureservicebus-arm64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-azureservicebus-arm64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.13/arm64/debian-elasticsearch7/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-elasticsearch7-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-elasticsearch7-arm64-1`
