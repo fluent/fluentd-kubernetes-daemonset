@@ -13,6 +13,7 @@
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
 	v1.13/debian-azureblob:v1.13.3-debian-azureblob-amd64-1.1,v1.13-debian-azureblob-amd64-1 \
+	v1.13/debian-azureservicebus:v1.13.3-debian-azureservicebus-amd64-1.1,v1.13-debian-azureservicebus-amd64-1 \
 	v1.13/debian-elasticsearch7:v1.13.3-debian-elasticsearch7-amd64-1.1,v1.13-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
 	v1.13/debian-elasticsearch6:v1.13.3-debian-elasticsearch6-amd64-1.1,v1.13-debian-elasticsearch6-amd64-1 \
 	v1.13/debian-loggly:v1.13.3-debian-loggly-amd64-1.1,v1.13-debian-loggly-amd64-1 \
@@ -34,6 +35,7 @@ X86_IMAGES := \
 
 ARM64_IMAGES := \
 	v1.13/arm64/debian-azureblob:v1.13.3-debian-azureblob-arm64-1.1,v1.13-debian-azureblob-arm64-1 \
+	v1.13/arm64/debian-azureservicebus:v1.13.3-debian-azureservicebus-arm64-1.1,v1.13-debian-azureservicebus-arm64-1 \
 	v1.13/arm64/debian-elasticsearch7:v1.13.3-debian-elasticsearch7-arm64-1.1,v1.13-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
 	v1.13/arm64/debian-elasticsearch6:v1.13.3-debian-elasticsearch6-arm64-1.1,v1.13-debian-elasticsearch6-arm64-1 \
 	v1.13/arm64/debian-loggly:v1.13.3-debian-loggly-arm64-1.1,v1.13-debian-loggly-arm64-1 \

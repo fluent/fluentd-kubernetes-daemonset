@@ -387,4 +387,20 @@
   </buffer>
 </match>
 
+<% when "azureservicebus"%>
+<match **>
+    @type azure_servicebus_queue
+    @id out_azure_servicebus_queue
+    namespace "#{ENV['AZURESERVICEBUS_NAMESPACE']}"
+    queueName "#{ENV['AZURESERVICEBUS_QUEUENAME']}"
+    accessKeyName "#{ENV['AZURESERIVCEBUS_ACCESSKEYNAME']}"
+    accessKeyValueFile "#{ENV['AZURESERIVCEBUS_ACCESSKEYVALUEFILE']}"
+    timeToLive "#{ENV['AZURESERIVCEBUS_TIMETOLIVE']}"
+    field "#{ENV['AZURESERVICEBUS_FIELD'] || 'message'}"
+    <buffer>
+        @type memory
+        flush_interval 1s
+    </buffer>
+</match>
+
 <% end %>
