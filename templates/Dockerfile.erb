@@ -29,7 +29,7 @@ ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.6.0
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
-RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %> build-essential patch zlib1g-dev liblzma-dev<% elsif target == "kafka" || target == "kafka2" %> build-essential autoconf automake libtool pkg-config<% end %><% if requires_git %> git<% end %>" \
+RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %> build-essential patch zlib1g-dev liblzma-dev<% elsif target == "kafka" || target == "kafka2" %> build-essential autoconf automake libtool pkg-config<% elsif target == "s3" %> curl<% end %><% if requires_git %> git<% end %>" \
   runtimeDeps="<% if target == "kafka" || target == "kafka2" %>krb5-kdc libsasl2-modules-gssapi-mit libsasl2-dev<% elsif target == "azureblob" %>pkg-config libxslt-dev libxml2-dev<% end %>" \
      <% if target == "kafka" || target == "kafka2" %> && export DEBIAN_FRONTEND=noninteractive <% end %> && apt-get update \
      && apt-get upgrade -y \
@@ -39,6 +39,12 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %>
     && gem install bundler --version 2.2.24 \
     && bundle config silence_root_warning true<% if target == "azureblob" %> && bundle config build.nokogiri --use-system-libraries<% end %> \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
+<% if target == "s3" %>
+    && curl -sL -o columnify_0.1.0_Linux_x86_64.tar.gz https://github.com/reproio/columnify/releases/download/v0.1.0/columnify_0.1.0_Linux_x86_64.tar.gz \
+    && tar xf columnify_0.1.0_Linux_x86_64.tar.gz \
+    && rm LICENSE README.md columnify_0.1.0_Linux_x86_64.tar.gz \
+    && mv columnify /usr/local/bin/ \
+<% end %>
     && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
                   -o APT::AutoRemove::RecommendsImportant=false \
