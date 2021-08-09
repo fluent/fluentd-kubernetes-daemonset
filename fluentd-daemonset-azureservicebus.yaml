@@ -59,7 +59,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: fluentd-azureblob
-        image: fluent/fluentd-kubernetes-daemonset:v1-debian-azureblob
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-azureservicebus
         imagePullPolicy: Always
         env:
           - name: AZURESERVICEBUS_NAMESPACE
@@ -69,9 +69,9 @@ spec:
           - name:  AZURESERIVCEBUS_ACCESSKEYNAME
             value: "myaccesskeyname"
           - name:  AZURESERIVCEBUS_ACCESSKEYVALUEFILE
-            value: "myaccesskeyvaluefile"
+            value: "/etc/password/queuePassword"
           - name:  AZURESERIVCEBUS_TIMETOLIVE
-            value: "mytimetolive"
+            value: "60"
         resources:
           limits:
             memory: 200Mi
@@ -89,6 +89,9 @@ spec:
         - name: dockercontainerlogdirectory
           mountPath: /var/log/pods
           readOnly: true
+        - mountPath: "/etc/password"
+          name: azure-serivcebus-access-key-value-file
+          readOnly: true
       terminationGracePeriodSeconds: 30
       volumes:
       - name: varlog
@@ -102,3 +105,15 @@ spec:
       - name: dockercontainerlogdirectory
         hostPath:
           path: /var/log/pods
+      - name: azure-serivcebus-access-key-value-file
+        secret:
+          secretName: azure-serivcebus-access-key-value-file
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: azure-serivcebus-access-key-value-file
+  namespace: kube-system
+data:
+  # Remember to change the password
+  queuePassword: "MYQUEUEPASSWORD"
