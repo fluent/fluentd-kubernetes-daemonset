@@ -22,7 +22,7 @@ X86_IMAGES := \
 	v1.13/debian-s3:v1.13.3-debian-s3-amd64-1.2,v1.13-debian-s3-amd64-1 \
 	v1.13/debian-syslog:v1.13.3-debian-syslog-amd64-1.1,v1.13-debian-syslog-amd64-1 \
 	v1.13/debian-forward:v1.13.3-debian-forward-amd64-1.1,v1.13-debian-forward-amd64-1 \
-	v1.13/debian-gcs:v1.13.3-debian-gcs-amd64-1.2,v1.13-debian-gcs-amd64-1 \
+	v1.13/debian-gcs:v1.13.3-debian-gcs-amd64-1.3,v1.13-debian-gcs-amd64-1 \
 	v1.13/debian-graylog:v1.13.3-debian-graylog-amd64-1.1,v1.13-debian-graylog-amd64-1 \
 	v1.13/debian-papertrail:v1.13.3-debian-papertrail-amd64-1.1,v1.13-debian-papertrail-amd64-1 \
 	v1.13/debian-logzio:v1.13.3-debian-logzio-amd64-1.1,v1.13-debian-logzio-amd64-1 \
@@ -43,7 +43,7 @@ ARM64_IMAGES := \
 	v1.13/arm64/debian-s3:v1.13.3-debian-s3-arm64-1.2,v1.13-debian-s3-arm64-1 \
 	v1.13/arm64/debian-syslog:v1.13.3-debian-syslog-arm64-1.1,v1.13-debian-syslog-arm64-1 \
 	v1.13/arm64/debian-forward:v1.13.3-debian-forward-arm64-1.1,v1.13-debian-forward-arm64-1 \
-	v1.13/arm64/debian-gcs:v1.13.3-debian-gcs-arm64-1.2,v1.13-debian-gcs-arm64-1 \
+	v1.13/arm64/debian-gcs:v1.13.3-debian-gcs-arm64-1.3,v1.13-debian-gcs-arm64-1 \
 	v1.13/arm64/debian-graylog:v1.13.3-debian-graylog-arm64-1.1,v1.13-debian-graylog-arm64-1 \
 	v1.13/arm64/debian-papertrail:v1.13.3-debian-papertrail-arm64-1.1,v1.13-debian-papertrail-arm64-1 \
 	v1.13/arm64/debian-logzio:v1.13.3-debian-logzio-arm64-1.1,v1.13-debian-logzio-arm64-1 \

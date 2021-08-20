@@ -38,7 +38,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-forward-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-1`
 - `Gcs`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-gcs-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-gcs-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-1`
 - `Graylog`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-graylog-1.1`
@@ -82,7 +82,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-forward-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-amd64-1`
 - `Gcs` [Dockerfile](docker-image/v1.13/debian-gcs/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-gcs-amd64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-gcs-amd64-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-amd64-1`
 - `Graylog` [Dockerfile](docker-image/v1.13/debian-graylog/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-graylog-amd64-1.1`
@@ -124,7 +124,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-forward-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-forward-arm64-1`
 - `Gcs` [Dockerfile](docker-image/v1.13/arm64/debian-gcs/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-gcs-arm64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-gcs-arm64-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13-debian-gcs-arm64-1`
 - `Graylog` [Dockerfile](docker-image/v1.13/arm64/debian-graylog/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.13.3-debian-graylog-arm64-1.1`
