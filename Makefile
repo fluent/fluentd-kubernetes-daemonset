@@ -310,6 +310,11 @@ systemd.conf:
 systemd.conf-all:
 	make each-image TARGET=systemd.conf
 
+tail_container_parse.conf:
+	make container-image-template FILE=conf/tail_container_parse.conf
+tail_container_parse.conf-all:
+	make each-image TARGET=tail_container_parse.conf
+
 
 prometheus.conf:
 	make container-image-template FILE=conf/prometheus.conf
@@ -427,6 +432,7 @@ post-push-hook-all:
         salt.conf salt.conf-all \
         startupscript.conf startupscript.conf-all \
         systemd.conf systemd.conf-all \
+        tail_container_parse.conf tail_container_parse.conf-all \
         prometheus.conf prometheus.conf-all \
         plugins plugins-all \
         post-checkout-hook post-checkout-hook-all \
