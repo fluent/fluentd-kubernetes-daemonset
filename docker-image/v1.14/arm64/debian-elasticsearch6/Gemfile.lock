@@ -16,7 +16,7 @@ GEM
       faraday (~> 1)
       multi_json
     excon (0.85.0)
-    faraday (1.7.1)
+    faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -43,7 +43,7 @@ GEM
       fluentd (> 1.0.0, < 2)
     fluent-plugin-concat (2.5.0)
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-detect-exceptions (0.0.13)
+    fluent-plugin-detect-exceptions (0.0.14)
       fluentd (>= 0.10)
     fluent-plugin-elasticsearch (4.0.11)
       elasticsearch
@@ -54,9 +54,9 @@ GEM
     fluent-plugin-json-in-json-2 (1.0.2)
       fluentd (>= 0.14.0, < 2)
       yajl-ruby (~> 1.0)
-    fluent-plugin-kubernetes_metadata_filter (2.8.0)
+    fluent-plugin-kubernetes_metadata_filter (2.8.1)
       fluentd (>= 0.14.0, < 1.15)
-      kubeclient (< 5)
+      kubeclient (>= 4.0.0, < 5.0.0)
       lru_redux
     fluent-plugin-multi-format-parser (1.0.0)
       fluentd (>= 0.14.0, < 2)
@@ -73,7 +73,7 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.14.0)
+    fluentd (1.14.1)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.8.0)
@@ -131,11 +131,11 @@ GEM
       ffi (~> 1.9)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2021.1)
+    tzinfo-data (1.2021.2)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.7)
+    unf_ext (0.0.8)
     webrick (1.7.0)
     yajl-ruby (1.4.1)
 
@@ -157,7 +157,7 @@ DEPENDENCIES
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.5)
-  fluentd (= 1.14.0)
+  fluentd (= 1.14.1)
   oj (= 3.11.0)
 
 BUNDLED WITH
