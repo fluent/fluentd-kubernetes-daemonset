@@ -250,6 +250,10 @@ You can use `cri` parser by overwriting `tail_container_parse.conf` via ConfigMa
 
 See also [CRI parser README](https://github.com/fluent/fluent-plugin-parser-cri#log-and-configuration-example)
 
+### Use FLUENT_CONTAINER_TAIL_PATH to change container logs folder
+
+You can update the default path for the container logs i.e /var/log/container/*.log and also one can add multiple path as defined in this fluentd document https://docs.fluentd.org/input/tail#path 
+
 ### Use FLUENT_CONTAINER_TAIL_EXCLUDE_PATH to exclude specific container logs
 
 Since v1.9.3 or later images.
