@@ -17,7 +17,7 @@ GEM
       multi_json
     elasticsearch-xpack (7.15.0)
       elasticsearch-api (>= 6)
-    excon (0.85.0)
+    excon (0.88.0)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -49,7 +49,7 @@ GEM
       fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.14)
       fluentd (>= 0.10)
-    fluent-plugin-elasticsearch (5.1.0)
+    fluent-plugin-elasticsearch (5.1.1)
       elasticsearch
       excon
       fluentd (>= 0.14.22)
@@ -135,7 +135,7 @@ GEM
       ffi (~> 1.9)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2021.2)
+    tzinfo-data (1.2021.5)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -153,7 +153,7 @@ DEPENDENCIES
   fluent-plugin-concat (~> 2.5.0)
   fluent-plugin-dedot_filter (~> 1.0)
   fluent-plugin-detect-exceptions (~> 0.0.13)
-  fluent-plugin-elasticsearch (~> 5.1.0)
+  fluent-plugin-elasticsearch (~> 5.1.1)
   fluent-plugin-grok-parser (~> 2.6.2)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kubernetes_metadata_filter (~> 2.8.0)
