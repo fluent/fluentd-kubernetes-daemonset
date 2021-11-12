@@ -33,7 +33,7 @@ GEM
       fluentd (>= 0.10.58, < 2)
       ltsv
       ruby-kafka (>= 1.4.0, < 2)
-    fluent-plugin-kubernetes_metadata_filter (2.8.1)
+    fluent-plugin-kubernetes_metadata_filter (2.9.2)
       fluentd (>= 0.14.0, < 1.15)
       kubeclient (>= 4.0.0, < 5.0.0)
       lru_redux
@@ -139,7 +139,7 @@ DEPENDENCIES
   fluent-plugin-grok-parser (~> 2.6.2)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kafka (~> 0.17.0)
-  fluent-plugin-kubernetes_metadata_filter (~> 2.8.0)
+  fluent-plugin-kubernetes_metadata_filter (~> 2.9.2)
   fluent-plugin-multi-format-parser (~> 1.0.0)
   fluent-plugin-parser-avro (~> 0.3.1)
   fluent-plugin-parser-cri (~> 0.1.0)
