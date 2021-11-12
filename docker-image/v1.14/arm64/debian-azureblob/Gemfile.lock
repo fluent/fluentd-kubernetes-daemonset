@@ -55,7 +55,7 @@ GEM
     fluent-plugin-json-in-json-2 (1.0.2)
       fluentd (>= 0.14.0, < 2)
       yajl-ruby (~> 1.0)
-    fluent-plugin-kubernetes_metadata_filter (2.8.1)
+    fluent-plugin-kubernetes_metadata_filter (2.9.2)
       fluentd (>= 0.14.0, < 1.15)
       kubeclient (>= 4.0.0, < 5.0.0)
       lru_redux
@@ -158,7 +158,7 @@ DEPENDENCIES
   fluent-plugin-detect-exceptions (~> 0.0.13)
   fluent-plugin-grok-parser (~> 2.6.2)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
-  fluent-plugin-kubernetes_metadata_filter (~> 2.8.0)
+  fluent-plugin-kubernetes_metadata_filter (~> 2.9.2)
   fluent-plugin-multi-format-parser (~> 1.0.0)
   fluent-plugin-parser-cri (~> 0.1.0)
   fluent-plugin-prometheus (~> 2.0.2)
