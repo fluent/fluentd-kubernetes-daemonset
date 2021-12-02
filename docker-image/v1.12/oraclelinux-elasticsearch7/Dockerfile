@@ -24,7 +24,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
     && yum clean all \
     && gem install bundler --version 2.2.6 \
     && bundle config silence_root_warning true \
-    && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
+    && bundle config set --local path '/fluentd/vendor/bundle' \
+    && bundle install --gemfile=/fluentd/Gemfile \
     && SUDO_FORCE_REMOVE=yes \
     && gem sources --clear-all \
     && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
