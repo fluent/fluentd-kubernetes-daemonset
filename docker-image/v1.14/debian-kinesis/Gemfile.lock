@@ -4,16 +4,16 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     aws-eventstream (1.2.0)
-    aws-partitions (1.534.0)
-    aws-sdk-core (3.123.0)
+    aws-partitions (1.540.0)
+    aws-sdk-core (3.124.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-firehose (1.44.0)
+    aws-sdk-firehose (1.45.0)
       aws-sdk-core (~> 3, >= 3.122.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-kinesis (1.37.0)
+    aws-sdk-kinesis (1.38.0)
       aws-sdk-core (~> 3, >= 3.122.0)
       aws-sigv4 (~> 1.1)
     aws-sigv4 (1.4.0)
@@ -42,7 +42,7 @@ GEM
       aws-sdk-kinesis (~> 1, != 1.5, != 1.4, != 1.14)
       fluentd (>= 0.14.22, < 2)
       google-protobuf (~> 3)
-    fluent-plugin-kubernetes_metadata_filter (2.9.2)
+    fluent-plugin-kubernetes_metadata_filter (2.9.3)
       fluentd (>= 0.14.0, < 1.15)
       kubeclient (>= 4.0.0, < 5.0.0)
       lru_redux
@@ -148,4 +148,4 @@ DEPENDENCIES
   oj (= 3.11.0)
 
 BUNDLED WITH
-   2.2.22
+   2.2.32

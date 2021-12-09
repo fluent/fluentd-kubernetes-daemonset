@@ -55,6 +55,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Kinesis`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.3-debian-kinesis-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-kinesis-1`
+- `Newrelic`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.3-debian-newrelic-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-newrelic-1`
 
 ##### x86_64 images
 - `Azureblob` [Dockerfile](docker-image/v1.14/debian-azureblob/Dockerfile)
@@ -103,6 +106,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Kinesis` [Dockerfile](docker-image/v1.14/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.3-debian-kinesis-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-kinesis-amd64-1`
+- `Newrelic` [Dockerfile](docker-image/v1.14/debian-newrelic/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.3-debian-newrelic-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-newrelic-amd64-1`
 
 ##### arm64 images
 - `Azureblob` [Dockerfile](docker-image/v1.14/arm64/debian-azureblob/Dockerfile)
@@ -346,6 +352,7 @@ Some images are contributed by users. If you have a problem/question for followi
 - Amazon Kinesis : @shiftky
 - logz.io : @SaMnCo / @jamielennox
 - splunkhec: @FutureSharks
+- newrelic : @AlecIsaacson
 
 Currently, we don't accept new destination request without contribution.
 See https://github.com/fluent/fluentd-kubernetes-daemonset/issues/293

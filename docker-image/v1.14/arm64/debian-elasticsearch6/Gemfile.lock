@@ -15,7 +15,7 @@ GEM
     elasticsearch-transport (6.8.3)
       faraday (~> 1)
       multi_json
-    excon (0.88.0)
+    excon (0.89.0)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -54,7 +54,7 @@ GEM
     fluent-plugin-json-in-json-2 (1.0.2)
       fluentd (>= 0.14.0, < 2)
       yajl-ruby (~> 1.0)
-    fluent-plugin-kubernetes_metadata_filter (2.9.2)
+    fluent-plugin-kubernetes_metadata_filter (2.9.3)
       fluentd (>= 0.14.0, < 1.15)
       kubeclient (>= 4.0.0, < 5.0.0)
       lru_redux
@@ -161,4 +161,4 @@ DEPENDENCIES
   oj (= 3.11.0)
 
 BUNDLED WITH
-   2.2.22
+   2.2.32

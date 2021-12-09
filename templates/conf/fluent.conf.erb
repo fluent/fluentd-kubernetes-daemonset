@@ -387,4 +387,11 @@
   </buffer>
 </match>
 
+<% when "newrelic" %>
+<match **>
+  @type newrelic
+  @id out_newrelic
+  license_key "#{ENV['API_KEY']}"
+</match>
+
 <% end %>

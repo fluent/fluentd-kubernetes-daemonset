@@ -1,0 +1,91 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluentd
+  namespace: kube-system
+automountServiceAccountToken: true
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fluentd-read
+rules:
+  - apiGroups: [""]
+    resources:
+      - namespaces
+      - pods
+    verbs: ["get", "list", "watch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: fluentd-read
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: fluentd-read
+subjects:
+  - kind: ServiceAccount
+    name: fluentd
+    namespace: kube-system
+    
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd
+  namespace: kube-system
+  labels:
+    k8s-app: fluentd-logging
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      k8s-app: fluentd-logging
+      version: v1
+  template:
+    metadata:
+      labels:
+        k8s-app: fluentd-logging
+        version: v1
+    spec:
+      serviceAccount: fluentd
+      serviceAccountName: fluentd
+      containers:
+        - name: newrelic-logging
+          image: fluent/fluentd-kubernetes-daemonset:v1-debian-newrelic
+          env:
+            - name: ENDPOINT
+              value : "https://log-api.newrelic.com/log/v1"
+            - name: SOURCE
+              value: "kubernetes"
+            - name: API_KEY
+              value: "Your-New-Relic-License-Key"
+            - name: CLUSTER_NAME
+              value: "Your-Cluster-Name"
+            - name: LOG_LEVEL
+              value: "info"
+            # Allowed values: "docker", "cri"
+            - name: LOG_PARSER
+              value: "docker"
+            - name: LOG_PATH
+              value: "/var/log/containers/*.log"
+            - name:  FLUENTD_SYSTEMD_CONF
+              value: "disable"
+          resources:
+            limits:
+              memory: 128Mi
+            requests:
+              cpu: 250m
+              memory: 64Mi
+          volumeMounts:
+            - name: varlog
+              mountPath: /var
+      terminationGracePeriodSeconds: 10
+      volumes:
+        - name: varlog
+          hostPath:
+            path: /var
