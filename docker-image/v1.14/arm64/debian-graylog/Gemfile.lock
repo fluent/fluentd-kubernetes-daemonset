@@ -44,10 +44,10 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.14.2)
+    fluentd (1.14.3)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
-      http_parser.rb (>= 0.5.1, < 0.8.0)
+      http_parser.rb (>= 0.5.1, < 0.9.0)
       msgpack (>= 1.3.1, < 2.0.0)
       serverengine (>= 2.2.2, < 3.0.0)
       sigdump (~> 0.2.2)
@@ -69,7 +69,7 @@ GEM
     http-form_data (2.3.0)
     http-parser (1.2.3)
       ffi-compiler (>= 1.0, < 2.0)
-    http_parser.rb (0.7.0)
+    http_parser.rb (0.8.0)
     json (2.6.1)
     jsonpath (1.1.0)
       multi_json
@@ -128,7 +128,7 @@ DEPENDENCIES
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.5)
-  fluentd (= 1.14.2)
+  fluentd (= 1.14.3)
   gelf (= 3.0.0)
   oj (= 3.11.0)
 
