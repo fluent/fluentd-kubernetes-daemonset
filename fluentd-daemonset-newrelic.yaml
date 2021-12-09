@@ -63,9 +63,9 @@ spec:
             - name: SOURCE
               value: "kubernetes"
             - name: API_KEY
-              value: "Your-New-Relic-License-Key-Here"
+              value: "Your-New-Relic-License-Key"
             - name: CLUSTER_NAME
-              value: "Your-Cluster-Name-Here"
+              value: "Your-Cluster-Name"
             - name: LOG_LEVEL
               value: "info"
             # Allowed values: "docker", "cri"
