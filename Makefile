@@ -28,7 +28,8 @@ X86_IMAGES := \
 	v1.14/debian-logzio:v1.14.2-debian-logzio-amd64-1.1,v1.14-debian-logzio-amd64-1 \
 	v1.14/debian-kafka:v1.14.2-debian-kafka-amd64-1.1,v1.14-debian-kafka-amd64-1 \
 	v1.14/debian-kafka2:v1.14.2-debian-kafka2-amd64-1.1,v1.14-debian-kafka2-amd64-1 \
-	v1.14/debian-kinesis:v1.14.2-debian-kinesis-amd64-1.1,v1.14-debian-kinesis-amd64-1
+	v1.14/debian-kinesis:v1.14.2-debian-kinesis-amd64-1.1,v1.14-debian-kinesis-amd64-1 \
+	v1.14/debian-newrelic:v1.14.2-debian-newrelic-amd64-1.1,v1.14-debian-newrelic-amd64-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 

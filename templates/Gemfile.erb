@@ -61,6 +61,8 @@ gem "snappy", "~> 0.0.15"
 gem "fluent-plugin-kinesis", "~> 3.4.0"
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
+<% when "newrelic" %>
+gem "fluent-plugin-newrelic", "~> 1.2.1"
 <% end %>
 gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.9.2"
 <% if !is_alpine %>

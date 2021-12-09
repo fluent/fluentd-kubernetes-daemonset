@@ -65,3 +65,13 @@
   </record>
 </filter>
 <% end %>
+
+<% case target when "newrelic" %>
+<filter kubernetes.**>
+  @type record_transformer
+  @id filter_nr_cluster_name
+  <record>
+    cluster_name "#{ENV['NEW_RELIC_METADATA_KUBERNETES_CLUSTER_NAME']}"
+  </record>
+</filter>
+<% end %>
