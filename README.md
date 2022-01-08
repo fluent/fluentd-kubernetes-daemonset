@@ -217,6 +217,8 @@ This is for v0.12 images.
 In Kubernetes and default setting, fluentd needs root permission to read logs in `/var/log` and write `pos_file` to `/var/log`.
 To avoid permission error, you need to set `FLUENT_UID` environment variable to `0` in your Kubernetes configuration.
 
+For this configuration, `forwarder.containerSecurityContext.privileged` and `forwarder.containerSecurityContext.allowPrivilegeEscalation` are have to be `true`.
+
 ### Use your configuration
 
 These images have default configuration and support some environment variables for parameters
