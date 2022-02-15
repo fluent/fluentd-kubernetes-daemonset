@@ -4,8 +4,8 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     aws-eventstream (1.2.0)
-    aws-partitions (1.553.0)
-    aws-sdk-core (3.126.0)
+    aws-partitions (1.554.0)
+    aws-sdk-core (3.126.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
       aws-sigv4 (~> 1.1)
@@ -86,7 +86,7 @@ GEM
     http-parser (1.2.3)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.8.0)
-    jmespath (1.5.0)
+    jmespath (1.6.0)
     jsonpath (1.1.0)
       multi_json
     kubeclient (4.9.2)
@@ -148,4 +148,4 @@ DEPENDENCIES
   oj (= 3.11.0)
 
 BUNDLED WITH
-   2.3.3
+   2.2.15

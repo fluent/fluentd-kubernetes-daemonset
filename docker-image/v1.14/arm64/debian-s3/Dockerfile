@@ -14,9 +14,9 @@ COPY --from=builder /go/qemu-aarch64-static /usr/bin/
 LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
 USER root
 WORKDIR /home/fluent
-ENV PATH /fluentd/vendor/bundle/ruby/2.6.0/bin:$PATH
-ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.6.0
-ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.6.0
+ENV PATH /fluentd/vendor/bundle/ruby/2.7.0/bin:$PATH
+ENV GEM_PATH /fluentd/vendor/bundle/ruby/2.7.0
+ENV GEM_HOME /fluentd/vendor/bundle/ruby/2.7.0
 # skip runtime bundler installation
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 

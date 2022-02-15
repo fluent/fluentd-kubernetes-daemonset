@@ -101,7 +101,7 @@ GEM
     google-cloud-env (1.5.0)
       faraday (>= 0.17.3, < 2.0)
     google-cloud-errors (1.2.0)
-    google-cloud-storage (1.36.0)
+    google-cloud-storage (1.36.1)
       addressable (~> 2.8)
       digest-crc (~> 0.4)
       google-apis-iamcredentials_v1 (~> 0.1)
@@ -109,7 +109,7 @@ GEM
       google-cloud-core (~> 1.6)
       googleauth (>= 0.16.2, < 2.a)
       mini_mime (~> 1.0)
-    googleauth (1.1.0)
+    googleauth (1.1.1)
       faraday (>= 0.17.3, < 2.0)
       jwt (>= 1.4, < 3.0)
       memoist (~> 0.16)
@@ -209,4 +209,4 @@ DEPENDENCIES
   oj (= 3.11.0)
 
 BUNDLED WITH
-   2.3.3
+   2.2.15
