@@ -61,6 +61,8 @@ space := $(empty) $(empty)
 DOCKERFILE ?= $(word 1,$(subst :, ,$(word 1,$(ALL_IMAGES))))
 TARGET ?= $(word 2,$(subst -, , $(DOCKERFILE)))
 
+RUBY_VERSION = 2.7
+
 # Gets the version value based on the directory the dockerfile is in.
 FLUENTD_VERSION ?= $(word 1,$(subst /, ,$(DOCKERFILE)))
 
@@ -152,13 +154,14 @@ src-all: README.md
 # Render the given erb template.
 #
 # Usage:
-#	make container-image-template [FILE=] [DOCKERFILE=] [VERSION=]
+#	make container-image-template [FILE=] [DOCKERFILE=] [VERSION=] [RUBY_VERSION=]
 container-image-template:
 	mkdir -p docker-image/$(DOCKERFILE)/$(dir $(FILE))
 	docker run --rm -i -v $(PWD)/templates/$(FILE).erb:/$(basename $(FILE)).erb:ro \
 		ruby:alpine erb -U -T 1 \
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
+			ruby_version='$(RUBY_VERSION)' \
 		/$(basename $(FILE)).erb > docker-image/$(DOCKERFILE)/$(FILE)
 
 # Execute the given TARGET for each images
