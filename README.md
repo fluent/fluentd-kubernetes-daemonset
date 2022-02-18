@@ -34,6 +34,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Elasticsearch6`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-elasticsearch6-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch6-1`
+- `Opensearch`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-opensearch-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-1`
 - `Cloudwatch`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-cloudwatch-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-cloudwatch-1`
@@ -67,6 +70,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Elasticsearch6` [Dockerfile](docker-image/v1.14/debian-elasticsearch6/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-elasticsearch6-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch6-amd64-1`
+- `Opensearch` [Dockerfile](docker-image/v1.14/debian-opensearch/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-opensearch-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-amd64-1`
 - `Loggly` [Dockerfile](docker-image/v1.14/debian-loggly/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-loggly-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-loggly-amd64-1`
@@ -115,6 +121,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Elasticsearch6` [Dockerfile](docker-image/v1.14/arm64/debian-elasticsearch6/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-elasticsearch6-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch6-arm64-1`
+- `Opensearch` [Dockerfile](docker-image/v1.14/arm64/debian-opensearch/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.5-debian-opensearch-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-arm64-1`
 - `Loggly` [Dockerfile](docker-image/v1.14/arm64/debian-loggly/Dockerfile)
 - `Logentries` [Dockerfile](docker-image/v1.14/arm64/debian-logentries/Dockerfile)
 - `Cloudwatch` [Dockerfile](docker-image/v1.14/arm64/debian-cloudwatch/Dockerfile)
