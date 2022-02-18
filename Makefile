@@ -12,6 +12,7 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
+	v1.14/debian-opensearch:v1.14.5-debian-opensearch-amd64-1.0,v1.14-debian-opensearch-amd64-1 \
 	v1.14/debian-azureblob:v1.14.5-debian-azureblob-amd64-1.1,v1.14-debian-azureblob-amd64-1 \
 	v1.14/debian-elasticsearch7:v1.14.5-debian-elasticsearch7-amd64-1.1,v1.14-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
 	v1.14/debian-elasticsearch6:v1.14.5-debian-elasticsearch6-amd64-1.1,v1.14-debian-elasticsearch6-amd64-1 \
