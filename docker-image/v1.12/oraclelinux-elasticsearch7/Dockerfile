@@ -29,7 +29,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
     && bundle install --gemfile=/fluentd/Gemfile \
     && SUDO_FORCE_REMOVE=yes \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
 # Copy configuration files
 COPY docker-image/v1.12/oraclelinux-elasticsearch7/conf/fluent.conf /fluentd/etc/
