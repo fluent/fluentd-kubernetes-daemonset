@@ -15,7 +15,7 @@ X86_IMAGES := \
 	v1.14/debian-azureblob:v1.14.6-debian-azureblob-amd64-1.0,v1.14-debian-azureblob-amd64-1 \
 	v1.14/debian-elasticsearch7:v1.14.6-debian-elasticsearch7-amd64-1.0,v1.14-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
 	v1.14/debian-elasticsearch6:v1.14.6-debian-elasticsearch6-amd64-1.0,v1.14-debian-elasticsearch6-amd64-1 \
-	v1.14/debian-opensearch:v1.14.6-debian-opensearch-amd64-1.0,v1.14-debian-opensearch-amd64-1 \
+	v1.14/debian-opensearch:v1.14.6-debian-opensearch-amd64-1.1,v1.14-debian-opensearch-amd64-1 \
 	v1.14/debian-loggly:v1.14.6-debian-loggly-amd64-1.0,v1.14-debian-loggly-amd64-1 \
 	v1.14/debian-logentries:v1.14.6-debian-logentries-amd64-1.0,v1.14-debian-logentries-amd64-1 \
 	v1.14/debian-cloudwatch:v1.14.6-debian-cloudwatch-amd64-1.0,v1.14-debian-cloudwatch-amd64-1 \
@@ -37,7 +37,7 @@ ARM64_IMAGES := \
 	v1.14/arm64/debian-azureblob:v1.14.6-debian-azureblob-arm64-1.0,v1.14-debian-azureblob-arm64-1 \
 	v1.14/arm64/debian-elasticsearch7:v1.14.6-debian-elasticsearch7-arm64-1.0,v1.14-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
 	v1.14/arm64/debian-elasticsearch6:v1.14.6-debian-elasticsearch6-arm64-1.0,v1.14-debian-elasticsearch6-arm64-1 \
-	v1.14/arm64/debian-opensearch:v1.14.6-debian-opensearch-arm64-1.0,v1.14-debian-opensearch-arm64-1 \
+	v1.14/arm64/debian-opensearch:v1.14.6-debian-opensearch-arm64-1.1,v1.14-debian-opensearch-arm64-1 \
 	v1.14/arm64/debian-loggly:v1.14.6-debian-loggly-arm64-1.0,v1.14-debian-loggly-arm64-1 \
 	v1.14/arm64/debian-logentries:v1.14.6-debian-logentries-arm64-1.0,v1.14-debian-logentries-arm64-1 \
 	v1.14/arm64/debian-cloudwatch:v1.14.6-debian-cloudwatch-arm64-1.0,v1.14-debian-cloudwatch-arm64-1 \

@@ -32,7 +32,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-elasticsearch7-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-opensearch-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-opensearch-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-1`
 - `Cloudwatch`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-cloudwatch-1.0`
@@ -66,7 +66,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.14/debian-elasticsearch6/Dockerfile)
 - `Opensearch` [Dockerfile](docker-image/v1.14/debian-opensearch/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-opensearch-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-opensearch-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-amd64-1`
 - `Loggly` [Dockerfile](docker-image/v1.14/debian-loggly/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-loggly-amd64-1.0`
@@ -115,7 +115,7 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.14/arm64/debian-elasticsearch6/Dockerfile)
 - `Opensearch` [Dockerfile](docker-image/v1.14/arm64/debian-opensearch/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-opensearch-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14.6-debian-opensearch-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.14-debian-opensearch-arm64-1`
 - `Loggly` [Dockerfile](docker-image/v1.14/arm64/debian-loggly/Dockerfile)
 - `Logentries` [Dockerfile](docker-image/v1.14/arm64/debian-logentries/Dockerfile)
