@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd
+  namespace: kube-system
+  labels:
+    k8s-app: fluentd-logging
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      k8s-app: fluentd-logging
+      version: v1
+  template:
+    metadata:
+      labels:
+        k8s-app: fluentd-logging
+        version: v1
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      containers:
+      - name: fluentd
+        image: fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch
+        env:
+          - name:  FLUENT_OPENSEARCH_HOST
+            value: "opensearch-logging"
+          - name:  FLUENT_OPENSEARCH_PORT
+            value: "9200"
+          - name: FLUENT_OPENSEARCH_SCHEME
+            value: "https"
+          # Option to configure OpenSearch plugin with self signed certs
+          # ================================================================
+          - name: FLUENT_OPENSEARCH_SSL_VERIFY
+            value: "true"
+          # Option to configure OpenSearch plugin with tls
+          # ================================================================
+          - name: FLUENT_OPENSEARCH_SSL_VERSION
+            value: "TLSv1_2"
+          # Authentication
+          # =====================
+          - name: FLUENT_OPENSEARCH_USER
+            value: "username"
+          - name: FLUENT_OPENSEARCH_PASSWORD
+            value: "changeme"
+          # Certificate
+          # =====================
+          - name: FLUENT_OPENSEARCH_CA_PATH
+            value: "/path/to/file.ca"
+          - name: FLUENT_OPENSEARCH_CLIENT_CERT
+            value: "/path/to/file.cert"
+          - name: FLUENT_OPENSEARCH_CLIENT_KEY
+            value: "/path/to/file.key"
+          - name: FLUENT_OPENSEARCH_CLIENT_KEY_PASS
+            value: "changeme"
+          # Fluentd Parser
+          # =====================
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+            value: "cri"
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT
+            value: "%Y-%m-%dT%H:%M:%S.%N%:z"
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        # When actual pod logs in /var/lib/docker/containers, the following lines should be used.
+        # - name: dockercontainerlogdirectory
+        #   mountPath: /var/lib/docker/containers
+        #   readOnly: true
+        # When actual pod logs in /var/log/pods, the following lines should be used.
+        - name: dockercontainerlogdirectory
+          mountPath: /var/log/pods
+          readOnly: true
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      # When actual pod logs in /var/lib/docker/containers, the following lines should be used.
+      # - name: dockercontainerlogdirectory
+      #   hostPath:
+      #     path: /var/lib/docker/containers
+      # When actual pod logs in /var/log/pods, the following lines should be used.
+      - name: dockercontainerlogdirectory
+        hostPath:
+          path: /var/log/pods
