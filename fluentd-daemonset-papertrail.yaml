@@ -19,6 +19,8 @@ spec:
         version: v1
     spec:
       tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        effect: NoSchedule
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
