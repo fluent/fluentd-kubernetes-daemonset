@@ -59,9 +59,11 @@ spec:
     spec:
       serviceAccount: fluentd
       serviceAccountName: fluentd
-      # Enable tolerations if you want to run daemonset on master nodes.
+      # Enable tolerations if you want to run daemonset on control-plane nodes.
       # Recommended to disable on managed k8s.
       # tolerations:
+      # - key: node-role.kubernetes.io/control-plane
+      #   effect: NoSchedule
       # - key: node-role.kubernetes.io/master
       #   effect: NoSchedule
       containers:
