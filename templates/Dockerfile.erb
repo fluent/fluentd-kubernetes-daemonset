@@ -16,7 +16,7 @@ RUN curl -sL -o qemu-6.0.0.balena1-aarch64.tar.gz https://github.com/balena-io/q
 FROM fluent/fluentd:<%= fluentd_ver %>-debian-arm64-1.0
 COPY --from=builder /go/qemu-aarch64-static /usr/bin/
 <% else %>
-FROM fluent/fluentd:<%= fluentd_ver %>-debian-1.0
+FROM fluent/fluentd:<%= fluentd_ver %>-debian-amd64-1.0
 <% end %>
 
 LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"

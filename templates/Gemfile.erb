@@ -7,7 +7,7 @@
 source "https://rubygems.org"
 
 gem "fluentd", "<%= fluentd_ver %>"
-gem "oj", "3.11.0"
+gem "oj", "~> 3.13.0"
 gem "fluent-plugin-multi-format-parser", "~> 1.0.0"
 gem "fluent-plugin-concat", "~> 2.5.0"
 gem "fluent-plugin-grok-parser", "~> 2.6.2"
@@ -41,7 +41,7 @@ gem "azure-storage-blob", "~> 2.0"
 gem "fluent-plugin-azure-storage-append-blob-lts", "~> 0.6.0"
 <% when "s3" %>
 gem "aws-sdk-s3", "~> 1.101"
-gem "fluent-plugin-s3", "~> 1.6.1"
+gem "fluent-plugin-s3", "~> 1.7.0"
 <% when "gcs" %>
 gem "fluent-plugin-gcs", "0.4.1"
 <% when "graylog" %>
@@ -54,8 +54,8 @@ gem "fluent-plugin-papertrail", "~> 0.2.6"
 <% when "syslog" %>
 gem "fluent-plugin-remote_syslog"
 <% when "kafka", "kafka2" %>
-gem "rdkafka", "~> 0.7.0"
-gem "fluent-plugin-kafka", "~> 0.17.0"
+gem "rdkafka", "~> 0.12.0"
+gem "fluent-plugin-kafka", "~> 0.18.0"
 gem "fluent-plugin-avro", "~> 1.1.1"
 gem "fluent-plugin-parser-avro", "~> 0.3.1"
 gem "snappy", "~> 0.0.15"
@@ -64,7 +64,7 @@ gem "fluent-plugin-kinesis", "~> 3.4.0"
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
 <% end %>
-gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.11.1"
+gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.13.0"
 <% if !is_alpine %>
 gem "ffi"
 gem "fluent-plugin-systemd", "~> 1.0.5"
