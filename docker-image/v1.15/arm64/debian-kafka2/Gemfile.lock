@@ -92,10 +92,10 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
     mini_portile2 (2.8.0)
-    msgpack (1.5.3)
+    msgpack (1.5.4)
     multi_json (1.15.0)
     netrc (0.11.0)
-    oj (3.13.17)
+    oj (3.13.18)
     prometheus-client (4.0.0)
     public_suffix (4.0.7)
     rake (13.0.6)
@@ -109,6 +109,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rexml (3.2.5)
     ruby-kafka (1.5.0)
       digest-crc
     serverengine (2.3.0)
@@ -150,6 +151,7 @@ DEPENDENCIES
   fluentd (= 1.15.0)
   oj (~> 3.13.0)
   rdkafka (~> 0.12.0)
+  rexml (~> 3.2.5)
   snappy (~> 0.0.15)
 
 BUNDLED WITH
