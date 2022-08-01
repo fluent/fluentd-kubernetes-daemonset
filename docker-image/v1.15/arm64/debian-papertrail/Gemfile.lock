@@ -47,7 +47,7 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.15.0)
+    fluentd (1.15.1)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.9.0)
@@ -85,7 +85,7 @@ GEM
     msgpack (1.5.4)
     multi_json (1.15.0)
     netrc (0.11.0)
-    oj (3.13.18)
+    oj (3.13.19)
     prometheus-client (4.0.0)
     public_suffix (4.0.7)
     rake (13.0.6)
@@ -130,7 +130,7 @@ DEPENDENCIES
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.5)
-  fluentd (= 1.15.0)
+  fluentd (= 1.15.1)
   oj (~> 3.13.0)
   rexml (~> 3.2.5)
 
