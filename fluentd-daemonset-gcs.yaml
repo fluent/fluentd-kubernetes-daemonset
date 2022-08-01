@@ -22,6 +22,10 @@ spec:
       - name: fluentd-gcs
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-gcs
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           - name:  GCS_BUCKET_PROJECT
             value: "myproject"
           - name:  GCS_BUCKET_NAME
