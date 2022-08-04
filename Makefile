@@ -27,8 +27,8 @@ X86_IMAGES := \
 	v1.15/debian-graylog:v1.15.1-debian-graylog-amd64-1.1,v1.15-debian-graylog-amd64-1 \
 	v1.15/debian-papertrail:v1.15.1-debian-papertrail-amd64-1.1,v1.15-debian-papertrail-amd64-1 \
 	v1.15/debian-logzio:v1.15.1-debian-logzio-amd64-1.1,v1.15-debian-logzio-amd64-1 \
-	v1.15/debian-kafka:v1.15.1-debian-kafka-amd64-1.1,v1.15-debian-kafka-amd64-1 \
-	v1.15/debian-kafka2:v1.15.1-debian-kafka2-amd64-1.1,v1.15-debian-kafka2-amd64-1 \
+	v1.15/debian-kafka:v1.15.1-debian-kafka-amd64-1.2,v1.15-debian-kafka-amd64-1 \
+	v1.15/debian-kafka2:v1.15.1-debian-kafka2-amd64-1.2,v1.15-debian-kafka2-amd64-1 \
 	v1.15/debian-kinesis:v1.15.1-debian-kinesis-amd64-1.1,v1.15-debian-kinesis-amd64-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
@@ -49,8 +49,8 @@ ARM64_IMAGES := \
 	v1.15/arm64/debian-graylog:v1.15.1-debian-graylog-arm64-1.1,v1.15-debian-graylog-arm64-1 \
 	v1.15/arm64/debian-papertrail:v1.15.1-debian-papertrail-arm64-1.1,v1.15-debian-papertrail-arm64-1 \
 	v1.15/arm64/debian-logzio:v1.15.1-debian-logzio-arm64-1.1,v1.15-debian-logzio-arm64-1 \
-	v1.15/arm64/debian-kafka:v1.15.1-debian-kafka-arm64-1.1,v1.15-debian-kafka-arm64-1 \
-	v1.15/arm64/debian-kafka2:v1.15.1-debian-kafka2-arm64-1.1,v1.15-debian-kafka2-arm64-1 \
+	v1.15/arm64/debian-kafka:v1.15.1-debian-kafka-arm64-1.2,v1.15-debian-kafka-arm64-1 \
+	v1.15/arm64/debian-kafka2:v1.15.1-debian-kafka2-arm64-1.2,v1.15-debian-kafka2-arm64-1 \
 	v1.15/arm64/debian-kinesis:v1.15.1-debian-kinesis-arm64-1.1,v1.15-debian-kinesis-arm64-1
 
 ALL_IMAGES := $(X86_IMAGES) $(ARM64_IMAGES)

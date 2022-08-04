@@ -47,10 +47,10 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-graylog-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-graylog-1`
 - `Kafka`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-kafka-1`
 - `Kafka2`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka2-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka2-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-kafka2-1`
 - `Kinesis`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kinesis-1.1`
@@ -96,10 +96,10 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-logzio-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-logzio-amd64-1`
 - `Kafka` [Dockerfile](docker-image/v1.15/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka-amd64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka-amd64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-kafka-amd64-1`
 - `Kafka2` [Dockerfile](docker-image/v1.15/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka2-amd64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka2-amd64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-kafka2-amd64-1`
 - `Kinesis` [Dockerfile](docker-image/v1.15/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kinesis-amd64-1.1`
@@ -137,10 +137,10 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Papertrail` [Dockerfile](docker-image/v1.15/arm64/debian-papertrail/Dockerfile)
 - `Logzio` [Dockerfile](docker-image/v1.15/arm64/debian-logzio/Dockerfile)
 - `Kafka` [Dockerfile](docker-image/v1.15/arm64/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-kafka-arm64-1`
 - `Kafka2` [Dockerfile](docker-image/v1.15/arm64/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka2-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kafka2-arm64-1.2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-kafka2-arm64-1`
 - `Kinesis` [Dockerfile](docker-image/v1.15/arm64/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.1-debian-kinesis-arm64-1.1`
