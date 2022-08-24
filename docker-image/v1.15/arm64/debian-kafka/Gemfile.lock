@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     avro (1.11.1)
       multi_json (~> 1.0)
     concurrent-ruby (1.1.10)
@@ -29,7 +29,7 @@ GEM
     fluent-plugin-json-in-json-2 (1.0.2)
       fluentd (>= 0.14.0, < 2)
       yajl-ruby (~> 1.0)
-    fluent-plugin-kafka (0.18.0)
+    fluent-plugin-kafka (0.18.1)
       fluentd (>= 0.10.58, < 2)
       ltsv
       ruby-kafka (>= 1.4.0, < 2)
@@ -55,7 +55,7 @@ GEM
     fluent-plugin-systemd (1.0.5)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 1.4.2)
-    fluentd (1.15.1)
+    fluentd (1.15.2)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.9.0)
@@ -92,12 +92,12 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2022.0105)
     mini_portile2 (2.8.0)
-    msgpack (1.5.4)
+    msgpack (1.5.6)
     multi_json (1.15.0)
     netrc (0.11.0)
-    oj (3.13.19)
+    oj (3.13.21)
     prometheus-client (4.0.0)
-    public_suffix (4.0.7)
+    public_suffix (5.0.0)
     rake (13.0.6)
     rdkafka (0.11.1)
       ffi (~> 1.15)
@@ -121,7 +121,7 @@ GEM
       ffi (~> 1.9)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2022.1)
+    tzinfo-data (1.2022.3)
       tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
@@ -148,7 +148,7 @@ DEPENDENCIES
   fluent-plugin-record-modifier (~> 2.1.0)
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.0.5)
-  fluentd (= 1.15.1)
+  fluentd (= 1.15.2)
   oj (~> 3.13.0)
   rdkafka (~> 0.11.1)
   rexml (~> 3.2.5)
