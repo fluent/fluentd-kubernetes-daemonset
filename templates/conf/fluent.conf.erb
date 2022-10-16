@@ -78,6 +78,10 @@
   client_key "#{ENV['FLUENT_OPENSEARCH_CLIENT_KEY']}"
   client_key_pass "#{ENV['FLUENT_OPENSEARCH_CLIENT_KEY_PASS']}"
   index_name "#{ENV['FLUENT_OPENSEARCH_INDEX_NAME'] || 'fluentd'}"
+  logstash_dateformat "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_DATEFORMAT'] || '%Y.%m.%d'}"
+  logstash_format "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_FORMAT'] || 'false'}"
+  logstash_prefix "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_PREFIX'] || 'logstash'}"
+  logstash_prefix_separator "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_PREFIX_SEPARATOR'] || '-'}"
 </match>
 <%  when "logentries"%>
 <match **>
