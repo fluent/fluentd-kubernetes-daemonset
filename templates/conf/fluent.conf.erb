@@ -82,6 +82,16 @@
   logstash_format "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_FORMAT'] || 'false'}"
   logstash_prefix "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_PREFIX'] || 'logstash'}"
   logstash_prefix_separator "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_PREFIX_SEPARATOR'] || '-'}"
+  <buffer>
+    flush_thread_count "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_THREAD_COUNT'] || '1'}"
+    flush_mode interval
+    flush_interval "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_INTERVAL'] || '60s'}"
+    chunk_limit_size "#{ENV['FLUENT_OPENSEARCH_BUFFER_CHUNK_LIMIT_SIZE'] || '8M'}"
+    total_limit_size "#{ENV['FLUENT_OPENSEARCH_BUFFER_TOTAL_LIMIT_SIZE'] || '512M'}"
+    retry_max_interval "#{ENV['FLUENT_OPENSEARCH_BUFFER_RETRY_MAX_INTERVAL'] || '30'}"
+    retry_timeout "#{ENV['FLUENT_OPENSEARCH_BUFFER_RETRY_TIMEOUT'] || '72h'}"
+    retry_forever "#{ENV['FLUENT_OPENSEARCH_BUFFER_RETRY_FOREVER'] || 'false'}"
+  </buffer>
 </match>
 <%  when "logentries"%>
 <match **>
