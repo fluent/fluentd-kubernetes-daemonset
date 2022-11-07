@@ -12,46 +12,46 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
-	v1.15/debian-azureblob:v1.15.2-debian-azureblob-amd64-1.0,v1.15-debian-azureblob-amd64-1 \
-	v1.15/debian-elasticsearch7:v1.15.2-debian-elasticsearch7-amd64-1.0,v1.15-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
-	v1.15/debian-elasticsearch6:v1.15.2-debian-elasticsearch6-amd64-1.0,v1.15-debian-elasticsearch6-amd64-1 \
-	v1.15/debian-opensearch:v1.15.2-debian-opensearch-amd64-1.0,v1.15-debian-opensearch-amd64-1 \
-	v1.15/debian-loggly:v1.15.2-debian-loggly-amd64-1.0,v1.15-debian-loggly-amd64-1 \
-	v1.15/debian-logentries:v1.15.2-debian-logentries-amd64-1.0,v1.15-debian-logentries-amd64-1 \
-	v1.15/debian-cloudwatch:v1.15.2-debian-cloudwatch-amd64-1.0,v1.15-debian-cloudwatch-amd64-1 \
-	v1.15/debian-stackdriver:v1.15.2-debian-stackdriver-amd64-1.0,v1.15-debian-stackdriver-amd64-1 \
-	v1.15/debian-s3:v1.15.2-debian-s3-amd64-1.0,v1.15-debian-s3-amd64-1 \
-	v1.15/debian-syslog:v1.15.2-debian-syslog-amd64-1.0,v1.15-debian-syslog-amd64-1 \
-	v1.15/debian-forward:v1.15.2-debian-forward-amd64-1.0,v1.15-debian-forward-amd64-1 \
-	v1.15/debian-gcs:v1.15.2-debian-gcs-amd64-1.0,v1.15-debian-gcs-amd64-1 \
-	v1.15/debian-graylog:v1.15.2-debian-graylog-amd64-1.0,v1.15-debian-graylog-amd64-1 \
-	v1.15/debian-papertrail:v1.15.2-debian-papertrail-amd64-1.0,v1.15-debian-papertrail-amd64-1 \
-	v1.15/debian-logzio:v1.15.2-debian-logzio-amd64-1.0,v1.15-debian-logzio-amd64-1 \
-	v1.15/debian-kafka:v1.15.2-debian-kafka-amd64-1.0,v1.15-debian-kafka-amd64-1 \
-	v1.15/debian-kafka2:v1.15.2-debian-kafka2-amd64-1.0,v1.15-debian-kafka2-amd64-1 \
-	v1.15/debian-kinesis:v1.15.2-debian-kinesis-amd64-1.0,v1.15-debian-kinesis-amd64-1
+	v1.15/debian-azureblob:v1.15.3-debian-azureblob-amd64-1.0,v1.15-debian-azureblob-amd64-1 \
+	v1.15/debian-elasticsearch7:v1.15.3-debian-elasticsearch7-amd64-1.0,v1.15-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
+	v1.15/debian-elasticsearch6:v1.15.3-debian-elasticsearch6-amd64-1.0,v1.15-debian-elasticsearch6-amd64-1 \
+	v1.15/debian-opensearch:v1.15.3-debian-opensearch-amd64-1.0,v1.15-debian-opensearch-amd64-1 \
+	v1.15/debian-loggly:v1.15.3-debian-loggly-amd64-1.0,v1.15-debian-loggly-amd64-1 \
+	v1.15/debian-logentries:v1.15.3-debian-logentries-amd64-1.0,v1.15-debian-logentries-amd64-1 \
+	v1.15/debian-cloudwatch:v1.15.3-debian-cloudwatch-amd64-1.0,v1.15-debian-cloudwatch-amd64-1 \
+	v1.15/debian-stackdriver:v1.15.3-debian-stackdriver-amd64-1.0,v1.15-debian-stackdriver-amd64-1 \
+	v1.15/debian-s3:v1.15.3-debian-s3-amd64-1.0,v1.15-debian-s3-amd64-1 \
+	v1.15/debian-syslog:v1.15.3-debian-syslog-amd64-1.0,v1.15-debian-syslog-amd64-1 \
+	v1.15/debian-forward:v1.15.3-debian-forward-amd64-1.0,v1.15-debian-forward-amd64-1 \
+	v1.15/debian-gcs:v1.15.3-debian-gcs-amd64-1.0,v1.15-debian-gcs-amd64-1 \
+	v1.15/debian-graylog:v1.15.3-debian-graylog-amd64-1.0,v1.15-debian-graylog-amd64-1 \
+	v1.15/debian-papertrail:v1.15.3-debian-papertrail-amd64-1.0,v1.15-debian-papertrail-amd64-1 \
+	v1.15/debian-logzio:v1.15.3-debian-logzio-amd64-1.0,v1.15-debian-logzio-amd64-1 \
+	v1.15/debian-kafka:v1.15.3-debian-kafka-amd64-1.0,v1.15-debian-kafka-amd64-1 \
+	v1.15/debian-kafka2:v1.15.3-debian-kafka2-amd64-1.0,v1.15-debian-kafka2-amd64-1 \
+	v1.15/debian-kinesis:v1.15.3-debian-kinesis-amd64-1.0,v1.15-debian-kinesis-amd64-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
 ARM64_IMAGES := \
-	v1.15/arm64/debian-azureblob:v1.15.2-debian-azureblob-arm64-1.0,v1.15-debian-azureblob-arm64-1 \
-	v1.15/arm64/debian-elasticsearch7:v1.15.2-debian-elasticsearch7-arm64-1.0,v1.15-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
-	v1.15/arm64/debian-elasticsearch6:v1.15.2-debian-elasticsearch6-arm64-1.0,v1.15-debian-elasticsearch6-arm64-1 \
-	v1.15/arm64/debian-opensearch:v1.15.2-debian-opensearch-arm64-1.0,v1.15-debian-opensearch-arm64-1 \
-	v1.15/arm64/debian-loggly:v1.15.2-debian-loggly-arm64-1.0,v1.15-debian-loggly-arm64-1 \
-	v1.15/arm64/debian-logentries:v1.15.2-debian-logentries-arm64-1.0,v1.15-debian-logentries-arm64-1 \
-	v1.15/arm64/debian-cloudwatch:v1.15.2-debian-cloudwatch-arm64-1.0,v1.15-debian-cloudwatch-arm64-1 \
-	v1.15/arm64/debian-stackdriver:v1.15.2-debian-stackdriver-arm64-1.0,v1.15-debian-stackdriver-arm64-1 \
-	v1.15/arm64/debian-s3:v1.15.2-debian-s3-arm64-1.0,v1.15-debian-s3-arm64-1 \
-	v1.15/arm64/debian-syslog:v1.15.2-debian-syslog-arm64-1.0,v1.15-debian-syslog-arm64-1 \
-	v1.15/arm64/debian-forward:v1.15.2-debian-forward-arm64-1.0,v1.15-debian-forward-arm64-1 \
-	v1.15/arm64/debian-gcs:v1.15.2-debian-gcs-arm64-1.0,v1.15-debian-gcs-arm64-1 \
-	v1.15/arm64/debian-graylog:v1.15.2-debian-graylog-arm64-1.0,v1.15-debian-graylog-arm64-1 \
-	v1.15/arm64/debian-papertrail:v1.15.2-debian-papertrail-arm64-1.0,v1.15-debian-papertrail-arm64-1 \
-	v1.15/arm64/debian-logzio:v1.15.2-debian-logzio-arm64-1.0,v1.15-debian-logzio-arm64-1 \
-	v1.15/arm64/debian-kafka:v1.15.2-debian-kafka-arm64-1.0,v1.15-debian-kafka-arm64-1 \
-	v1.15/arm64/debian-kafka2:v1.15.2-debian-kafka2-arm64-1.0,v1.15-debian-kafka2-arm64-1 \
-	v1.15/arm64/debian-kinesis:v1.15.2-debian-kinesis-arm64-1.0,v1.15-debian-kinesis-arm64-1
+	v1.15/arm64/debian-azureblob:v1.15.3-debian-azureblob-arm64-1.0,v1.15-debian-azureblob-arm64-1 \
+	v1.15/arm64/debian-elasticsearch7:v1.15.3-debian-elasticsearch7-arm64-1.0,v1.15-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
+	v1.15/arm64/debian-elasticsearch6:v1.15.3-debian-elasticsearch6-arm64-1.0,v1.15-debian-elasticsearch6-arm64-1 \
+	v1.15/arm64/debian-opensearch:v1.15.3-debian-opensearch-arm64-1.0,v1.15-debian-opensearch-arm64-1 \
+	v1.15/arm64/debian-loggly:v1.15.3-debian-loggly-arm64-1.0,v1.15-debian-loggly-arm64-1 \
+	v1.15/arm64/debian-logentries:v1.15.3-debian-logentries-arm64-1.0,v1.15-debian-logentries-arm64-1 \
+	v1.15/arm64/debian-cloudwatch:v1.15.3-debian-cloudwatch-arm64-1.0,v1.15-debian-cloudwatch-arm64-1 \
+	v1.15/arm64/debian-stackdriver:v1.15.3-debian-stackdriver-arm64-1.0,v1.15-debian-stackdriver-arm64-1 \
+	v1.15/arm64/debian-s3:v1.15.3-debian-s3-arm64-1.0,v1.15-debian-s3-arm64-1 \
+	v1.15/arm64/debian-syslog:v1.15.3-debian-syslog-arm64-1.0,v1.15-debian-syslog-arm64-1 \
+	v1.15/arm64/debian-forward:v1.15.3-debian-forward-arm64-1.0,v1.15-debian-forward-arm64-1 \
+	v1.15/arm64/debian-gcs:v1.15.3-debian-gcs-arm64-1.0,v1.15-debian-gcs-arm64-1 \
+	v1.15/arm64/debian-graylog:v1.15.3-debian-graylog-arm64-1.0,v1.15-debian-graylog-arm64-1 \
+	v1.15/arm64/debian-papertrail:v1.15.3-debian-papertrail-arm64-1.0,v1.15-debian-papertrail-arm64-1 \
+	v1.15/arm64/debian-logzio:v1.15.3-debian-logzio-arm64-1.0,v1.15-debian-logzio-arm64-1 \
+	v1.15/arm64/debian-kafka:v1.15.3-debian-kafka-arm64-1.0,v1.15-debian-kafka-arm64-1 \
+	v1.15/arm64/debian-kafka2:v1.15.3-debian-kafka2-arm64-1.0,v1.15-debian-kafka2-arm64-1 \
+	v1.15/arm64/debian-kinesis:v1.15.3-debian-kinesis-arm64-1.0,v1.15-debian-kinesis-arm64-1
 
 ALL_IMAGES := $(X86_IMAGES) $(ARM64_IMAGES)
 
