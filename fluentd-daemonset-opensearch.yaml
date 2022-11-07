@@ -26,6 +26,10 @@ spec:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-opensearch
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           - name:  FLUENT_OPENSEARCH_HOST
             value: "opensearch-logging"
           - name:  FLUENT_OPENSEARCH_PORT

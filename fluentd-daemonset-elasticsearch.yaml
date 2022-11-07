@@ -26,6 +26,10 @@ spec:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           - name:  FLUENT_ELASTICSEARCH_HOST
             value: "elasticsearch-logging"
           - name:  FLUENT_ELASTICSEARCH_PORT

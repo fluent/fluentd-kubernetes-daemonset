@@ -68,12 +68,16 @@ spec:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-syslog
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           - name:  SYSLOG_HOST
             value: "sysloghost"
           - name:  SYSLOG_PORT
             value: "514"
           - name:  SYSLOG_PROTOCOL
-            value: "udp"            
+            value: "udp"
         resources:
           limits:
             memory: 200Mi
