@@ -84,7 +84,7 @@
   logstash_prefix_separator "#{ENV['FLUENT_OPENSEARCH_LOGSTASH_PREFIX_SEPARATOR'] || '-'}"
   <buffer>
     flush_thread_count "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_THREAD_COUNT'] || '1'}"
-    flush_mode interval
+    flush_mode "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_MODE'] || 'interval'}"
     flush_interval "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_INTERVAL'] || '60s'}"
     chunk_limit_size "#{ENV['FLUENT_OPENSEARCH_BUFFER_CHUNK_LIMIT_SIZE'] || '8M'}"
     total_limit_size "#{ENV['FLUENT_OPENSEARCH_BUFFER_TOTAL_LIMIT_SIZE'] || '512M'}"
