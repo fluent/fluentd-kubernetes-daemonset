@@ -4,8 +4,8 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     aws-eventstream (1.2.0)
-    aws-partitions (1.654.0)
-    aws-sdk-core (3.166.0)
+    aws-partitions (1.665.0)
+    aws-sdk-core (3.168.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
@@ -16,7 +16,7 @@ GEM
     cool.io (1.7.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    excon (0.93.1)
+    excon (0.94.0)
     faraday (1.10.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -64,7 +64,7 @@ GEM
       lru_redux
     fluent-plugin-multi-format-parser (1.0.0)
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-opensearch (1.0.8)
+    fluent-plugin-opensearch (1.0.9)
       aws-sdk-core (~> 3)
       excon
       faraday (~> 1.10)
@@ -124,7 +124,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.2.3)
     netrc (0.11.0)
-    oj (3.13.22)
+    oj (3.13.23)
     opensearch-api (2.0.2)
       multi_json
     opensearch-ruby (2.0.3)
@@ -182,4 +182,4 @@ DEPENDENCIES
   rexml (~> 3.2.5)
 
 BUNDLED WITH
-   2.2.15
+   2.3.7

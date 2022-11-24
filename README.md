@@ -34,6 +34,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Opensearch`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-opensearch-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-opensearch-1`
+- `Insightops`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-insightops-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-insightops-1`
 - `Cloudwatch`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-cloudwatch-1`
@@ -74,6 +77,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
 - `Logentries` [Dockerfile](docker-image/v1.15/debian-logentries/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-logentries-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-logentries-amd64-1`
+- `Insightops` [Dockerfile](docker-image/v1.15/debian-insightops/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-insightops-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-insightops-amd64-1`
 - `Cloudwatch` [Dockerfile](docker-image/v1.15/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-cloudwatch-amd64-1`
@@ -119,6 +125,9 @@ If you want to use above non published images, build it by yourself. Dockefile i
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-opensearch-arm64-1`
 - `Loggly` [Dockerfile](docker-image/v1.15/arm64/debian-loggly/Dockerfile)
 - `Logentries` [Dockerfile](docker-image/v1.15/arm64/debian-logentries/Dockerfile)
+- `Insightops` [Dockerfile](docker-image/v1.15/arm64/debian-insightops/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-insightops-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-insightops-arm64-1`
 - `Cloudwatch` [Dockerfile](docker-image/v1.15/arm64/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.15-debian-cloudwatch-arm64-1`

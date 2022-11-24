@@ -18,6 +18,7 @@ X86_IMAGES := \
 	v1.15/debian-opensearch:v1.15.3-debian-opensearch-amd64-1.0,v1.15-debian-opensearch-amd64-1 \
 	v1.15/debian-loggly:v1.15.3-debian-loggly-amd64-1.0,v1.15-debian-loggly-amd64-1 \
 	v1.15/debian-logentries:v1.15.3-debian-logentries-amd64-1.0,v1.15-debian-logentries-amd64-1 \
+	v1.15/debian-insightops:v1.15.3-debian-insightops-amd64-1.0,v1.15-debian-insightops-amd64-1 \
 	v1.15/debian-cloudwatch:v1.15.3-debian-cloudwatch-amd64-1.0,v1.15-debian-cloudwatch-amd64-1 \
 	v1.15/debian-stackdriver:v1.15.3-debian-stackdriver-amd64-1.0,v1.15-debian-stackdriver-amd64-1 \
 	v1.15/debian-s3:v1.15.3-debian-s3-amd64-1.0,v1.15-debian-s3-amd64-1 \
@@ -40,6 +41,7 @@ ARM64_IMAGES := \
 	v1.15/arm64/debian-opensearch:v1.15.3-debian-opensearch-arm64-1.0,v1.15-debian-opensearch-arm64-1 \
 	v1.15/arm64/debian-loggly:v1.15.3-debian-loggly-arm64-1.0,v1.15-debian-loggly-arm64-1 \
 	v1.15/arm64/debian-logentries:v1.15.3-debian-logentries-arm64-1.0,v1.15-debian-logentries-arm64-1 \
+	v1.15/arm64/debian-insightops:v1.15.3-debian-insightops-arm64-1.0,v1.15-debian-insightops-arm64-1 \
 	v1.15/arm64/debian-cloudwatch:v1.15.3-debian-cloudwatch-arm64-1.0,v1.15-debian-cloudwatch-arm64-1 \
 	v1.15/arm64/debian-stackdriver:v1.15.3-debian-stackdriver-arm64-1.0,v1.15-debian-stackdriver-arm64-1 \
 	v1.15/arm64/debian-s3:v1.15.3-debian-s3-arm64-1.0,v1.15-debian-s3-arm64-1 \

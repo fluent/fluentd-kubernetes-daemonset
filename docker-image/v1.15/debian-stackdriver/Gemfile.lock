@@ -17,7 +17,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     extlib (0.9.16)
-    faraday (0.17.5)
+    faraday (0.17.6)
       multipart-post (>= 1.2, < 3)
     ffi (1.15.5)
     ffi-compiler (1.0.1)
@@ -123,7 +123,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.2.3)
     netrc (0.11.0)
-    oj (3.13.22)
+    oj (3.13.23)
     os (1.1.4)
     prometheus-client (4.0.0)
     public_suffix (5.0.0)
@@ -180,4 +180,4 @@ DEPENDENCIES
   rexml (~> 3.2.5)
 
 BUNDLED WITH
-   2.2.15
+   2.3.7

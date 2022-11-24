@@ -102,6 +102,13 @@
    tag_error_log stderr
    config_path /etc/logentries/tokens.yaml
 </match>
+<%  when "insightops"%>
+<match **>
+   @type insightops
+   @id out_insightops
+   use_json true
+   config_path /etc/insightops/config.yaml
+</match>
 <%  when "loggly"%>
 <match **>
    @type loggly
