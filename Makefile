@@ -13,6 +13,7 @@
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
 	v1.16/debian-azureblob:v1.16.1-debian-azureblob-amd64-1.0,v1.16-debian-azureblob-amd64-1 \
+	v1.16/debian-elasticsearch8:v1.16.1-debian-elasticsearch8-amd64-1.0,v1.16-debian-elasticsearch8-amd64-1 \
 	v1.16/debian-elasticsearch7:v1.16.1-debian-elasticsearch7-amd64-1.0,v1.16-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
 	v1.16/debian-elasticsearch6:v1.16.1-debian-elasticsearch6-amd64-1.0,v1.16-debian-elasticsearch6-amd64-1 \
 	v1.16/debian-opensearch:v1.16.1-debian-opensearch-amd64-1.0,v1.16-debian-opensearch-amd64-1 \
@@ -35,6 +36,7 @@ X86_IMAGES := \
 
 ARM64_IMAGES := \
 	v1.16/arm64/debian-azureblob:v1.16.1-debian-azureblob-arm64-1.0,v1.16-debian-azureblob-arm64-1 \
+	v1.16/arm64/debian-elasticsearch8:v1.16.1-debian-elasticsearch8-arm64-1.0,v1.16-debian-elasticsearch8-arm64-1 \
 	v1.16/arm64/debian-elasticsearch7:v1.16.1-debian-elasticsearch7-arm64-1.0,v1.16-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
 	v1.16/arm64/debian-elasticsearch6:v1.16.1-debian-elasticsearch6-arm64-1.0,v1.16-debian-elasticsearch6-arm64-1 \
 	v1.16/arm64/debian-opensearch:v1.16.1-debian-opensearch-arm64-1.0,v1.16-debian-opensearch-arm64-1 \
