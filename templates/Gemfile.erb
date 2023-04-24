@@ -23,11 +23,15 @@ gem "elasticsearch", "~> 6.0"
 gem "fluent-plugin-elasticsearch", "~> 4.0.9"
 <% when "elasticsearch7" %>
 gem "elasticsearch", "~> 7.0"
-gem "fluent-plugin-elasticsearch", "~> 5.1.1"
+gem "fluent-plugin-elasticsearch", "~> 5.3.0"
 gem "elasticsearch-xpack", "~> 7.0"
 gem "fluent-plugin-dedot_filter", "~> 1.0"
+<% when "elasticsearch8" %>
+gem "elasticsearch", "~> 8.0"
+gem "fluent-plugin-elasticsearch", "~> 5.3.0"
+gem "fluent-plugin-dedot_filter", "~> 1.0"
 <% when "opensearch" %>
-gem "fluent-plugin-opensearch", "~> 1.0.6"
+gem "fluent-plugin-opensearch", "~> 1.1.0"
 <% when "logentries" %>
 #gem "fluent-plugin-logentries"
 <% when "loggly"%>
@@ -65,7 +69,7 @@ gem "fluent-plugin-kinesis", "~> 3.4.0"
 <% when "splunkhec" %>
 gem "fluent-plugin-splunk-enterprise"
 <% end %>
-gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.13.0"
+gem "fluent-plugin-kubernetes_metadata_filter", "~> 3.2.0"
 <% if !is_alpine %>
 gem "ffi"
 gem "fluent-plugin-systemd", "~> 1.0.5"
