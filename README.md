@@ -31,7 +31,7 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch8-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch8-1`
 - `Elasticsearch7`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch7-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch7-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch`
@@ -67,7 +67,7 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch8-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch8-amd64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.16/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch7-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch7-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-amd64-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.16/debian-elasticsearch6/Dockerfile)
@@ -119,7 +119,7 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch8-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch8-arm64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.16/arm64/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch7-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch7-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-arm64-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
 - `Elasticsearch6` [Dockerfile](docker-image/v1.16/arm64/debian-elasticsearch6/Dockerfile)
