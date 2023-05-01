@@ -387,6 +387,7 @@
   packet_size 65535
 
   <buffer kubernetes_host>
+    flush_interval "#{ENV['FLUENT_SYSLOG_FLUSH_INTERVAL'] || use_default}"
   </buffer>
 
   <format>
@@ -403,6 +404,9 @@
     host "#{ENV['FLUENT_FOWARD_HOST']}"
     port "#{ENV['FLUENT_FOWARD_PORT']}"
   </server>
+  <buffer>
+    flush_interval "#{ENV['FLUENT_FORWARD_FLUSH_INTERVAL'] || use_default}"
+  </buffer>
 </match>
 
 <% when "kinesis" %>
