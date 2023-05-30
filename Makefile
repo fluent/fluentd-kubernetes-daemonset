@@ -12,7 +12,7 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
-	v1.16/debian-azureblob:v1.16.1-debian-azureblob-amd64-1.2,v1.16-debian-azureblob-amd64-1 \
+	v1.16/debian-azureblob:v1.16.1-debian-azureblob-amd64-1.3,v1.16-debian-azureblob-amd64-1 \
 	v1.16/debian-elasticsearch8:v1.16.1-debian-elasticsearch8-amd64-1.2,v1.16-debian-elasticsearch8-amd64-1 \
 	v1.16/debian-elasticsearch7:v1.16.1-debian-elasticsearch7-amd64-1.2,v1.16-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
 	v1.16/debian-elasticsearch6:v1.16.1-debian-elasticsearch6-amd64-1.2,v1.16-debian-elasticsearch6-amd64-1 \
@@ -35,7 +35,7 @@ X86_IMAGES := \
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
 ARM64_IMAGES := \
-	v1.16/arm64/debian-azureblob:v1.16.1-debian-azureblob-arm64-1.2,v1.16-debian-azureblob-arm64-1 \
+	v1.16/arm64/debian-azureblob:v1.16.1-debian-azureblob-arm64-1.3,v1.16-debian-azureblob-arm64-1 \
 	v1.16/arm64/debian-elasticsearch8:v1.16.1-debian-elasticsearch8-arm64-1.2,v1.16-debian-elasticsearch8-arm64-1 \
 	v1.16/arm64/debian-elasticsearch7:v1.16.1-debian-elasticsearch7-arm64-1.2,v1.16-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
 	v1.16/arm64/debian-elasticsearch6:v1.16.1-debian-elasticsearch6-arm64-1.2,v1.16-debian-elasticsearch6-arm64-1 \
@@ -198,7 +198,7 @@ dockerfile-all:
 gemfile:
 	make container-image-template FILE=Gemfile
 	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
-		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
+		ruby:$(RUBY_VERSION)-alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
 
 # Generate Gemfile and Gemfile.lock from template for all supported Docker images.
 #

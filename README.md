@@ -25,7 +25,7 @@ If you want to use above non published images, build it by yourself. Dockerfile 
 
 ##### Multi-Arch images
 - `Azureblob`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-azureblob-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-azureblob-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-azureblob-1`
 - `Elasticsearch8`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch8-1.2`
@@ -61,7 +61,7 @@ If you want to use above non published images, build it by yourself. Dockerfile 
 
 ##### x86_64 images
 - `Azureblob` [Dockerfile](docker-image/v1.16/debian-azureblob/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-azureblob-amd64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-azureblob-amd64-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-azureblob-amd64-1`
 - `Elasticsearch8` [Dockerfile](docker-image/v1.16/debian-elasticsearch8/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch8-amd64-1.2`
@@ -113,7 +113,7 @@ If you want to use above non published images, build it by yourself. Dockerfile 
 
 ##### arm64 images
 - `Azureblob` [Dockerfile](docker-image/v1.16/arm64/debian-azureblob/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-azureblob-arm64-1.2`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-azureblob-arm64-1.3`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-azureblob-arm64-1`
 - `Elasticsearch8` [Dockerfile](docker-image/v1.16/arm64/debian-elasticsearch8/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.1-debian-elasticsearch8-arm64-1.2`
