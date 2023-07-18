@@ -7,12 +7,12 @@
 source "https://rubygems.org"
 
 gem "fluentd", "<%= fluentd_ver %>"
-gem "oj", "~> 3.14.0"
+gem "oj", "~> 3.15.0"
 gem "rexml", "~> 3.2.5"
 gem "fluent-plugin-multi-format-parser", "~> 1.0.0"
 gem "fluent-plugin-concat", "~> 2.5.0"
 gem "fluent-plugin-grok-parser", "~> 2.6.2"
-gem "fluent-plugin-prometheus", "~> 2.0.2"
+gem "fluent-plugin-prometheus", "~> 2.1.0"
 gem 'fluent-plugin-json-in-json-2', ">= 1.0.2"
 gem "fluent-plugin-record-modifier", "~> 2.1.0"
 gem "fluent-plugin-detect-exceptions", "~> 0.0.13"
@@ -43,7 +43,7 @@ gem "fluent-plugin-cloudwatch-logs", "~> 0.14.0"
 gem "fluent-plugin-google-cloud", "~> 0.4.10"
 <% when "azureblob" %>
 gem "azure-storage-blob", "~> 2.0"
-gem "fluent-plugin-azure-storage-append-blob-lts", "~> 0.6.0"
+gem "fluent-plugin-azure-storage-append-blob-lts", "~> 0.7.0"
 <% when "s3" %>
 gem "aws-sdk-s3", "~> 1.101"
 gem "fluent-plugin-s3", "~> 1.7.0"
@@ -53,14 +53,14 @@ gem "fluent-plugin-gcs", "0.4.2"
 gem "gelf", "3.0.0"
 gem "fluent-plugin-gelf-hs", "~> 1.0.7"
 <% when "logzio" %>
-gem "fluent-plugin-logzio", "~> 0.0.18"
+gem "fluent-plugin-logzio", "~> 0.2.0"
 <% when "papertrail" %>
 gem "fluent-plugin-papertrail", "~> 0.2.6"
 <% when "syslog" %>
 gem "fluent-plugin-remote_syslog"
 <% when "kafka", "kafka2" %>
 gem "rdkafka", "~> 0.11.1"
-gem "fluent-plugin-kafka", "~> 0.18.0"
+gem "fluent-plugin-kafka", "~> 0.19.0"
 gem "fluent-plugin-avro", "~> 1.1.1"
 gem "fluent-plugin-parser-avro", "~> 0.3.1"
 gem "snappy", "~> 0.0.15"
