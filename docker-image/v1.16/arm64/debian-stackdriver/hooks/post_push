@@ -13,7 +13,7 @@ curl -Lo manifest-tool https://github.com/estesp/manifest-tool/releases/download
 chmod +x manifest-tool
 
 # Tag and push image and manifest list for each additional tag
-for tag in {v1.16.1-debian-stackdriver-arm64-1.2,v1.16-debian-stackdriver-arm64-1}; do
+for tag in {v1.16.2-debian-stackdriver-arm64-1.0,v1.16-debian-stackdriver-arm64-1}; do
   docker tag $IMAGE_NAME ${repoName}:${tag}
   docker push ${repoName}:${tag}
   # Note: this will fail until both the amd64 and arm64 images have been pushed
