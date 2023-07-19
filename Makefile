@@ -162,7 +162,7 @@ src-all: README.md
 container-image-template:
 	mkdir -p docker-image/$(DOCKERFILE)/$(dir $(FILE))
 	docker run --rm -i -v $(PWD)/templates/$(FILE).erb:/$(basename $(FILE)).erb:ro \
-		ruby:alpine erb -U -T 1 \
+		ruby:$(RUBY_VERSION)-alpine erb -U -T 1 \
 			dockerfile='$(DOCKERFILE)' \
 			version='$(VERSION)' \
 			ruby_version='$(RUBY_VERSION)' \
@@ -198,7 +198,7 @@ dockerfile-all:
 gemfile:
 	make container-image-template FILE=Gemfile
 	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
-		ruby:alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
+		ruby:$(RUBY_VERSION)-alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
 
 # Generate Gemfile and Gemfile.lock from template for all supported Docker images.
 #
@@ -331,7 +331,7 @@ prometheus.conf-all:
 
 README.md: templates/README.md.erb
 	docker run --rm -i -v $(PWD)/templates/README.md.erb:/README.md.erb:ro \
-		ruby:alpine erb -U -T 1 \
+		ruby:$(RUBY_VERSION)-alpine erb -U -T 1 \
 	                all_images='$(ALL_IMAGES)' \
 		/README.md.erb > README.md
 
@@ -371,7 +371,7 @@ post-checkout-hook:
 	if [ -n "$(findstring /arm64/,$(DOCKERFILE))" ]; then \
 		mkdir -p docker-image/$(DOCKERFILE)/hooks; \
 		docker run --rm -i -v $(PWD)/templates/post_checkout.erb:/post_checkout.erb:ro \
-			ruby:alpine erb -U \
+			ruby:$(RUBY_VERSION)-alpine erb -U \
 				dockerfile='$(DOCKERFILE)' \
 			/post_checkout.erb > docker-image/$(DOCKERFILE)/hooks/post_checkout ; \
 	fi
@@ -398,7 +398,7 @@ post-checkout-hook-all:
 post-push-hook:
 	mkdir -p docker-image/$(DOCKERFILE)/hooks
 	docker run --rm -i -v $(PWD)/templates/post_push.erb:/post_push.erb:ro \
-		ruby:alpine erb -U \
+		ruby:$(RUBY_VERSION)-alpine erb -U \
 			image_tags='$(TAGS)' \
 		/post_push.erb > docker-image/$(DOCKERFILE)/hooks/post_push
 
