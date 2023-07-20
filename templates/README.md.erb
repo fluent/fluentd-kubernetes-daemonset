@@ -15,8 +15,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 <% debian_arm64 = images.select { |i| i.match(/debian-.*-arm64/) } %>
 <% debian = images.select { |i| i.match("debian") }.reject { |i| debian_arm64.include?(i) } %>
 <% alpine = images.select { |i| i.match("alpine") } %>
-<% no_built_x86_64_images = %w(papertrail syslog elasticsearch6) %>
-<% no_built_arm64_images = %w(papertrail syslog logentries loggly logzio s3 elasticsearch6) %>
+<% no_built_x86_64_images = %w(papertrail syslog) %>
+<% no_built_arm64_images = %w(papertrail syslog logentries loggly logzio s3) %>
 <% no_built_multiarch_images = no_built_arm64_images.dup.concat(no_built_x86_64_images).uniq %>
 
 ### Debian
