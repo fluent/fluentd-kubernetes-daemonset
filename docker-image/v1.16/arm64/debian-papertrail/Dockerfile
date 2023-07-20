@@ -8,7 +8,7 @@ ENV QEMU_DOWNLOAD_SHA256 5db25cccb40ac7b1ca857653b883376b931d91b06ff34ffe70dcf61
 RUN apk add curl --no-cache
 RUN curl -sL -o qemu-6.0.0.balena1-aarch64.tar.gz https://github.com/balena-io/qemu/releases/download/v6.0.0%2Bbalena1/qemu-6.0.0.balena1-aarch64.tar.gz && echo "$QEMU_DOWNLOAD_SHA256 *qemu-6.0.0.balena1-aarch64.tar.gz" | sha256sum -c - | tar zxvf qemu-6.0.0.balena1-aarch64.tar.gz -C . && mv qemu-6.0.0+balena1-aarch64/qemu-aarch64-static .
 
-FROM fluent/fluentd:v1.16.1-debian-arm64-1.0
+FROM fluent/fluentd:v1.16.2-debian-arm64-1.0
 COPY --from=builder /go/qemu-aarch64-static /usr/bin/
 
 LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
@@ -28,7 +28,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps $runtimeDeps net-tools \
-    && gem install bundler --version 2.2.24 \
+    && gem install bundler --version 2.4.17 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \
