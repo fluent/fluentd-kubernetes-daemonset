@@ -36,7 +36,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev<% if target == "graylog" %>
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps $runtimeDeps net-tools \
-    && gem install bundler --version 2.2.24 \
+    && gem install bundler --version 2.4.17 \
     && bundle config silence_root_warning true<% if target == "azureblob" %> && bundle config build.nokogiri --use-system-libraries<% end %> \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
 <% if target == "s3" %>

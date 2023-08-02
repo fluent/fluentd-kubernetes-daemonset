@@ -67,6 +67,10 @@ spec:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-cloudwatch
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           - name: LOG_GROUP_NAME
             value: "k8s"
           - name: AWS_REGION

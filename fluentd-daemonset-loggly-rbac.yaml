@@ -65,6 +65,10 @@ spec:
       - name: fluentd
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-loggly
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           # See https://github.com/fluent/fluentd-kubernetes-daemonset/blob/master/docker-image/v1.4/debian-loggly/conf/fluent.conf
           # loggly_url "https://logs-01.loggly.com/bulk/#{ENV['LOGGLY_TOKEN']}/tag/#{ENV['LOGGLY_TAGS'] || 'fluentd'}/bulk"
           - name: LOGGLY_TOKEN
@@ -72,9 +76,9 @@ spec:
           - name: LOGGLY_TAGS
             value: exampletag1,exampletag2
           # Depending on your configuration, adapt or remove the FLUENTD_* variables:
-          - name: FLUENTD_SYSTEMD_CONF 
+          - name: FLUENTD_SYSTEMD_CONF
             value: disable
-          - name: FLUENTD_PROMETHEUS_CONF 
+          - name: FLUENTD_PROMETHEUS_CONF
             value: disable
         resources:
           limits:

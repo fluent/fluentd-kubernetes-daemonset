@@ -64,12 +64,16 @@ spec:
         image: fluent/fluentd-kubernetes-daemonset:v1-debian-azureblob
         imagePullPolicy: Always
         env:
+          - name: K8S_NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
           # See https://github.com/elsesiy/fluent-plugin-azure-storage-append-blob-lts#configuration for all configuration options & combinations
           - name: AZUREBLOB_AZURE_CLOUD
             value: "AZUREPUBLICCLOUD"
           - name:  AZUREBLOB_ACCOUNT_NAME
             value: "mystorageaccount"
-          # Use AZUREBLOB_ACCOUNT_KEY for access key authorization, AZUREBLOB_SAS_TOKEN for shared access signature authorization, 
+          # Use AZUREBLOB_ACCOUNT_KEY for access key authorization, AZUREBLOB_SAS_TOKEN for shared access signature authorization,
           # AZUREBLOB_CONNECTION_STRING to use the full connection string generated in the Azure Portal or neither to use Managed Service Identity.
           - name:  AZUREBLOB_ACCOUNT_KEY
             value: "mystorageaccountkey"
