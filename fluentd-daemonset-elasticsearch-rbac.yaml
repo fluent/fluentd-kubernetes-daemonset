@@ -89,6 +89,12 @@ spec:
             value: "elastic"
           - name: FLUENT_ELASTICSEARCH_PASSWORD
             value: "changeme"
+          # Prevents circular logging issue
+          - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
+            value: /var/log/containers/fluent*
+          # Docker log parser
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+            value: /^(?<time>.+) (?<stream>stdout|stderr)( (?<logtag>.))? (?<log>.*)$/
         resources:
           limits:
             memory: 200Mi
