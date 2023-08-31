@@ -18,8 +18,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 As the current limitation about the number of automated builds on hub.docker.com, there are some restrictions to ship daemonset images:
 
-* `stackdriver`, `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
-* `logentries`, `loggly`, `logzio`, `s3` arm64 images won't be published anymore (x86_64 only supported)
+* `stackdriver`, `papertrail`, `syslog`, `s3` images (x86_64/arm64) won't be published anymore
+* `logentries`, `loggly`, `logzio` arm64 images won't be published anymore (x86_64 only supported)
 
 If you want to use above non published images, build it by yourself. Dockerfile itself is still maintained in this repository.
 
