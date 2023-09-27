@@ -15,12 +15,10 @@ X86_IMAGES := \
 	v1.16/debian-azureblob:v1.16.2-debian-azureblob-amd64-1.0,v1.16-debian-azureblob-amd64-1 \
 	v1.16/debian-elasticsearch8:v1.16.2-debian-elasticsearch8-amd64-1.0,v1.16-debian-elasticsearch8-amd64-1 \
 	v1.16/debian-elasticsearch7:v1.16.2-debian-elasticsearch7-amd64-1.0,v1.16-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
-	v1.16/debian-elasticsearch6:v1.16.2-debian-elasticsearch6-amd64-1.0,v1.16-debian-elasticsearch6-amd64-1 \
 	v1.16/debian-opensearch:v1.16.2-debian-opensearch-amd64-1.0,v1.16-debian-opensearch-amd64-1 \
 	v1.16/debian-loggly:v1.16.2-debian-loggly-amd64-1.0,v1.16-debian-loggly-amd64-1 \
 	v1.16/debian-logentries:v1.16.2-debian-logentries-amd64-1.0,v1.16-debian-logentries-amd64-1 \
 	v1.16/debian-cloudwatch:v1.16.2-debian-cloudwatch-amd64-1.0,v1.16-debian-cloudwatch-amd64-1 \
-	v1.16/debian-stackdriver:v1.16.2-debian-stackdriver-amd64-1.0,v1.16-debian-stackdriver-amd64-1 \
 	v1.16/debian-s3:v1.16.2-debian-s3-amd64-1.0,v1.16-debian-s3-amd64-1 \
 	v1.16/debian-syslog:v1.16.2-debian-syslog-amd64-1.0,v1.16-debian-syslog-amd64-1 \
 	v1.16/debian-forward:v1.16.2-debian-forward-amd64-1.0,v1.16-debian-forward-amd64-1 \
@@ -38,12 +36,10 @@ ARM64_IMAGES := \
 	v1.16/arm64/debian-azureblob:v1.16.2-debian-azureblob-arm64-1.0,v1.16-debian-azureblob-arm64-1 \
 	v1.16/arm64/debian-elasticsearch8:v1.16.2-debian-elasticsearch8-arm64-1.0,v1.16-debian-elasticsearch8-arm64-1 \
 	v1.16/arm64/debian-elasticsearch7:v1.16.2-debian-elasticsearch7-arm64-1.0,v1.16-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
-	v1.16/arm64/debian-elasticsearch6:v1.16.2-debian-elasticsearch6-arm64-1.0,v1.16-debian-elasticsearch6-arm64-1 \
 	v1.16/arm64/debian-opensearch:v1.16.2-debian-opensearch-arm64-1.0,v1.16-debian-opensearch-arm64-1 \
 	v1.16/arm64/debian-loggly:v1.16.2-debian-loggly-arm64-1.0,v1.16-debian-loggly-arm64-1 \
 	v1.16/arm64/debian-logentries:v1.16.2-debian-logentries-arm64-1.0,v1.16-debian-logentries-arm64-1 \
 	v1.16/arm64/debian-cloudwatch:v1.16.2-debian-cloudwatch-arm64-1.0,v1.16-debian-cloudwatch-arm64-1 \
-	v1.16/arm64/debian-stackdriver:v1.16.2-debian-stackdriver-arm64-1.0,v1.16-debian-stackdriver-arm64-1 \
 	v1.16/arm64/debian-s3:v1.16.2-debian-s3-arm64-1.0,v1.16-debian-s3-arm64-1 \
 	v1.16/arm64/debian-syslog:v1.16.2-debian-syslog-arm64-1.0,v1.16-debian-syslog-arm64-1 \
 	v1.16/arm64/debian-forward:v1.16.2-debian-forward-arm64-1.0,v1.16-debian-forward-arm64-1 \

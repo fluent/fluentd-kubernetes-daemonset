@@ -18,7 +18,7 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 As the current limitation about the number of automated builds on hub.docker.com, there are some restrictions to ship daemonset images:
 
-* `stackdriver`, `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
+* `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
 * `logentries`, `loggly`, `logzio`, `s3` arm64 images won't be published anymore (x86_64 only supported)
 
 If you want to use above non published images, build it by yourself. Dockerfile itself is still maintained in this repository.
@@ -70,7 +70,6 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-elasticsearch7-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-amd64-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
-- `Elasticsearch6` [Dockerfile](docker-image/v1.16/debian-elasticsearch6/Dockerfile)
 - `Opensearch` [Dockerfile](docker-image/v1.16/debian-opensearch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-opensearch-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-opensearch-amd64-1`
@@ -83,7 +82,6 @@ If you want to use above non published images, build it by yourself. Dockerfile 
 - `Cloudwatch` [Dockerfile](docker-image/v1.16/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-cloudwatch-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-cloudwatch-amd64-1`
-- `Stackdriver` [Dockerfile](docker-image/v1.16/debian-stackdriver/Dockerfile)
 - `S3` [Dockerfile](docker-image/v1.16/debian-s3/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-s3-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-s3-amd64-1`
@@ -122,7 +120,6 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-elasticsearch7-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-arm64-1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
-- `Elasticsearch6` [Dockerfile](docker-image/v1.16/arm64/debian-elasticsearch6/Dockerfile)
 - `Opensearch` [Dockerfile](docker-image/v1.16/arm64/debian-opensearch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-opensearch-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-opensearch-arm64-1`
@@ -131,7 +128,6 @@ If you want to use above non published images, build it by yourself. Dockerfile 
 - `Cloudwatch` [Dockerfile](docker-image/v1.16/arm64/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.2-debian-cloudwatch-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-cloudwatch-arm64-1`
-- `Stackdriver` [Dockerfile](docker-image/v1.16/arm64/debian-stackdriver/Dockerfile)
 - `S3` [Dockerfile](docker-image/v1.16/arm64/debian-s3/Dockerfile)
 - `Syslog` [Dockerfile](docker-image/v1.16/arm64/debian-syslog/Dockerfile)
 - `Forward` [Dockerfile](docker-image/v1.16/arm64/debian-forward/Dockerfile)

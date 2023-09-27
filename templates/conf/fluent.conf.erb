@@ -8,7 +8,7 @@
 @include kubernetes.conf
 @include conf.d/*.conf
 
-<% case target when "elasticsearch6","elasticsearch7","elasticsearch8" %>
+<% case target when "elasticsearch7","elasticsearch8" %>
 <match **>
    @type elasticsearch
    @id out_es
@@ -157,32 +157,6 @@
   time_slice_format %Y/%m/%d
   time_slice_wait 10m
   utc
-</match>
-<% when "stackdriver"%>
-<match **>
-  @type google_cloud
-  @id out_google_cloud
-
-  # Set the buffer type to file to improve the reliability and reduce the memory consumption
-  buffer_type file
-  buffer_path /var/log/fluentd-buffers/stackdriver.buffer
-  # Set queue_full action to block because we want to pause gracefully
-  # in case of the off-the-limits load instead of throwing an exception
-  buffer_queue_full_action block
-  # Set the chunk limit conservatively to avoid exceeding the GCL limit
-  # of 10MiB per write request.
-  buffer_chunk_limit 2M
-  # Cap the combined memory usage of this buffer and the one below to
-  # 2MiB/chunk * (6 + 2) chunks = 16 MiB
-  buffer_queue_limit 6
-  # Never wait more than 5 seconds before flushing logs in the non-error case.
-  flush_interval 5s
-  # Never wait longer than 30 seconds between retries.
-  max_retry_wait 30
-  # Disable the limit on the number of retries (retry forever).
-  # disable_retry_limit
-  # Use multiple threads for processing.
-  num_threads 2
 </match>
 <% when "azureblob"%>
 <match **>
