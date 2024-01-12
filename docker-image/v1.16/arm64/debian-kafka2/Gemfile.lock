@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     avro (1.11.3)
       multi_json (~> 1.0)
@@ -9,7 +9,7 @@ GEM
     cool.io (1.8.0)
     digest-crc (0.6.5)
       rake (>= 12.0.0, < 14.0.0)
-    domain_name (0.6.20231109)
+    domain_name (0.6.20240107)
     ffi (1.16.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -32,7 +32,7 @@ GEM
       fluentd (>= 0.10.58, < 2)
       ltsv
       ruby-kafka (>= 1.5.0, < 2)
-    fluent-plugin-kubernetes_metadata_filter (3.2.0)
+    fluent-plugin-kubernetes_metadata_filter (3.4.0)
       fluentd (>= 0.14.0, < 1.17)
       kubeclient (>= 4.0.0, < 5.0.0)
       lru_redux
@@ -88,16 +88,16 @@ GEM
       rake (~> 13.0)
     lru_redux (1.1.0)
     ltsv (0.1.2)
-    mime-types (3.5.1)
+    mime-types (3.5.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2023.1003)
+    mime-types-data (3.2023.1205)
     mini_portile2 (2.8.5)
     msgpack (1.7.2)
     multi_json (1.15.0)
     netrc (0.11.0)
     oj (3.15.1)
     prometheus-client (4.2.2)
-    public_suffix (5.0.3)
+    public_suffix (5.0.4)
     rake (13.1.0)
     rdkafka (0.11.1)
       ffi (~> 1.15)
@@ -121,7 +121,7 @@ GEM
       ffi (~> 1.9)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2023.3)
+    tzinfo-data (1.2023.4)
       tzinfo (>= 1.0.0)
     webrick (1.8.1)
     yajl-ruby (1.4.3)
@@ -137,7 +137,7 @@ DEPENDENCIES
   fluent-plugin-grok-parser (~> 2.6.2)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kafka (~> 0.19.0)
-  fluent-plugin-kubernetes_metadata_filter (~> 3.2.0)
+  fluent-plugin-kubernetes_metadata_filter (~> 3.4.0)
   fluent-plugin-multi-format-parser (~> 1.0.0)
   fluent-plugin-parser-avro (~> 0.3.1)
   fluent-plugin-parser-cri (~> 0.1.0)
@@ -152,4 +152,4 @@ DEPENDENCIES
   snappy (~> 0.0.15)
 
 BUNDLED WITH
-   2.3.26
+   2.4.10
