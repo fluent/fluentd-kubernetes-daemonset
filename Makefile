@@ -193,8 +193,22 @@ dockerfile-all:
 #	make gemfile [DOCKERFILE=] [VERSION=]
 gemfile:
 	make container-image-template FILE=Gemfile
-	docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
-		ruby:$(RUBY_VERSION)-alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock
+	RETRY=1; \
+	while [ $${RETRY} -ge 1 ] ; do \
+	  docker run --rm -i -v $(PWD)/docker-image/$(DOCKERFILE)/Gemfile:/Gemfile:ro \
+		ruby:$(RUBY_VERSION)-alpine sh -c "apk add --no-cache --quiet git && bundle lock --print --remove-platform x86_64-linux-musl --add-platform ruby" > docker-image/${DOCKERFILE}/Gemfile.lock; \
+	  if [ $$? -eq 0 ]; then \
+	    RETRY=0; \
+	  else \
+	    RETRY=$(shell echo $$(( $(RETRY) + 1))); \
+	    echo "ERROR: Retry to generate ${PWD}/docker-image/${DOCKERFILE}/Gemfile.lock after a while"; \
+	    if [ $${RETRY} -gt 3 ]; then \
+	      echo "ERROR: Give up retrying to generate ${PWD}/docker-image/${DOCKERFILE}/Gemfile.lock"; \
+	      exit 1; \
+	    fi; \
+	    sleep 10; \
+	  fi; \
+	done
 
 # Generate Gemfile and Gemfile.lock from template for all supported Docker images.
 #
