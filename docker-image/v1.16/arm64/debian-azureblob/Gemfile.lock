@@ -11,7 +11,7 @@ GEM
       faraday_middleware (~> 1.0, >= 1.0.0.rc1)
       net-http-persistent (~> 4.0)
       nokogiri (~> 1, >= 1.10.8)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     cool.io (1.8.0)
     domain_name (0.6.20240107)
