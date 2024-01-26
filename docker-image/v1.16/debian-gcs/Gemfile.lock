@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     cool.io (1.8.0)
     declarative (0.0.20)
     digest-crc (0.6.5)
