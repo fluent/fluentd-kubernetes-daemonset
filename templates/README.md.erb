@@ -167,6 +167,14 @@ You can use `cri` parser by overwriting `tail_container_parse.conf` via ConfigMa
 </parse>
 ```
 
+Or by setting environment variables `FLUENT_CONTAINER_TAIL_PARSER_TYPE` and/or `FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT` according to your setup.
+```
+- name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+  value: "cri"
+- name: FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT
+  value: "%Y-%m-%dT%H:%M:%S.%N%:z"
+```
+
 See also [CRI parser README](https://github.com/fluent/fluent-plugin-parser-cri#log-and-configuration-example)
 
 ### Use FLUENT_CONTAINER_TAIL_PATH to change container logs folder
