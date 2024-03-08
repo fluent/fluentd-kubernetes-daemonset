@@ -60,10 +60,16 @@ spec:
             value: "/path/to/file.key"
           - name: FLUENT_OPENSEARCH_CLIENT_KEY_PASS
             value: "changeme"
-          # Fluentd Parser
-          # =====================
+          # Exclude Fluentd logs' to avoid an infine loop
+          # ================================================================
+          - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
+            value: "/var/log/pods/fluent*"
+          # Option to configure containerd/cri-o log format
+          # ================================================================
           - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
             value: "cri"
+          # Option to configure containerd date time log format
+          # ================================================================
           - name: FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT
             value: "%Y-%m-%dT%H:%M:%S.%N%:z"
         resources:

@@ -89,6 +89,24 @@ spec:
             value: "elastic"
           - name: FLUENT_ELASTICSEARCH_PASSWORD
             value: "changeme"
+          # Exclude Fluentd logs' to avoid an infine loop
+          # ================================================================
+          - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
+            value: "/var/log/pods/fluent*"
+          # Option to configure containerd/cri-o log format
+          # ================================================================
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
+            value: "cri"
+          # Option to configure containerd date time log format
+          # ================================================================
+          - name: FLUENT_CONTAINER_TAIL_PARSER_TIME_FORMAT
+            value: "%Y-%m-%dT%H:%M:%S.%N%:z"
+          # Logz.io Authentication
+          # ======================
+          - name: LOGZIO_TOKEN
+            value: "ThisIsASuperLongToken"
+          - name: LOGZIO_LOGTYPE
+            value: "kubernetes"
         resources:
           limits:
             memory: 200Mi
