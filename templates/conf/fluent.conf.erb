@@ -94,6 +94,7 @@
   sniffer_class_name "#{ENV['FLUENT_SNIFFER_CLASS_NAME'] || use_nil}"
   request_timeout "#{ENV['FLUENT_OPENSEARCH_REQUEST_TIMEOUT'] || '5s'}"
   application_name "#{ENV['FLUENT_OPENSEARCH_APPLICATION_NAME'] || use_default}"
+  bulk_message_request_threshold "#{ENV['FLUENT_OPENSEARCH_BULK_MESSAGE_REQUEST_THRESHOLD'] || use_nil}"
   <buffer>
     flush_thread_count "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_THREAD_COUNT'] || '1'}"
     flush_mode "#{ENV['FLUENT_OPENSEARCH_BUFFER_FLUSH_MODE'] || 'interval'}"
