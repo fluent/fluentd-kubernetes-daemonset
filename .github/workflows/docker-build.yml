@@ -57,8 +57,8 @@ jobs:
       - name: Setup tags
         run: |
           set -x
-          context=${{ matrix.context }}
-          component=${context##*/}
+          component=${{ matrix.component }}
+          echo "CONTEXT=docker-image/v1.16/${component}" >> ${GITHUB_ENV}
           for target in $(make echo-all-images); do
             case $target in
               *$component-amd64*)
