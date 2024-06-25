@@ -68,16 +68,6 @@ jobs:
           tags: ${{ env.AMD64TAGS }}
           # dare to use old mediatype (application/vnd.docker.distribution.manifest.v2+json)
           outputs: oci-mediatypes=false
-      - name: Build and push for arm64
-        uses: docker/build-push-action@v6
-        with:
-          context: ${{ matrix.context }}
-          provenance: false
-          push: true
-          platforms: linux/amd64
-          tags: ${{ env.AMD64TAGS }}
-          # dare to use old mediatype (application/vnd.docker.distribution.manifest.v2+json)
-          outputs: oci-mediatypes=false
   arm64:
     runs-on: ubuntu-latest
     strategy:
