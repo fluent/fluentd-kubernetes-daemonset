@@ -116,7 +116,7 @@ jobs:
       - name: Build and push for arm64
         uses: docker/build-push-action@v6
         with:
-          context: ${{ matrix.context }}
+          context: ${{ env.CONTEXT }}
           provenance: false
           push: true
           platforms: linux/arm64
