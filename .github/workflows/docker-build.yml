@@ -10,6 +10,33 @@ on:
 env:
   REPOSITORY: ${{ secrets.DOCKER_HUB_ORGS }}/fluentd-kubernetes-daemonset
 jobs:
+  define-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      components: ${{ steps.set-components.outputs.components }}
+    steps:
+      - id: set-components
+        run: |
+          components=$(echo '[
+            "debian-azureblob",
+            "debian-cloudwatch",
+            "debian-elasticsearch7",
+            "debian-elasticsearch8",
+            "debian-forward",
+            "debian-gcs",
+            "debian-graylog",
+            "debian-kafka",
+            "debian-kafka2",
+            "debian-kinesis",
+            "debian-logentries",
+            "debian-loggly",
+            "debian-logzio",
+            "debian-opensearch",
+            "debian-papertrail",
+            "debian-s3",
+            "debian-syslog"
+            ]' | jq -c)
+          echo "components=$components" >> "$GITHUB_OUTPUT"
   amd64:
     runs-on: ubuntu-latest
     strategy:
