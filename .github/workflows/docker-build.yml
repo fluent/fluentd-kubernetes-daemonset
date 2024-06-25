@@ -140,7 +140,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Create manifest
         run: |
-          component=${{ matrix.context }}
+          component=${{ matrix.component }}
           for target in $(make echo-all-images); do
             case $target in
               *$component-amd64*)
