@@ -126,29 +126,12 @@ jobs:
           # dare to use old mediatype (application/vnd.docker.distribution.manifest.v2+json)
           outputs: oci-mediatypes=false
   manifest:
-    needs: [amd64, arm64]
+    needs: [define-matrix, amd64, arm64]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        context:
-          - debian-azureblob
-          - debian-cloudwatch
-          - debian-elasticsearch7
-          - debian-elasticsearch8
-          - debian-forward
-          - debian-gcs
-          - debian-graylog
-          - debian-kafka
-          - debian-kafka2
-          - debian-kinesis
-          - debian-logentries
-          - debian-loggly
-          - debian-logzio
-          - debian-opensearch
-          - debian-papertrail
-          - debian-s3
-          - debian-syslog
+        component: ${{ fromJSON(needs.define-matrix.outputs.components) }}
     steps:
       - uses: actions/checkout@v4
       - uses: docker/login-action@v3
