@@ -23,12 +23,15 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 
 #### Current stable
 
-As the current limitation about the number of automated builds on hub.docker.com, there are some restrictions to ship daemonset images:
-
-* `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
-* `logentries`, `loggly`, `logzio`, `s3` arm64 images won't be published anymore (x86_64 only supported)
-
-If you want to use above non published images, build it by yourself. Dockerfile itself is still maintained in this repository.
+> [!TIP]
+> Since v1.17.0, the container image build process has been migrated from automated builds on hub.docker.com to GitHub Actions.
+> This is because there were limitation about the number of automated builds on hub.docker.com.
+> Now, there is no limitation about the number of build pipelines.
+>
+> Note that there were some restrictions to ship daemonset images for v1.16.5 or older ones before:
+> * `papertrail`, `syslog` images (x86_64/arm64) won't be published anymore
+> * `logentries`, `loggly`, `logzio`, `s3` arm64 images won't be published anymore (x86_64 only supported)
+> If you want to use above non published images, build it by yourself. Dockerfile itself is still maintained in this repository.
 
 ##### Multi-Arch images
 <% debian.each do |image| %>
