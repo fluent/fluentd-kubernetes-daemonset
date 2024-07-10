@@ -21,8 +21,8 @@ ENV GEM_HOME /fluentd/vendor/bundle/ruby/3.2.0
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
-RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev build-essential autoconf automake libtool pkg-config" \
-  runtimeDeps="krb5-kdc libsasl2-modules-gssapi-mit libsasl2-dev" \
+RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev build-essential autoconf automake libtool pkg-config libsasl2-dev" \
+  runtimeDeps="krb5-kdc libsasl2-modules-gssapi-mit libsasl2-2" \
       && export DEBIAN_FRONTEND=noninteractive  && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
