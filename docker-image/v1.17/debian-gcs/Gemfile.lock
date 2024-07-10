@@ -12,8 +12,9 @@ GEM
       rake (>= 12.0.0, < 14.0.0)
     domain_name (0.6.20240107)
     drb (2.2.1)
-    faraday (2.9.2)
+    faraday (2.10.0)
       faraday-net_http (>= 2.0, < 3.2)
+      logger
     faraday-net_http (3.1.0)
       net-http
     ffi (1.17.0)
@@ -78,7 +79,7 @@ GEM
       rexml
     google-apis-iamcredentials_v1 (0.21.0)
       google-apis-core (>= 0.15.0, < 2.a)
-    google-apis-storage_v1 (0.39.0)
+    google-apis-storage_v1 (0.40.0)
       google-apis-core (>= 0.15.0, < 2.a)
     google-cloud-core (1.7.0)
       google-cloud-env (>= 1.0, < 3.a)
@@ -126,10 +127,11 @@ GEM
     llhttp-ffi (0.5.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
+    logger (1.6.0)
     lru_redux (1.1.0)
     mime-types (3.5.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.0604)
+    mime-types-data (3.2024.0702)
     mini_mime (1.1.5)
     msgpack (1.7.2)
     multi_json (1.15.0)
@@ -138,7 +140,8 @@ GEM
     netrc (0.11.0)
     oj (3.15.1)
     os (1.1.4)
-    prometheus-client (4.2.2)
+    prometheus-client (4.2.3)
+      base64
     public_suffix (6.0.0)
     rake (13.2.1)
     recursive-open-struct (1.2.2)
