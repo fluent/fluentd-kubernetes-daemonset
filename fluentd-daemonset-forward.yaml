@@ -30,9 +30,9 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: spec.nodeName
-          - name:  FLUENT_FOWARD_HOST
+          - name:  FLUENT_FORWARD_HOST
             value: "REMOTE_ENDPOINT"
-          - name:  FLUENT_FOWARD_PORT
+          - name:  FLUENT_FORWARD_PORT
             value: "18080"
         resources:
           limits:
