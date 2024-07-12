@@ -40,7 +40,7 @@ jobs:
         run: |
           echo "for_all=true" >> "$GITHUB_OUTPUT"
           for component in ${{ join(fromJSON(env.ALL_COMPONENTS), ' ') }}; do
-            if [[ ${{ env.github.ref_name }} == *"$component"* ]]; then
+            if [[ ${{ github.ref_name }} == *"$component"* ]]; then
               echo "for_all=false" >> "$GITHUB_OUTPUT"
               echo "component=$component" >> "$GITHUB_OUTPUT"
               break
