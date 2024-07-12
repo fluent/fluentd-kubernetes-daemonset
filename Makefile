@@ -23,7 +23,7 @@ X86_IMAGES := \
 	v1.17/debian-syslog:v1.17.0-debian-syslog-amd64-1.1,v1.17-debian-syslog-amd64-1 \
 	v1.17/debian-forward:v1.17.0-debian-forward-amd64-1.1,v1.17-debian-forward-amd64-1 \
 	v1.17/debian-gcs:v1.17.0-debian-gcs-amd64-1.1,v1.17-debian-gcs-amd64-1 \
-	v1.17/debian-graylog:v1.17.0-debian-graylog-amd64-1.1,v1.17-debian-graylog-amd64-1 \
+	v1.17/debian-graylog:v1.17.0-debian-graylog-amd64-1.2,v1.17-debian-graylog-amd64-1 \
 	v1.17/debian-papertrail:v1.17.0-debian-papertrail-amd64-1.1,v1.17-debian-papertrail-amd64-1 \
 	v1.17/debian-logzio:v1.17.0-debian-logzio-amd64-1.1,v1.17-debian-logzio-amd64-1 \
 	v1.17/debian-kafka:v1.17.0-debian-kafka-amd64-1.1,v1.17-debian-kafka-amd64-1 \
@@ -44,7 +44,7 @@ ARM64_IMAGES := \
 	v1.17/arm64/debian-syslog:v1.17.0-debian-syslog-arm64-1.1,v1.17-debian-syslog-arm64-1 \
 	v1.17/arm64/debian-forward:v1.17.0-debian-forward-arm64-1.1,v1.17-debian-forward-arm64-1 \
 	v1.17/arm64/debian-gcs:v1.17.0-debian-gcs-arm64-1.1,v1.17-debian-gcs-arm64-1 \
-	v1.17/arm64/debian-graylog:v1.17.0-debian-graylog-arm64-1.1,v1.17-debian-graylog-arm64-1 \
+	v1.17/arm64/debian-graylog:v1.17.0-debian-graylog-arm64-1.2,v1.17-debian-graylog-arm64-1 \
 	v1.17/arm64/debian-papertrail:v1.17.0-debian-papertrail-arm64-1.1,v1.17-debian-papertrail-arm64-1 \
 	v1.17/arm64/debian-logzio:v1.17.0-debian-logzio-arm64-1.1,v1.17-debian-logzio-arm64-1 \
 	v1.17/arm64/debian-kafka:v1.17.0-debian-kafka-arm64-1.1,v1.17-debian-kafka-arm64-1 \
