@@ -10,31 +10,42 @@ env:
 jobs:
   define-matrix:
     runs-on: ubuntu-latest
+    env:
+      ALL_COMPONENTS: >
+        [
+        "debian-azureblob",
+        "debian-cloudwatch",
+        "debian-elasticsearch7",
+        "debian-elasticsearch8",
+        "debian-forward",
+        "debian-gcs",
+        "debian-graylog",
+        "debian-kafka",
+        "debian-kafka2",
+        "debian-kinesis",
+        "debian-logentries",
+        "debian-loggly",
+        "debian-logzio",
+        "debian-opensearch",
+        "debian-papertrail",
+        "debian-s3",
+        "debian-syslog"
+        ]
     outputs:
-      components: ${{ steps.set-components.outputs.components }}
+      components: >
+        ${{ steps.arrange-components.outputs.for_all == 'true' && env.ALL_COMPONENTS
+        || format('["{0}"]', steps.arrange-components.outputs.component) }}
     steps:
-      - id: set-components
+      - id: arrange-components
         run: |
-          components=$(echo '[
-            "debian-azureblob",
-            "debian-cloudwatch",
-            "debian-elasticsearch7",
-            "debian-elasticsearch8",
-            "debian-forward",
-            "debian-gcs",
-            "debian-graylog",
-            "debian-kafka",
-            "debian-kafka2",
-            "debian-kinesis",
-            "debian-logentries",
-            "debian-loggly",
-            "debian-logzio",
-            "debian-opensearch",
-            "debian-papertrail",
-            "debian-s3",
-            "debian-syslog"
-            ]' | jq -c)
-          echo "components=$components" >> "$GITHUB_OUTPUT"
+          echo "for_all=true" >> "$GITHUB_OUTPUT"
+          for component in ${{ join(fromJSON(env.ALL_COMPONENTS), ' ') }}; do
+            if [[ ${{ env.github.ref_name }} == *"$component"* ]]; then
+              echo "for_all=false" >> "$GITHUB_OUTPUT"
+              echo "component=$component" >> "$GITHUB_OUTPUT"
+              break
+            fi
+          done
   amd64:
     needs: define-matrix
     runs-on: ubuntu-latest
