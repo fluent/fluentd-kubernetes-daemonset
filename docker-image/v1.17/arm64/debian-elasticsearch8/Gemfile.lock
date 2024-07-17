@@ -9,7 +9,7 @@ GEM
     csv (3.3.0)
     domain_name (0.6.20240107)
     drb (2.2.1)
-    elastic-transport (8.3.2)
+    elastic-transport (8.3.5)
       faraday (< 3)
       multi_json
     elasticsearch (8.14.0)
