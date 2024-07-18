@@ -172,6 +172,10 @@ jobs:
                 ;;
             esac
           done
+          # v1-debian-(component)
+          docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component} ${{ env.REPOSITORY }}:${AMD64TAG}
+          # v1-debian-(component)-arm64
+          docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component}-arm64 ${{ env.REPOSITORY }}:${ARM64TAG}
           # v1.xx.x-debian-(component)-xxx
           if [ ${MULTIARCH_AMD64_TAG} != ${MULTIARCH_ARM64_TAG} ]; then
             echo "Multiarch tag (v1.xx.x-debian-(component)-xxx) must be same for amd64 and arm64: ${MULTIARCH_AMD64_TAG} !=  ${MULTIARCH_ARM64_TAG}"
