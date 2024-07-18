@@ -186,6 +186,20 @@ If you have a trouble with specific log, use this envvar, e.g. `["/var/log/conta
 - `exclude_path` parameter document: https://docs.fluentd.org/input/tail#exclude_path
 - Fluentd log issue with backslash: https://github.com/fluent/fluentd/issues/2545
 
+### Use LD_PRELOAD to enable jemalloc memory allocator
+
+Since v1.17.0-1.3/v1.16.5-1.3, jemalloc memory allocator is disabled by default.
+This is because that combination of systemd plugin and jemalloc memory allocator causes [a crash bug](https://github.com/fluent/fluentd-docker-image/issues/378).
+(`free(): invalid pointer` in typical)
+
+If you don't use systemd plugin at all, you can enable jemalloc memory allocator explicitly via env: parameter.
+
+```
+env:
+  ...
+  LD_PRELOAD="/usr/lib/libjemalloc.so.2"
+```
+
 ### Disable systemd input
 
 If you don't setup systemd in the container, fluentd shows following messages by default configuration.
