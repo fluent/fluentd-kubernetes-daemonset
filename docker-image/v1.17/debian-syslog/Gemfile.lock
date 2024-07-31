@@ -92,7 +92,7 @@ GEM
     oj (3.15.1)
     prometheus-client (4.2.3)
       base64
-    public_suffix (6.0.0)
+    public_suffix (6.0.1)
     rake (13.2.1)
     recursive-open-struct (1.2.2)
     remote_syslog_sender (1.2.2)
