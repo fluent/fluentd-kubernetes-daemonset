@@ -11,7 +11,7 @@
 
 If you find a vulnerability of **fluentd-daemonset-SOMETHING** with the default configuration, report it from the following page:
 
-* https://github.com/fluent/fluentd/security/advisories
+* https://github.com/fluent/fluentd-kubernetes-daemonset/security/advisories
 
 > [!IMPORTANT]
 > fluentd-kubernetes-daemonset images are downstream of [fluent/fluentd](https://hub.docker.com/r/fluent/fluentd) container.
