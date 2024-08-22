@@ -50,10 +50,10 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-graylog-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-graylog-2`
 - `Kafka`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-kafka-2`
 - `Kafka2`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka2-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka2-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-kafka2-2`
 - `Kinesis`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kinesis-1.0`
@@ -100,10 +100,10 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-logzio-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-logzio-amd64-2`
 - `Kafka` [Dockerfile](docker-image/v1.16/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-kafka-amd64-2`
 - `Kafka2` [Dockerfile](docker-image/v1.16/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka2-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka2-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-kafka2-amd64-2`
 - `Kinesis` [Dockerfile](docker-image/v1.16/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kinesis-amd64-1.0`
@@ -142,10 +142,10 @@ If you want to use above non published images, build it by yourself. Dockerfile 
 - `Papertrail` [Dockerfile](docker-image/v1.16/arm64/debian-papertrail/Dockerfile)
 - `Logzio` [Dockerfile](docker-image/v1.16/arm64/debian-logzio/Dockerfile)
 - `Kafka` [Dockerfile](docker-image/v1.16/arm64/debian-kafka/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-kafka-arm64-2`
 - `Kafka2` [Dockerfile](docker-image/v1.16/arm64/debian-kafka2/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka2-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kafka2-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-kafka2-arm64-2`
 - `Kinesis` [Dockerfile](docker-image/v1.16/arm64/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.6-debian-kinesis-arm64-1.0`
