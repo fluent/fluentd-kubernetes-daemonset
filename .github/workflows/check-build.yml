@@ -1,0 +1,128 @@
+name: Check Docker Image Build
+
+on:
+  pull_request:
+
+env:
+  REPOSITORY: ${{ secrets.DOCKER_HUB_ORGS }}/fluentd-kubernetes-daemonset
+jobs:
+ define-matrix:
+    runs-on: ubuntu-latest
+    env:
+      ALL_COMPONENTS: >
+        [
+        "debian-azureblob",
+        "debian-cloudwatch",
+        "debian-elasticsearch7",
+        "debian-elasticsearch8",
+        "debian-forward",
+        "debian-gcs",
+        "debian-graylog",
+        "debian-kafka2",
+        "debian-kafka",
+        "debian-kinesis",
+        "debian-logentries",
+        "debian-loggly",
+        "debian-logzio",
+        "debian-opensearch",
+        "debian-papertrail",
+        "debian-s3",
+        "debian-syslog"
+        ]
+    outputs:
+      components: >
+        ${{ format('["{0}"]', steps.arrange-components.outputs.component) }}
+    steps:
+      - id: arrange-components
+        run: |
+          for component in ${{ join(fromJSON(env.ALL_COMPONENTS), ' ') }}; do
+            echo "component=$component" >> "$GITHUB_OUTPUT"
+          done
+  amd64:
+    needs: define-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        component: ${{ fromJSON(needs.define-matrix.outputs.components) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          platforms: linux/amd64
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Setup tags
+        run: |
+          set -x
+          component=${{ matrix.component }}
+          echo "CONTEXT=docker-image/v1.17/${component}" >> ${GITHUB_ENV}
+          for target in $(make echo-all-images); do
+            case $target in
+              *$component-amd64*)
+                tags=$(echo $target | cut -d':' -f2-)
+                tag1=$(echo $tags | cut -d',' -f1)
+                tag2=$(echo $tags | cut -d',' -f2)
+                echo "AMD64TAGS=${{ env.REPOSITORY }}:${tag1},${{ env.REPOSITORY }}:${tag2}" >> ${GITHUB_ENV}
+                ;;
+            esac
+          done
+      - name: Build and push for amd64
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ env.CONTEXT }}
+          provenance: false
+          push: false
+          platforms: linux/amd64
+          tags: ${{ env.AMD64TAGS }}
+          # dare to use old mediatype (application/vnd.docker.distribution.manifest.v2+json)
+          outputs: oci-mediatypes=false
+  arm64:
+    needs: define-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        component: ${{ fromJSON(needs.define-matrix.outputs.components) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          platforms: linux/arm64
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Setup tags
+        run: |
+          set -x
+          component=${{ matrix.component }}
+          echo "CONTEXT=docker-image/v1.17/arm64/${component}" >> ${GITHUB_ENV}
+          for target in $(make echo-all-images); do
+            case $target in
+              *$component-arm64*)
+                tags=$(echo $target | cut -d':' -f2-)
+                tag1=$(echo $tags | cut -d',' -f1)
+                tag2=$(echo $tags | cut -d',' -f2)
+                echo "ARM64TAGS=${{ env.REPOSITORY }}:${tag1},${{ env.REPOSITORY }}:${tag2}" >> ${GITHUB_ENV}
+                ;;
+            esac
+          done
+      - name: Build and push for arm64
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ env.CONTEXT }}
+          provenance: false
+          push: false
+          platforms: linux/arm64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: ${{ env.ARM64TAGS }}
+          # dare to use old mediatype (application/vnd.docker.distribution.manifest.v2+json)
+          outputs: oci-mediatypes=false
