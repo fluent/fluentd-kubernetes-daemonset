@@ -7,9 +7,17 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
+    - uses: hashicorp/vault-action@v2
+      with:
+        method: jwt
+        path: jwt-github-actions
+        role: github-issuu-fluentd-kubernetes-daemonset
+        url: https://vault.bendingspoons.com
+        secrets: |
+            static2/data/github/issuu/shared/ci/manual GITHUB_TOKEN
     - uses: actions/stale@v4
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ env.GITHUB_TOKEN }}
         days-before-stale: 90
         days-before-close: 30
         operations-per-run: 60
