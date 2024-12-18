@@ -28,7 +28,7 @@
 <filter kubernetes.**>
   @type kubernetes_metadata
   @id filter_kube_metadata
-  kubernetes_url "#{ENV['FLUENT_FILTER_KUBERNETES_URL'] || 'https://' + ENV.fetch('KUBERNETES_SERVICE_HOST') + ':' + ENV.fetch('KUBERNETES_SERVICE_PORT') + '/api'}"
+  kubernetes_url "#{ENV['FLUENT_FILTER_KUBERNETES_URL'] || (host = ENV.fetch('KUBERNETES_SERVICE_HOST'); port = ENV.fetch('KUBERNETES_SERVICE_PORT'); host = (IPAddr.new(host).ipv6? ? '[' + host + ']' : host rescue host); 'https://' + host + ':' + port + '/api')}"
   verify_ssl "#{ENV['KUBERNETES_VERIFY_SSL'] || true}"
   ca_file "#{ENV['KUBERNETES_CA_FILE']}"
   skip_labels "#{ENV['FLUENT_KUBERNETES_METADATA_SKIP_LABELS'] || 'false'}"
