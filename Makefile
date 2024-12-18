@@ -3,10 +3,6 @@
 # Images and description on Docker Hub will be automatically rebuilt on
 # pushes to `master` branch of this repo and on updates of parent images.
 #
-# Note! Docker Hub `post_push` hook must be always up-to-date with values
-# specified in current Makefile. To update it just use:
-#	make post-push-hook-all
-#
 # It's still possible to build, tag and push images manually. Just use:
 #	make release-all
 
@@ -139,7 +135,7 @@ release-all:
 #
 # Usage:
 #	make src [DOCKERFILE=] [VERSION=] [TAGS=t1,t2,...]
-src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins post-checkout-hook entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf tail_container_parse.conf .github/dependabot.yml
+src: dockerfile gemfile fluent.conf systemd.conf prometheus.conf kubernetes.conf plugins entrypoint.sh cluster-autoscaler.conf containers.conf docker.conf etcd.conf glbc.conf kube-apiserver-audit.conf kube-apiserver.conf kube-controller-manager.conf kube-proxy.conf kube-scheduler.conf kubelet.conf rescheduler.conf salt.conf startupscript.conf tail_container_parse.conf .github/dependabot.yml
 
 # Generate sources for all supported Docker images.
 #
@@ -370,64 +366,6 @@ plugins-all:
 			DOCKERFILE=$(word 1,$(subst :, ,$(img))) ; \
 	))
 
-# Create `post_checkout` Docker Hub hook.
-#
-# When Docker Hub triggers automated build, the `post_checkout` hook is called
-# after the Git repo is checked out. This can be used to set up prerequisites
-# for, for example, cross-platform builds.
-# See details:
-# https://docs.docker.com/docker-cloud/builds/advanced/#build-hook-examples
-#
-# Usage:
-#	make post-checkout-hook [DOCKERFILE=]
-post-checkout-hook:
-	if [ -n "$(findstring /arm64/,$(DOCKERFILE))" ]; then \
-		mkdir -p docker-image/$(DOCKERFILE)/hooks; \
-		docker run --rm -i -v $(PWD)/templates/post_checkout.erb:/post_checkout.erb:ro \
-			ruby:$(RUBY_VERSION)-alpine erb -U \
-				dockerfile='$(DOCKERFILE)' \
-			/post_checkout.erb > docker-image/$(DOCKERFILE)/hooks/post_checkout ; \
-	fi
-
-
-# Create `post_push` Docker Hub hook for all supported Docker images.
-#
-# Usage:
-#	make post-checkout-hook-all
-post-checkout-hook-all:
-	make each-image TARGET=post-checkout-hook
-
-# Create `post_push` Docker Hub hook.
-#
-# When Docker Hub triggers automated build all the tags defined in `post_push`
-# hook will be assigned to built image. It allows to link the same image with
-# different tags, and not to build identical image for each tag separately.
-# See details:
-# http://windsock.io/automated-docker-image-builds-with-multiple-tags
-#
-# Usage:
-#	make post-push-hook [DOCKERFILE=] [TAGS=t1,t2,...]
-
-post-push-hook:
-	mkdir -p docker-image/$(DOCKERFILE)/hooks
-	docker run --rm -i -v $(PWD)/templates/post_push.erb:/post_push.erb:ro \
-		ruby:$(RUBY_VERSION)-alpine erb -U \
-			image_tags='$(TAGS)' \
-		/post_push.erb > docker-image/$(DOCKERFILE)/hooks/post_push
-
-# Create `post_push` Docker Hub hook for all supported Docker images.
-#
-# Usage:
-#	make post-push-hook-all
-
-post-push-hook-all:
-	(set -e ; $(foreach img,$(ALL_IMAGES), \
-		make post-push-hook \
-			DOCKERFILE=$(word 1,$(subst :, ,$(img))) \
-			TAGS=$(word 2,$(subst :, ,$(img))) ; \
-	))
-
-
 .PHONY: image tags push \
         release release-all \
         src src-all \
@@ -455,6 +393,4 @@ post-push-hook-all:
         tail_container_parse.conf tail_container_parse.conf-all \
         prometheus.conf prometheus.conf-all \
         plugins plugins-all \
-        post-checkout-hook post-checkout-hook-all \
-        post-push-hook post-push-hook-all \
 	README.md
