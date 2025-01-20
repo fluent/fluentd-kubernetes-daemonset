@@ -4,7 +4,7 @@ on:
   pull_request:
 
 env:
-  REPOSITORY: ${{ secrets.DOCKER_HUB_ORGS }}/fluentd-kubernetes-daemonset
+  REPOSITORY: ${{ secrets.DOCKER_HUB_ORGS || github.repository_owner }}/fluentd-kubernetes-daemonset
 jobs:
   define-matrix:
     runs-on: ubuntu-latest
