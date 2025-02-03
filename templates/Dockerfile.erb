@@ -7,7 +7,7 @@
 
 <% if is_arm64 %>
 # For multiarch build on Docker hub automated build.
-FROM fluent/fluentd:<%= fluentd_ver %>-debian-arm64-1.0
+FROM fluent/fluentd:<%= fluentd_ver %>-debian-arm64-1.1
 <% else %>
 FROM fluent/fluentd:<%= fluentd_ver %>-debian-amd64-1.0
 <% end %>
