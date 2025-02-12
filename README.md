@@ -40,9 +40,21 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Opensearch`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-opensearch-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-opensearch-1`
+- `Loggly`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-loggly-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-loggly-1`
+- `Logentries`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-logentries-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-logentries-1`
 - `Cloudwatch`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-cloudwatch-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-cloudwatch-1`
+- `S3`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-s3-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-s3-1`
+- `Syslog`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-syslog-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-syslog-1`
 - `Forward`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-forward-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-forward-1`
@@ -52,6 +64,12 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Graylog`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-graylog-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-graylog-1`
+- `Papertrail`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-papertrail-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-papertrail-1`
+- `Logzio`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-logzio-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-logzio-1`
 - `Kafka`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-kafka-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-kafka-1`
@@ -89,6 +107,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-s3-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-s3-amd64-1`
 - `Syslog` [Dockerfile](docker-image/v1.18/debian-syslog/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-syslog-amd64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-syslog-amd64-1`
 - `Forward` [Dockerfile](docker-image/v1.18/debian-forward/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-forward-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-forward-amd64-1`
@@ -99,6 +119,8 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-graylog-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-graylog-amd64-1`
 - `Papertrail` [Dockerfile](docker-image/v1.18/debian-papertrail/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-papertrail-amd64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-papertrail-amd64-1`
 - `Logzio` [Dockerfile](docker-image/v1.18/debian-logzio/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-logzio-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-logzio-amd64-1`
@@ -127,12 +149,20 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-opensearch-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-opensearch-arm64-1`
 - `Loggly` [Dockerfile](docker-image/v1.18/arm64/debian-loggly/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-loggly-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-loggly-arm64-1`
 - `Logentries` [Dockerfile](docker-image/v1.18/arm64/debian-logentries/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-logentries-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-logentries-arm64-1`
 - `Cloudwatch` [Dockerfile](docker-image/v1.18/arm64/debian-cloudwatch/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-cloudwatch-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-cloudwatch-arm64-1`
 - `S3` [Dockerfile](docker-image/v1.18/arm64/debian-s3/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-s3-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-s3-arm64-1`
 - `Syslog` [Dockerfile](docker-image/v1.18/arm64/debian-syslog/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-syslog-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-syslog-arm64-1`
 - `Forward` [Dockerfile](docker-image/v1.18/arm64/debian-forward/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-forward-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-forward-arm64-1`
@@ -143,7 +173,11 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-graylog-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-graylog-arm64-1`
 - `Papertrail` [Dockerfile](docker-image/v1.18/arm64/debian-papertrail/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-papertrail-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-papertrail-arm64-1`
 - `Logzio` [Dockerfile](docker-image/v1.18/arm64/debian-logzio/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-logzio-arm64-1.1`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-logzio-arm64-1`
 - `Kafka` [Dockerfile](docker-image/v1.18/arm64/debian-kafka/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18.0-debian-kafka-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.18-debian-kafka-arm64-1`
