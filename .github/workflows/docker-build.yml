@@ -67,7 +67,8 @@ jobs:
         run: |
           set -x
           component=${{ matrix.component }}
-          echo "CONTEXT=docker-image/v1.17/${component}" >> ${GITHUB_ENV}
+          branch=$(make echo-all-images | cut -d '/' -f1)
+          echo "CONTEXT=docker-image/${branch}/${component}" >> ${GITHUB_ENV}
           for target in $(make echo-all-images); do
             case $target in
               *$component-amd64*)
@@ -109,7 +110,8 @@ jobs:
         run: |
           set -x
           component=${{ matrix.component }}
-          echo "CONTEXT=docker-image/v1.17/arm64/${component}" >> ${GITHUB_ENV}
+          branch=$(make echo-all-images | cut -d '/' -f1)
+          echo "CONTEXT=docker-image/${branch}/arm64/${component}" >> ${GITHUB_ENV}
           for target in $(make echo-all-images); do
             case $target in
               *$component-arm64*)
