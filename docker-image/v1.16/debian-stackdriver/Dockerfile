@@ -13,14 +13,14 @@ ENV GEM_HOME /fluentd/vendor/bundle/ruby/3.1.0
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
-RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
+RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev git" \
   runtimeDeps="" \
       && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
      -y --no-install-recommends \
-     $buildDeps $runtimeDeps net-tools \
-    && gem install bundler --version 2.4.17 \
+     $buildDeps $runtimeDeps net-tools
+RUN gem install bundler --version 2.4.17 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \
@@ -29,7 +29,12 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem\
+RUN gem list
+RUN cd /fluentd && git clone https://github.com/GoogleCloudPlatform/fluent-plugin-google-cloud.git
+RUN cd /fluentd/fluent-plugin-google-cloud \
+    && gem build fluent-plugin-google-cloud.gemspec \
+    && gem install --local fluent-plugin-google-cloud-0.13.2.gem
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
 COPY ./conf/systemd.conf /fluentd/etc/
