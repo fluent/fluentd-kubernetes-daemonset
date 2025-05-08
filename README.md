@@ -28,10 +28,10 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-azureblob-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-azureblob-2`
 - `Elasticsearch8`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch8-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch8-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch8-2`
 - `Elasticsearch7`
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch7-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch7-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch`
 - `Opensearch`
@@ -64,10 +64,10 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-azureblob-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-azureblob-amd64-2`
 - `Elasticsearch8` [Dockerfile](docker-image/v1.16/debian-elasticsearch8/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch8-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch8-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch8-amd64-2`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.16/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch7-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch7-amd64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-amd64-2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-amd64`
 - `Opensearch` [Dockerfile](docker-image/v1.16/debian-opensearch/Dockerfile)
@@ -114,10 +114,10 @@ If you want to use above non published images, build it by yourself. Dockerfile 
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-azureblob-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-azureblob-arm64-2`
 - `Elasticsearch8` [Dockerfile](docker-image/v1.16/arm64/debian-elasticsearch8/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch8-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch8-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch8-arm64-2`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.16/arm64/debian-elasticsearch7/Dockerfile)
-  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch7-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16.8-debian-elasticsearch7-arm64-1.1`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.16-debian-elasticsearch7-arm64-2`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch-arm64`
 - `Opensearch` [Dockerfile](docker-image/v1.16/arm64/debian-opensearch/Dockerfile)
