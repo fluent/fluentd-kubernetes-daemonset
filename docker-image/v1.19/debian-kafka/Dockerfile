@@ -30,9 +30,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev build-essential autoconf au
                   '*-dev' \
  && rm -rf /var/lib/apt/lists/* \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
-    && ldd $(gem contents rdkafka | grep librdkafka.so) | grep libsasl2.so.2
-    
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
 COPY ./conf/systemd.conf /fluentd/etc/
