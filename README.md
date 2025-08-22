@@ -193,42 +193,6 @@ You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debia
 
 See dockerhub's tags page for older tags.
 
-#### Old stable
-
-v0.12 development has been ended. These images are never updated.
-
-- `v0.12-debian-elasticsearch` [archived-image/v0.12/debian-elasticsearch/Dockerfile](archived-image/v0.12/debian-elasticsearch/Dockerfile)
-- `v0.12-debian-loggly` [archived-image/v0.12/debian-loggly/Dockerfile](archived-image/v0.12/debian-loggly/Dockerfile)
-- `v0.12-debian-logentries` [archived-image/v0.12/debian-logentries/Dockerfile](archived-image/v0.12/debian-logentries/Dockerfile)
-- `v0.12-debian-cloudwatch` [archived-image/v0.12/debian-cloudwatch/Dockerfile](archived-image/v0.12/debian-cloudwatch/Dockerfile)
-- `v0.12-debian-stackdriver` [archived-image/v0.12/debian-stackdriver/Dockerfile](archived-image/v0.12/debian-stackdriver/Dockerfile)
-- `v0.12-debian-s3` [archived-image/v0.12/debian-s3/Dockerfile](archived-image/v0.12/debian-s3/Dockerfile)
-- `v0.12-debian-gcs` [archived-image/v0.12/debian-gcs/Dockerfile](archived-image/v0.12/debian-gcs/Dockerfile)
-- `v0.12-debian-papertrail` [archived-image/v0.12/debian-papertrail/Dockerfile](archived-image/v0.12/debian-papertrail/Dockerfile)
-- `v0.12-debian-syslog` [archived-image/v0.12/debian-syslog/Dockerfile](archived-image/v0.12/debian-syslog/Dockerfile)
-- `v0.12-debian-graylog` [archived-image/v0.12/debian-graylog/Dockerfile](archived-image/v0.12/debian-graylog/Dockerfile)
-- `v0.12-debian-logzio` [archived-image/v0.12/debian-logzio/Dockerfile](archived-image/v0.12/debian-logzio/Dockerfile)
-- `v0.12-debian-kafka` [archived-image/v0.12/debian-kafka/Dockerfile](archived-image/v0.12/debian-kafka/Dockerfile)
-- `v0.12-debian-splunkhec` [archived-image/v0.12/debian-splunkhec/Dockerfile](archived-image/v0.12/debian-splunkhec/Dockerfile)
-- `v0.12-debian-kinesis` [archived-image/v0.12/debian-kinesis/Dockerfile](archived-image/v0.12/debian-kinesis/Dockerfile)
-
-### Alpine Linux (This is deprecated. Use Debian images instead)
-
-- `v0.12-alpine-elasticsearch` [archived-image/v0.12/alpine-elasticsearch/Dockerfile](archived-image/v0.12/alpine-elasticsearch/Dockerfile)
-- `v0.12-alpine-loggly` [archived-image/v0.12/alpine-loggly/Dockerfile](archived-image/v0.12/alpine-loggly/Dockerfile)
-- `v0.12-alpine-logentries` [archived-image/v0.12/alpine-logentries/Dockerfile](archived-image/v0.12/alpine-logentries/Dockerfile)
-- `v0.12-alpine-cloudwatch` [archived-image/v0.12/alpine-cloudwatch/Dockerfile](archived-image/v0.12/alpine-cloudwatch/Dockerfile)
-- `v0.12-alpine-stackdriver` [archived-image/v0.12/alpine-stackdriver/Dockerfile](archived-image/v0.12/alpine-stackdriver/Dockerfile)
-- `v0.12-alpine-s3` [archived-image/v0.12/alpine-s3/Dockerfile](archived-image/v0.12/alpine-s3/Dockerfile)
-- `v0.12-alpine-gcs` [archived-image/v0.12/alpine-gcs/Dockerfile](archived-image/v0.12/alpine-gcs/Dockerfile)
-- `v0.12-alpine-papertrail` [archived-image/v0.12/alpine-papertrail/Dockerfile](archived-image/v0.12/alpine-papertrail/Dockerfile)
-- `v0.12-alpine-syslog` [archived-image/v0.12/alpine-syslog/Dockerfile](archived-image/v0.12/alpine-syslog/Dockerfile)
-- `v0.12-alpine-graylog` [archived-image/v0.12/alpine-graylog/Dockerfile](archived-image/v0.12/alpine-graylog/Dockerfile)
-- `v0.12-alpine-logzio` [archived-image/v0.12/alpine-logzio/Dockerfile](archived-image/v0.12/alpine-logzio/Dockerfile)
-- `v0.12-alpine-kafka` [archived-image/v0.12/alpine-kafka/Dockerfile](archived-image/v0.12/alpine-kafka/Dockerfile)
-- `v0.12-alpine-kinesis` [archived-image/v0.12/alpine-kinesis/Dockerfile](archived-image/v0.12/alpine-kinesis/Dockerfile)
-- `v0.12-alpine-splunkhec` [archived-image/v0.12/alpine-splunkhec/Dockerfile](archived-image/v0.12/alpine-splunkhec/Dockerfile)
-
 ## What is Fluentd?
 
 ![Fluentd Logo](http://www.fluentd.org/assets/img/miscellany/fluentd-logo.png)
@@ -246,7 +210,6 @@ Fluentd versioning is as follows:
 | Series | Description                         |
 |--------|-------------------------------------|
 | v1.x   | current stable |
-| v0.12  | Old stable, no longer updated |
 
 ## Settings
 
