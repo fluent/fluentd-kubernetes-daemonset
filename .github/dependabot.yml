@@ -28,6 +28,13 @@ updates:
 
 
   - package-ecosystem: "bundler"
+    directory: "/docker-image/v1.19/arm64/debian-datadog"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 0
+
+
+  - package-ecosystem: "bundler"
     directory: "/docker-image/v1.19/arm64/debian-elasticsearch7"
     schedule:
       interval: "daily"
@@ -141,6 +148,13 @@ updates:
 
   - package-ecosystem: "bundler"
     directory: "/docker-image/v1.19/debian-cloudwatch"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 0
+
+
+  - package-ecosystem: "bundler"
+    directory: "/docker-image/v1.19/debian-datadog"
     schedule:
       interval: "daily"
     open-pull-requests-limit: 0

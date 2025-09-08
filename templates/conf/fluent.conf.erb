@@ -400,4 +400,11 @@
   </buffer>
 </match>
 
+<% when "datadog" %>
+<match **>
+  @type datadog
+  @id out_datadog
+  api_key "#{ENV['DD_API_KEY']}"
+</match>
+
 <% end %>
