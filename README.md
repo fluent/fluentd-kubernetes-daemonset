@@ -79,6 +79,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Kinesis`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.0-debian-kinesis-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-kinesis-1`
+- `Datadog`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.0-debian-datadog-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-datadog-1`
 
 ##### x86_64 images
 - `Azureblob` [Dockerfile](docker-image/v1.19/debian-azureblob/Dockerfile)
@@ -133,6 +136,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Kinesis` [Dockerfile](docker-image/v1.19/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.0-debian-kinesis-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-kinesis-amd64-1`
+- `Datadog` [Dockerfile](docker-image/v1.19/debian-datadog/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.0-debian-datadog-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-datadog-amd64-1`
 
 ##### arm64 images
 - `Azureblob` [Dockerfile](docker-image/v1.19/arm64/debian-azureblob/Dockerfile)
@@ -187,6 +193,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Kinesis` [Dockerfile](docker-image/v1.19/arm64/debian-kinesis/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.0-debian-kinesis-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-kinesis-arm64-1`
+- `Datadog` [Dockerfile](docker-image/v1.19/arm64/debian-datadog/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.0-debian-datadog-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-datadog-arm64-1`
 
 
 You can also use `v1-debian-PLUGIN` tag to refer latest v1 image, e.g. `v1-debian-elasticsearch`. On production, strict tag is better to avoid unexpected update.
@@ -373,6 +382,7 @@ Some images are contributed by users. If you have a problem/question for followi
 - Amazon Kinesis : @shiftky
 - logz.io : @SaMnCo / @jamielennox
 - splunkhec: @FutureSharks
+- Datadog : @nbifrye
 
 Currently, we don't accept new destination request without contribution.
 See https://github.com/fluent/fluentd-kubernetes-daemonset/issues/293

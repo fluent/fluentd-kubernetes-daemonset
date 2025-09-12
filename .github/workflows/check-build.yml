@@ -13,6 +13,7 @@ jobs:
         [
         "debian-azureblob",
         "debian-cloudwatch",
+        "debian-datadog",
         "debian-elasticsearch7",
         "debian-elasticsearch8",
         "debian-forward",

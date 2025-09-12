@@ -24,7 +24,8 @@ X86_IMAGES := \
 	v1.19/debian-logzio:v1.19.0-debian-logzio-amd64-1.0,v1.19-debian-logzio-amd64-1 \
 	v1.19/debian-kafka:v1.19.0-debian-kafka-amd64-1.0,v1.19-debian-kafka-amd64-1 \
 	v1.19/debian-kafka2:v1.19.0-debian-kafka2-amd64-1.0,v1.19-debian-kafka2-amd64-1 \
-	v1.19/debian-kinesis:v1.19.0-debian-kinesis-amd64-1.0,v1.19-debian-kinesis-amd64-1
+	v1.19/debian-kinesis:v1.19.0-debian-kinesis-amd64-1.0,v1.19-debian-kinesis-amd64-1 \
+	v1.19/debian-datadog:v1.19.0-debian-datadog-amd64-1.0,v1.19-debian-datadog-amd64-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
@@ -45,7 +46,8 @@ ARM64_IMAGES := \
 	v1.19/arm64/debian-logzio:v1.19.0-debian-logzio-arm64-1.0,v1.19-debian-logzio-arm64-1 \
 	v1.19/arm64/debian-kafka:v1.19.0-debian-kafka-arm64-1.0,v1.19-debian-kafka-arm64-1 \
 	v1.19/arm64/debian-kafka2:v1.19.0-debian-kafka2-arm64-1.0,v1.19-debian-kafka2-arm64-1 \
-	v1.19/arm64/debian-kinesis:v1.19.0-debian-kinesis-arm64-1.0,v1.19-debian-kinesis-arm64-1
+	v1.19/arm64/debian-kinesis:v1.19.0-debian-kinesis-arm64-1.0,v1.19-debian-kinesis-arm64-1 \
+	v1.19/arm64/debian-datadog:v1.19.0-debian-datadog-arm64-1.0,v1.19-debian-datadog-arm64-1
 
 ALL_IMAGES := $(X86_IMAGES) $(ARM64_IMAGES)
 
