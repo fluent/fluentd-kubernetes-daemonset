@@ -21,7 +21,6 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev curl" \
      && apt-get install \
      -y --no-install-recommends \
      $buildDeps $runtimeDeps net-tools \
-    && gem install bundler --version 2.4.17 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && curl -sL -o columnify_0.1.0_Linux_x86_64.tar.gz https://github.com/reproio/columnify/releases/download/v0.1.0/columnify_0.1.0_Linux_x86_64.tar.gz \
