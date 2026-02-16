@@ -3,7 +3,7 @@
 
 source "https://rubygems.org"
 
-gem "fluentd", "1.19.1"
+gem "fluentd", "1.19.2"
 gem "oj", "~> 3.16.11"
 gem "rexml", "~> 3.4.1"
 gem "fluent-plugin-multi-format-parser", "~> 1.0.0"
