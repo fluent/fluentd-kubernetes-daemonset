@@ -27,4 +27,51 @@ fi
 
 <% end %>
 
+# Avoid infinite parse error logging loopback, exclude
+# fluentd*.log explicitly here as a fallback.
+path_exist_in_env() {
+    VALUE="$1"
+    TARGETS="$2"
+    OLD_IFS="$IFS"
+    IFS=','
+    for path in $TARGETS; do
+        path=$(echo "$path" | xargs) # trim spaces in both ends
+        if [ "$path" = "$VALUE" ]; then
+            return 1
+        fi
+    done
+    IFS="$OLD_IFS"
+    return 0
+}
+
+WILDCARD_TAIL_PATH="/var/log/containers/*.log"
+IGNORE_TAIL_PATH="/var/log/containers/fluentd*.log"
+if [ -n "$FLUENT_CONTAINER_TAIL_PATH" ]; then
+    if [ -n "${FLUENT_CONTAINER_TAIL_EXCLUDE_PATH}" ]; then
+        path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"
+        if [ $? -eq 0 ]; then
+            # Exclude rule exists, then ensure to ignore it if is missing
+            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
+        fi
+    else
+        path_exist_in_env "$WILDCARD_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_PATH"
+        if [ $? -eq 1 ]; then
+            # No exclude rule yet, so if wildcard was enabled, ignore fluentd*.log
+            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$IGNORE_TAIL_PATH"
+        fi
+    fi
+else
+    # Wildcard will be enabled as fallback in tail path
+    if [ -n "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH" ]; then
+        path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"
+        if [ $? -eq 0 ]; then
+            # No exclude rule yet, so ignore fluentd*.log
+            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
+        fi
+    else
+        # No exclude rule yet, set ignore 
+        export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$IGNORE_TAIL_PATH"
+    fi
+fi
+
 exec fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins --gemfile /fluentd/Gemfile ${FLUENTD_OPT}
