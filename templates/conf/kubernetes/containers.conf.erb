@@ -4,6 +4,7 @@
   path "#{ENV['FLUENT_CONTAINER_TAIL_PATH'] || '/var/log/containers/*.log'}"
   pos_file "#{File.join('/var/log/', ENV.fetch('FLUENT_POS_EXTRA_DIR', ''), 'fluentd-containers.log.pos')}"
   tag "#{ENV['FLUENT_CONTAINER_TAIL_TAG'] || 'kubernetes.*'}"
+<%# NOTE: To keep simplicity, fallback logic for exclude_path was implemented in entrypoint.sh.erb -%>
   exclude_path "#{ENV['FLUENT_CONTAINER_TAIL_EXCLUDE_PATH'] || use_default}"
   read_from_head true
   @include ../tail_container_parse.conf
