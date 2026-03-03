@@ -37,6 +37,7 @@ path_exist_in_env() {
     for path in $TARGETS; do
         path=$(echo "$path" | xargs) # trim spaces in both ends
         if [ "$path" = "$VALUE" ]; then
+            IFS="$OLD_IFS"
             return 1
         fi
     done
