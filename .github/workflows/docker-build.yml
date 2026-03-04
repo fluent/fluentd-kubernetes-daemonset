@@ -5,6 +5,9 @@ on:
     tags:
       - v1.*
 
+permissions:
+  contents: read
+
 env:
   REPOSITORY: ${{ secrets.DOCKER_HUB_ORGS }}/fluentd-kubernetes-daemonset
 jobs:

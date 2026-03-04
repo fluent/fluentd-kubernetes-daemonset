@@ -3,6 +3,9 @@ name: Check Docker Image Build
 on:
   pull_request:
 
+permissions:
+  contents: read
+
 env:
   REPOSITORY: ${{ secrets.DOCKER_HUB_ORGS || github.repository_owner }}/fluentd-kubernetes-daemonset
 jobs:
