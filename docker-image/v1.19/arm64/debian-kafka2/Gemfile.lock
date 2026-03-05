@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.8)
+    addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
     async (2.36.0)
       console (~> 1.29)
@@ -20,7 +20,7 @@ GEM
       protocol-http2 (~> 0.22)
       protocol-url (~> 0.2)
       traces (~> 0.10)
-    async-pool (0.11.1)
+    async-pool (0.11.2)
       async (>= 2.0)
     avro (1.12.1)
       multi_json (~> 1.0)
@@ -69,7 +69,7 @@ GEM
     fluent-plugin-json-in-json-2 (1.0.2)
       fluentd (>= 0.14.0, < 2)
       yajl-ruby (~> 1.0)
-    fluent-plugin-kafka (0.19.5)
+    fluent-plugin-kafka (0.19.6)
       bigdecimal (~> 3.1)
       fluentd (>= 0.10.58, < 2)
       ltsv
@@ -128,7 +128,7 @@ GEM
     http-form_data (2.3.0)
     http_parser.rb (0.8.1)
     io-endpoint (0.17.2)
-    io-event (1.14.2)
+    io-event (1.14.3)
     io-stream (0.11.1)
     json (2.18.1)
     jsonpath (1.1.5)
@@ -147,7 +147,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0203)
+    mime-types-data (3.2026.0303)
     mini_portile2 (2.8.9)
     msgpack (1.8.0)
     multi_json (1.19.1)
@@ -168,7 +168,7 @@ GEM
       protocol-hpack (~> 1.4)
       protocol-http (~> 0.47)
     protocol-url (0.4.0)
-    public_suffix (7.0.2)
+    public_suffix (7.0.5)
     rake (13.3.1)
     rdkafka (0.22.2)
       ffi (~> 1.15)
@@ -213,7 +213,7 @@ GEM
     traces (0.18.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2025.3)
+    tzinfo-data (1.2026.1)
       tzinfo (>= 1.0.0)
     uri (1.1.1)
     webrick (1.9.2)
