@@ -24,19 +24,24 @@ ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 COPY Gemfile* /fluentd/
 <%
   build_deps = %w[sudo make gcc g++ libc-dev libffi-dev]
+  runtime_deps = %w[]
   case target
+  when 'azureblob'
+    runtime_deps << %w[pkg-config libxslt-dev libxml2-dev]
   when 'graylog'
     build_deps << %w[build-essential patch zlib1g-dev liblzma-dev]
   when 'kafka', 'kafka2'
+    runtime_deps << %w[krb5-kdc libsasl2-modules-gssapi-mit libsasl2-2]
     build_deps << %w[build-essential autoconf automake libtool pkg-config libsasl2-dev libssl-dev zlib1g-dev libzstd-dev libsnappy-dev]
   when 's3'
     build_deps << %w[curl]
   when 'elasticsearch8', 'opensearch'
+    runtime_deps << %w[libcurl4t64]
     build_deps << %w[build-essential libcurl4-openssl-dev]
   end
 %>
 RUN buildDeps="<%= build_deps.join(' ') %><% if requires_git %> git<% end %>" \
-  runtimeDeps="<% if target == "kafka" || target == "kafka2" %>krb5-kdc libsasl2-modules-gssapi-mit libsasl2-2<% elsif target == "azureblob" %>pkg-config libxslt-dev libxml2-dev<% end %>" \
+  runtimeDeps="<%= runtime_deps.join(' ') %>" \
      <% if target == "kafka" || target == "kafka2" %> && export DEBIAN_FRONTEND=noninteractive <% end %> && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
