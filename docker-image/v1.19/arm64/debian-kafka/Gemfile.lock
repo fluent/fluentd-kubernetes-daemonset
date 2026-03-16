@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
-    async (2.36.0)
+    async (2.38.0)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
@@ -128,9 +128,9 @@ GEM
     http-form_data (2.3.0)
     http_parser.rb (0.8.1)
     io-endpoint (0.17.2)
-    io-event (1.14.3)
+    io-event (1.14.4)
     io-stream (0.11.1)
-    json (2.18.1)
+    json (2.19.1)
     jsonpath (1.1.5)
       multi_json
     kubeclient (4.13.0)
@@ -154,14 +154,14 @@ GEM
     net-http (0.9.1)
       uri (>= 0.11.1)
     netrc (0.11.0)
-    oj (3.16.15)
+    oj (3.16.16)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     ostruct (0.6.3)
     prometheus-client (4.2.5)
       base64
     protocol-hpack (1.5.1)
-    protocol-http (0.59.0)
+    protocol-http (0.60.0)
     protocol-http1 (0.37.0)
       protocol-http (~> 0.58)
     protocol-http2 (0.24.0)
