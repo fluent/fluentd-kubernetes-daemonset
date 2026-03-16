@@ -14,7 +14,7 @@ ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
 RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev build-essential libcurl4-openssl-dev" \
-  runtimeDeps="" \
+  runtimeDeps="libcurl4t64" \
       && apt-get update \
      && apt-get upgrade -y \
      && apt-get install \
