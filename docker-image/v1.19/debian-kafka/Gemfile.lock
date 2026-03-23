@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
-    async (2.38.0)
+    async (2.38.1)
       console (~> 1.29)
       fiber-annotation
       io-event (~> 1.11)
@@ -31,7 +31,7 @@ GEM
       fiber-annotation
       fiber-local (~> 1.1)
       json
-    cool.io (1.9.3)
+    cool.io (1.9.4)
     csv (3.3.5)
     digest-crc (0.7.0)
       rake (>= 12.0.0, < 14.0.0)
@@ -130,7 +130,7 @@ GEM
     io-endpoint (0.17.2)
     io-event (1.14.4)
     io-stream (0.11.1)
-    json (2.19.1)
+    json (2.19.2)
     jsonpath (1.1.5)
       multi_json
     kubeclient (4.13.0)
@@ -147,7 +147,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0303)
+    mime-types-data (3.2026.0317)
     mini_portile2 (2.8.9)
     msgpack (1.8.0)
     multi_json (1.19.1)
