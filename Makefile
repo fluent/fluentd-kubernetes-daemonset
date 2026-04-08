@@ -347,7 +347,7 @@ README.md: templates/README.md.erb
 		/README.md.erb > README.md
 
 .github/dependabot.yml: templates/dependabot.yml.erb
-	erb $< > $@
+	erb -T - $< > $@
 
 # Generate plugins for version
 #
