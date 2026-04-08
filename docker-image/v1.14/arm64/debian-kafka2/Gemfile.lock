@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
     avro (1.11.0)
       multi_json (~> 1.0)
     concurrent-ruby (1.1.10)
@@ -97,7 +97,7 @@ GEM
     netrc (0.11.0)
     oj (3.11.0)
     prometheus-client (4.0.0)
-    public_suffix (4.0.7)
+    public_suffix (7.0.5)
     rake (12.3.3)
     rdkafka (0.7.0)
       ffi (~> 1.9)
