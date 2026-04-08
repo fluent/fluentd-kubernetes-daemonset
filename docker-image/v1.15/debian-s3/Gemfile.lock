@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.1)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
     aws-eventstream (1.2.0)
     aws-partitions (1.711.0)
     aws-sdk-core (3.170.0)
@@ -106,7 +106,7 @@ GEM
     netrc (0.11.0)
     oj (3.14.2)
     prometheus-client (4.0.0)
-    public_suffix (5.0.1)
+    public_suffix (7.0.5)
     rake (13.0.6)
     recursive-open-struct (1.1.3)
     rest-client (2.1.0)
