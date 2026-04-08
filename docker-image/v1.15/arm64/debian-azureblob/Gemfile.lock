@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.1)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
     azure-storage-blob (2.0.3)
       azure-storage-common (~> 2.0)
       nokogiri (~> 1, >= 1.10.8)
@@ -126,7 +126,7 @@ GEM
       racc (~> 1.4)
     oj (3.14.2)
     prometheus-client (4.0.0)
-    public_suffix (5.0.1)
+    public_suffix (7.0.5)
     racc (1.6.2)
     rake (13.0.6)
     recursive-open-struct (1.1.3)
