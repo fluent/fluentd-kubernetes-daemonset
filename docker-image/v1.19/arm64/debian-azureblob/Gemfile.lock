@@ -197,7 +197,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
-    oj (3.16.17)
+    oj (3.17.3)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     ostruct (0.6.3)
@@ -271,7 +271,7 @@ DEPENDENCIES
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.1.1)
   fluentd (= 1.19.3)
-  oj (~> 3.16.11)
+  oj (~> 3.17.3)
   rexml (~> 3.4.1)
 
 BUNDLED WITH
