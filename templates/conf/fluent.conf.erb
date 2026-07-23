@@ -8,7 +8,7 @@
 @include kubernetes.conf
 @include conf.d/*.conf
 
-<% case target when "elasticsearch7","elasticsearch8" %>
+<% case target when "elasticsearch7","elasticsearch8","elasticsearch9" %>
 <match **>
    @type elasticsearch
    @id out_es
@@ -19,10 +19,13 @@
    path "#{ENV['FLUENT_ELASTICSEARCH_PATH']}"
    scheme "#{ENV['FLUENT_ELASTICSEARCH_SCHEME'] || 'http'}"
    ssl_verify "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERIFY'] || 'true'}"
-<% if target == "elasticsearch7" %>
+<% if target == "elasticsearch7" || target == "elasticsearch9" %>
    ssl_version "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERSION'] || 'TLSv1_2'}"
 <% else %>
    ssl_version "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERSION'] || 'TLSv1'}"
+<% end %>
+<% if target == "elasticsearch9" %>
+   use_elasticsearch_version 9
 <% end %>
    user "#{ENV['FLUENT_ELASTICSEARCH_USER'] || use_default}"
    password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD'] || use_default}"
@@ -35,7 +38,9 @@
    logstash_format "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_FORMAT'] || 'true'}"
    index_name "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_INDEX_NAME'] || 'logstash'}"
    target_index_key "#{ENV['FLUENT_ELASTICSEARCH_TARGET_INDEX_KEY'] || use_nil}"
+<% unless target == "elasticsearch9" %>
    type_name "#{ENV['FLUENT_ELASTICSEARCH_LOGSTASH_TYPE_NAME'] || 'fluentd'}"
+<% end %>
    include_timestamp "#{ENV['FLUENT_ELASTICSEARCH_INCLUDE_TIMESTAMP'] || 'false'}"
    template_name "#{ENV['FLUENT_ELASTICSEARCH_TEMPLATE_NAME'] || use_nil}"
    template_file "#{ENV['FLUENT_ELASTICSEARCH_TEMPLATE_FILE'] || use_nil}"

@@ -28,6 +28,11 @@ gem "elasticsearch", "~> 8.0"
 gem "fluent-plugin-elasticsearch", "~> 5.4.0"
 gem "fluent-plugin-dedot_filter", "~> 1.0"
 gem "faraday-typhoeus", "~> 1.1.0"
+<% when "elasticsearch9" %>
+gem "elasticsearch", "~> 9.0"
+gem "fluent-plugin-elasticsearch", "~> 6.0.0"
+gem "fluent-plugin-dedot_filter", "~> 1.0"
+gem "faraday-excon", "~> 2.4"
 <% when "opensearch" %>
 gem "fluent-plugin-opensearch", "~> 1.1.5"
 gem "faraday-typhoeus", "~> 1.1.0"
