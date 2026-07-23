@@ -35,7 +35,7 @@ COPY Gemfile* /fluentd/
     build_deps << %w[build-essential autoconf automake libtool pkg-config libsasl2-dev libssl-dev zlib1g-dev libzstd-dev libsnappy-dev]
   when 's3'
     build_deps << %w[curl]
-  when 'elasticsearch8', 'opensearch'
+  when 'elasticsearch8', 'elasticsearch9', 'opensearch'
     runtime_deps << %w[libcurl4t64]
     build_deps << %w[build-essential libcurl4-openssl-dev]
   end

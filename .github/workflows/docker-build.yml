@@ -21,6 +21,7 @@ jobs:
         "debian-datadog",
         "debian-elasticsearch7",
         "debian-elasticsearch8",
+        "debian-elasticsearch9",
         "debian-forward",
         "debian-gcs",
         "debian-graylog",
