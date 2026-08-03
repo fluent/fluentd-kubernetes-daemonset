@@ -24,6 +24,9 @@
 <% else %>
    ssl_version "#{ENV['FLUENT_ELASTICSEARCH_SSL_VERSION'] || 'TLSv1'}"
 <% end %>
+<% if target == "elasticsearch9" %>
+   default_elasticsearch_version 9
+<% end %>
    user "#{ENV['FLUENT_ELASTICSEARCH_USER'] || use_default}"
    password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD'] || use_default}"
    reload_connections "#{ENV['FLUENT_ELASTICSEARCH_RELOAD_CONNECTIONS'] || 'false'}"
