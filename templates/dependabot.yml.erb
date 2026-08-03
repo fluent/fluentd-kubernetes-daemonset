@@ -11,7 +11,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     groups:
       # PR: "Security update [package] from [old] to [new]"
       # This PR should be merged in hurry
@@ -44,9 +44,6 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update"]
     # Check [Security and quality] or [Insights] > [Dependency graph]
     # periodically It will help to know security issues in each
     # Gemfile, but no need to create PR automatically.
