@@ -18,18 +18,6 @@ GEM
       protocol-url (~> 0.2)
     async-pool (0.11.2)
       async (>= 2.0)
-    aws-eventstream (1.4.0)
-    aws-partitions (1.1277.0)
-    aws-sdk-core (3.254.0)
-      aws-eventstream (~> 1, >= 1.3.0)
-      aws-partitions (~> 1, >= 1.992.0)
-      aws-sigv4 (~> 1.9)
-      base64
-      bigdecimal
-      jmespath (~> 1, >= 1.6.1)
-      logger
-    aws-sigv4 (1.12.1)
-      aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
     bigdecimal (4.1.2)
     concurrent-ruby (1.3.8)
@@ -41,9 +29,15 @@ GEM
     csv (3.3.6)
     domain_name (0.6.20240107)
     drb (2.2.3)
-    ethon (0.18.0)
-      ffi (>= 1.15.0)
-      logger
+    elastic-transport (8.5.3)
+      faraday (< 3)
+      multi_json
+    elasticsearch (9.5.0)
+      elastic-transport (~> 8.3)
+      elasticsearch-api (= 9.5.0)
+    elasticsearch-api (9.5.0)
+      base64
+      multi_json
     excon (1.6.0)
       logger
     faraday (2.14.3)
@@ -55,12 +49,6 @@ GEM
       faraday (>= 2.11.0, < 3)
     faraday-net_http (3.4.4)
       net-http (~> 0.5)
-    faraday-typhoeus (1.1.0)
-      faraday (~> 2.0)
-      typhoeus (~> 1.4)
-    faraday_middleware-aws-sigv4 (1.0.1)
-      aws-sigv4 (~> 1.0)
-      faraday (>= 2.0, < 3)
     ffi (1.17.4)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
@@ -83,8 +71,16 @@ GEM
       fluentd (> 1.0.0, < 2)
     fluent-plugin-concat (2.6.2)
       fluentd (>= 0.14.0, < 2)
+    fluent-plugin-dedot_filter (1.0.0)
+      fluentd (>= 0.14.0, < 2)
     fluent-plugin-detect-exceptions (0.0.16)
       fluentd (>= 1.14.2)
+    fluent-plugin-elasticsearch (6.0.0)
+      elasticsearch
+      excon
+      faraday (>= 2.0.0)
+      faraday-excon (>= 2.0.0)
+      fluentd (>= 0.14.22)
     fluent-plugin-grok-parser (2.6.2)
       fluentd (>= 0.14.6, < 2)
     fluent-plugin-json-in-json-2 (1.0.2)
@@ -96,14 +92,6 @@ GEM
       sin_lru_redux
     fluent-plugin-multi-format-parser (1.0.0)
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-opensearch (1.1.6)
-      aws-sdk-core (~> 3)
-      excon
-      faraday (>= 2.0.0)
-      faraday-excon (>= 2.0.0)
-      faraday_middleware-aws-sigv4 (~> 1.0.1)
-      fluentd (>= 0.14.22)
-      opensearch-ruby (>= 3.0.1)
     fluent-plugin-parser-cri (0.1.1)
       fluentd (>= 1)
     fluent-plugin-prometheus (2.2.2)
@@ -152,7 +140,6 @@ GEM
     io-event (1.19.4)
     io-stream (0.14.0)
       openssl (>= 3.3)
-    jmespath (1.6.2)
     json (2.21.2)
     jsonpath (1.1.5)
       multi_json
@@ -177,9 +164,6 @@ GEM
     oj (3.17.5)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
-    opensearch-ruby (3.4.0)
-      faraday (>= 1.0, < 3)
-      multi_json (>= 1.0)
     openssl (4.0.2)
     ostruct (0.6.3)
     prometheus-client (4.2.5)
@@ -211,8 +195,6 @@ GEM
     strptime (0.2.5)
     systemd-journal (2.1.2)
       ffi (~> 1.9)
-    typhoeus (1.6.0)
-      ethon (>= 0.18.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2026.3)
@@ -236,15 +218,16 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  faraday-typhoeus (~> 1.1.0)
+  elasticsearch (~> 9.0)
   ffi
   fluent-plugin-concat (~> 2.6.0)
+  fluent-plugin-dedot_filter (~> 1.0)
   fluent-plugin-detect-exceptions (~> 0.0.16)
+  fluent-plugin-elasticsearch (~> 6.0.0)
   fluent-plugin-grok-parser (~> 2.6.2)
   fluent-plugin-json-in-json-2 (>= 1.0.2)
   fluent-plugin-kubernetes_metadata_filter (~> 3.8.0)
   fluent-plugin-multi-format-parser (~> 1.0.0)
-  fluent-plugin-opensearch (~> 1.1.5)
   fluent-plugin-parser-cri (~> 0.1.1)
   fluent-plugin-prometheus (~> 2.2.1)
   fluent-plugin-record-modifier (~> 2.2.0)

@@ -14,7 +14,7 @@ ENV GEM_HOME /fluentd/vendor/bundle/ruby/3.4.0
 ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
-RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev curl" \
+RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev libssl-dev curl" \
   runtimeDeps="" \
       && apt-get update \
      && apt-get upgrade -y \
