@@ -13,39 +13,27 @@ env:
 jobs:
   define-matrix:
     runs-on: ubuntu-latest
-    env:
-      ALL_COMPONENTS: >
-        [
-        "debian-azureblob",
-        "debian-cloudwatch",
-        "debian-datadog",
-        "debian-elasticsearch7",
-        "debian-elasticsearch8",
-        "debian-elasticsearch9",
-        "debian-forward",
-        "debian-gcs",
-        "debian-graylog",
-        "debian-kafka2",
-        "debian-kafka",
-        "debian-kinesis",
-        "debian-logentries",
-        "debian-loggly",
-        "debian-logzio",
-        "debian-opensearch",
-        "debian-papertrail",
-        "debian-s3",
-        "debian-syslog"
-        ]
     outputs:
       components: >
-        ${{ steps.arrange-components.outputs.for_all == 'true' && env.ALL_COMPONENTS
+        ${{ steps.arrange-components.outputs.for_all == 'true' && steps.all-components.outputs.json
         || format('["{0}"]', steps.arrange-components.outputs.component) }}
     steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: all-components
+        name: Collect components handled by `make src-all`
+        run: |
+          set -x
+          components="$(make echo-all-components)"
+          echo "list=${components}" >> "$GITHUB_OUTPUT"
+          echo "json=$(printf '%s' "${components}" | jq --raw-input --compact-output 'split(" ")')" >> "$GITHUB_OUTPUT"
       - id: arrange-components
+        env:
+          ALL_COMPONENTS: ${{ steps.all-components.outputs.list }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
           echo "for_all=true" >> "$GITHUB_OUTPUT"
-          for component in ${{ join(fromJSON(env.ALL_COMPONENTS), ' ') }}; do
-            if [[ ${{ github.ref_name }} == *"$component"* ]]; then
+          for component in ${ALL_COMPONENTS}; do
+            if [[ ${REF_NAME} == *"$component"* ]]; then
               echo "for_all=false" >> "$GITHUB_OUTPUT"
               echo "component=$component" >> "$GITHUB_OUTPUT"
               break
