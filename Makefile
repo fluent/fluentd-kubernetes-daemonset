@@ -10,6 +10,7 @@ IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
 	v1.19/debian-azureblob:v1.19.3-debian-azureblob-amd64-1.0,v1.19-debian-azureblob-amd64-1 \
 	v1.19/debian-elasticsearch8:v1.19.3-debian-elasticsearch8-amd64-1.0,v1.19-debian-elasticsearch8-amd64-1 \
+	v1.19/debian-elasticsearch9:v1.19.3-debian-elasticsearch9-amd64-1.0,v1.19-debian-elasticsearch9-amd64-1 \
 	v1.19/debian-elasticsearch7:v1.19.3-debian-elasticsearch7-amd64-1.0,v1.19-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
 	v1.19/debian-opensearch:v1.19.3-debian-opensearch-amd64-1.0,v1.19-debian-opensearch-amd64-1 \
 	v1.19/debian-loggly:v1.19.3-debian-loggly-amd64-1.0,v1.19-debian-loggly-amd64-1 \
@@ -32,6 +33,7 @@ X86_IMAGES := \
 ARM64_IMAGES := \
 	v1.19/arm64/debian-azureblob:v1.19.3-debian-azureblob-arm64-1.0,v1.19-debian-azureblob-arm64-1 \
 	v1.19/arm64/debian-elasticsearch8:v1.19.3-debian-elasticsearch8-arm64-1.0,v1.19-debian-elasticsearch8-arm64-1 \
+	v1.19/arm64/debian-elasticsearch9:v1.19.3-debian-elasticsearch9-arm64-1.0,v1.19-debian-elasticsearch9-arm64-1 \
 	v1.19/arm64/debian-elasticsearch7:v1.19.3-debian-elasticsearch7-arm64-1.0,v1.19-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
 	v1.19/arm64/debian-opensearch:v1.19.3-debian-opensearch-arm64-1.0,v1.19-debian-opensearch-arm64-1 \
 	v1.19/arm64/debian-loggly:v1.19.3-debian-loggly-arm64-1.0,v1.19-debian-loggly-arm64-1 \
