@@ -56,7 +56,7 @@ else
             export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
         fi
     else
-        # No exclude rule yet, set ignore 
+        # No exclude rule yet, set ignore
         export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$IGNORE_TAIL_PATH"
     fi
 fi
