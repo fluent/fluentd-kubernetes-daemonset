@@ -108,6 +108,24 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
+    directory: "/docker-image/v1.19/arm64/debian-elasticsearch9"
+    schedule:
+      interval: "daily"
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update"]
+    # Check [Security and quality] or [Insights] > [Dependency graph]
+    # periodically It will help to know security issues in each
+    # Gemfile, but no need to create PR automatically.
+    open-pull-requests-limit: 0
+
+  # security updates in daily, ignore normal updates
+  - package-ecosystem: "bundler"
     directory: "/docker-image/v1.19/arm64/debian-forward"
     schedule:
       interval: "daily"
@@ -371,6 +389,24 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
+    # Check [Security and quality] or [Insights] > [Dependency graph]
+    # periodically It will help to know security issues in each
+    # Gemfile, but no need to create PR automatically.
+    open-pull-requests-limit: 0
+
+  # security updates in daily, ignore normal updates
+  - package-ecosystem: "bundler"
+    directory: "/docker-image/v1.19/debian-elasticsearch9"
+    schedule:
+      interval: "daily"
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update"]
     # Check [Security and quality] or [Insights] > [Dependency graph]
     # periodically It will help to know security issues in each
     # Gemfile, but no need to create PR automatically.

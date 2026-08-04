@@ -32,6 +32,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Elasticsearch8`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch8-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch8-1`
+- `Elasticsearch9`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch9-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch9-1`
 - `Elasticsearch7`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch7-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch7-1`
@@ -89,6 +92,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Elasticsearch8` [Dockerfile](docker-image/v1.19/debian-elasticsearch8/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch8-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch8-amd64-1`
+- `Elasticsearch9` [Dockerfile](docker-image/v1.19/debian-elasticsearch9/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch9-amd64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch9-amd64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.19/debian-elasticsearch7/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch7-amd64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch7-amd64-1`
@@ -146,6 +152,9 @@ See also dockerhub tags page: https://hub.docker.com/r/fluent/fluentd-kubernetes
 - `Elasticsearch8` [Dockerfile](docker-image/v1.19/arm64/debian-elasticsearch8/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch8-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch8-arm64-1`
+- `Elasticsearch9` [Dockerfile](docker-image/v1.19/arm64/debian-elasticsearch9/Dockerfile)
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch9-arm64-1.0`
+  - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch9-arm64-1`
 - `Elasticsearch7` [Dockerfile](docker-image/v1.19/arm64/debian-elasticsearch7/Dockerfile)
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19.3-debian-elasticsearch7-arm64-1.0`
   - `docker pull fluent/fluentd-kubernetes-daemonset:v1.19-debian-elasticsearch7-arm64-1`
