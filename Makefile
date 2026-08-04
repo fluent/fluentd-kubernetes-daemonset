@@ -86,6 +86,25 @@ no-cache-arg = $(if $(call eq, $(no-cache), yes), --no-cache, $(empty))
 echo-all-images:
 	@echo $(ALL_IMAGES)
 
+# Echo the component names (e.g. debian-s3) handled by `make src-all`.
+#
+# The list is derived from ALL_IMAGES so that CI workflows never need their own
+# hard-coded copy of it.
+#
+# The components are sorted by name length in descending order: a component
+# whose name is a prefix of another one (debian-kafka vs debian-kafka2) must
+# come later, otherwise it would shadow the longer one when matched against a
+# tag name.
+#
+# Usage:
+#	make echo-all-components
+echo-all-components:
+	@echo $(ALL_IMAGES) | tr ' ' '\n' | \
+		sed -e 's|:.*||' -e 's|.*/||' | \
+		awk 'NF { print length, $$0 }' | \
+		sort --key=1,1nr --key=2,2 --unique | \
+		cut -d' ' -f2- | paste --serial --delimiters=' ' -
+
 # Build Docker image.
 #
 # Usage:
@@ -370,7 +389,8 @@ plugins-all:
 			DOCKERFILE=$(word 1,$(subst :, ,$(img))) ; \
 	))
 
-.PHONY: image tags push \
+.PHONY: echo-all-images echo-all-components \
+        image tags push \
         release release-all \
         src src-all \
         container-image-template each-image \
