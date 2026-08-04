@@ -8,48 +8,48 @@
 
 IMAGE_NAME := fluent/fluentd-kubernetes
 X86_IMAGES := \
-	v1.19/debian-azureblob:v1.19.3-debian-azureblob-amd64-1.0,v1.19-debian-azureblob-amd64-1 \
-	v1.19/debian-elasticsearch8:v1.19.3-debian-elasticsearch8-amd64-1.0,v1.19-debian-elasticsearch8-amd64-1 \
-	v1.19/debian-elasticsearch9:v1.19.3-debian-elasticsearch9-amd64-1.0,v1.19-debian-elasticsearch9-amd64-1 \
-	v1.19/debian-elasticsearch7:v1.19.3-debian-elasticsearch7-amd64-1.0,v1.19-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
-	v1.19/debian-opensearch:v1.19.3-debian-opensearch-amd64-1.0,v1.19-debian-opensearch-amd64-1 \
-	v1.19/debian-loggly:v1.19.3-debian-loggly-amd64-1.0,v1.19-debian-loggly-amd64-1 \
-	v1.19/debian-logentries:v1.19.3-debian-logentries-amd64-1.0,v1.19-debian-logentries-amd64-1 \
-	v1.19/debian-cloudwatch:v1.19.3-debian-cloudwatch-amd64-1.0,v1.19-debian-cloudwatch-amd64-1 \
-	v1.19/debian-s3:v1.19.3-debian-s3-amd64-1.0,v1.19-debian-s3-amd64-1 \
-	v1.19/debian-syslog:v1.19.3-debian-syslog-amd64-1.0,v1.19-debian-syslog-amd64-1 \
-	v1.19/debian-forward:v1.19.3-debian-forward-amd64-1.0,v1.19-debian-forward-amd64-1 \
-	v1.19/debian-gcs:v1.19.3-debian-gcs-amd64-1.0,v1.19-debian-gcs-amd64-1 \
-	v1.19/debian-graylog:v1.19.3-debian-graylog-amd64-1.0,v1.19-debian-graylog-amd64-1 \
-	v1.19/debian-papertrail:v1.19.3-debian-papertrail-amd64-1.0,v1.19-debian-papertrail-amd64-1 \
-	v1.19/debian-logzio:v1.19.3-debian-logzio-amd64-1.0,v1.19-debian-logzio-amd64-1 \
-	v1.19/debian-kafka:v1.19.3-debian-kafka-amd64-1.0,v1.19-debian-kafka-amd64-1 \
-	v1.19/debian-kafka2:v1.19.3-debian-kafka2-amd64-1.0,v1.19-debian-kafka2-amd64-1 \
-	v1.19/debian-kinesis:v1.19.3-debian-kinesis-amd64-1.0,v1.19-debian-kinesis-amd64-1 \
-	v1.19/debian-datadog:v1.19.3-debian-datadog-amd64-1.0,v1.19-debian-datadog-amd64-1
+	v1.19/debian-azureblob:v1.19.3-debian-azureblob-amd64-1.1,v1.19-debian-azureblob-amd64-1 \
+	v1.19/debian-cloudwatch:v1.19.3-debian-cloudwatch-amd64-1.1,v1.19-debian-cloudwatch-amd64-1 \
+	v1.19/debian-datadog:v1.19.3-debian-datadog-amd64-1.1,v1.19-debian-datadog-amd64-1 \
+	v1.19/debian-elasticsearch7:v1.19.3-debian-elasticsearch7-amd64-1.1,v1.19-debian-elasticsearch7-amd64-1,v1-debian-elasticsearch-amd64 \
+	v1.19/debian-elasticsearch8:v1.19.3-debian-elasticsearch8-amd64-1.1,v1.19-debian-elasticsearch8-amd64-1 \
+	v1.19/debian-elasticsearch9:v1.19.3-debian-elasticsearch9-amd64-1.1,v1.19-debian-elasticsearch9-amd64-1 \
+	v1.19/debian-forward:v1.19.3-debian-forward-amd64-1.1,v1.19-debian-forward-amd64-1 \
+	v1.19/debian-gcs:v1.19.3-debian-gcs-amd64-1.1,v1.19-debian-gcs-amd64-1 \
+	v1.19/debian-graylog:v1.19.3-debian-graylog-amd64-1.1,v1.19-debian-graylog-amd64-1 \
+	v1.19/debian-kafka2:v1.19.3-debian-kafka2-amd64-1.1,v1.19-debian-kafka2-amd64-1 \
+	v1.19/debian-kafka:v1.19.3-debian-kafka-amd64-1.1,v1.19-debian-kafka-amd64-1 \
+	v1.19/debian-kinesis:v1.19.3-debian-kinesis-amd64-1.1,v1.19-debian-kinesis-amd64-1 \
+	v1.19/debian-logentries:v1.19.3-debian-logentries-amd64-1.1,v1.19-debian-logentries-amd64-1 \
+	v1.19/debian-loggly:v1.19.3-debian-loggly-amd64-1.1,v1.19-debian-loggly-amd64-1 \
+	v1.19/debian-logzio:v1.19.3-debian-logzio-amd64-1.1,v1.19-debian-logzio-amd64-1 \
+	v1.19/debian-opensearch:v1.19.3-debian-opensearch-amd64-1.1,v1.19-debian-opensearch-amd64-1 \
+	v1.19/debian-papertrail:v1.19.3-debian-papertrail-amd64-1.1,v1.19-debian-papertrail-amd64-1 \
+	v1.19/debian-s3:v1.19.3-debian-s3-amd64-1.1,v1.19-debian-s3-amd64-1 \
+	v1.19/debian-syslog:v1.19.3-debian-syslog-amd64-1.1,v1.19-debian-syslog-amd64-1
 
 #	<Dockerfile>:<version>,<tag1>,<tag2>,...
 
 ARM64_IMAGES := \
-	v1.19/arm64/debian-azureblob:v1.19.3-debian-azureblob-arm64-1.0,v1.19-debian-azureblob-arm64-1 \
-	v1.19/arm64/debian-elasticsearch8:v1.19.3-debian-elasticsearch8-arm64-1.0,v1.19-debian-elasticsearch8-arm64-1 \
-	v1.19/arm64/debian-elasticsearch9:v1.19.3-debian-elasticsearch9-arm64-1.0,v1.19-debian-elasticsearch9-arm64-1 \
-	v1.19/arm64/debian-elasticsearch7:v1.19.3-debian-elasticsearch7-arm64-1.0,v1.19-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
-	v1.19/arm64/debian-opensearch:v1.19.3-debian-opensearch-arm64-1.0,v1.19-debian-opensearch-arm64-1 \
-	v1.19/arm64/debian-loggly:v1.19.3-debian-loggly-arm64-1.0,v1.19-debian-loggly-arm64-1 \
-	v1.19/arm64/debian-logentries:v1.19.3-debian-logentries-arm64-1.0,v1.19-debian-logentries-arm64-1 \
-	v1.19/arm64/debian-cloudwatch:v1.19.3-debian-cloudwatch-arm64-1.0,v1.19-debian-cloudwatch-arm64-1 \
-	v1.19/arm64/debian-s3:v1.19.3-debian-s3-arm64-1.0,v1.19-debian-s3-arm64-1 \
-	v1.19/arm64/debian-syslog:v1.19.3-debian-syslog-arm64-1.0,v1.19-debian-syslog-arm64-1 \
-	v1.19/arm64/debian-forward:v1.19.3-debian-forward-arm64-1.0,v1.19-debian-forward-arm64-1 \
-	v1.19/arm64/debian-gcs:v1.19.3-debian-gcs-arm64-1.0,v1.19-debian-gcs-arm64-1 \
-	v1.19/arm64/debian-graylog:v1.19.3-debian-graylog-arm64-1.0,v1.19-debian-graylog-arm64-1 \
-	v1.19/arm64/debian-papertrail:v1.19.3-debian-papertrail-arm64-1.0,v1.19-debian-papertrail-arm64-1 \
-	v1.19/arm64/debian-logzio:v1.19.3-debian-logzio-arm64-1.0,v1.19-debian-logzio-arm64-1 \
-	v1.19/arm64/debian-kafka:v1.19.3-debian-kafka-arm64-1.0,v1.19-debian-kafka-arm64-1 \
-	v1.19/arm64/debian-kafka2:v1.19.3-debian-kafka2-arm64-1.0,v1.19-debian-kafka2-arm64-1 \
-	v1.19/arm64/debian-kinesis:v1.19.3-debian-kinesis-arm64-1.0,v1.19-debian-kinesis-arm64-1 \
-	v1.19/arm64/debian-datadog:v1.19.3-debian-datadog-arm64-1.0,v1.19-debian-datadog-arm64-1
+	v1.19/arm64/debian-azureblob:v1.19.3-debian-azureblob-arm64-1.1,v1.19-debian-azureblob-arm64-1 \
+	v1.19/arm64/debian-cloudwatch:v1.19.3-debian-cloudwatch-arm64-1.1,v1.19-debian-cloudwatch-arm64-1 \
+	v1.19/arm64/debian-datadog:v1.19.3-debian-datadog-arm64-1.1,v1.19-debian-datadog-arm64-1 \
+	v1.19/arm64/debian-elasticsearch7:v1.19.3-debian-elasticsearch7-arm64-1.1,v1.19-debian-elasticsearch7-arm64-1,v1-debian-elasticsearch-arm64 \
+	v1.19/arm64/debian-elasticsearch8:v1.19.3-debian-elasticsearch8-arm64-1.1,v1.19-debian-elasticsearch8-arm64-1 \
+	v1.19/arm64/debian-elasticsearch9:v1.19.3-debian-elasticsearch9-arm64-1.1,v1.19-debian-elasticsearch9-arm64-1 \
+	v1.19/arm64/debian-forward:v1.19.3-debian-forward-arm64-1.1,v1.19-debian-forward-arm64-1 \
+	v1.19/arm64/debian-gcs:v1.19.3-debian-gcs-arm64-1.1,v1.19-debian-gcs-arm64-1 \
+	v1.19/arm64/debian-graylog:v1.19.3-debian-graylog-arm64-1.1,v1.19-debian-graylog-arm64-1 \
+	v1.19/arm64/debian-kafka2:v1.19.3-debian-kafka2-arm64-1.1,v1.19-debian-kafka2-arm64-1 \
+	v1.19/arm64/debian-kafka:v1.19.3-debian-kafka-arm64-1.1,v1.19-debian-kafka-arm64-1 \
+	v1.19/arm64/debian-kinesis:v1.19.3-debian-kinesis-arm64-1.1,v1.19-debian-kinesis-arm64-1 \
+	v1.19/arm64/debian-logentries:v1.19.3-debian-logentries-arm64-1.1,v1.19-debian-logentries-arm64-1 \
+	v1.19/arm64/debian-loggly:v1.19.3-debian-loggly-arm64-1.1,v1.19-debian-loggly-arm64-1 \
+	v1.19/arm64/debian-logzio:v1.19.3-debian-logzio-arm64-1.1,v1.19-debian-logzio-arm64-1 \
+	v1.19/arm64/debian-opensearch:v1.19.3-debian-opensearch-arm64-1.1,v1.19-debian-opensearch-arm64-1 \
+	v1.19/arm64/debian-papertrail:v1.19.3-debian-papertrail-arm64-1.1,v1.19-debian-papertrail-arm64-1 \
+	v1.19/arm64/debian-s3:v1.19.3-debian-s3-arm64-1.1,v1.19-debian-s3-arm64-1 \
+	v1.19/arm64/debian-syslog:v1.19.3-debian-syslog-arm64-1.1,v1.19-debian-syslog-arm64-1
 
 ALL_IMAGES := $(X86_IMAGES) $(ARM64_IMAGES)
 
