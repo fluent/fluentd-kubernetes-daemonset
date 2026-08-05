@@ -23,7 +23,7 @@ ENV FLUENTD_DISABLE_BUNDLER_INJECTION 1
 
 COPY Gemfile* /fluentd/
 <%
-  build_deps = %w[sudo make gcc g++ libc-dev libffi-dev]
+  build_deps = %w[sudo make gcc g++ libc-dev libffi-dev libssl-dev]
   runtime_deps = %w[]
   case target
   when 'azureblob'
@@ -32,7 +32,7 @@ COPY Gemfile* /fluentd/
     build_deps << %w[build-essential patch zlib1g-dev liblzma-dev]
   when 'kafka', 'kafka2'
     runtime_deps << %w[krb5-kdc libsasl2-modules-gssapi-mit libsasl2-2]
-    build_deps << %w[build-essential autoconf automake libtool pkg-config libsasl2-dev libssl-dev zlib1g-dev libzstd-dev libsnappy-dev]
+    build_deps << %w[build-essential autoconf automake libtool pkg-config libsasl2-dev zlib1g-dev libzstd-dev libsnappy-dev]
   when 's3'
     build_deps << %w[curl]
   when 'elasticsearch8', 'elasticsearch9', 'opensearch'

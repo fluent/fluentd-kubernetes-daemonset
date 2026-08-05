@@ -116,9 +116,6 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update"]
     # Check [Security and quality] or [Insights] > [Dependency graph]
     # periodically It will help to know security issues in each
     # Gemfile, but no need to create PR automatically.
@@ -404,9 +401,6 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update"]
     # Check [Security and quality] or [Insights] > [Dependency graph]
     # periodically It will help to know security issues in each
     # Gemfile, but no need to create PR automatically.
