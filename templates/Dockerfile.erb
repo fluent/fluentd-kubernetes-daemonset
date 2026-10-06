@@ -12,7 +12,7 @@ FROM fluent/fluentd:<%= fluentd_ver %>-debian-arm64
 FROM fluent/fluentd:<%= fluentd_ver %>-debian-amd64
 <% end %>
 
-LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
+LABEL maintainer="Fluentd developers <cncf-fluentd-maintainers@lists.cncf.io>"
 USER root
 WORKDIR /home/fluent
 ENV PATH /fluentd/vendor/bundle/ruby/<%= ruby_version %>.0/bin:$PATH
