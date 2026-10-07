@@ -144,7 +144,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0929)
+    mime-types-data (3.2026.1006)
     mini_portile2 (2.8.9)
     msgpack (1.8.5)
     multi_json (1.21.2)
