@@ -3,7 +3,7 @@
 
 FROM fluent/fluentd:v1.19.4-debian-amd64
 
-LABEL maintainer="Eduardo Silva <eduardo@treasure-data.com>"
+LABEL maintainer="Fluentd developers <cncf-fluentd-maintainers@lists.cncf.io>"
 USER root
 WORKDIR /home/fluent
 ENV PATH /fluentd/vendor/bundle/ruby/3.4.0/bin:$PATH
@@ -46,9 +46,6 @@ COPY entrypoint.sh /fluentd/entrypoint.sh
 # Environment variables
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
-# Override LD_PRELOAD in fluentd docker image
-# Set "/usr/lib/libjemalloc.so.2" if you want to enable jemalloc explicitly
-ENV LD_PRELOAD=""
 
 # Overwrite ENTRYPOINT to run fluentd as root for /var/log / /var/lib
 ENTRYPOINT ["tini", "--", "/fluentd/entrypoint.sh"]

@@ -19,7 +19,7 @@ GEM
     async-pool (0.12.0)
       async (>= 2.0)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1292.0)
+    aws-partitions (1.1293.0)
     aws-sdk-core (3.257.0)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
@@ -97,7 +97,7 @@ GEM
       sin_lru_redux
     fluent-plugin-multi-format-parser (1.0.0)
       fluentd (>= 0.14.0, < 2)
-    fluent-plugin-opensearch (1.1.7)
+    fluent-plugin-opensearch (1.1.8)
       aws-sdk-core (~> 3)
       excon
       faraday (>= 2.0.0)
@@ -170,7 +170,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0929)
+    mime-types-data (3.2026.1006)
     msgpack (1.8.5)
     multi_json (1.21.2)
     net-http (0.9.1)
