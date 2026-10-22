@@ -25,6 +25,7 @@ jobs:
   amd64:
     needs: define-matrix
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
@@ -64,6 +65,7 @@ jobs:
   arm64:
     needs: define-matrix
     runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
