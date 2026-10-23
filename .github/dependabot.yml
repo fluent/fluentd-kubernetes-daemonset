@@ -33,7 +33,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-azureblob"
+    directory: "/docker-image/v1.20/arm64/debian-azureblob"
     schedule:
       interval: "daily"
     groups:
@@ -48,7 +48,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-cloudwatch"
+    directory: "/docker-image/v1.20/arm64/debian-cloudwatch"
     schedule:
       interval: "daily"
     groups:
@@ -63,7 +63,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-datadog"
+    directory: "/docker-image/v1.20/arm64/debian-datadog"
     schedule:
       interval: "daily"
     groups:
@@ -78,7 +78,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-elasticsearch7"
+    directory: "/docker-image/v1.20/arm64/debian-elasticsearch8"
     schedule:
       interval: "daily"
     groups:
@@ -93,7 +93,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-elasticsearch8"
+    directory: "/docker-image/v1.20/arm64/debian-elasticsearch9"
     schedule:
       interval: "daily"
     groups:
@@ -108,7 +108,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-elasticsearch9"
+    directory: "/docker-image/v1.20/arm64/debian-forward"
     schedule:
       interval: "daily"
     groups:
@@ -123,7 +123,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-forward"
+    directory: "/docker-image/v1.20/arm64/debian-gcs"
     schedule:
       interval: "daily"
     groups:
@@ -138,7 +138,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-gcs"
+    directory: "/docker-image/v1.20/arm64/debian-graylog"
     schedule:
       interval: "daily"
     groups:
@@ -153,7 +153,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-graylog"
+    directory: "/docker-image/v1.20/arm64/debian-kafka"
     schedule:
       interval: "daily"
     groups:
@@ -168,7 +168,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-kafka"
+    directory: "/docker-image/v1.20/arm64/debian-kafka2"
     schedule:
       interval: "daily"
     groups:
@@ -183,7 +183,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-kafka2"
+    directory: "/docker-image/v1.20/arm64/debian-kinesis"
     schedule:
       interval: "daily"
     groups:
@@ -198,7 +198,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-kinesis"
+    directory: "/docker-image/v1.20/arm64/debian-logentries"
     schedule:
       interval: "daily"
     groups:
@@ -213,7 +213,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-logentries"
+    directory: "/docker-image/v1.20/arm64/debian-loggly"
     schedule:
       interval: "daily"
     groups:
@@ -228,7 +228,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-loggly"
+    directory: "/docker-image/v1.20/arm64/debian-logzio"
     schedule:
       interval: "daily"
     groups:
@@ -243,7 +243,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-logzio"
+    directory: "/docker-image/v1.20/arm64/debian-opensearch"
     schedule:
       interval: "daily"
     groups:
@@ -258,7 +258,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-opensearch"
+    directory: "/docker-image/v1.20/arm64/debian-papertrail"
     schedule:
       interval: "daily"
     groups:
@@ -273,7 +273,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-papertrail"
+    directory: "/docker-image/v1.20/arm64/debian-s3"
     schedule:
       interval: "daily"
     groups:
@@ -288,7 +288,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-s3"
+    directory: "/docker-image/v1.20/arm64/debian-syslog"
     schedule:
       interval: "daily"
     groups:
@@ -303,7 +303,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/arm64/debian-syslog"
+    directory: "/docker-image/v1.20/debian-azureblob"
     schedule:
       interval: "daily"
     groups:
@@ -318,7 +318,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-azureblob"
+    directory: "/docker-image/v1.20/debian-cloudwatch"
     schedule:
       interval: "daily"
     groups:
@@ -333,7 +333,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-cloudwatch"
+    directory: "/docker-image/v1.20/debian-datadog"
     schedule:
       interval: "daily"
     groups:
@@ -348,7 +348,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-datadog"
+    directory: "/docker-image/v1.20/debian-elasticsearch8"
     schedule:
       interval: "daily"
     groups:
@@ -363,7 +363,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-elasticsearch7"
+    directory: "/docker-image/v1.20/debian-elasticsearch9"
     schedule:
       interval: "daily"
     groups:
@@ -378,7 +378,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-elasticsearch8"
+    directory: "/docker-image/v1.20/debian-forward"
     schedule:
       interval: "daily"
     groups:
@@ -393,7 +393,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-elasticsearch9"
+    directory: "/docker-image/v1.20/debian-gcs"
     schedule:
       interval: "daily"
     groups:
@@ -408,7 +408,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-forward"
+    directory: "/docker-image/v1.20/debian-graylog"
     schedule:
       interval: "daily"
     groups:
@@ -423,7 +423,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-gcs"
+    directory: "/docker-image/v1.20/debian-kafka"
     schedule:
       interval: "daily"
     groups:
@@ -438,7 +438,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-graylog"
+    directory: "/docker-image/v1.20/debian-kafka2"
     schedule:
       interval: "daily"
     groups:
@@ -453,7 +453,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-kafka"
+    directory: "/docker-image/v1.20/debian-kinesis"
     schedule:
       interval: "daily"
     groups:
@@ -468,7 +468,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-kafka2"
+    directory: "/docker-image/v1.20/debian-logentries"
     schedule:
       interval: "daily"
     groups:
@@ -483,7 +483,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-kinesis"
+    directory: "/docker-image/v1.20/debian-loggly"
     schedule:
       interval: "daily"
     groups:
@@ -498,7 +498,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-logentries"
+    directory: "/docker-image/v1.20/debian-logzio"
     schedule:
       interval: "daily"
     groups:
@@ -513,7 +513,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-loggly"
+    directory: "/docker-image/v1.20/debian-opensearch"
     schedule:
       interval: "daily"
     groups:
@@ -528,7 +528,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-logzio"
+    directory: "/docker-image/v1.20/debian-papertrail"
     schedule:
       interval: "daily"
     groups:
@@ -543,7 +543,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-opensearch"
+    directory: "/docker-image/v1.20/debian-s3"
     schedule:
       interval: "daily"
     groups:
@@ -558,37 +558,7 @@ updates:
 
   # security updates in daily, ignore normal updates
   - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-papertrail"
-    schedule:
-      interval: "daily"
-    groups:
-      security-updates:
-        applies-to: security-updates
-        patterns:
-          - "*"
-    # Check [Security and quality] or [Insights] > [Dependency graph]
-    # periodically It will help to know security issues in each
-    # Gemfile, but no need to create PR automatically.
-    open-pull-requests-limit: 0
-
-  # security updates in daily, ignore normal updates
-  - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-s3"
-    schedule:
-      interval: "daily"
-    groups:
-      security-updates:
-        applies-to: security-updates
-        patterns:
-          - "*"
-    # Check [Security and quality] or [Insights] > [Dependency graph]
-    # periodically It will help to know security issues in each
-    # Gemfile, but no need to create PR automatically.
-    open-pull-requests-limit: 0
-
-  # security updates in daily, ignore normal updates
-  - package-ecosystem: "bundler"
-    directory: "/docker-image/v1.19/debian-syslog"
+    directory: "/docker-image/v1.20/debian-syslog"
     schedule:
       interval: "daily"
     groups:
