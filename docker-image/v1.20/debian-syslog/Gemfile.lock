@@ -80,7 +80,7 @@ GEM
     fluent-plugin-systemd (1.1.2)
       fluentd (>= 0.14.11, < 2)
       systemd-journal (~> 2.1.0)
-    fluentd (1.20.0)
+    fluentd (1.20.1)
       async-http (~> 0.86)
       base64 (~> 0.2)
       bundler
@@ -100,7 +100,6 @@ GEM
       tzinfo-data (~> 1.0)
       uri (~> 1.0)
       webrick (~> 1.4)
-      yajl-ruby (~> 1.0)
       zstd-ruby (~> 1.5)
     http (5.3.1)
       addressable (~> 2.8)
@@ -149,10 +148,10 @@ GEM
     prometheus-client (5.0.0)
       base64
     protocol-hpack (1.5.1)
-    protocol-http (0.72.0)
+    protocol-http (0.72.1)
     protocol-http1 (0.41.1)
       protocol-http (~> 0.68)
-    protocol-http2 (0.29.1)
+    protocol-http2 (0.29.2)
       protocol-hpack (~> 1.4)
       protocol-http (~> 0.62)
     protocol-url (0.19.0)
@@ -215,9 +214,10 @@ DEPENDENCIES
   fluent-plugin-remote_syslog
   fluent-plugin-rewrite-tag-filter (~> 2.4.0)
   fluent-plugin-systemd (~> 1.1.1)
-  fluentd (= 1.20.0)
+  fluentd (= 1.20.1)
   oj (~> 3.17.3)
   rexml (~> 3.4.1)
+  yajl-ruby (~> 1.4.3)
 
 BUNDLED WITH
    2.6.9
