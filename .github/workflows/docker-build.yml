@@ -143,8 +143,24 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Create manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           component=${{ matrix.component }}
+          gh api -H "Accept: application/vnd.github.raw" \
+            "repos/${GITHUB_REPOSITORY}/contents/Makefile?ref=master" > ${RUNNER_TEMP}/Makefile.master
+          version=$(make --silent echo-all-images | cut -d '/' -f1)
+          master_version=$(make --silent --file=${RUNNER_TEMP}/Makefile.master echo-all-images | cut -d '/' -f1)
+          master_components=$(make --silent --file=${RUNNER_TEMP}/Makefile.master echo-all-components)
+          if [ ${version} = ${master_version} ]; then
+            UPDATE_V1_TAG=true
+          elif [[ " ${master_components} " != *" ${component} "* ]]; then
+            # master dropped this component (e.g. debian-elasticsearch7), so no one
+            # but this maintenance branch can update its v1-* tags
+            UPDATE_V1_TAG=true
+          else
+            UPDATE_V1_TAG=false
+          fi
           for target in $(make echo-all-images); do
             case $target in
               *$component-amd64*)
@@ -167,10 +183,15 @@ jobs:
                 ;;
             esac
           done
-          # v1-debian-(component)
-          docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component} ${{ env.REPOSITORY }}:${AMD64TAG}
-          # v1-debian-(component)-arm64
-          docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component}-arm64 ${{ env.REPOSITORY }}:${ARM64TAG}
+          # Release from a maintenance branch must not move v1-* tags back to an old version
+          if [ ${UPDATE_V1_TAG} = true ]; then
+            # v1-debian-(component)
+            docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component} ${{ env.REPOSITORY }}:${AMD64TAG}
+            # v1-debian-(component)-arm64
+            docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component}-arm64 ${{ env.REPOSITORY }}:${ARM64TAG}
+          else
+            echo "Skip v1-${component} tags because master (${master_version}) also has ${component}"
+          fi
           # v1.xx.x-debian-(component)-xxx
           if [ ${MULTIARCH_AMD64_TAG} != ${MULTIARCH_ARM64_TAG} ]; then
             echo "Multiarch tag (v1.xx.x-debian-(component)-xxx) must be same for amd64 and arm64: ${MULTIARCH_AMD64_TAG} !=  ${MULTIARCH_ARM64_TAG}"
