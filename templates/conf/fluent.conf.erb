@@ -274,9 +274,9 @@
 
   brokers "#{ENV['FLUENT_KAFKA_BROKERS']}"
 
-  default_topic "#{ENV['FLUENT_KAFKA_DEFAULT_TOPIC'] || nil}"
-  default_partition_key "#{ENV['FLUENT_KAFKA_DEFAULT_PARTITION_KEY'] || nil}"
-  default_message_key "#{ENV['FLUENT_KAFKA_DEFAULT_MESSAGE_KEY'] || nil}"
+  default_topic "#{ENV['FLUENT_KAFKA_DEFAULT_TOPIC'] || use_default}"
+  default_partition_key "#{ENV['FLUENT_KAFKA_DEFAULT_PARTITION_KEY'] || use_default}"
+  default_message_key "#{ENV['FLUENT_KAFKA_DEFAULT_MESSAGE_KEY'] || use_default}"
   output_data_type "#{ENV['FLUENT_KAFKA_OUTPUT_DATA_TYPE'] || 'json'}"
   output_include_tag "#{ENV['FLUENT_KAFKA_OUTPUT_INCLUDE_TAG'] || false}"
   output_include_time "#{ENV['FLUENT_KAFKA_OUTPUT_INCLUDE_TIME'] || false}"
@@ -287,9 +287,9 @@
   # ruby-kafka producer options
   max_send_retries "#{ENV['FLUENT_KAFKA_MAX_SEND_RETRIES'] || 1}"
   required_acks "#{ENV['FLUENT_KAFKA_REQUIRED_ACKS'] || -1}"
-  ack_timeout "#{ENV['FLUENT_KAFKA_ACK_TIMEOUT'] || nil}"
-  compression_codec "#{ENV['FLUENT_KAFKA_COMPRESSION_CODEC'] || nil}"
-  max_send_limit_bytes "#{ENV['FLUENT_KAFKA_MAX_SEND_LIMIT_BYTES'] || nil}"
+  ack_timeout "#{ENV['FLUENT_KAFKA_ACK_TIMEOUT'] || use_default}"
+  compression_codec "#{ENV['FLUENT_KAFKA_COMPRESSION_CODEC'] || use_default}"
+  max_send_limit_bytes "#{ENV['FLUENT_KAFKA_MAX_SEND_LIMIT_BYTES'] || use_default}"
   discard_kafka_delivery_failed "#{ENV['FLUENT_KAFKA_DISCARD_KAFKA_DELIVERY_FAILED'] || false}"
 </match>
 <% when "kafka2" %>
@@ -299,9 +299,9 @@
 
   brokers "#{ENV['FLUENT_KAFKA2_BROKERS']}"
 
-  default_topic "#{ENV['FLUENT_KAFKA2_DEFAULT_TOPIC'] || nil}"
-  default_partition_key "#{ENV['FLUENT_KAFKA2_DEFAULT_PARTITION_KEY'] || nil}"
-  default_message_key "#{ENV['FLUENT_KAFKA2_DEFAULT_MESSAGE_KEY'] || nil}"
+  default_topic "#{ENV['FLUENT_KAFKA2_DEFAULT_TOPIC'] || use_default}"
+  default_partition_key "#{ENV['FLUENT_KAFKA2_DEFAULT_PARTITION_KEY'] || use_default}"
+  default_message_key "#{ENV['FLUENT_KAFKA2_DEFAULT_MESSAGE_KEY'] || use_default}"
   exclude_topic_key "#{ENV['FLUENT_KAFKA2_EXCLUDE_TOPIC_KEY'] || false}"
   exclude_partition_key "#{ENV['FLUENT_KAFKA2_EXCLUDE_PARTITION_KEY'] || false}"
   get_kafka_client_log "#{ENV['FLUENT_KAFKA2_GET_KAFKA_CLIENT_LOG'] || false}"
@@ -316,9 +316,9 @@
   # ruby-kafka producer options
   max_send_retries "#{ENV['FLUENT_KAFKA2_MAX_SEND_RETRIES'] || 1}"
   required_acks "#{ENV['FLUENT_KAFKA2_REQUIRED_ACKS'] || -1}"
-  ack_timeout "#{ENV['FLUENT_KAFKA2_ACK_TIMEOUT'] || nil}"
-  compression_codec "#{ENV['FLUENT_KAFKA2_COMPRESSION_CODEC'] || nil}"
-  max_send_limit_bytes "#{ENV['FLUENT_KAFKA2_MAX_SEND_LIMIT_BYTES'] || nil}"
+  ack_timeout "#{ENV['FLUENT_KAFKA2_ACK_TIMEOUT'] || use_default}"
+  compression_codec "#{ENV['FLUENT_KAFKA2_COMPRESSION_CODEC'] || use_default}"
+  max_send_limit_bytes "#{ENV['FLUENT_KAFKA2_MAX_SEND_LIMIT_BYTES'] || use_default}"
   discard_kafka_delivery_failed "#{ENV['FLUENT_KAFKA2_DISCARD_KAFKA_DELIVERY_FAILED'] || false}"
 </match>
 <% when "splunkhec" %>
@@ -326,9 +326,9 @@
   @type splunk_hec
   @id out_splunk_hec
 
-  host "#{ENV['FLUENT_SPLUNK_HEC_HOST'] || nil}"
+  host "#{ENV['FLUENT_SPLUNK_HEC_HOST'] || use_default}"
   port "#{ENV['FLUENT_SPLUNK_HEC_PORT'] || '8089'}"
-  token "#{ENV['FLUENT_SPLUNK_HEC_TOKEN'] || nil}"
+  token "#{ENV['FLUENT_SPLUNK_HEC_TOKEN'] || use_default}"
 
   # metadata parameter
   default_source "#{ENV['FLUENT_SPLUNK_HEC_SOURCE'] || 'fluentd-splunkhec'}"
@@ -394,7 +394,7 @@
 <match **>
   @type kinesis_streams
   @id out_kinesis_streams
-  region "#{ENV['FLUENT_KINESIS_STREAMS_REGION'] || nil}"
+  region "#{ENV['FLUENT_KINESIS_STREAMS_REGION'] || use_default}"
   stream_name "#{ENV['FLUENT_KINESIS_STREAMS_STREAM_NAME']}"
   include_time_key "#{ENV['FLUENT_KINESIS_STREAMS_INCLUDE_TIME_KEY'] || false}"
   <buffer>
