@@ -144,6 +144,8 @@ Since v1.9.3 or later images.
 
 You can exclude container logs from `/var/log/containers/` with `FLUENT_CONTAINER_TAIL_EXCLUDE_PATH`.
 If you have a trouble with specific log, use this envvar, e.g. `["/var/log/containers/logname-*"]`.
+Both a JSON array and a comma separated list (e.g. `/var/log/containers/logname-*,/var/log/containers/other-*`) are accepted.
+`/var/log/containers/fluentd*.log` is appended when missing, to avoid reading fluentd's own logs.
 
 - `exclude_path` parameter document: https://docs.fluentd.org/input/tail#exclude_path
 - Fluentd log issue with backslash: https://github.com/fluent/fluentd/issues/2545
