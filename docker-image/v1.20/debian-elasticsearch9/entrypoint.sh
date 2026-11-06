@@ -15,9 +15,16 @@ fi
 
 # Avoid infinite parse error logging loopback, exclude
 # fluentd*.log explicitly here as a fallback.
+# FLUENT_CONTAINER_TAIL_EXCLUDE_PATH accepts both a comma separated
+# list and a JSON array, e.g. ["/var/log/containers/foo*.log"].
 path_exist_in_env() {
     VALUE="$1"
     TARGETS="$2"
+    case "$TARGETS" in
+        \[*)
+            TARGETS=$(printf '%s' "$TARGETS" | sed -e 's/^\[//' -e 's/\][[:space:]]*$//')
+            ;;
+    esac
     OLD_IFS="$IFS"
     IFS=','
     for path in $TARGETS; do
@@ -31,13 +38,29 @@ path_exist_in_env() {
     return 0
 }
 
+append_path() {
+    case "$1" in
+        \[*)
+            BODY=$(printf '%s' "$1" | sed -e 's/^\[//' -e 's/\][[:space:]]*$//')
+            if [ -z "$(printf '%s' "$BODY" | tr -d '[:space:]')" ]; then
+                printf '["%s"]' "$2"
+            else
+                printf '[%s,"%s"]' "$BODY" "$2"
+            fi
+            ;;
+        *)
+            printf '%s,%s' "$1" "$2"
+            ;;
+    esac
+}
+
 WILDCARD_TAIL_PATH="/var/log/containers/*.log"
 IGNORE_TAIL_PATH="/var/log/containers/fluentd*.log"
 if [ -n "$FLUENT_CONTAINER_TAIL_PATH" ]; then
     if [ -n "${FLUENT_CONTAINER_TAIL_EXCLUDE_PATH}" ]; then
         if path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"; then
             # Exclude rule exists, then ensure to ignore it if is missing
-            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
+            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$(append_path "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH" "$IGNORE_TAIL_PATH")"
         fi
     else
         if ! path_exist_in_env "$WILDCARD_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_PATH"; then
@@ -50,7 +73,7 @@ else
     if [ -n "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH" ]; then
         if path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"; then
             # No exclude rule yet, so ignore fluentd*.log
-            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
+            export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$(append_path "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH" "$IGNORE_TAIL_PATH")"
         fi
     else
         # No exclude rule yet, set ignore
