@@ -17,6 +17,8 @@ jobs:
       components: >
         ${{ steps.arrange-components.outputs.for_all == 'true' && steps.all-components.outputs.json
         || format('["{0}"]', steps.arrange-components.outputs.component) }}
+      master_version: ${{ steps.master.outputs.version }}
+      master_components: ${{ steps.master.outputs.components }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: all-components
@@ -39,6 +41,24 @@ jobs:
               break
             fi
           done
+      - id: master
+        name: Collect version and components on master
+        # Fetch them here once, so that a failure stops the workflow before
+        # any image is pushed
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -H "Accept: application/vnd.github.raw" \
+            "repos/${GITHUB_REPOSITORY}/contents/Makefile?ref=master" > "${RUNNER_TEMP}/Makefile.master"
+          version=$(make --silent --file="${RUNNER_TEMP}/Makefile.master" echo-all-images | cut -d '/' -f1)
+          components=$(make --silent --file="${RUNNER_TEMP}/Makefile.master" echo-all-components)
+          if [ -z "${version}" ] || [ -z "${components}" ]; then
+            echo "Failed to get version or components from Makefile on master"
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "components=${components}" >> "$GITHUB_OUTPUT"
   amd64:
     needs: define-matrix
     runs-on: ubuntu-latest
@@ -143,8 +163,26 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Create manifest
+        shell: bash
+        env:
+          MASTER_VERSION: ${{ needs.define-matrix.outputs.master_version }}
+          MASTER_COMPONENTS: ${{ needs.define-matrix.outputs.master_components }}
         run: |
           component=${{ matrix.component }}
+          version=$(make --silent echo-all-images | cut -d '/' -f1)
+          if [ -z "${version}" ]; then
+            echo "Failed to get version from Makefile"
+            exit 1
+          fi
+          if [ "${version}" = "${MASTER_VERSION}" ]; then
+            UPDATE_V1_TAG=true
+          elif [[ " ${MASTER_COMPONENTS} " != *" ${component} "* ]]; then
+            # master dropped this component (e.g. debian-elasticsearch7), so no one
+            # but this maintenance branch can update its v1-* tags
+            UPDATE_V1_TAG=true
+          else
+            UPDATE_V1_TAG=false
+          fi
           for target in $(make echo-all-images); do
             case $target in
               *$component-amd64*)
@@ -167,10 +205,15 @@ jobs:
                 ;;
             esac
           done
-          # v1-debian-(component)
-          docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component} ${{ env.REPOSITORY }}:${AMD64TAG}
-          # v1-debian-(component)-arm64
-          docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component}-arm64 ${{ env.REPOSITORY }}:${ARM64TAG}
+          # Release from a maintenance branch must not move v1-* tags back to an old version
+          if [ "${UPDATE_V1_TAG}" = true ]; then
+            # v1-debian-(component)
+            docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component} ${{ env.REPOSITORY }}:${AMD64TAG}
+            # v1-debian-(component)-arm64
+            docker buildx imagetools create -t ${{ env.REPOSITORY }}:v1-${component}-arm64 ${{ env.REPOSITORY }}:${ARM64TAG}
+          else
+            echo "Skip v1-${component} tags because master (${MASTER_VERSION}) also has ${component}"
+          fi
           # v1.xx.x-debian-(component)-xxx
           if [ ${MULTIARCH_AMD64_TAG} != ${MULTIARCH_ARM64_TAG} ]; then
             echo "Multiarch tag (v1.xx.x-debian-(component)-xxx) must be same for amd64 and arm64: ${MULTIARCH_AMD64_TAG} !=  ${MULTIARCH_ARM64_TAG}"
