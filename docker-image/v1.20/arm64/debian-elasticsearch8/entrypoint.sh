@@ -35,14 +35,12 @@ WILDCARD_TAIL_PATH="/var/log/containers/*.log"
 IGNORE_TAIL_PATH="/var/log/containers/fluentd*.log"
 if [ -n "$FLUENT_CONTAINER_TAIL_PATH" ]; then
     if [ -n "${FLUENT_CONTAINER_TAIL_EXCLUDE_PATH}" ]; then
-        path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"
-        if [ $? -eq 0 ]; then
+        if path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"; then
             # Exclude rule exists, then ensure to ignore it if is missing
             export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
         fi
     else
-        path_exist_in_env "$WILDCARD_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_PATH"
-        if [ $? -eq 1 ]; then
+        if ! path_exist_in_env "$WILDCARD_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_PATH"; then
             # No exclude rule yet, so if wildcard was enabled, ignore fluentd*.log
             export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$IGNORE_TAIL_PATH"
         fi
@@ -50,8 +48,7 @@ if [ -n "$FLUENT_CONTAINER_TAIL_PATH" ]; then
 else
     # Wildcard will be enabled as fallback in tail path
     if [ -n "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH" ]; then
-        path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"
-        if [ $? -eq 0 ]; then
+        if path_exist_in_env "$IGNORE_TAIL_PATH" "$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH"; then
             # No exclude rule yet, so ignore fluentd*.log
             export FLUENT_CONTAINER_TAIL_EXCLUDE_PATH="$FLUENT_CONTAINER_TAIL_EXCLUDE_PATH,$IGNORE_TAIL_PATH"
         fi
