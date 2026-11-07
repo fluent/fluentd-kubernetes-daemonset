@@ -124,7 +124,7 @@
   use_tag_as_stream true
   retention_in_days "#{ENV['RETENTION_IN_DAYS'] || 'nil'}"
   json_handler yajl # To avoid UndefinedConversionError
-  log_rejected_request "#{ENV['LOG_REJECTED_REQUEST']}" # Log rejected request for missing parts
+  log_rejected_request "#{ENV['LOG_REJECTED_REQUEST'] || use_default}" # Log rejected request for missing parts
 </match>
 <%  when "s3"%>
 <match **>
@@ -134,7 +134,7 @@
   @id out_s3
   @log_level info
   s3_bucket "#{ENV['S3_BUCKET_NAME']}"
-  s3_region "#{ENV['S3_BUCKET_REGION']}"
+  s3_region "#{ENV['S3_BUCKET_REGION'] || use_default}"
   s3_object_key_format "#{ENV['S3_OBJECT_KEY_FORMAT'] || '%{path}%Y/%m/%d/cluster-log-%{index}.%{file_extension}'}"
   storage_class "#{ENV['S3_STORAGE_CLASS'] || 'STANDARD'}"
   <inject>
@@ -170,14 +170,14 @@
   @type azure-storage-append-blob
   @id out_azure_storage_append_blob
 
-  azure_cloud                     "#{ENV['AZUREBLOB_AZURE_CLOUD']}"
+  azure_cloud                     "#{ENV['AZUREBLOB_AZURE_CLOUD'] || use_default}"
   azure_storage_account           "#{ENV['AZUREBLOB_ACCOUNT_NAME']}"
   azure_storage_access_key        "#{ENV['AZUREBLOB_ACCOUNT_KEY']}"
   azure_storage_connection_string "#{ENV['AZUREBLOB_CONNECTION_STRING']}"
   azure_storage_sas_token         "#{ENV['AZUREBLOB_SAS_TOKEN']}"
   azure_container                 "#{ENV['AZUREBLOB_CONTAINER']}"
-  azure_imds_api_version          "#{ENV['AZUREBLOB_IMDS_API_VERSION']}"
-  azure_token_refresh_interval    "#{ENV['AZUREBLOB_TOKEN_REFRESH_INTERVAL']}"
+  azure_imds_api_version          "#{ENV['AZUREBLOB_IMDS_API_VERSION'] || use_default}"
+  azure_token_refresh_interval    "#{ENV['AZUREBLOB_TOKEN_REFRESH_INTERVAL'] || use_default}"
   auto_create_container           true
   path                            "#{ENV['AZUREBLOB_LOG_PATH']}"
   azure_object_key_format         %{path}%{time_slice}_%{index}.log
